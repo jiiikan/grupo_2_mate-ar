@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalog</title>
+    <link rel="stylesheet" href="css/registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-register">
+      <p>Registro</p>
+    <form method="post" class="box-register">
+      <label for="nombre_usuario" class="registro">Nombre de usuario:</label>
+      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777"  required><br>
+
+      <label for="email" class="registro">Correo electrónico:</label>
+      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" required><br>
+      
+      <label for="phone_number" class="registro">Numero celular:</label>
+      <input type="number" class="in-register" name="phone_number" placeholder="5492901432109" required><br>
+
+      <label for="ideal" class="registro">¿Que quiere hacer?</label>
+      <select class="in-register">
+        <option value="conmprar">Quiero comprar</option>
+        <option value="vender">Quiero vender</option>
+        <option value="los-dos">Quiero comprar y vender</option>
+      </select><br>
+      
+      <label for="contrasena" class="registro">Contraseña:</label>
+      <input type="password" class="in-register" name="contrasena" minlength="8" placeholder="123456789" required><br>
+
+      <label for="confirmar_contrasena" class="registro">Confirmar contraseña:</label>
+      <input type="password" class="in-register" name="confirmar_contrasena" minlength="8" placeholder="123456789" required><br>
+
+      <hr class="linea-registro">
+      <div class="boton">
+      <button type="submit" class="boton-registro">Crear cuenta</button><br>
+      </div>
+    </form>
+    </main>
+</body>
+</html>

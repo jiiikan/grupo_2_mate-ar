@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+  
+}
+
+.main-login{
+    background-color: #efefefeb;
+    padding: 30px;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #2589bd;
+    padding: 10px;
+    border-radius: 3px;
+    border: solid 1px;
+    box-shadow: 7px 5px 0px 4px rgba(0,0,0,1);
+    
+
+}
+
+.iniciar{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.login-sub{
+    font-size: 16px;
+    padding: 10px;
+}
+
+.login-input{
+    border-radius: 5px;
+    border: solid 1px;
+    width: 200px;
+    padding: 3px;
+    text-align: center;
+    align-self: center;
+    margin: 6px;
+    box-shadow: 2px 2px 0px 2px rgba(0,0,0,1);
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.boton-iniciar{
+    margin: 15px;
+    padding: 5px;
+    width: 180px;
+    align-self: center;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px 2px rgba(0,0,0,1);
+}
+
+.form-acceso{
+    display: flex;
+    flex-direction: column;
+    background-color: #2589bd;
+    padding: 10px;
+    border-radius: 3px;
+    border: solid 1px;
+}
+
+.go-register{
+    padding: 5px;
+    font-size: 12px;
+}

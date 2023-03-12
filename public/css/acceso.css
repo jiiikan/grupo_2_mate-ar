@@ -8,7 +8,7 @@
 
 .main-login{
     background-color: #efefefeb;
-    padding: 30px;
+    padding: 20px;
 }
 
 .login-container{
@@ -26,11 +26,12 @@
 .iniciar{
     font-size: 30px;
     font-weight: bold;
+    text-align: center;
 }
 
 .login-sub{
-    font-size: 16px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 3px;
 }
 
 .login-input{
@@ -72,4 +73,34 @@
 .go-register{
     padding: 5px;
     font-size: 12px;
+}
+
+
+@media (min-width: 361px) {
+
+.login-sub{
+    font-size: 20px; 
+    text-decoration: underline;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+.login-input{
+    width: 300px;
+    height: 30px;
+    align-self: center;
+}
+
+.boton-iniciar{
+    width: 100px;
+    height: 30px;
+    align-self: center;
+}
+
+
+@media (min-width: 769px){
+
+
+}
+
 }

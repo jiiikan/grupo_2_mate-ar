@@ -1,0 +1,23 @@
+*{
+    font-family: 'Roboto', sans-serif;
+font-family: 'Tajawal', sans-serif;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px; /* ajusta el valor para que se adapte al tamaño de tus imágenes */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+.titulo {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }

@@ -20,8 +20,16 @@ app.get("/acceso", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/acceso.html"));
 });
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/home.html"));
+});
+
+app.get("/Producto", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/detalleProducto.html"));
+});
+
+app.get("/categoria-jeans", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/categoria-jeans.html"));
 });
 
 app.get("/detalleProducto", (req, res) => {

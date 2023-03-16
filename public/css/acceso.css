@@ -9,6 +9,9 @@
 .main-login{
     background-color: #efefefeb;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-container{
@@ -19,6 +22,7 @@
     border-radius: 3px;
     border: solid 1px;
     box-shadow: 7px 5px 0px 4px rgba(0,0,0,1);
+    width: 300px;
     
 
 }
@@ -97,8 +101,13 @@
     align-self: center;
 }
 
+.login-container{
+    width: 400px;
+}
+
 
 @media (min-width: 769px){
+
 
 
 }

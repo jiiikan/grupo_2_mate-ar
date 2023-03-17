@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
-
 const path = require('path');
+const port = 3000;
+const funca = 'Servidor funcionando en localhost: ';
 
-app.listen(3000, ()=>{
-    console.log('Servidor funcionando');
+app.listen(port, ()=>{
+    console.log(funca + port);
     });
 
 const pathPublic = path.resolve(__dirname, 'public');

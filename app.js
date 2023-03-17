@@ -12,27 +12,27 @@ app.set("view engine", `ejs`);
 
 app.use(express.static("./public"));
 
-
-app.get("/carro", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./src/views/carrito.html"));
-});
-
-app.get("/acceso", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./src/views/acceso.html"));
-});
-
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./src/views/home.html"));
 });
 
+app.get("/carro", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./src/views/users/carrito.html"));
+});
+
+app.get("/acceso", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./src/views/users/login.html"));
+});
+
+app.get("/registro", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./src/views/users/registro.html"));
+});
+
 app.get("/producto", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./src/views/detalleProducto.html"));
+    res.sendFile(path.resolve(__dirname, "./src/views/products/detalleProducto.html"));
 });
 
-app.get("/categoria-jeans", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./src/views/categoria-jeans.html"));
+app.get("/catalogo", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./src/views/products/catalogo.html"));
 });
 
-app.get("/detalleProducto", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./src/views/detalleProducto.html"));
-});

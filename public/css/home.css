@@ -1,32 +1,99 @@
-*{
-    font-family: 'Roboto', sans-serif;
-font-family: 'Tajawal', sans-serif;
+*{  font-family: 'Tajawal', sans-serif; }
+body{ margin: 0; background-color: #E5D9B6;}
+
+/* Header */
+
+.header{
+  padding: 10% ;
+  text-align: center;
+  background-color: #285430;
+  align-items: center;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-img{
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 400px; /* ajusta el valor para que se adapte al tamaño de tus imágenes */
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+.logo{ width: 25%;  margin: 0;}
+.busqueda{ 
+  margin: 18px 0; 
+  display: flex;
+  text-align: center;
+}
+.cuadrado-busqueda { 
+  font-weight: 500;
+  font-size: 16px;
+  width: 80%;
+  border: none;
+  background-color: #E5D9B6;
+  border-start-start-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+.button-busqueda{
+  color: #E5D9B6;
+  padding: 1px 10px;
+  border: none;
+  margin-bottom: 0;
+  background-color: #5F8D4E;
+  border-end-end-radius: 10px;
+  border-start-end-radius: 10px;
+}
+.nav{
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+  border-top: #E5D9B6 solid 2px;
+}
+.nav a { 
+  margin: 20px; 
+  color: #fff5e2;
+  font-weight: bold;
+  text-decoration: none;
+}
 
+/* Main */
+img{
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px; /* ajusta el valor para que se adapte al tamaño de tus imágenes */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .titulo {
-    display: block;
-    margin: 10px 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+  display: block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Footer */
+.footer{
+  background-color: #333;
+}
+
+/* Responsive */
+
+@media(min-width: 450px){
+    /*tablet*/
+    .header{
+      padding: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+}
+
+@media(min-width: 800px){
+  /*desktop*/
+  .header{ 
+    padding: 20px 5% 5px;
+    flex-wrap: wrap;
   }
+  .busqueda{ width: 30%;}
+  .footer{
+    padding: 30px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

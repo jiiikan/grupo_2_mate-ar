@@ -4,7 +4,7 @@ body{ margin: 0; background-color: #E5D9B6;}
 /* Header */
 
 .header{
-  padding: 10% ;
+  padding: 20px ;
   text-align: center;
   background-color: #285430;
   align-items: center;
@@ -69,8 +69,11 @@ img{
 
 /* Footer */
 .footer{
-  background-color: #333;
+  background-color: #285430;
+  padding: 5% 3%;
+  color: #E5D9B6;
 }
+
 
 /* Responsive */
 
@@ -91,8 +94,8 @@ img{
     flex-wrap: wrap;
   }
   .busqueda{ width: 30%;}
+
   .footer{
-    padding: 30px;
     flex-direction: row;
     justify-content: space-around;
   }

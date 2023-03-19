@@ -8,4 +8,4 @@ crema: #E5D9B6
 # Tipografia: 
 https://fonts.google.com/specimen/Tajawal?query=taja
 https://fonts.google.com/specimen/Josefin+Sans?preview.text=mate%20ar&preview.size=34&preview.text_type=custom&slant=6
-https://fonts.google.com/specimen/Anton
+

@@ -10,7 +10,7 @@ body{ margin: 0; background-color: #E5D9B6;}
   align-items: center;
 }
 
-.logo{ width: 25%;  margin: 0;}
+.logo{ width: 25%;  margin: 0; padding: 0;}
 .busqueda{ 
   margin: 18px 0; 
   display: flex;

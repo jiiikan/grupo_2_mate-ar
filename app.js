@@ -16,10 +16,7 @@ app.listen(port, funca);
 
 app.use(express.static("./public"));
 
-app.use("/", products);
-app.use("/catalogo", products);
-app.use("/detalle", products);
-app.use("/editor", products);
+app.use("/products", products);
 
 app.use("/login", users);
 app.use("/registro", users);

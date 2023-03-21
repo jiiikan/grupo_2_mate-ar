@@ -6,13 +6,13 @@ let productsController = {
         res.render("index");
     },
     catalogo: (req, res) => {
-        res.render("catalogo");
+        res.render("./products/catalogo");
     },
     detalle: (req, res) => {
-        res.render("detalleProducto");
+        res.render("./products/detalleProducto");
     },
     edition: (req, res) => {
-        res.render("editionProducts");
+        res.render("./products/editionProducts");
     }
 };
 

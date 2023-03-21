@@ -1,15 +1,15 @@
 const express = require("express");
 const path = require("path");
 
-let usersController =  {
-    login: (req, res ) => { 
-        res.render("login");
+let usersController = {
+    login: (req,res) => {
+        res.render("./users/login");
     },
     registro: (req, res) => {
-        res.render("registro");
+        res.render("./users/registro");
     },
-    carrito: (req , res) => {
-        res.render( "carrito");
+    carrito: (req, res) => {
+        res.render("./users/carrito");
     },
 };
 

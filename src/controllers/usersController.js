@@ -2,14 +2,14 @@ const express = require("express");
 const path = require("path");
 
 let usersController =  {
-    login: (req,res ) => { 
-        res.sendFile(path.resolve(__dirname, "../views/users/login.html"));
+    login: (req, res ) => { 
+        res.render("login");
     },
     registro: (req, res) => {
-        res.sendFile(path.resolve(__dirname, "../views/users/registro.html"));
+        res.render("registro");
     },
     carrito: (req , res) => {
-        res.sendFile(path.resolve(__dirname, "../views/users/carrito.html"));
+        res.render( "carrito");
     },
 };
 

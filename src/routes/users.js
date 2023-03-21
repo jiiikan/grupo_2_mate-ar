@@ -6,4 +6,4 @@ router.get("/login", usersController.login);
 router.get("/registro", usersController.registro);
 router.get("/carro", usersController.carrito);
 
-module.exports= router; 
+module.exports = router;

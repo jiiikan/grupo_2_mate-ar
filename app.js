@@ -21,6 +21,16 @@ app.use("/login", users);
 app.use("/registro", users);
 app.use("/carro", users);
 
+//app.get("/carro", (req, res) => {
+//    res.sendFile(path.resolve(__dirname, "./src/views/users/carrito.ejs"));
+//});
+//app.get("/login", (req, res) => {
+//    res.sendFile(path.resolve(__dirname, "./src/views/users/login.html"));
+//});
+//app.get("/registro", (req, res) => {
+//    res.sendFile(path.resolve(__dirname, "./src/views/users/registro.html"));
+//});
+
 
 
 //const pathPublic = path.resolve(__dirname, 'public');

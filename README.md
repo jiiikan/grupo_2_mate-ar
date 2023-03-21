@@ -8,6 +8,7 @@ está compuesto por 3 miembros:
 - Dante Stigliani 
 - Genaro Rafault
 - Nahir Cabezas 
+-Fernando  Lepe
 
 # Listado de paginas de referencia o inspiracion:
 - Todo mates: diseño muy llamativo y con una idea bastante clara al comunicar al cliente 

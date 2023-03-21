@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<%- include("../partials/head.ejs") %>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mate.ar -Carga y edita los productos</title>
 </head>
 <body>
-    <h3>hola mundo xd</h3>
+    <%- include("../partials/header) %>
     <!-- ● Nombre del producto (name)
     ● Descripción (description)
     ● Imagen (image)
@@ -18,7 +17,9 @@
         <form action="/product" method="post" class="busqueda">
             <input type="text" name="name" placeholder="Nombre" class="input" >
             <button type="submit" class="button">Subir</button>
-          </form>
+        </form>
     </main>
+
+    <%- include("../partials/footer") %>
 </body>
 </html>

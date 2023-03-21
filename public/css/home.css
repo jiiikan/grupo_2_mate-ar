@@ -4,7 +4,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 /* Header */
 
 .header{
-  padding: 5px;
+  padding: 5%;
   text-align: center;
   background-color: #285430;
   align-items: center;
@@ -18,7 +18,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 }
 
 .logo{ 
-  width: 25%;
+  width: 30%;
 }
 
 .nav-1{

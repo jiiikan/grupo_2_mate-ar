@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<%- include("../partials/head") %>
+
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/productos.css">
     <title>Productos</title>
     <link rel="stylesheet" href="estilos.css">
   </head>
+
   <body>
-    <header>
-      <h1>Pantalog</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/views/home.html#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+  
+    <%- include("../partials/header") %>
+
     <main>
       <section class="productos">
         <article class="producto">
@@ -40,8 +35,8 @@
         </article>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2023 Nuestra Tienda</p>
-    </footer>
+    
+    <%- include("../partials/footer") %>
+
   </body>
 </html>

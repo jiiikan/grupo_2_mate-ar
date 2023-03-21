@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <header class="header">
+  <%- include("./partials/header.ejs") %>
+  <!--<header class="header">
       <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
     <form action="/product" method="get" class="busqueda">
       <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
@@ -28,22 +29,16 @@
       <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
-    
-    <nav class="nav-1">     
-      <a href="/registro">Registro</a>
-      <hr>
-      <a href="/acceso">Acceso</a>
-    </nav>  
-
-    <nav class="nav-2">
+    <nav class="nav">
       <a href="/">Inicio</a>
       <a href="/catalogo">Catalogo</a>
+      <a href="/registro">Registrarse</a>
+      <a href="/login">Inicio sesion</a>
       <a href="/carro">Carrito</span></a>
     </nav>
     </header>-->
 
     <main>
-      <section>
         <div class="slider">
             <div><img src="" alt=""></div>
             <div><img src="" alt=""></div>
@@ -74,11 +69,13 @@
             <span class="titulo">Casuales</span>
             <img src="/images/casual.avif" > 
         </article>
-      </section>
     </main>
 
     
-  <footer class="footer">
+
+  <%- include("./partials/footer.ejs") %>
+
+  <!--<footer class="footer">
     <section class="seccionesFooter">
         <p>Seguinos en nuestras redes sociales</p> 
         <section class="iconosFooter">
@@ -107,24 +104,13 @@
 
     <section class="pie">
       <section class="legal">
-        <p>Copyright © 2023 Mate-Ar S.R.L.</p>
+        <p>Copyright ©️ 2023 Mate-Ar S.R.L.</p>
       </section>
-
-      <section class="section-footer">
-        <h3>Legal</h3>
-        <ul>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-        </ul>
+      <section class="legal">
+        <p><a href="/">Política de privacidad</a></p>
       </section>
-
-      <section class="section-footer">
-        <h3>Contacto</h3>
-        <ul>
-          <li><a href="mail:panta-log@gmail.com">panta-log@gmail.com</a></li>
-          <li><a href="#">(123) 456-7890</a></li>
-          <li><a href="#">Horario de atención al cliente</a></li>
-        </ul>
+      <section class="legal">
+        <p><a href="/">Términos y condiciones</a></p>
       </section>
     </section>
 

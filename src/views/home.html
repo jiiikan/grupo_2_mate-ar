@@ -14,53 +14,65 @@
 </head>
 
 <body>
-  <header class="header">
+ 
+  <header class="header"> 
+    <div class="box-logoynav1">
       <img src="/images/Logo-Matear.png" alt="logo-Mater.ar" class="logo">
+
+    <nav class="nav-1">     
+      <a href="/registro">Registro</a>
+      <hr>
+      <a href="/acceso">Acceso</a>
+    </nav></div>   
+
     <form action="/product" method="get" class="busqueda">
       <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
       <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 
-    <nav class="nav">
+
+    <nav class="nav-2">
       <a href="/">Inicio</a>
       <a href="/catalogo">Catalogo</a>
-      <a href="/registro">Registrarse</a>
-      <a href="/acceso">Inicio sesion</a>
       <a href="/carro">Carrito</span></a>
     </nav>
     </header>
 
     <main>
-        <div class="slider">
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-        </div>
-        <h2>Categorias de pantalones</h2>
-        <article class="categoria">
-            <span class="titulo">Jeans</span>
-            <a href="/catalogo"><img src="/images/Jeans.jpg" alt="foto-jeans"></a>
-        </article>
+      <section>
 
-        <article class="categoria">
-            <span class="titulo">De vestir</span>
-            <img src="/images/de-vestir.jpg"> 
-        </article>
-        
-        <article class="categoria">
-            <span class="titulo">Shorts</span>
-            <img src="/images/shorts.avif"> 
-        </article>
-
-        <article class="categoria">
-            <span class="titulo">Deportivos</span>
-            <img src="/images/deportivos.jfif" > 
-        </article>
-
-        <article class="categoria">
-            <span class="titulo">Casuales</span>
-            <img src="/images/casual.avif" > 
-        </article>
+      <p class="subtitulo">Categorias de mate-ar:</p>
+      <article class="productos-articulo">
+        <img class="clasificacion" src="/images/yerba-de-mate.jpg">
+      <div class="box-titulo">
+        <p class="titulo-articulo">Yerbas de mate</p>
+      </div>
+      </article>
+      <article class="productos-articulo">
+        <img class="clasificacion" src="/images/termo.jpg">
+      <div class="box-titulo">
+        <p class="titulo-articulo">Termos de mate</p>
+      </div>
+      </article>
+      <article class="productos-articulo">
+        <img class="clasificacion" src="/images/mate.jpg">
+      <div class="box-titulo">
+        <p class="titulo-articulo">Tipo de mates</p>
+      </div>
+      </article>
+      <article class="productos-articulo">
+        <img class="clasificacion" src="/images/accesorio.jpg">
+      <div class="box-titulo">
+        <p class="titulo-articulo">Accesorios para mate</p>
+      </div>
+      </article>
+      <article class="productos-articulo">
+        <img class="clasificacion" src="/images/kitcompleto1.jpg">
+      <div class="box-titulo">
+        <p class="titulo-articulo">Kit de mate</p>
+      </div>
+      </article>
+      </section>
     </main>
 
     

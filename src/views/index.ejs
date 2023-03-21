@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/home.css">
-  <script src="https://kit.fontawesome.com/b8dd215804.js" crossorigin="anonymous"></script>
-  <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet">-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <title>Mate.ar</title>
+  <title>Mate.ar</title>
 </head>
 
 <body>
   <header class="header">
-      <img src="/images/Logo-Matear.png" alt="logo-Mater.ar" class="logo">
+      <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
+    <form action="/product" method="get" class="busqueda">
+      <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
+      <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <nav class="nav">
+      <a href="/">Inicio</a>
+      <a href="/catalogo">Catalogo</a>
+      <a href="/registro">Registrarse</a>
+      <a href="/login">Inicio sesion</a>
+      <a href="/carro">Carrito</span></a>
+    </nav> <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
     <form action="/product" method="get" class="busqueda">
       <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
       <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -33,7 +40,7 @@
       <a href="/catalogo">Catalogo</a>
       <a href="/carro">Carrito</span></a>
     </nav>
-    </header>
+    </header>-->
 
     <main>
       <section>
@@ -72,19 +79,35 @@
 
     
   <footer class="footer">
-    <section class="container">
-      <section class="section-footer">
-        <h3>Nuestras redes</h3>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-        </ul>
-      </section>
-      
-      <section class="section-footer">
-        <h3>Metodos de pago</h3>
+    <section class="seccionesFooter">
+        <p>Seguinos en nuestras redes sociales</p> 
+        <section class="iconosFooter">
+            <i class="fa-brands fa-instagram animIcon"></i>
+            <i class="fa-brands fa-facebook animIcon"></i>
+            <i class="fa-brands fa-twitter animIcon"></i>
+        </section>
+    </section>
+
+    <section class="seccionesFooter">
+      <p>Metodos de pago</p>
+      <section class="iconosFooter">
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-visa"></i>
+    </section>
+    </section>
+
+    <section class="seccionesFooter">
+        <p>Informacion y contactos</p>
+        <section class="iconosFooter">
+            <i class="fa-solid fa-phone animIcon"></i>
+            <i class="fa-solid fa-envelope animIcon"></i>
+            <i class="fa-solid fa-truck-fast"></i>
+        </section>
+    </section>
+
+    <section class="pie">
+      <section class="legal">
+        <p>Copyright © 2023 Mate-Ar S.R.L.</p>
       </section>
 
       <section class="section-footer">
@@ -105,6 +128,6 @@
       </section>
     </section>
 
-    </footer>
+    </footer>-->
 </body>
 </html>

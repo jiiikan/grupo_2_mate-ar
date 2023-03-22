@@ -9,7 +9,7 @@ let productsController = {
         res.render("./products/catalogo");
     },
     detalle: (req, res) => {
-        res.render("./products/detalleProducto");
+        res.render("../products/detalleProducto");
     },
     edition: (req, res) => {
         res.render("./products/editionProducts");

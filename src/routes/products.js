@@ -6,5 +6,6 @@ router.get("/", productsController.index);
 router.get("/detalle", productsController.detalle);
 router.get("/catalogo", productsController.catalogo);
 router.get("/editor", productsController.edition);
+router.get("/create", productsController.create);
 
 module.exports= router; 

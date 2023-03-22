@@ -16,9 +16,21 @@ app.listen(port, funca);
 
 app.use(express.static("./public"));
 
-app.use("/products", products);
+app.use("/", products);
+app.use("/catalogo", products);
+app.use("/detalle", products);
+app.use("/editor", products);
+app.use("/create", products);
 
-app.use("/users", users);
+//no funciona con :
+//app.use("/products", products);
+
+app.use("/login", users);
+app.use("/registro", users);
+app.use("/carrito", users);
+
+//no funciona con :
+//app.use("/users", users);
 
 
 //app.get("/carro", (req, res) => {

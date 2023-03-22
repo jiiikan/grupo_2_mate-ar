@@ -13,6 +13,9 @@ let productsController = {
     },
     edition: (req, res) => {
         res.render("./products/editionProducts");
+    },
+    create: (req, res) => { 
+        res.render("./products/createProducts");
     }
 };
 

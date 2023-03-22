@@ -18,9 +18,7 @@ app.use(express.static("./public"));
 
 app.use("/products", products);
 
-app.use("/login", users);
-app.use("/registro", users);
-app.use("/carro", users);
+app.use("/users", users);
 
 
 //app.get("/carro", (req, res) => {

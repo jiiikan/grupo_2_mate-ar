@@ -1,19 +1,21 @@
 const express = require("express");
 const path = require("path");
 
-const productsController = {};
+const productsController = {
 
-productsController.catalogo = (req, res) => {
+    catalogo: (req, res) => {
     res.render("products/catalogo")
-};
-productsController.detalle = (req, res) => {
+},
+    detalle: (req, res) => {
     res.render("products/detalleProducto")
-};
-productsController.edition = (req, res) => {
+},
+    edition: (req, res) => {
     res.render("products/editionProducts")
-};
-productsController.create = (req, res) => {
+},
+    create: (req, res) => {
     res.render("products/createProducts")
+}
 };
+
 
 module.exports = productsController;

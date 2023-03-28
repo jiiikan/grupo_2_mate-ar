@@ -1,3 +1,7 @@
+*{  font-family: 'Tajawal', sans-serif; }
+body{ margin: 0; padding: 0; background-color: #E5D9B6;}
+
+
 .producto {
     display: flex;
     flex-direction: column;

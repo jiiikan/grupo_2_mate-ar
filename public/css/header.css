@@ -109,6 +109,7 @@
     .logo{
       width: 150px;
     }
+
 }
 
 @media(min-width: 800px){
@@ -130,7 +131,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-self: center;
-    border-top: solid 1px white;
     border-width: 60%;
   }
 
@@ -141,6 +141,10 @@
   .busqueda{
     width: 50%;
     justify-content: flex-start;
+  }
+
+  .box-logoynav1{
+    margin: 5px;
   }
    
 

@@ -4,61 +4,80 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 .subtitulo{
   padding-left: 10px;
   font-weight: bold;
-  text-decoration: underline;
+  font-size: 20px;
+}
+
+.titulo-reseña{
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.box-reseña{
+  width: 100%;
+  background-color: #5F8D4E;
+  border-bottom: solid 2px;
+  border-top: solid 2px;
+
+}
+
+.reseña-home{
+  font-size: 18px;
+  padding: 10px;
+  font-weight: 400;
 }
 
 .categoria{
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .productos-articulo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 0 10px 10px 10px;
   padding-top: 20px;
 
 }
 
-.clasificacion{
+.box-imgyp{
+  width: 100%;
+}
+
+.box-imgyp img{
   width: 250px;
   height: 250px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-} 
+}
 
-.titulo-articulo {
+.box-imgyp p{
   font-weight: bold;
   text-align: center;
-
-
+  font-size: 18px;
 }
-  .footer{
+
+.footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  .legal{
+.legal{
     margin: 0px 10px;
   }
-  .pie{
+.pie{
     margin-top: 20px;
     display: flex;
     justify-content: flex-start;
     width: 100%;
   }
-  .seccionesFooter{
+.seccionesFooter{
     font-size: 18px;
 }
 
 @media (min-width: 450px){
 
-  .categoria{
-    display: flex;
-    justify-content: space-between;
-  }
+
 
 
 

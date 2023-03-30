@@ -14,6 +14,19 @@
   <main class="main">
 
     <h1>Catalogo</h1>
+
+    <section>
+    <% for( let i = 0; i < products.length; i++ ) { %>
+      <article class="producto">
+        <img src="/images/<%= products[i].imagen %>" alt="Producto 1">
+        <h3><%= products[i].nombre %></h3>
+        <p><%= products[i].descripcion %></p>
+        <span class="precio"><%= products[i].precio %></span>
+      </article>
+    <% } %>
+    </section>
+
+    <!--
     <section>
       <h2>Bombillas</h2>
       <article class="producto">
@@ -77,6 +90,7 @@
           <span class="precio">$8700</span>
         </article>
       </section>
+      -->
 
   </main>
 

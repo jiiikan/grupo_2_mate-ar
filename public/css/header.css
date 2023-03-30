@@ -41,7 +41,7 @@
   }
   .cuadrado-busqueda { 
     font-weight: 500;
-    width: 70%;
+    width: 500px;
     max-width: 80%;
     border: none;
     background-color: #E5D9B6;
@@ -107,7 +107,7 @@
       font-size: 14px; 
     }
     .logo{
-      width: 150px;
+      width: 175px;
     }
 
 }
@@ -116,14 +116,14 @@
   /*desktop*/
    .box-nav2{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: flex-start;    
    }
    
    .nav-2{
-    display: flex;
-    justify-content: right;
 
+    justify-content: space-around;
+    align-items: flex-end;
    }
 
    .buscadorynav2{
@@ -134,12 +134,8 @@
     border-width: 60%;
   }
 
-  .linea-nav2{
-    display: none;
-  }
 
   .busqueda{
-    width: 50%;
     justify-content: flex-start;
   }
 
@@ -147,6 +143,10 @@
     margin: 5px;
   }
    
+  .logo{
+    width: 200px;
+  }
+
 
 }
 

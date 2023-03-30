@@ -5,14 +5,14 @@
     padding-bottom: 1%;
     color: #E5D9B6;
   }
-  .footer{
+.footer{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
   }
-  .iconosFooter{
+.iconosFooter{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -20,10 +20,16 @@
     justify-content: space-around;
     align-items: center;
   }
-  .legal{
+.legal{
     font-size: 14px;
   }
-  .legal p a{
+.legal p a{
     text-decoration: none;
     color: #E5D9B6;
+  }
+
+  @media(min-width: 800px){
+
+  
+
   }

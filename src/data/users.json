@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nombre": "genaro",
+        "apellido": "alcachofa",
+        "email": "genaro@ejemplo.com",
+        "contraseña": "contraseña",
+        "admin": true,
+        "imagen": "ejemplo.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "dante",
+        "apellido": "alcachofa",
+        "email": "dante@ejemplo.com",
+        "contraseña": "contraseña",
+        "admin": true,
+        "imagen": "ejemplo.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "fernado",
+        "apellido": "lepe",
+        "email": "lepe@ejemplo.com",
+        "contraseña": "contraseña",
+        "admin": true,
+        "imagen": "ejemplo.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "nahir",
+        "apellido": "cabezas",
+        "email": "nahir@ejemplo.com",
+        "contraseña": "contraseña",
+        "admin": true,
+        "imagen": "ejemplo.jpg"
+    }
+]

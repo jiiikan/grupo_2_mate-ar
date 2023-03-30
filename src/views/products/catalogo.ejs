@@ -1,47 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<%- include("../partials/head") %>
+
+<head>
     <link rel="stylesheet" href="/css/productos.css">
     <title>Productos</title>
-    <link rel="stylesheet" href="estilos.css">
-  </head>
-  <body>
-    <header>
-      <h1>Pantalog</h1>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/views/home.html#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="productos">
+</head>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+  <main class="main">
+
+    <h1>Catalogo</h1>
+
+    <section>
+    <% for( let i = 0; i < products.length; i++ ) { %>
+      <article class="producto">
+        <img src="/images/<%= products[i].imagen %>" alt="Producto 1">
+        <h3><%= products[i].nombre %></h3>
+        <p><%= products[i].descripcion %></p>
+        <span class="precio"><%= products[i].precio %></span>
+      </article>
+    <% } %>
+    </section>
+
+    <!--
+    <section>
+      <h2>Bombillas</h2>
+      <article class="producto">
+        <img src="/images/bombilla.jpg" alt="Producto 1">
+        <h3>Bombilla plana</h3>
+        <p>Bombilla punta plana</p>
+        <span class="precio">$2000</span>
+      </article>
+      <article class="producto">
+        <img src="/images/BOMBILLAS3.jpg" alt="Producto 1">
+        <h3>Bombilla recta</h3>
+        <p>Bombilla con resorte</p>
+        <span class="precio">$2600</span>
+      </article>
+    </section>
+
+      <section>
+        <h2>Termos</h2>
         <article class="producto">
-          <img src="/images/kitcompleto1.jpg" alt="Producto 1">
-          <h2>Producto 1</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$10.00</span>
+          <img src="/images/termo.jpg" alt="Producto 1">
+          <h3>Termo 1l</h3>
+          <p>Termo 1l clor gris</p>
+          <span class="precio">$4300</span>
         </article>
         <article class="producto">
-          <img src="producto2.jpg" alt="Producto 2">
-          <h2>Producto 2</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$15.00</span>
-        </article>
-        <article class="producto">
-          <img src="producto3.jpg" alt="Producto 3">
-          <h2>Producto 3</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$20.00</span>
+          <img src="/images/termo.jpg" alt="Producto 1">
+          <h3>Termo 1,5l</h3>
+          <p>Termo 1,5 l clor gris</p>
+          <span class="precio">$6000</span>
         </article>
       </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Nuestra Tienda</p>
-    </footer>
+
+      <section>
+        <h2>Mates</h2>
+        <article class="producto">
+          <img src="/images/mate3.jpeg" alt="Producto 1">
+          <h3>Mate Madera</h3>
+          <p>Mate de madera color artesanal con detalles</p>
+          <span class="precio">$3400</span>
+        </article>
+        <article class="producto">
+          <img src="/images/mate1.jpeg" alt="Producto 1">
+          <h3>Mate de cuero</h3>
+          <p>Mate forrado en cuero negro detalle tallado en metal</p>
+          <span class="precio">$5200</span>
+        </article>
+      </section>
+
+      <section>
+        <h2>Kit de mate</h2>
+        <article class="producto">
+          <img src="/images/kitcompleto1.jpg" alt="Producto 1">
+          <h3>Kit de cuero azul</h3>
+          <p>Set de mate completo de color azul incluye yerbera y azucarera</p>
+          <span class="precio">$7500</span>
+        </article>
+        <article class="producto">
+          <img src="/images/set completo3.jpg" alt="Producto 1">
+          <h3>Kit de cuero negro</h3>
+          <p>Set de mate de cuero negro incluye solo un accesorio de màs</p>
+          <span class="precio">$8700</span>
+        </article>
+      </section>
+      -->
+
+  </main>
+
+  <%- include("../partials/footer") %>
+
   </body>
 </html>

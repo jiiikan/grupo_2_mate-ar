@@ -1,15 +1,33 @@
-<header>
-    <img src="" alt="logo-Mater.ar" class="logo">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/header.css">
+    <title>Mate.ar</title>
+</head>
+
+<header class="header">
+    <div class="box-logoynav1">
+    <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
+    <nav class="nav-1">
+        <a href="/users/registro">Registrarse</a>
+        <hr class="linea-acceyregis">
+        <a href="/users/login">Acceso</a>
+    </nav> 
+    </div> 
+    <div class="buscadorynav2">
     <form action="/product" method="get" class="busqueda">
         <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
         <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-
-    <nav class="nav">
+    <!--<hr class="linea-nav2">-->
+<div class="box-nav2">
+    <nav class="nav-2">
         <a href="/">Inicio</a>
-        <a href="/catalogo">Catalogo</a>
-        <a href="/registro">Registrarse</a>
-        <a href="/acceso">Inicio sesion</a>
-        <a href="/carro">Carrito</span></a>
+        <a href="/products/catalogo">Catalogo</a>        
+        <a href="/users/carrito">Carrito</a>        
+        <a href="/products/detalle">Detalle</a> 
     </nav>
+</div>
+    <style></style>
 </header>
+</html>

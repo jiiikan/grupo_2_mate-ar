@@ -1,19 +1,24 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 
-let productsController = {
-    index: (req,res) => {
-        res.render("index");
-    },
+let products = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/products.json")));
+
+const productsController = {
+
     catalogo: (req, res) => {
-        res.render("catalogo");
-    },
+    res.render("products/catalogo", {products: products})
+},
     detalle: (req, res) => {
-        res.render("detalleProducto");
-    },
+    res.render("products/detalleProducto")
+},
     edition: (req, res) => {
-        res.render("editionProducts");
-    }
+    res.render("products/editionProducts")
+},
+    create: (req, res) => {
+    res.render("products/createProducts")
+}
 };
+
 
 module.exports = productsController;

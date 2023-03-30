@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "mate"
+    },
+    {
+        "id": 2,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "mate"
+    },
+    {
+        "id": 3,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "termos"
+    },
+    {
+        "id": 4,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "termos"
+    },
+    {
+        "id": 5,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "bombilla"
+    },
+    {
+        "id": 6,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "bombilla"
+    },
+    {
+        "id": 7,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "kut de mate"
+    },
+    {
+        "id": 8,
+        "nombre": "mate1",
+        "descripcion": "mate de madera y cuero hay qeu poner todos los productos que tenemos",
+        "precio": "3000",
+        "imagen": "mate.jpg",
+        "categoria": "kit de mate"
+    }
+]

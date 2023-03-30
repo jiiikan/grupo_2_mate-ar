@@ -1,16 +1,18 @@
 const express = require("express");
 const path = require("path");
 
-let usersController =  {
-    login: (req, res ) => { 
-        res.render("login");
-    },
+const usersController = {
+
+    carrito: (req, res) => {
+    res.render("users/carrito")
+},
+    login: (req, res) => {
+    res.render("users/login")
+},
     registro: (req, res) => {
-        res.render("registro");
-    },
-    carrito: (req , res) => {
-        res.render( "carrito");
-    },
+    res.render("users/registro")
+}
+
 };
 
 module.exports = usersController;

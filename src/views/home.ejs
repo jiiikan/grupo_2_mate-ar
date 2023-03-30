@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+
+<head>
+  <link rel="stylesheet" href="/css/home.css">
+  <title>Mate.ar</title>
+</head>
+
+<body>
+  <%- include("./partials/header.ejs") %>
+
+    <main>
+      <section>
+      <article class="reseña-articulo">
+      <p class="titulo-reseña">¿Quienes somos?</p>
+      <div class="box-reseña">
+      <p class="reseña-home">Mate Ar es una empresa argentina que viene a querer ayudar a los distintos Argentinos del mundo a poder conseguir un matecito de forma
+      rapida y segura, sino si sos extranjero tambien tenemos todo lo necesario para vos y toda tu familia a un precio bastante economico</p>
+      </div>
+      </article>
+      </section>
+      <section>
+        <p class="subtitulo">A continuacion las distintas categorias:</p>
+        
+        <div class="categoria">
+        <article class="productos-articulo">
+          <div class="box-imgyp">
+          <img src="/images/bombilla.jpg" class="clasificacion">
+          <p class="titulo-articulo">Bombillas de mate</p> 
+          </div>
+      </article>
+
+        <article class="productos-articulo">
+          <div class="box-imgyp">
+            <img src="/images/termo.jpg" class="clasificacion"> 
+            <p class="titulo-articulo">Termos de mate</p>
+          </div>
+        </article>
+        
+        <article class="productos-articulo">
+          <div class="box-imgyp">
+            <img src="/images/mate.jpg" class="clasificacion"> 
+            <p class="titulo-articulo">Tipos de mate</p>
+          </div>
+        </article>
+
+        <article class="productos-articulo">
+          <div class="box-imgyp">
+            <img src="/images/kitcompleto1.jpg" class="clasificacion"> 
+            <p class="titulo-articulo">Kit de mate</p>
+          </div>
+        </article></div>
+      </section>
+    </main>
+
+  <%- include("./partials/footer.ejs") %>
+
+</body>
+</html>

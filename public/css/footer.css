@@ -1,0 +1,35 @@
+/* Footer */
+.footer{
+    background-color: #285430;
+    padding: 4% ;
+    padding-bottom: 1%;
+    color: #E5D9B6;
+  }
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+.iconosFooter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 1.4rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+.legal{
+    font-size: 14px;
+  }
+.legal p a{
+    text-decoration: none;
+    color: #E5D9B6;
+  }
+
+  @media(min-width: 800px){
+
+  
+
+  }

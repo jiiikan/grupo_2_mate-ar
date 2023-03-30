@@ -1,73 +1,83 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Sofia Sans Semi Condensed', sans-serif;
+*{  font-family: 'Tajawal', sans-serif; margin: 0; padding: 0;}
 
-}
+body{  background-color: #E5D9B6;}
+
 
 .main-cart{
-  padding: 15px;
-  background-color: #efefefbe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.down-cart{
-  font-size: 30px;
-  text-align: left;
-  padding-top: 5px;
-  background-color: #2589bd;
-  font-weight: bold;
-  padding-left: 10px;
-  text-transform: uppercase;
-}
-
-.description-cart{
-  font-size: 14px;
-  background-color: #2589bd;
-  padding-left: 10px;
-  padding-bottom: 5px;
-}
-
-.linea{
-  border: 1px solid rgb(29, 28, 28);
-}
-
-.products{
-  font-size: 15px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  align-self: center;
-  padding: 10px 20px;
-  border: none;
-  background-color: #38686a;
-  color: white;
-  border-radius: 5px;
-}
-
-.box{
+.box-cart{
+  width: 80%;
+  background-color: white;
+  border: solid 1px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  margin: 40px;
 
 }
 
-.box-images{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.products-dospuntos{
+.titulo-carrito{
   font-size: 25px;
-  padding-left: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 20px;
+  margin-top: 20px;
+
 }
 
-.metodos-pago{
-  width: 80px;
-  align-items: center;
-  padding-bottom: 5px;
-  
+.compra{
+  width: 200px;
+  height: 200px;
+  align-self: center;
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
+.numero-articulos{
+  font-weight: 500;
+  margin-right: 20px;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.precio{
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.nombre{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.comprar{
+  width: 100px;
+  height: 30px;
+  align-self: center;
+  margin: 5px;
+  color: #E5D9B6;
+  border: solid 1px;
+  background-color: #285430;
+  border-radius: 8px;
+  text-decoration: underline;
+}
+
+.envios{
+  text-align: left;
+  font-size: 15px;
+  margin: 10px;
+  margin-left: 20px;
+  font-weight: 300;
+  color: #5F8D4E;
 }
 
 @media (min-width: 361px){

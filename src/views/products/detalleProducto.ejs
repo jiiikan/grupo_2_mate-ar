@@ -2,24 +2,39 @@
 <html lang="en">
 
 <%- include("../partials/head") %>
-
 <head>
     <link rel="stylesheet" href="/css/detalleProducto.css">
     <title>Detalle de producto</title>
 </head>
 
 <body>
-
   <%- include("../partials/header") %>
 
-  <main>
+  <main class="main">
+
     <div class="producto">
-        <img src="imagen-producto.jpg" alt="Producto">
-        <div class="botones">
-          <button class="boton-carrito">Añadir al carrito</button>
-          <button class="boton-comprar">Comprar</button>
-        </div>
+      <section class="array-products">
+
+        <% let productos = {} %>
+        <% productos = products.find(products => this.id == 1)  %>
+        <% console.log(productos) %>
+          <h1 class="title"><%= productos[i].nombre %></h1>
+          <article class="producto">
+            <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
+            <h3><%= products[i].nombre %></h3>
+            <p class="descripcion"><%= products[i].descripcion %></p>
+            <span class="precio">$<%= products[i].precio %></span>
+          </article>
+
+        </section>
+
+      <div class="botones">
+        <button class="boton">Añadir al carrito</button>
+        <button class="boton">Comprar</button>
+        <button class="button"><a href="/products/edition">Editar</a></button>
       </div>
+    </div>
+
   </main>
 
   <%- include("../partials/footer") %>

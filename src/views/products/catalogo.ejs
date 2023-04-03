@@ -14,17 +14,24 @@
   <main class="main">
 
     <h1>Catalogo</h1>
+    <!-- filter para filtrar por categoria idea -->
 
-    <section>
+    <section class="array-products">
     <% for( let i = 0; i < products.length; i++ ) { %>
-      <article class="producto">
-        <img src="/images/<%= products[i].imagen %>" alt="Producto 1">
+
+      <article class="producto" onclick="location.href= '/products/<%= products[i].id%>'">
+
+        <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
         <h3><%= products[i].nombre %></h3>
-        <p><%= products[i].descripcion %></p>
-        <span class="precio"><%= products[i].precio %></span>
+        <p class="descripcion"><%= products[i].descripcion %></p>
+        <span class="precio">$<%= products[i].precio %></span>
+        
       </article>
+
     <% } %>
     </section>
+
+    <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/productos/create'">
 
     <!--
     <section>
@@ -69,8 +76,8 @@
         </article>
         <article class="producto">
           <img src="/images/mate1.jpeg" alt="Producto 1">
-          <h3>Mate de cuero</h3>
-          <p>Mate forrado en cuero negro detalle tallado en metal</p>
+          <h3>Mate de cuero</h3>Mate forrado en cuero negro detalle tallado en metal
+          <p></p>
           <span class="precio">$5200</span>
         </article>
       </section>

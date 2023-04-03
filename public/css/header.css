@@ -1,7 +1,7 @@
 /* Header */
 
 .header{
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     background-color: #285430;
     align-items: center;
@@ -69,7 +69,7 @@
   .nav-2{
     font-size: 14px;
     width: 100%;
-    margin-top: 10px;
+  
     display: flex;  
     justify-content: center;
     align-items: center;
@@ -84,9 +84,14 @@
   
   }
 
-  .linea-nav2{
-    width: 90%;
-  }
+
+
+  .linea-separadora{
+    width: 99%;
+    margin-top: 20px;
+    
+
+}
 
 
 @media(min-width: 450px){
@@ -100,7 +105,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      height: 10px;
     }
 
     .nav-1{
@@ -114,29 +118,32 @@
 
 @media(min-width: 800px){
   /*desktop*/
+    
+
+    
    .box-nav2{
     display: flex;
-    justify-content: right;
-    align-items: flex-start;    
+    justify-content: right; 
    }
    
    .nav-2{
-
     justify-content: space-around;
-    align-items: flex-end;
+    margin-right: 20px;
    }
 
    .buscadorynav2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-self: center;
-    border-width: 60%;
+    align-items: center;
+    margin-bottom: 10px;
+    
   }
 
 
-  .busqueda{
+  .busqueda, .button-busqueda{
     justify-content: flex-start;
+
   }
 
   .box-logoynav1{
@@ -145,6 +152,16 @@
    
   .logo{
     width: 200px;
+  }
+
+  .nav-2 a{
+    align-items: center;
+    font-size: 15px;
+    margin-left: 20px;
+  }
+
+  .button-busqueda{
+    height: 33px;
   }
 
 

@@ -18,14 +18,20 @@
 
     <section class="array-products">
     <% for( let i = 0; i < products.length; i++ ) { %>
-      <article class="producto">
+
+      <article class="producto" onclick="location.href= '/products/<%= products[i].id%>'">
+
         <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
         <h3><%= products[i].nombre %></h3>
         <p class="descripcion"><%= products[i].descripcion %></p>
         <span class="precio">$<%= products[i].precio %></span>
+        
       </article>
+
     <% } %>
     </section>
+
+    <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/productos/create'">
 
     <!--
     <section>

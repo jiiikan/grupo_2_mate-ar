@@ -18,7 +18,7 @@
     {
         "id": 3,
         "nombre": "Termo 1l",
-        "descripcion": "Termo 1l clor gris",
+        "descripcion": "Termo 1l color gris",
         "precio": "4300",
         "imagen": "termo.jpg",
         "categoria": "termos"
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "nombre": "Termo 1,5l",
-        "descripcion": "Termo 1,5 l clor gris",
+        "descripcion": "Termo 1,5 l color gris",
         "precio": "6000",
         "imagen": "termo2.jpg",
         "categoria": "termos"

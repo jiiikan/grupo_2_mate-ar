@@ -12,7 +12,7 @@
         "nombre": "Mate de cuero",
         "descripcion": "Mate forrado en cuero negro detalle tallado en metal",
         "precio": "4800",
-        "imagen": "mate3.jpg",
+        "imagen": "mate1.jpeg",
         "categoria": "mate"
     },
     {
@@ -28,7 +28,7 @@
         "nombre": "Termo 1,5l",
         "descripcion": "Termo 1,5 l clor gris",
         "precio": "6000",
-        "imagen": "mate2.jpg",
+        "imagen": "termo2.jpg",
         "categoria": "termos"
     },
     {

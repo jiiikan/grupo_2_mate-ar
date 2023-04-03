@@ -4,29 +4,31 @@ body{ background-color: #E5D9B6;}
 .main{ padding: 5% 8%;}
 h1{ margin: 10px 0; color: #285430;}
 
-  .productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .producto {
-    margin-bottom: 2rem;
-    width: calc(33.33% - 1rem);
-    border: 2px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .producto img {
-    max-width: 100%;
-  }
-  
-  .producto h2 {
-    margin-top: 0;
-  }
-  
-  .producto .precio {
-    color: #cc0000;
-    font-weight: bold;
-  }
+.array-products{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto {
+  border-radius: 10px;
+  width: 80%;
+  background-color: #A4BE7B;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.producto h3{
+  margin-top: 5px;
+  border-top: #E5D9B6 solid 2px;
+}
+
+.imag{
+  width: 80%;
+}
+
+.producto .precio {
+  color: #cc0000;
+  font-weight: bold;
+}

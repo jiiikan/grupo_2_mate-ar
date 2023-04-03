@@ -12,13 +12,12 @@ const productsController = {
 },
 
     detalle: (req, res) => {
-        const iD = req.params.id;
+        const productoid = req.params.id;
         
         const product = products.find(
-            (product) => product.id === parseInt(iD)
+            (product) => product.id === parseInt(productoid)
         );
-
-    res.render("products/detalleProducto", {})
+    res.render("products/detalle", {product})
 },
 
     edition: (req, res) => {

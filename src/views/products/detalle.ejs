@@ -15,15 +15,14 @@
     <div class="producto">
       <section class="array-products">
 
-        <% let productos = {} %>
-        <% productos = products.find(products => this.id == 1)  %>
-        <% console.log(productos) %>
-          <h1 class="title"><%= productos[i].nombre %></h1>
+        <% console.log(product) %>
+          <h1 class="title"><%= product.nombre %></h1>
+
           <article class="producto">
-            <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
-            <h3><%= products[i].nombre %></h3>
-            <p class="descripcion"><%= products[i].descripcion %></p>
-            <span class="precio">$<%= products[i].precio %></span>
+            <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
+            <h3><%= product.nombre %></h3>
+            <p class="descripcion"><%= product.descripcion %></p>
+            <span class="precio">$<%= product.precio %></span>
           </article>
 
         </section>

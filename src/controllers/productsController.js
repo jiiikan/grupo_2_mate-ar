@@ -12,13 +12,13 @@ const productsController = {
 },
 
     detalle: (req, res) => {
-        const iD = req.params.id;
+        const productoid = req.params.id;
         
         const product = products.find(
-            (product) => product.id === parseInt(iD)
+            (product) => product.id === parseInt(productoid)
         );
+    res.render("products/detalle", {product})
 
-    res.render("products/detalleProducto", {})
 },
 
     edition: (req, res) => {
@@ -26,7 +26,21 @@ const productsController = {
 },
 
     create: (req, res) => {
-    res.render("products/createProducts")
+    res.render("products/createProducts")   
+},
+    store: (req, res) => {
+    const {product, description, price, image, category } = req.body;
+    const newProduct = {
+        id: products.length + 1,
+        nombre: req.body.product,
+        descripcion: req.body.description,
+        precio: req.body.price,
+        imagen: req.body.image,
+        categoria: req.body.category
+    };
+    products.push(newProduct);
+    fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), JSON.stringify(products, null, 2), "utf-8");
+    res.redirect("/products/catalogo");
 }
 
 };

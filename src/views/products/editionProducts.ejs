@@ -4,20 +4,27 @@
 <%- include("../partials/head.ejs") %>
 <head>
     <title>Mate.ar -Carga y edita los productos</title>
+    <link rel="stylesheet" href="/css/edition.css">
 </head>
 <body>
     <%- include("../partials/header") %>
-    <!-- ● Nombre del producto (name)
-    ● Descripción (description)
-    ● Imagen (image)
-    ● Categoría (category)
-    ● Colores (o cualquier otro campo similar como: tamaños, talles, etc)
-    ● Precio (price)-->
-    <main>
-        <form action="/product" method="post" class="busqueda">
-            <input type="text" name="name" placeholder="Nombre" class="input" >
+    <main class="main-edition">
+        <section class="edition-container">
+        <form action="/product" method="post" class="edition">
+            <span class="titulo">Edicion de productos:</span>
+            <label for="" class="label-edition">Nombre del producto</label>
+            <input type="text" name="product" placeholder="Nombre" class="input">
+            <label class="label-edition">Descripcion del producto</label>
+            <input type="text" name="description" placeholder="descripcion" class="input">
+            <label class="label-edition">Precio del producto</label>
+            <input type="number" name="price" placeholder="Precio" class="input">
+            <label class="label-edition">Imagen del producto</label>
+            <input type="file" name="image" placeholder="Imagen" class="file">
+            <label class="label-edition">Categoria del producto</label>
+            <input type="text" name="category" placeholder="Categoria" class="input">
             <button type="submit" class="button">Subir</button>
         </form>
+        </section>
     </main>
 
     <%- include("../partials/footer") %>

@@ -22,11 +22,41 @@ const productsController = {
 },
 
     edition: (req, res) => {
-    res.render("products/editionProducts")
+        const productId = parseInt(req.query.id);
+    if (isNaN(productId)) {
+        res.status(404).send("Producto no encontrado");
+        return;
+    }
+    const product = products.find((product) => product.id === productId);
+    if (!product) {
+        res.status(404).send("Producto no encontrado");
+        return;
+    }
+    res.render("products/editionProducts.ejs", { product: product });
 },
 
+
+update: (req, res) => {
+    const productId = parseInt(req.params.id);
+    const productIndex = products.findIndex((product) => product.id === productId);
+    if (productIndex === -1) {
+    res.status(404).send("Producto no encontrado");
+    return;
+    }
+    const { id, product, description, price, image, category } = req.body;
+    products[productIndex] = {
+    id: productId,
+    nombre: product,
+    descripcion: description,
+    precio: parseFloat(price),
+    imagen: image,
+    categoria: category,
+    };
+    res.redirect("/products/catalogo");
+    
+},
     create: (req, res) => {
-    res.render("products/createProducts")   
+    res.render("products/createProducts")       
 },
     store: (req, res) => {
     const {product, description, price, image, category } = req.body;
@@ -39,7 +69,6 @@ const productsController = {
         categoria: req.body.category
     };
     products.push(newProduct);
-    fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), JSON.stringify(products, null, 2), "utf-8");
     res.redirect("/products/catalogo");
 }
 

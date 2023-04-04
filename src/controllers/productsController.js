@@ -24,12 +24,12 @@ const productsController = {
     edition: (req, res) => {
         const productId = parseInt(req.query.id);
     if (isNaN(productId)) {
-        res.status(404).send("Producto no encontrado");
+        res.status(404).render("error404");
         return;
     }
     const product = products.find((product) => product.id === productId);
     if (!product) {
-        res.status(404).send("Producto no encontrado");
+        res.status(404).render("error404");//send("Producto no encontrado");
         return;
     }
     res.render("products/editionProducts.ejs", { product: product });
@@ -40,7 +40,7 @@ update: (req, res) => {
     const productId = parseInt(req.params.id);
     const productIndex = products.findIndex((product) => product.id === productId);
     if (productIndex === -1) {
-    res.status(404).send("Producto no encontrado");
+    res.status(404).render("error404");
     return;
     }
     const { id, product, description, price, image, category } = req.body;
@@ -56,7 +56,7 @@ update: (req, res) => {
     
 },
     create: (req, res) => {
-    res.render("products/createProducts")       
+    res.render("products/create")       
 },
     store: (req, res) => {
     const {product, description, price, image, category } = req.body;

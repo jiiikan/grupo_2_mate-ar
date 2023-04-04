@@ -52,6 +52,11 @@ update: (req, res) => {
     imagen: image,
     categoria: category,
     };
+    fs.writeFileSync(
+        path.resolve(__dirname, "../data/products.json"),
+        JSON.stringify(products, null, 2),
+        "utf-8"
+    );
     res.redirect("/products/catalogo");
     
 },
@@ -69,8 +74,27 @@ update: (req, res) => {
         categoria: req.body.category
     };
     products.push(newProduct);
+    fs.writeFileSync(
+        path.resolve(__dirname, "../data/products.json"),
+        JSON.stringify(products, null, 2),
+        "utf-8");
     res.redirect("/products/catalogo");
-}
+},
+
+    delete: (req, res) => {
+        res.render("products/detalle")
+        const { id } = req.params;
+        const productIndex = products.findIndex((p) => p.id === parseInt(id));
+        if (productIndex !== -1) {
+        product.splice(productIndex, 1);
+        fs.writeFileSync(
+            path.resolve(__dirname, "../data/products.json"),
+            JSON.stringify(products, null, 2),
+            "utf-8"
+        );
+        }
+        res.redirect("/products/catalogo");
+    }
 
 };
 

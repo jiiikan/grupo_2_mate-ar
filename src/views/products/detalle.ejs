@@ -16,8 +16,11 @@
       <section class="array-products">
 
         <% console.log(product) %>
+        <% if (product) { %>
           <h1 class="title"><%= product.nombre %></h1>
-
+        <% } else { %>
+          <h1 class="title">Producto no encontrado</h1>    
+          <% } %>
           <article class="producto">
             <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
             <h3><%= product.nombre %></h3>
@@ -30,7 +33,13 @@
       <div class="botones">
         <button class="boton">Añadir al carrito</button>
         <button class="boton">Comprar</button>
+
         <button class="button"><a href="/products/edition?id=<%= product.id %>">Editar</a></button>
+
+        <form method="POST" action="/products/delete<%= product.id %>?_method=DELETE">
+        <button type="submit" class="button" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
+        </form>
+
       </div>
     </div>
 

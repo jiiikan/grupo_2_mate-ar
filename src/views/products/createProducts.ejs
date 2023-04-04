@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="/css/create.css">
     <title>Mate.ar -Carga y edita los productos</title>
 </head>
+
 <body>
     <%- include("../partials/header") %>
+
     <main class="main-create">
         <section class="create-container">
         <form action="/products/create" method="POST" class="create">
@@ -25,8 +27,9 @@
             <button type="submit" class="button">Subir</button>
         </form>
         </section>
+        
     </main>
     
-    <%- include("../partials/footer") %>
+<%- include("../partials/footer") %>
 </body>
 </html>

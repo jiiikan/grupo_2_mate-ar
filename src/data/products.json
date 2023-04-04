@@ -62,13 +62,5 @@
     "precio": "8700",
     "imagen": "set completo3.jpg",
     "categoria": "kit de mate"
-  },
-  {
-    "id": 9,
-    "nombre": "fedfe",
-    "descripcion": "lol",
-    "precio": "4356453",
-    "imagen": "Captura de pantalla 2023-03-16 220546.png",
-    "categoria": "Mates"
   }
 ]

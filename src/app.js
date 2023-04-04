@@ -40,15 +40,3 @@ app.use((req, res, next) => {
     res.status(404).render("error404");
     next();
 });
-
-/*app.use("/catalogo", products);
-app.use("/detalle", products);
-app.use("/editor", products);
-app.use("/create", products);*/
-
-/*app.use("/login", users);
-app.use("/registro", users);
-app.use("/carrito", users);*/
-
-
-

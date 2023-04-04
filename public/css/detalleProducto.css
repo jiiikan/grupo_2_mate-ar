@@ -19,7 +19,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     justify-content: center;
   }
   
-  .boton-carrito, .boton-comprar {
+  .boton{
     padding: 10px 20px;
     margin: 0 5px;
     border: none;

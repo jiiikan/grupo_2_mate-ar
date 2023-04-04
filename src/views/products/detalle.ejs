@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+<head>
+    <link rel="stylesheet" href="/css/detalleProducto.css">
+    <title>Detalle de producto</title>
+</head>
+
+<body>
+  <%- include("../partials/header") %>
+
+  <main class="main">
+
+    <div class="producto">
+      <section class="array-products">
+
+        <% console.log(product) %>
+          <h1 class="title"><%= product.nombre %></h1>
+
+          <article class="producto">
+            <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
+            <h3><%= product.nombre %></h3>
+            <p class="descripcion"><%= product.descripcion %></p>
+            <span class="precio">$<%= product.precio %></span>
+          </article>
+
+        </section>
+
+      <div class="botones">
+        <button class="boton">Añadir al carrito</button>
+        <button class="boton">Comprar</button>
+        <button class="button"><a href="/products/edition">Editar</a></button>
+      </div>
+    </div>
+
+  </main>
+
+  <%- include("../partials/footer") %>
+
+</body>
+</html>

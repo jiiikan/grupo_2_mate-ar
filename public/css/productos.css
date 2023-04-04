@@ -32,3 +32,11 @@ h1{ margin: 10px 0; color: #285430;}
   color: #cc0000;
   font-weight: bold;
 }
+
+@media (min-width: 450px){
+  
+}
+
+@media (min-width: 800px){
+
+}

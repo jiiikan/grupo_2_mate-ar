@@ -15,6 +15,8 @@
     <div class="producto">
       <section class="array-products">
 
+        <% console.log(product) %>
+        <% if (product) { %>
         
           <h1 class="title"><%= product.nombre %></h1>
         <% } else { %>
@@ -35,7 +37,7 @@
 
         <button class="button"><a href="/products/edition?id=<%= product.id %>">Editar</a></button>
 
-        <form method="POST" action="/products/delete<%= product.id %>?_method=DELETE">
+        <form method="POST" action="/products/<%= product.id %>?_method=DELETE">
         <button type="submit" class="button" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
         </form>
 

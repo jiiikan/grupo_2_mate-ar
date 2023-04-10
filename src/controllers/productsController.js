@@ -6,12 +6,15 @@ let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
 let products = JSON.parse(readFile, "utf-8");
 
 const productsController = {
+// Renderizar lista de productos
 
-    catalogo: (req, res) => {
+catalogo: (req, res) => {
     res.render("products/catalogo", {products: products})
 },
 
-    detalle: (req, res) => {
+// Detalle de product dinamico
+
+detalle: (req, res) => {
         const productoid = req.params.id;
         
         const product = products.find(
@@ -21,7 +24,9 @@ const productsController = {
 
 },
 
-    edition: (req, res) => {
+// Renderizar pagina editar producto
+
+edition: (req, res) => {
         const productId = parseInt(req.query.id);
     if (isNaN(productId)) {
         res.status(404).render("error404");
@@ -35,6 +40,7 @@ const productsController = {
     res.render("products/editionProducts.ejs", { product: product });
 },
 
+// Editar producto
 
 update: (req, res) => {
     const productId = parseInt(req.params.id);
@@ -60,10 +66,16 @@ update: (req, res) => {
     res.redirect("/products/catalogo");
     
 },
-    create: (req, res) => {
+
+// Get pagina crear producto
+
+create: (req, res) => {
     res.render("products/create")       
 },
-    store: (req, res) => {
+
+//Crear producto
+
+store: (req, res) => {
     const {product, description, price, image, category } = req.body;
     const newProduct = {
         id: products.length + 1,
@@ -81,20 +93,19 @@ update: (req, res) => {
     res.redirect("/products/catalogo");
 },
 
+// Borrar producto
+
 delete: (req, res) => {
-    const { id } = req.params;
-    const productIndex = products.findIndex(p => p.id === parseInt(id));
-    if (productIndex !== -1) {
-    products.splice(productIndex, 1);
-    fs.writeFileSync(
-    path.resolve(__dirname, '../data/products.json'),
-    JSON.stringify(products, null, 2),
-    'utf-8'
+    const borrar = req.params.id;
+
+    const productBorrar = products.filter(
+        (producto) => producto.id != borrar
     );
-    res.redirect('/products/catalogo');
-} else {
-    res.status(404).send('Producto no encontrado'); 
-}}
+
+    let productoGuardar = JSON.stringify(productBorrar, null, 2);
+    fs.writeFileSync( path.resolve(__dirname, "../data/products.json"), productoGuardar );
+    res.redirect("/products/catalogo");
+    }
 };
 
 

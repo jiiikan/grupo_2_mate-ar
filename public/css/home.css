@@ -67,32 +67,11 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-size: 18px;
 }
 
-.footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-.legal{
-    margin: 0px 10px;
-  }
-.pie{
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-.seccionesFooter{
-    font-size: 18px;
-}
-
 @media (min-width: 450px){
 
 .box-imgyp{
   margin: 10px;
 }
-
-
-
 
 
 }
@@ -110,7 +89,5 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   .box-imgyp img{
     margin: 0px 10px 0px 10px;
   }
-
-
 
 }

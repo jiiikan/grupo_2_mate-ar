@@ -2,17 +2,17 @@
   {
     "id": 1,
     "nombre": "Mate madera",
-    "descripcion": "Mate de madera color artesanal con detalles",
+    "descripcion": "Mate de madera forrado de cuero negro artesanal con detalles",
     "precio": "3400",
-    "imagen": "mate3.jpeg",
+    "imagen": "matee.jpg",
     "categoria": "mate"
   },
   {
     "id": 2,
     "nombre": "Mate de cuero",
-    "descripcion": "Mate forrado en cuero negro detalle tallado en metal",
+    "descripcion": "Mate de madera lustrado detalle tallado en metal dorado",
     "precio": "4800",
-    "imagen": "mate1.jpeg",
+    "imagen": "mate-2.jpg",
     "categoria": "mate"
   },
   {
@@ -65,10 +65,10 @@
   },
   {
     "id": 9,
-    "nombre": "fedfe",
-    "descripcion": "lol",
-    "precio": "4356453",
-    "imagen": "Captura de pantalla 2023-03-16 220546.png",
-    "categoria": "Mates"
+    "nombre": "kit completo cuero",
+    "descripcion": "set artesanal completo  de cuero negro reforsado  incluye azucarera y yerbera",
+    "precio": 7300,
+    "imagen": "set-completo2.jpg",
+    "categoria": "kit de mate"
   }
 ]

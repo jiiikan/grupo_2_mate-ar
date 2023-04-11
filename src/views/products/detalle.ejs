@@ -14,11 +14,10 @@
 
     <div class="producto">
       <section class="array-products">
-
-        <% console.log(product) %>
+        
           <h1 class="title"><%= product.nombre %></h1>
-
-          <article class="producto">
+        
+          <article class="products">
             <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
             <h3><%= product.nombre %></h3>
             <p class="descripcion"><%= product.descripcion %></p>
@@ -28,9 +27,14 @@
         </section>
 
       <div class="botones">
-        <button class="boton">Añadir al carrito</button>
-        <button class="boton">Comprar</button>
-        <button class="button"><a href="/products/edition">Editar</a></button>
+        <form method="GET" action="/users/carrito/add/<%= product.id %>">
+        <button class="boton"><a href="/users/carrito/add/?id=<%= product.id %>">Añadir al carrito</a></button>
+        </form>
+
+        <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
+
+        <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
+        
       </div>
     </div>
 

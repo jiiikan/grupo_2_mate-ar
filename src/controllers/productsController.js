@@ -60,6 +60,7 @@ update: (req, res) => {
     res.redirect("/products/catalogo");
     
 },
+
     create: (req, res) => {
     res.render("products/create")       
 },

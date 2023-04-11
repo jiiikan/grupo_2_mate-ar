@@ -32,8 +32,9 @@
         </section>
 
       <div class="botones">
-        <button class="boton">Añadir al carrito</button>
-        <button class="boton">Comprar</button>
+        <form method="GET" action="/users/carrito/add/<%= product.id %>">
+        <button class="boton"><a href="/users/carrito/add/?id=<%= product.id %>">Añadir al carrito</a></button>
+        </form>
 
         <button class="button"><a href="/products/edition?id=<%= product.id %>">Editar</a></button>
 

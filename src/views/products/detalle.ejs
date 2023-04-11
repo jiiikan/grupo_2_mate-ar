@@ -14,15 +14,10 @@
 
     <div class="producto">
       <section class="array-products">
-
-        <% console.log(product) %>
-        <% if (product) { %>
         
           <h1 class="title"><%= product.nombre %></h1>
-        <% } else { %>
-          <h1 class="title">Producto no encontrado</h1>    
-          <% } %>
-          <article class="producto">
+        
+          <article class="products">
             <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
             <h3><%= product.nombre %></h3>
             <p class="descripcion"><%= product.descripcion %></p>
@@ -36,12 +31,10 @@
         <button class="boton"><a href="/users/carrito/add/?id=<%= product.id %>">Añadir al carrito</a></button>
         </form>
 
-        <button class="button"><a href="/products/edition?id=<%= product.id %>">Editar</a></button>
+        <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
 
-        <form method="POST" action="/products/<%= product.id %>?_method=DELETE">
-        <button type="submit" class="button" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">Eliminar</button>
-        </form>
-
+        <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
+        
       </div>
     </div>
 

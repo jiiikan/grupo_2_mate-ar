@@ -13,7 +13,7 @@ router.get("/detalle/:id", productsController.detalle);
 router.get("/edition", productsController.edition);
 router.post("/update/:id", productsController.update);
 
-router.delete("/:id", productsController.delete);
+router.get("/delete/:id", productsController.delete);
 
 
 module.exports= router; 

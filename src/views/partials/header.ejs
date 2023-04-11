@@ -1,33 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/css/header.css">
-    <title>Mate.ar</title>
-</head>
-
 <header class="header">
-    <div class="box-logoynav1">
+
     <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
-    <nav class="nav-1">
-        <a href="/users/registro">Registrarse</a>
-        <hr class="linea-acceyregis">
-        <a href="/users/login">Acceso</a>
-    </nav> 
-    </div> 
-    <hr class="linea-separadora">
-    <div class="buscadorynav2">
+
     <form action="/product" method="get" class="busqueda">
         <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
         <button type="submit" class="button-busqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
-    <!--<hr class="linea-nav2">-->
-<div class="box-nav2">
-    <nav class="nav-2">
-        <a href="/">Inicio</a>
-        <a href="/products/catalogo">Catalogo</a>        
-        <a href="/users/carrito">Carrito</a>
-    </nav>
-</div>
-    <style></style>
+
+        <nav class="nav">
+            <a href="/">Inicio</a>
+            <a href="/products/catalogo">Catalogo</a>        
+            <a href="/users/carrito">Carrito</a>
+            <a href="/users/registro">Registrarse</a>
+            <a href="/users/login">Acceso</a>
+        </nav>
+
+    <style>
+    .header{
+        padding: 20px;
+        padding-bottom: 0px;
+        text-align: center;
+        background-color: #285430;;
+    }
+
+    .logo{ 
+        width: 60%;
+    }
+
+    .busqueda{ 
+        margin: 10px 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        
+    }
+
+    .cuadrado-busqueda { 
+        font-weight: 500;
+        width: 80%;
+        border: none;
+        background-color: #E5D9B6;
+        border-start-start-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 10px;
+        height: 13px;
+    }
+
+
+    .button-busqueda{
+        color: #E5D9B6;
+        padding: 1px 10px;
+        border: none;
+        background-color: #5F8D4E;
+        border-end-end-radius: 10px;
+        border-start-end-radius: 10px; 
+    }
+
+    .nav{
+        margin: 5px 0;
+        padding: 10px;
+        border-top: #E5D9B6 solid 2px;
+    }
+
+    .nav a { 
+        margin: 20px; 
+        color: #fff5e2;
+        font-weight: bold;
+        text-decoration: none;
+    }       
+
+    @media(min-width: 450px){
+    /*tablet*/
+    .header{ padding-bottom: 10px;}
+}
+
+    @media(min-width: 800px){
+    /*desktop*/
+    .header{ 
+    padding: 20px 5% 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+    .logo{ width: 25%;}
+
+    .busqueda{ width: 40%;}
+
+    .nav{ width: 100%;}
+    
+    .button-busqueda{
+        height: 33px;
+    }
+}   
+    </style>
 </header>
-</html>

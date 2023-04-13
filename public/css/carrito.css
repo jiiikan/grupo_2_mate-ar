@@ -80,42 +80,11 @@ body{  background-color: #E5D9B6;}
   color: #5F8D4E;
 }
 
-@media (min-width: 361px){
+@media (min-width: 450px){
 
-.down-cart{
-  font-size: 40px;
-}
 
-.description-cart{
-  font-size: 20px;
-}
 
-.products{
-  font-size: 25px;
-  align-self: flex-start;
-  margin-left: 40px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
-.products-dospuntos{
-  text-decoration: underline;
-  margin-left: 20px;
-}
-
-.box-images{
-  flex-direction: column;
-  border: solid;
-  padding: 10px;
-  margin: 10px;
-}
-
-.metodos-pago{
-  width: 100px;
-  margin: 30px;
-}
-
-@media (min-width: 769px){
+@media (min-width: 800px){
 
 }
 

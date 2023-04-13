@@ -3,39 +3,41 @@
 
 <%- include("../partials/head") %>
 
-  <head>
-    <link rel="stylesheet" href="/css/productos.css">
+<head>
+    <link rel="stylesheet" href="/css/catalogo.css">
     <title>Productos</title>
-  </head>
+</head>
 
-  <body>
-  
+<body>
     <%- include("../partials/header.ejs") %>
 
-    <main>
-      <section class="productos">
-        <article class="producto">
-          <img src="/images/kitcompleto1.jpg" alt="Producto 1">
-          <h2>Producto 1</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$10.00</span>
-        </article>
-        <article class="producto">
-          <img src="producto2.jpg" alt="Producto 2">
-          <h2>Producto 2</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$15.00</span>
-        </article>
-        <article class="producto">
-          <img src="producto3.jpg" alt="Producto 3">
-          <h2>Producto 3</h2>
-          <p>Descripción breve del producto.</p>
-          <span class="precio">$20.00</span>
-        </article>
-      </section>
-    </main>
-    
-    <%- include("../partials/footer") %>
+  <main class="main">
+
+    <h1>Catalogo</h1>
+    <!-- filter para filtrar por categoria idea -->
+
+    <section class="array-products">
+    <% for( let i = 0; i < products.length; i++ ) { %>
+
+      <article class="producto" onclick="location.href= '/products/detalle/<%= products[i].id%>'">
+
+        <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
+        <h3><%= products[i].nombre %></h3>
+        <p class="descripcion"><%= products[i].descripcion %></p>
+        <span class="precio">$<%= products[i].precio %></span>
+        
+      </article>
+
+    <% } %>
+    </section>
+
+  <section class="section-input">
+    <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/products/create'">
+  </section>
+
+  </main>
+
+  <%- include("../partials/footer") %>
 
   </body>
 </html>

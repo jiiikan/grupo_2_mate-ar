@@ -5,20 +5,28 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   padding-left: 10px;
   font-weight: bold;
   font-size: 20px;
+  text-align: center;
 }
 
 .titulo-reseña{
   font-size: 20px;
   font-weight: bold;
   padding-left: 10px;
+
+}
+
+.reseña-articulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .box-reseña{
   width: 100%;
-  border-bottom: solid 2px;
-  border-top: solid 2px;
   background-color: #285430;
-
+  align-self: center;
 }
 
 .reseña-home{
@@ -26,6 +34,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   padding: 10px;
   font-weight: 400;
   color: #E5D9B6;
+  text-align: center;
 }
 
 .categoria{
@@ -58,30 +67,27 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-size: 18px;
 }
 
-.footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-.legal{
-    margin: 0px 10px;
-  }
-.pie{
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-.seccionesFooter{
-    font-size: 18px;
-}
-
 @media (min-width: 450px){
 
+.box-imgyp{
+  margin: 10px;
+}
 
 
+}
 
+@media (min-width: 800px){
 
+  .subtitulo{
+    text-align: left;
+  }
 
+  .titulo-reseña{
+    text-align: left;
+  }
+  
+  .box-imgyp img{
+    margin: 0px 10px 0px 10px;
+  }
 
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+<head>
+    <link rel="stylesheet" href="/css/detalleProducto.css">
+    <title>Detalle de producto</title>
+</head>
+
+<body>
+  <%- include("../partials/header") %>
+
+  <main class="main">
+
+    <div class="producto">
+      <section class="array-products">
+        
+          <h1 class="title"><%= product.nombre %></h1>
+        
+          <article class="products">
+            <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
+            <h3><%= product.nombre %></h3>
+            <p class="descripcion"><%= product.descripcion %></p>
+            <span class="precio">$<%= product.precio %></span>
+          </article>
+
+        </section>
+
+      <div class="botones">
+        <form method="GET" action="/users/carrito/add/<%= product.id %>">
+        <button class="boton"><a href="/users/carrito/add/?id=<%= product.id %>">Añadir al carrito</a></button>
+        </form>
+
+        <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
+
+        <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
+        
+      </div>
+    </div>
+
+  </main>
+
+  <%- include("../partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+*{  font-family: 'Tajawal', sans-serif; }
+body{ margin: 0; padding: 0; background-color: #E5D9B6;}
+
+.main{ padding: 5% 8%;}
+h1{ margin: 10px 0; color: #285430;}
+
+.array-products{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto {
+  border-radius: 10px;
+  width: 80%;
+  background-color: #A4BE7B;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.producto h3{
+  margin-top: 5px;
+  border-top: #E5D9B6 solid 2px;
+}
+
+.imag{
+  width: 80%; border-radius: 10px;
+}
+
+.producto .precio {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+.section-input{
+  display: flex;
+  justify-content: center;
+}
+
+.section-input input{ 
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color:#285430;
+  color: #E5D9B6;
+  font-weight: 500;
+}
+
+@media (min-width: 450px){
+  
+}
+
+@media (min-width: 800px){
+  .main{
+    padding: 2% 8%;
+  }
+  h1{ font-size: 40px;}
+
+  .producto{
+    width: 25%;
+  }
+  .array-products{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+}

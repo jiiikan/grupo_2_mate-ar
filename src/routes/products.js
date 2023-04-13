@@ -3,8 +3,17 @@ const router = express.Router();
 const productsController = require("../controllers/productsController.js");
 
 router.get("/catalogo", productsController.catalogo);
+
 router.get("/create", productsController.create);
-router.get("/detalle", productsController.detalle);
+router.post("/create", productsController.store);
+
+// router.get("/detalle", productsController.detalle); no sirve que este
+router.get("/detalle/:id", productsController.detalle);
+
 router.get("/edition", productsController.edition);
+router.post("/update/:id", productsController.update);
+
+router.get("/delete/:id", productsController.delete);
+
 
 module.exports= router; 

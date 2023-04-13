@@ -1,0 +1,42 @@
+*{  font-family: 'Tajawal', sans-serif; }
+body{ margin: 0; padding: 0; background-color: #E5D9B6;}
+
+.main-edition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edition-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.edition{
+    display: grid;
+    margin: 20px;
+}
+
+.edition input{
+    padding: 5px;
+}
+
+.titulo{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.label-edition{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.file{
+    width: 300px;
+}
+
+.button{
+    margin-top: 15px;
+}

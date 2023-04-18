@@ -13,11 +13,11 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 .login-container{
     display: flex;
     flex-direction: column;
-    background-color: #2589bd;
+    background-color: #5F8D4E;
     padding: 10px;
     border-radius: 3px;
     border: solid 1px;
-    box-shadow: 7px 5px 0px 4px rgba(0,0,0,1);
+    box-shadow: 7px 5px 0px 4px rgba(137, 181, 116,1);
     width: 300px;
     
 
@@ -64,7 +64,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 .form-acceso{
     display: flex;
     flex-direction: column;
-    background-color: #2589bd;
+    background-color: #A4BE7B;
     padding: 10px;
     border-radius: 3px;
     border: solid 1px;

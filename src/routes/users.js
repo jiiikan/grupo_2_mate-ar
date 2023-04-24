@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 })
 const uploadFile = multer({ storage })
 
-const validations = [
+/*const validations = [
     body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
     body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
     body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
@@ -33,7 +33,7 @@ const validations = [
 }
     return true;
     })
-]
+]*/
 
 // rutas como tal
 router.get("/carrito", usersController.carrito);

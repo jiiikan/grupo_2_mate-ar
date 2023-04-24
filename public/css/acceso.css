@@ -2,8 +2,8 @@
 
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main-login{
-    background-color: #efefefeb;
+.main{
+    background-color: #E5D9B6;
     padding: 20px;
     display: flex;
     align-items: center;

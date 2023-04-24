@@ -12,7 +12,7 @@
   <%- include("../partials/header") %>
 
     <main class="main">
-    <form method="post" class="box-register" enctype="multipart/form-data">
+    <form method="post" class="box-register" enctype="multipart/form-data" action="/users/registro">
 
       <h1>Regristro</h1>
 
@@ -26,10 +26,19 @@
       <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" >
       
       <label class="registro">Pais</label>
-      <input type="number" class="in-register" name="pais" placeholder="Argentina" >
+      
+      <select name="pais" class="in-register">
+        <option value="Argentina">Argentina</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Peru">Peru</option>
+        <option value="Mexico">Mexico</option>
+      </select>
 
       <label class="registro">Domicilio</label>
       <input type="number" class="in-register" name="domicilio" placeholder="Calle numero" >
+
+      <label class="registro">Avatar</label>
+      <input type="file" class="in-register" name="avatar">
 
       <label class="registro">Permisos</label>
       <label><input type="radio" name="admin"> Admin</label>

@@ -2,16 +2,25 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const db = require('../database/models');
+const { validationResult } = require("express-validator");
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
 let products = JSON.parse(readFile, "utf-8");
 
 const productsController = {
-// Renderizar lista de productos
 
-catalogo: (req, res) => {
-    res.render("products/catalogo", {products: products})
-},
+    lista: (req, res) => {
+        db.Producto.findAll()
+        .then(products =>{
+            res.render('catalogo.ejs', {products: products})
+            })
+    },
+
+    // Renderizar lista de productos
+
+    catalogo: (req, res) => {
+        res.render("products/catalogo", {products: products})
+    },
 
 // Detalle de product dinamico
 
@@ -74,6 +83,14 @@ update: (req, res) => {
 //Crear producto
 
 store: (req, res) => {
+    const resultValidation = validationResult(req);
+
+    if(resultValidation.erros.length > 0){
+        return res.render("/create", {
+            errors: resultValidation.mapped(),
+            olddata: req.body
+        })
+    }
     const {product, description, price, image, category } = req.body;
     const newProduct = {
         id: products.length + 1,

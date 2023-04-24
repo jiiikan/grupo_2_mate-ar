@@ -2,7 +2,9 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Producto";
     let cols = {
         id:{
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
         nombre:{
             type: dataTypes.STRING
@@ -20,11 +22,11 @@ module.exports = (sequelize, dataTypes) => {
 
         },
         id_categoria: {
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER
         }
     }
     let config = {
-        tablename: "Productos",
+        tablename: "productos",
         timestamps:false
     }
 

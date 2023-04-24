@@ -49,21 +49,53 @@
 
       
       <label class="registro">Pais</label>
-      <select name="pais" class="in-register">
-        <option value="Argentina">Argentina</option>
-        <option value="Peru">Peru</option>
-        <option value="Brasil">Brasil</option>
-        <option value="Mexico">Mexico</option>
+      <select name="pais" class="in-register"
+      class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+
+        <option value="">Selecciona un Pais</option>
+        <%
+          let paises = ["Argentina", "Colombia", "Peru", "Canada"]
+        %>
+
+        <% for (const oneCountry of paises) { %>
+          <option 
+          value="<%= oneCountry %>"
+          <%= locals.oldData && (oneCountry  === oldData.paises ) ? 'selected' : null %>>
+          <%= oneCountry %> </option>
+              <% } %>
       </select>
+      <% if (locals.errors && errors.paises ) { %>
+        <div class="text-danger">
+            <%= errors.paises.msg %>
+        </div>
+    <% } %>
+
 
       <label class="registro">Domicilio</label>
-      <input type="text" class="in-register" name="domicilio" placeholder="Calle numero" >
+      <input type="text" class="in-register" name="domicilio" placeholder="Calle numero" 
+      class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>">
+      <% if (locals.errors && errors.domicilio) { %>
+          <div class="text-danger">
+              <%= errors.domicilio.msg %>
+          </div>
+      <% } %>
 
       <label class="registro">Permisos</label>
       <label><input type="radio" name="admin"> Admin</label>
 
       <label class="registro">Avatar</label>
+<<<<<<< HEAD
       <input type="file" class="in-register" name="avatar">
+=======
+      <input type="file" class="in-register" name="avatar"
+      class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+      <% if (locals.errors && errors.avatar) { %>
+          <div class="text-danger">
+              <%= errors.avatar.msg %>
+          </div>
+      <% } %>
+      
+>>>>>>> 9ea0cba83109e0e2d06db0ae5a7b58f80c685901
       
       <label class="registro">Contraseña</label>
       <input type="password" class="in-register" name="contraseña"  placeholder="123456789"

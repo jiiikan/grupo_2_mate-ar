@@ -6,7 +6,7 @@ const multer = require("multer");
 const { body } = require("express-validator");
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
-        cb(null, "../public/images/users")
+        cb(null, "./public/images/users")
     },
     filename: (req, file, cb) =>{
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
@@ -17,11 +17,14 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage })
 
 const validations = [
-    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
-    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
-    body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
-    body("imagenproducto").custom((value, { req }) => {
+    body("nombre_usuario").notEmpty().withMessage("Tienes que crear un nombre de usuario"),
+    body("nombre_apellido").notEmpty().withMessage("Tienes que ingresar tu nombre completo"),
+    body("email").notEmpty().withMessage("Tienes que ingresar un email valido"),
+    body("pais").notEmpty().withMessage("Tienes que ingresar el pais donde vives"),
+    body("domicilio").notEmpty().withMessage("Tienes que ingresar un domicilio real"),
+    body("contraseña").notEmpty().withMessage("Tienes que ingresar una contraseña"),
+    body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
+    body("avatar").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
@@ -40,7 +43,7 @@ const validations = [
 router.get("/carrito", usersController.carrito);
 router.get("/login", usersController.login);
 router.get("/registro", usersController.registro);
-router.post("/registro", validations, usersController.registrado)
+router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado)
 //router.post('/register', uploadFile.single('avatar'), usersController.create);
 
 module.exports = router;

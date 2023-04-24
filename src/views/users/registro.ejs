@@ -11,35 +11,43 @@
 
   <%- include("../partials/header") %>
 
-    <main class="main-register">
+    <main class="main">
     <form method="post" class="box-register" enctype="multipart/form-data">
-      <div class="box-title"><p class="Titulo-register">Registro:</p></div>
-      <label for="nombre_usuario" class="registro">Nombre de usuario:</label>
-      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777" ><br>
 
-      <label for="email" class="registro">Correo electrónico:</label>
-      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" ><br>
+      <h1>Regristro</h1>
+
+      <label class="registro">Nombre de usuario</label>
+      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777">
+
+      <label class="registro">Nombre y apellido</label>
+      <input type="text" class="in-register" name="nombre-apellido" placeholder="Gustavo Cerati">
+
+      <label class="registro">Correo electrónico</label>
+      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" >
       
-      <label for="phone_number" class="registro">Pais:</label>
-      <input type="number" class="in-register" name="pais" placeholder="5492901432109" ><br>
+      <label class="registro">Pais</label>
+      <input type="number" class="in-register" name="pais" placeholder="Argentina" >
 
-      <label for="ideal" class="registro">¿Que quiere hacer?</label>
-      <select class="in-register">
-        <option value="conmprar">Quiero comprar</option>
-        <option value="vender">Quiero vender</option>
-        <option value="los-dos">Quiero comprar y vender</option>
-      </select><br>
+      <label class="registro">Domicilio</label>
+      <input type="number" class="in-register" name="domicilio" placeholder="Calle numero" >
+
+      <label class="registro">Permisos</label>
+      <label><input type="radio" name="admin"> Admin</label>
       
-      <label for="contrasena" class="registro">Contraseña:</label>
-      <input type="password" class="in-register" name="contrasena" minlength="8" placeholder="123456789" ><br>
+      <label class="registro">Contraseña</label>
+      <input type="password" class="in-register" name="contrasena"  placeholder="123456789" >
 
-      <label for="confirmar_contrasena" class="registro">Confirmar contraseña:</label>
-      <input type="password" class="in-register" name="confirmar_contrasena" minlength="8" placeholder="123456789" ><br>
+      <label class="registro">Confirmar contraseña</label>
+      <input type="password" class="in-register" name="confirmar_contrasena" placeholder="123456789" >
 
-      <hr class="linea-registro">
+      <label class="registro"><input type="radio" name="terminos y condiciones"> Acepto terminos y condiciones</label>
+
       <div class="boton">
-      <button type="submit" class="boton-registro">Crear cuenta</button><br>
+        <button type="submit" class="boton-registro">Crear cuenta</button>
+        <button type="reset" class="boton-registro">Borrar</button>
       </div>
+
+
     </form>
     </main>
 

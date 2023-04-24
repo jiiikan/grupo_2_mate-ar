@@ -12,23 +12,24 @@
 
   <%- include("../partials/header") %>
 
-  <main class="main-login">
-  <div class="login-container">
+    <main class="main-login">
+		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
 		<form method="post" class="form-acceso" enctype="multipart/form-data">
-			<label for="username" class="login-sub">Nombre de usuario o correo electrónico:</label>
+			<label class="login-sub">Nombre de usuario o correo electrónico:</label>
 			<input type="text" class="login-input" name="Nombre de usuario" placeholder="" required>
 
-			<label for="password" class="login-sub">Contraseña:</label>
+			<label class="login-sub">Contraseña:</label>
 			<input type="password" class="login-input" name="Contraseña" placeholder="" required>
+
+			<label><input type="radio" ></label>
     <div class="bottom">
 			<button type="submit" class="boton-iniciar">Iniciar sesión</button>
 		</div>
-  </form>
+	</form>
 		<h3 class="go-register">¿No tenes una cuenta? <a href="/registro">Regístrate aquí</a></h3>
 	</div>
 </main>
-  
 
 <%- include("../partials/footer") %>
 

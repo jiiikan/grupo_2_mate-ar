@@ -13,27 +13,26 @@ const storage = multer.diskStorage({
         cb(null, fileName)
     }
 })
-
 const uploadFile = multer({ storage })
 
 const validations = [
-    /*body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
+    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
     body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
     body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("imagen-producto").custom((value, { req }) => {
+    body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
+    body("imagenproducto").custom((value, { req }) => {
     let file = req.file 
-     //let acceptedExtensions  = [".jpg", ".png", ".gif"] VARIABLE PARA ESPECIFICAR QUE TIPO DE IMAGEN QUEREMOS
+    let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
         throw new Error("Tienen que subir una imagen")
+    } else {
+    let fileExtension = path.extname(file.originalname);  
+    if (!acceptedExtensions.includes(fileExtension)){
+    throw new Error (`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`)
     }
-    // else {
-    //let fileExtension = path.extname(file.originalName)
-    //if (!acceptedExtensions.includes(fileExtension)){
-    // throw new Error("Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}')
-    //}}
+}
     return true;
-    }),
-    body("category").notEmpty().withMessage("Tienes que ingresar una categoria")*/
+    })
 ]
 
 // rutas como tal

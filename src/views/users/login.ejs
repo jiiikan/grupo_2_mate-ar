@@ -15,19 +15,20 @@
     <main class="main">
 		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
-		<form method="post" class="form-acceso" enctype="multipart/form-data">
-			<label class="login-sub">Nombre de usuario o correo electrónico:</label>
-			<input type="text" class="login-input" name="Nombre de usuario" placeholder="" required>
+		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
+			<label class="login-sub">Nombre de usuario o correo electrónico</label>
+			<input type="text" class="login-input" name="nombre-user" placeholder="correo o username" required>
 
-			<label class="login-sub">Contraseña:</label>
-			<input type="password" class="login-input" name="Contraseña" placeholder="" required>
+			<label class="login-sub">Contraseña</label>
+			<input type="password" class="login-input" name="Contraseña" placeholder="hola81272" required>
 
-			<label><input type="checkbox" class="login-input" name="recordar">Recordar este usuario</label>
+			<label class="login-sub"><input type="checkbox" name="recordar">Recordar este usuario</label>
+
     <div class="bottom">
 			<button type="submit" class="boton-iniciar">Iniciar sesión</button>
 		</div>
 	</form>
-		<h3 class="go-register">¿No tenes una cuenta? <a href="/registro">Regístrate aquí</a></h3>
+		<h3 class="go-register">¿No tenes una cuenta? <a href="/registro"> Regístrate aquí</a></h3>
 	</div>
 </main>
 

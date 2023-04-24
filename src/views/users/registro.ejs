@@ -17,8 +17,8 @@
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777"
-      class="form-control <%= locals.errors && errors.nombre_usuario ? 'is-invalid' : null %>"
+      <input type="text"  name="nombre_usuario" placeholder="Genaro777"
+      class="in-register <%= locals.errors && errors.nombre_usuario ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.nombre_usuario : null %>">
       <% if (locals.errors && errors.nombre_usuario) { %>
         <div class="text-danger">
@@ -27,8 +27,8 @@
     <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text" class="in-register" name="nombre_apellido" placeholder="Gustavo Cerati"
-      class="form-control <%= locals.errors && errors.nombre_apellido ? 'is-invalid' : null %>"
+      <input type="text"  name="nombre_apellido" placeholder="Gustavo Cerati"
+      class="in-register <%= locals.errors && errors.nombre_apellido ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.nombre_apellido : null %>">
       <% if (locals.errors && errors.nombre_apellido) { %>
         <div class="text-danger">
@@ -38,8 +38,8 @@
 
 
       <label class="registro">Correo electrónico</label>
-      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com"
-      class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+      <input type="email" name="email" placeholder="genarorafault@gmail.com"
+      class="in-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.email : null %>">
       <% if (locals.errors && errors.email) { %>
         <div class="text-danger">
@@ -49,9 +49,9 @@
 
       
       <label class="registro">Pais</label>
-      <select name="pais" class="in-register"
-      class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
-
+      <select name="pais" 
+      class="in-register form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+      
         <option value="">Selecciona un Pais</option>
         <%
           let paises = ["Argentina", "Colombia", "Peru", "Canada","Brasil", "España"]
@@ -72,8 +72,8 @@
 
 
       <label class="registro">Domicilio</label>
-      <input type="text" class="in-register" name="domicilio" placeholder="Calle numero" 
-      class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>">
+      <input type="text"  name="domicilio" placeholder="Calle numero" 
+      class="in-register form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>">
       <% if (locals.errors && errors.domicilio) { %>
           <div class="text-danger">
               <%= errors.domicilio.msg %>
@@ -84,22 +84,22 @@
       <label ><input type="radio" name="admin"> Admin</label>
 
       <label class="registro">Avatar</label>
-      <input type="file" class="in-register" name="avatar" style="border: none;">
-      <!--<input type="file" class="in-register" name="avatar"
-      class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+      <input type="file"  name="avatar" style="border: none" 
+      class="in-register <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+
       <% if (locals.errors && errors.avatar) { %>
         <div class="text-danger">
             <%= errors.avatar.msg %>
         </div>
-    <% } %> -->
+    <% } %> 
 
       <label class="registro">Contraseña</label>
-      <input type="password" class="in-register" name="contraseña"  placeholder="123456789"
-      class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.contraseña : null %>">
-      <% if (locals.errors && errors.contraseña) { %>
+      <input type="password" name="password"  placeholder="123456789"
+      class="in-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.password : null %>">
+      <% if (locals.errors && errors.password) { %>
         <div class="text-danger">
-            <%= errors.contraseña.msg %>
+            <%= errors.password.msg %>
         </div>
     <% } %>
 

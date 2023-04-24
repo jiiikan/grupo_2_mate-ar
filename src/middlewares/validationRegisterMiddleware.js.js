@@ -3,12 +3,14 @@ const { body } = require('express-validator');
 
 
 const validations = [
-    body("nombre_usuario").notEmpty().withMessage("Tienes que crear un nombre de usuario"),
+    body("nombre_usuario").notEmpty().withMessage("Tienes que escribir un nombre de usuario"),
     body("nombre_apellido").notEmpty().withMessage("Tienes que ingresar tu nombre completo"),
-    body("email").isEmail().withMessage("Tienes que ingresar un email valido"),
+    body("email")
+    .notEmpty().withMessage("Tienes que ingresar un email valido").bail()
+    .isEmail().withMessage("Debes escribir un formato de correo valido"),
     body("pais").notEmpty().withMessage("Tienes que ingresar el pais donde vives"),
     body("domicilio").notEmpty().withMessage("Tienes que ingresar un domicilio real"),
-    body("contraseña").isLength({min: 8}).withMessage("Tienes que ingresar una contraseña"),
+    body("password").notEmpty().withMessage("Tienes que ingresar una contraseña"),
     //body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
     body("avatar").custom((value, { req }) => {
     let file = req.file 

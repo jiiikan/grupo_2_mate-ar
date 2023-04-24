@@ -4,7 +4,7 @@ const fs = require("fs");
 const db = require('../database/models');
 const { validationResult } = require("express-validator");
 const bcrypt = require('bcryptjs');
-
+const User = require('../modelos/User');
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
@@ -33,10 +33,12 @@ const usersController = {
     if(resultValidation.errors.length > 0){
         return res.render("users/registro", {
             errors: resultValidation.mapped(),
-            olddata: req.body
+            oldData: req.body
     })
     }
-    let userInDB = User.findByField('email', req.body.email);
+
+
+    /*let userInDB = User.findByField('email', req.body.email);
 
 		if (userInDB) {
 			return res.render('userRegisterForm', {
@@ -56,7 +58,7 @@ const usersController = {
         }
         let userCreated = User.create(userToCreate);
 
-		return res.redirect('/users/login');
+		return res.redirect('/users/login');*/
 	},
     login: (req, res) => {
         res.render("users/login")

@@ -15,14 +15,14 @@ router.get("/carrito", usersController.carrito);
 
 
 router.get("/login", usersController.login);
-router.post('/login', usersController.loginProcess);
+router.post('/login', usersController.logeando);
 
 
-router.get("/registro", guestMiddleware ,usersController.registro);
+router.get("/registro", usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado)
 //router.post('/register', uploadFile.single('avatar'), usersController.create);
 
-router.get('/profile/', authMiddleware, usersController.profile);
+router.get('/profile/', usersController.profile);
 
 router.get('/logout/', usersController.logout);
 

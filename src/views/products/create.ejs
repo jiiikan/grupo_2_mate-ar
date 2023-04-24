@@ -23,51 +23,51 @@
 
             <span class="titulo">Creacion del producto:</span>
 
-            <label for="" class="label-create">Nombre del producto</label>
-
-            <input type="text" name="product" placeholder="Nombre" class="input" required 
+            <label class="label-create">Nombre del producto</label>
+            <input type="text" name="product" placeholder="Nombre" class="input" 
             class="form-control <%= locals.errors && errors.product ? 'is-invalid' : null %>"
             value= "<%= locals.oldData ? oldData.product : null %>">
-                <% if (locals.errors && errors.product) {%>
+                <% if (locals.errors && errors.product) { %>
                     <div class="text-danger">
                         <%= errors.product.msg %>
                     </div>
                 <% } %>
             
             <label class="label-create">Descripcion del producto</label>
-            <input type="text" name="description" placeholder="descripcion" class="input" required
+            <input type="text" name="description" placeholder="descripcion" class="input" 
             class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
             value= "<%= locals.oldData ? oldData.description : null %>">
-            <% if (locals.errors && errors.description) {%>
+            <% if (locals.errors && errors.description) { %>
                 <div class="text-danger">
                     <%= errors.description.msg %>
                 </div>
             <% } %>
 
             <label class="label-create">Precio del producto</label>
-            <input type="number" name="price" placeholder="Precio" class="input" required
+            <input type="number" name="price" placeholder="Precio" class="input" 
             class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
             value= "<%= locals.oldData ? oldData.price : null %>">
-            <% if (locals.errors && errors.price) {%>
+            <% if (locals.errors && errors.price) { %>
                 <div class="text-danger">
                     <%= errors.price.msg %>
                 </div>
             <% } %>
 
             <label class="label-create">Imagen del producto</label>
-            <input type="file" name="imagen-producto" placeholder="Imagen" class="file" required>
-            <% if (locals.errors && errors.imagen-producto) {%>
+            <input type="file" name="imagen" placeholder="Imagen" class="file">
+            <% if (locals.errors && errors.imagen) { %>
                 <div class="text-danger">
-                    <%= errors.imagen-producto.msg %>
+                    <%= errors.imagen.msg %>
                 </div>
             <% } %>
 
 
 
-
+            
             <label class="label-create">Categoria del producto</label>
-            <select name="category" class="input" required
-            class="form-control <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+            
+            <select name="category" 
+            class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
 
             <option value="">Elegi una categoria</option>
 
@@ -78,14 +78,17 @@
             <% for (const oneCategory of categorias) { %>
             <option 
             value="<%= oneCategory %>"
-            <%= locals.oldData && (oneCategory  === oldData.category) ? 'selected' : null %>
-            > <%= oneCategory %> </option>
+            <%= locals.oldData && (oneCategory  === oldData.category ) ? 'selected' : null %>>
+            <%= oneCategory %> </option>
                 <% } %>
+
                 </select>
-            <!-- 
-                value
-                <%= locals.oldData && (categoriaSeleccionada  == oldData.category) : 'selected' : null %>
-            --> 
+
+                <% if (locals.errors && errors.country) { %>
+                    <div class="text-danger">
+                        <%= errors.country.msg %>
+                    </div>
+                <% } %>
 
             <button type="submit" class="button">Subir</button>
 

@@ -85,8 +85,8 @@ update: (req, res) => {
 store: (req, res) => {
     const resultValidation = validationResult(req);
 
-    if(resultValidation.erros.length > 0){
-        return res.render("/create", {
+    if(resultValidation.errors.length > 0){
+        return res.render("products/create", {
             errors: resultValidation.mapped(),
             olddata: req.body
         })

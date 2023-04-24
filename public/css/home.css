@@ -1,6 +1,10 @@
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
+.main{
+  padding: 8% 6%;
+}
+
 .subtitulo{
   padding-left: 10px;
   font-weight: bold;
@@ -11,8 +15,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 .titulo-reseña{
   font-size: 20px;
   font-weight: bold;
-  padding-left: 10px;
-
+  margin-top: 0;
 }
 
 .reseña-articulo{
@@ -20,13 +23,13 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
 .box-reseña{
-  width: 100%;
   background-color: #285430;
   align-self: center;
+  border-radius: 25px;
+  padding: 15px;
 }
 
 .reseña-home{
@@ -35,6 +38,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-weight: 400;
   color: #E5D9B6;
   text-align: center;
+  margin: 0;
 }
 
 .categoria{
@@ -67,16 +71,40 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-size: 18px;
 }
 
+.info{
+  margin-bottom: 4%;
+  background-color: #5F8D4E;
+}
+
+.info-texto{
+  padding: 3%;
+}
+
+.matear2022{
+  width: 100%;
+}
+
 @media (min-width: 450px){
 
 .box-imgyp{
   margin: 10px;
 }
 
-
 }
 
 @media (min-width: 800px){
+  .main{
+    padding: 4% 6%;
+  }
+
+  .box-reseña{
+    border-radius: 50px;
+    padding: 12px;
+  }
+
+  .reseña-home{
+    margin: 0 10px;
+  }
 
   .subtitulo{
     text-align: left;
@@ -90,4 +118,13 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     margin: 0px 10px 0px 10px;
   }
 
+  .matear2022{
+    width: 40%;
+    border-radius: 20px;
+  }
+  .info{
+    display: flex;
+    padding: 3%;
+    align-items: center;
+  }
 }

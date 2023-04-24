@@ -1,26 +1,29 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const usersController = require("../controllers/usersController.js");
 const multer = require("multer");
-
-//utilizacion de Multer
+const { body } = require("express-validator");
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
-        cb(null, "./public/images/users")
+        cb(null, "../public/images/users")
     },
     filename: (req, file, cb) =>{
-        let fileName = '${Date.now()}_img${path.extname(file.originalname)}';
+        let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
         cb(null, fileName)
     }
 })
-const uploadFile = multer({ storage })
 
+const uploadFile = multer({ storage })
 const validations = [
-    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
-    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
-    body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
-    body("imagenproducto").custom((value, { req }) => {
+    body("nombre_usuario").notEmpty().withMessage("Tienes que crear un nombre de usuario"),
+    body("nombre_apellido").notEmpty().withMessage("Tienes que igresar tu nombre completo"),
+    body("email").notEmpty().withMessage("Tienes que ingresar un email valido"),
+    body("pais").notEmpty().withMessage("Tienes que ingresar un pais"),
+    body("domicilio").notEmpty().withMessage("Tienes que ingresar el domicilio donde vives"),
+    body("contraseña").notEmpty().withMessage("Tienes que ingresar una contraseña valida"),
+    body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
+    body("imagen").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
@@ -33,12 +36,14 @@ const validations = [
 }
     return true;
     })
+    
 ]
 
-// rutas como tal
+
 router.get("/carrito", usersController.carrito);
 router.get("/login", usersController.login);
 router.get("/registro", usersController.registro);
+router.post("/registro", validations, usersController.registrado)
 //router.post('/register', uploadFile.single('avatar'), usersController.create);
 
 module.exports = router;

@@ -12,33 +12,80 @@
   <%- include("../partials/header") %>
 
     <main class="main">
-    <form method="post" class="box-register" enctype="multipart/form-data">
+    <form method="POST" class="box-register" enctype="multipart/form-data" action="/users/registro">
 
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777">
+      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777"
+      class="form-control <%= locals.errors && errors.nombre_usuario ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.nombre_usuario : null %>">
+      <% if (locals.errors && errors.nombre_usuario) { %>
+        <div class="text-danger">
+            <%= errors.nombre_usuario.msg %>
+        </div>
+    <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text" class="in-register" name="nombre-apellido" placeholder="Gustavo Cerati">
+      <input type="text" class="in-register" name="nombre_apellido" placeholder="Gustavo Cerati"
+      class="form-control <%= locals.errors && errors.nombre_apellido ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.nombre_apellido : null %>">
+      <% if (locals.errors && errors.nombre_apellido) { %>
+        <div class="text-danger">
+            <%= errors.nombre_apellido.msg %>
+        </div>
+    <% } %>
+
 
       <label class="registro">Correo electrónico</label>
-      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" >
+      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com"
+      class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.email : null %>">
+      <% if (locals.errors && errors.email) { %>
+        <div class="text-danger">
+            <%= errors.email.msg %>
+        </div>
+    <% } %>
+
       
       <label class="registro">Pais</label>
-      <input type="number" class="in-register" name="pais" placeholder="Argentina" >
+      <input type="text" class="in-register" name="pais" placeholder="Argentina" >
 
       <label class="registro">Domicilio</label>
-      <input type="number" class="in-register" name="domicilio" placeholder="Calle numero" >
+      <input type="number" class="in-register" name="domicilio" placeholder="Calle numero"
+      class="form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.domicilio : null %>">
+      <% if (locals.errors && errors.domicilio) { %>
+        <div class="text-danger">
+            <%= errors.domicilio.msg %>
+        </div>
+    <% } %>
+
 
       <label class="registro">Permisos</label>
       <label><input type="radio" name="admin"> Admin</label>
       
       <label class="registro">Contraseña</label>
-      <input type="password" class="in-register" name="contrasena"  placeholder="123456789" >
+      <input type="password" class="in-register" name="contraseña"  placeholder="123456789"
+      class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.contraseña : null %>">
+      <% if (locals.errors && errors.contraseña) { %>
+        <div class="text-danger">
+            <%= errors.contraseña.msg %>
+        </div>
+    <% } %>
+
 
       <label class="registro">Confirmar contraseña</label>
-      <input type="password" class="in-register" name="confirmar_contrasena" placeholder="123456789" >
+      <input type="password" class="in-register" name="confirmar_contraseña" placeholder="123456789"
+      class="form-control <%= locals.errors && errors.confirmar_contraseña ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.confirmar_contraseña : null %>">
+      <% if (locals.errors && errors.confirmar_contraseña) { %>
+        <div class="text-danger">
+            <%= errors.confirmar_contraseña.msg %>
+        </div>
+    <% } %>
+
 
       <label class="registro"><input type="radio" name="terminos y condiciones"> Acepto terminos y condiciones</label>
 

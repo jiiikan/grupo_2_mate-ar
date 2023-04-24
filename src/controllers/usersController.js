@@ -1,9 +1,11 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const db = require('../database/models');
+const { validationResult } = require("express-validator");
 
-let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
-let products = JSON.parse(readFile, "utf-8");
+let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
+let users = JSON.parse(readFile, "utf-8");
 
 const usersController = {   
     carrito: (req, res) => {
@@ -23,7 +25,37 @@ const usersController = {
 },
     registro: (req, res) => {
     res.render("users/registro")
-}
+
+},
+    registrado: (req, res) => {
+        const resultValidation = validationResult(req);
+
+    if(resultValidation.errors.length > 0){
+        return res.render("users/registro", {
+            errors: resultValidation.mapped(),
+            olddata: req.body
+        })
+    }
+    const { usuario, nombre_apellido, email, pais, domicilio, permisos, contraseña, imagen } = req.body;
+    const newUser = {
+        id: users.length + 1,
+        usuario: req.body.nombre_usuario,
+        nombre_apellido: req.body.nombre_apellido,
+        email: req.body.email,
+        pais: req.body.pais,
+        domicilio: req.body.domicilio,
+        permisos:req.body.permisos,
+        contraseña: req.body.confirmar_contraseña,
+        imagen: req.file.filename
+    };
+
+    users.push(newUser);
+    fs.writeFileSync(
+        path.resolve(__dirname, "../data/users.json"),
+        JSON.stringify(users, null, 2),
+        "utf-8");
+    res.redirect("/users/login");
+    }
 
 };
 

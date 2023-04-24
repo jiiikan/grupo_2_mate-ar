@@ -1,20 +1,20 @@
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main-create{
+.main{
+    padding: 10%;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.create-container{
-    display: flex;
-    flex-direction: column;
 }
 
 .create{
-    display: grid;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5F8D4E;
+    padding: 10%;
+    color: #E5D9B6;
+    border-radius: 15px;
 }
 
 .create input{
@@ -24,19 +24,74 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 .titulo{
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .label-create{
-    font-size: 15px;
-    font-weight: 400;
-    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px;
+}
+
+.input{
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    width: 80%;
 }
 
 .file{
-    width: 300px;
+    width: 80%;
+}
+
+.select select{
+    border-radius: 5px;
 }
 
 .button{
     margin-top: 15px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: #285430;
+}
+
+.text-danger{
+    color: rgb(202, 20, 20);
+    font-weight: bolder;
+}
+
+@media (min-width: 450px){
+    .main{
+        padding: 6%;
+        display: block;
+    }
+
+    .create-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .create{
+        width: 46%;
+        padding: 3%;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .text-danger{
+        margin: 5px;
+    }
+
+    .label-create{
+        font-size: 18px;
+        margin: 15px;
+    }
+
+    .button{
+        margin: 30px 0px 10px;
+    }
 }

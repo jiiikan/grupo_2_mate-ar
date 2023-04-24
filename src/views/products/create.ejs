@@ -4,18 +4,18 @@
 <%- include("../partials/head.ejs") %>
 <head>
     <link rel="stylesheet" href="/css/create.css">
-    <title>Mate.ar -Carga y edita los productos</title>
+    <title>Mate.ar -Nuevo producto</title>
 </head>
 
 <body>
     <%- include("../partials/header") %>
 
-    <main class="main-create">
+    <main class="main">
         
         <section class="create-container">
         <form action="/products/create" method="POST" class="create" enctype="multipart/form-data">
 
-            <span class="titulo">Creacion del producto:</span>
+            <span class="titulo">Creacion del producto</span>
 
             <label class="label-create">Nombre del producto</label>
             <input type="text" name="product" placeholder="Nombre" class="input" 

@@ -10,6 +10,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .titulo-reseña{
@@ -124,5 +125,6 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     display: flex;
     padding: 3%;
     align-items: center;
+    margin-bottom: 6%;
   }
 }

@@ -11,7 +11,6 @@ app.engine('html', require('ejs').renderFile);
 app.set("views", path.resolve(__dirname,"./views"));
 app.set("view engine", `ejs`);
 
-
 // Levantamos servidor   
 //- correr con node: npm start -- correr con nodemon: npm run dev -
 

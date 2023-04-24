@@ -11,21 +11,82 @@
     <%- include("../partials/header") %>
 
     <main class="main-create">
+        <!--<% if (locals.errors) {%>
+        <% for(let oneErrors in errors) { %>
+            <p><%= errors[oneErrors].msg %></p>
+        <% } %> 
+        
+        <%}%>-->
         
         <section class="create-container">
-        <form action="/products/create" method="POST" class="create">
+        <form action="/products/create" method="POST" class="create" enctype="multipart/form-data">
 
             <span class="titulo">Creacion del producto:</span>
+
             <label for="" class="label-create">Nombre del producto</label>
-            <input type="text" name="product" placeholder="Nombre" class="input" required>
+
+            <input type="text" name="product" placeholder="Nombre" class="input" required 
+            class="form-control <%= locals.errors && errors.product ? 'is-invalid' : null %>"
+            value= "<%= locals.oldData ? oldData.product : null %>">
+                <% if (locals.errors && errors.product) {%>
+                    <div class="text-danger">
+                        <%= errors.product.msg %>
+                    </div>
+                <% } %>
+            
             <label class="label-create">Descripcion del producto</label>
-            <input type="text" name="description" placeholder="descripcion" class="input" required>
+            <input type="text" name="description" placeholder="descripcion" class="input" required
+            class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
+            value= "<%= locals.oldData ? oldData.description : null %>">
+            <% if (locals.errors && errors.description) {%>
+                <div class="text-danger">
+                    <%= errors.description.msg %>
+                </div>
+            <% } %>
+
             <label class="label-create">Precio del producto</label>
-            <input type="number" name="price" placeholder="Precio" class="input" required>
+            <input type="number" name="price" placeholder="Precio" class="input" required
+            class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+            value= "<%= locals.oldData ? oldData.price : null %>">
+            <% if (locals.errors && errors.price) {%>
+                <div class="text-danger">
+                    <%= errors.price.msg %>
+                </div>
+            <% } %>
+
             <label class="label-create">Imagen del producto</label>
-            <input type="file" name="image" placeholder="Imagen" class="file" required>
+            <input type="file" name="imagen-producto" placeholder="Imagen" class="file" required>
+            <% if (locals.errors && errors.imagen-producto) {%>
+                <div class="text-danger">
+                    <%= errors.imagen-producto.msg %>
+                </div>
+            <% } %>
+
+
+
+
             <label class="label-create">Categoria del producto</label>
-            <input type="text" name="category" placeholder="Categoria" class="input" required>
+            <select name="category" class="input" required
+            class="form-control <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+
+            <option value="">Elegi una categoria</option>
+
+            <%
+                let categorias = ["Mates",  "Kits", "Termos"];
+            %>
+
+            <% for (const oneCategory of categorias) { %>
+            <option 
+            value="<%= oneCategory %>"
+            <%= locals.oldData && (oneCategory  === oldData.category) ? 'selected' : null %>
+            > <%= oneCategory %> </option>
+                <% } %>
+                </select>
+            <!-- 
+                value
+                <%= locals.oldData && (categoriaSeleccionada  == oldData.category) : 'selected' : null %>
+            --> 
+
             <button type="submit" class="button">Subir</button>
 
         </form>

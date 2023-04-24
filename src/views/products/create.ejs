@@ -11,12 +11,6 @@
     <%- include("../partials/header") %>
 
     <main class="main-create">
-        <!--<% if (locals.errors) {%>
-        <% for(let oneErrors in errors) { %>
-            <p><%= errors[oneErrors].msg %></p>
-        <% } %> 
-        
-        <%}%>-->
         
         <section class="create-container">
         <form action="/products/create" method="POST" class="create" enctype="multipart/form-data">
@@ -60,9 +54,6 @@
                     <%= errors.imagen.msg %>
                 </div>
             <% } %>
-
-
-
             
             <label class="label-create">Categoria del producto</label>
             

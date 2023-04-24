@@ -4,6 +4,8 @@ const path = require("path");
 const productsController = require("../controllers/productsController.js");
 const multer = require("multer");
 const { body } = require("express-validator");
+
+//utilizacion de Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
         cb(null, "../public/images")
@@ -15,6 +17,7 @@ const storage = multer.diskStorage({
 })
 
 const uploadFile = multer({ storage })
+
 const validations = [
     body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
     body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
@@ -36,6 +39,7 @@ const validations = [
     
 ]
 
+// Rutas como tal
 router.get("/catalogo", productsController.catalogo);
 //router.get("/catalogo", productsController.lista)
 

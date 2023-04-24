@@ -11,16 +11,18 @@
 <body>
   <%- include("./partials/header.ejs") %>
 
-    <main>
-      <section>
+    <main class="main">
       <article class="reseña-articulo">
       <p class="titulo-reseña">¿Quienes somos?</p>
       <div class="box-reseña">
-      <p class="reseña-home">Mate Ar es una empresa argentina que viene a querer ayudar a los distintos Argentinos del mundo a poder conseguir un matecito de forma
-      rapida y segura, sino si sos extranjero tambien tenemos todo lo necesario para vos y toda tu familia a un precio bastante economico</p>
+      <p class="reseña-home">
+        Mate Ar es una empresa Argentina con el objetivo de querer ayudar a los distintos Argentinos del mundo a poder conseguir un matecito de forma
+        rapida y segura, si no si sos extranjero tambien tenemos todo lo necesario para vos y toda tu familia a un precio bastante economico. <br> Todos nuestros productos 
+        son artesanales provenientes de distintas partes de nuestro paìs, como seria el caso de nuestras bolsas materas de cuero de guanaco proveniente de la 
+        patagonia, o los mates decorativos hechos de las salinas de Jujuy.</p>
       </div>
       </article>
-      </section>
+
       <section>
         <p class="subtitulo">A continuacion las distintas categorias:</p>
         
@@ -53,7 +55,23 @@
           </div>
         </article></div>
       </section>
+
     </main>
+
+    <section class="info">
+      <img src="/images/Matear2022.jpg" alt="banner-buenos aires" class="matear2022">
+      <section class="info-texto">
+        <h3>Matear Argentina 2022 </h3>
+      <p>
+        ¿Que es matear Argentina? <br>
+        MATEAR es una feria temática que muestra lo mejor de nuestro producto, profundizando el vínculo 
+        que los argentinos tenemos con el mate, proponiendo un espacio de intercambio con el sector 
+        gastronómico, comercial, cultural y con los consumidores finales. <br>
+        Para mas informacion puede ingresar a la pagina principal de matear: https://matear.com.ar/ o 
+        directamente a la magian de los organizadores del evento: https://inym.org.ar/feria-matear.html
+      </p>
+      </section>
+    </section>
 
   <%- include("./partials/footer.ejs") %>
 

@@ -54,7 +54,7 @@
 
         <option value="">Selecciona un Pais</option>
         <%
-          let paises = ["Argentina", "Colombia", "Peru", "Canada"]
+          let paises = ["Argentina", "Colombia", "Peru", "Canada","Brasil", "España"]
         %>
 
         <% for (const oneCountry of paises) { %>
@@ -81,22 +81,18 @@
       <% } %>
 
       <label class="registro">Permisos</label>
-      <label><input type="radio" name="admin"> Admin</label>
+      <label ><input type="radio" name="admin"> Admin</label>
 
       <label class="registro">Avatar</label>
-<<<<<<< HEAD
-      <input type="file" class="in-register" name="avatar">
-=======
-      <input type="file" class="in-register" name="avatar"
+      <input type="file" class="in-register" name="avatar" style="border: none;">
+      <!--<input type="file" class="in-register" name="avatar"
       class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
       <% if (locals.errors && errors.avatar) { %>
-          <div class="text-danger">
-              <%= errors.avatar.msg %>
-          </div>
-      <% } %>
-      
->>>>>>> 9ea0cba83109e0e2d06db0ae5a7b58f80c685901
-      
+        <div class="text-danger">
+            <%= errors.avatar.msg %>
+        </div>
+    <% } %> -->
+
       <label class="registro">Contraseña</label>
       <input type="password" class="in-register" name="contraseña"  placeholder="123456789"
       class="form-control <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>"

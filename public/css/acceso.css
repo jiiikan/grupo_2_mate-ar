@@ -104,4 +104,8 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     text-align: center;
 }
 
+.login-container{
+    border-radius: 20px;
+}
+
 }

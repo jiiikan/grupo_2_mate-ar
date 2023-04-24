@@ -10,9 +10,9 @@
 
 <body>
 
-  <%- include("../partials/header") %>
+	<%- include("../partials/header") %>
 
-    <main class="main-login">
+    <main class="main">
 		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
 		<form method="post" class="form-acceso" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
 			<label class="login-sub">Contraseña:</label>
 			<input type="password" class="login-input" name="Contraseña" placeholder="" required>
 
-			<label><input type="radio" ></label>
+			<label><input type="checkbox" class="login-input" name="recordar">Recordar este usuario</label>
     <div class="bottom">
 			<button type="submit" class="boton-iniciar">Iniciar sesión</button>
 		</div>

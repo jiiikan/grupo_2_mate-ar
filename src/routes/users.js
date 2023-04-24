@@ -15,15 +15,13 @@ const storage = multer.diskStorage({
 })
 
 const uploadFile = multer({ storage })
+
 const validations = [
-    body("nombre_usuario").notEmpty().withMessage("Tienes que crear un nombre de usuario"),
-    body("nombre_apellido").notEmpty().withMessage("Tienes que igresar tu nombre completo"),
-    body("email").notEmpty().withMessage("Tienes que ingresar un email valido"),
-    body("pais").notEmpty().withMessage("Tienes que ingresar un pais"),
-    body("domicilio").notEmpty().withMessage("Tienes que ingresar el domicilio donde vives"),
-    body("contraseña").notEmpty().withMessage("Tienes que ingresar una contraseña valida"),
-    body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
-    body("imagen").custom((value, { req }) => {
+    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
+    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
+    body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
+    body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
+    body("imagenproducto").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
@@ -36,7 +34,6 @@ const validations = [
 }
     return true;
     })
-    
 ]
 
 

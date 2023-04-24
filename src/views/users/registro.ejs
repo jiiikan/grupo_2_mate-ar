@@ -12,7 +12,7 @@
   <%- include("../partials/header") %>
 
     <main class="main">
-    <form method="POST" class="box-register" enctype="multipart/form-data">
+    <form method="POST" class="box-register" enctype="multipart/form-data" action="/users/registro">
 
       <h1>Regristro</h1>
 
@@ -49,10 +49,15 @@
 
       
       <label class="registro">Pais</label>
-      <input type="number" class="in-register" name="pais" placeholder="Argentina" >
+      <select name="pais" class="in-register">
+        <option value="Argentina">Argentina</option>
+        <option value="Peru">Peru</option>
+        <option value="Brasil">Brasil</option>
+        <option value="Mexico">Mexico</option>
+      </select>
 
       <label class="registro">Domicilio</label>
-      <input type="number" class="in-register" name="domicilio" placeholder="Calle numero" >
+      <input type="text" class="in-register" name="domicilio" placeholder="Calle numero" >
 
       <label class="registro">Permisos</label>
       <label><input type="radio" name="admin"> Admin</label>

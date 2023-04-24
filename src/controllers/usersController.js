@@ -36,17 +36,17 @@ const usersController = {
             olddata: req.body
         })
     }
-    const { usuario, nombre_apellido, email, pais, domicilio, permisos, contraseña, imagen } = req.body;
+    const { nombre_user, nombre_apellido, email, pais, domicilio, admin, confirmar_contraseña, avatar } = req.body;
     const newUser = {
         id: users.length + 1,
-        usuario: req.body.nombre_usuario,
+        nombre_user: req.body.nombre_usuario,
         nombre_apellido: req.body.nombre_apellido,
         email: req.body.email,
         pais: req.body.pais,
         domicilio: req.body.domicilio,
-        permisos:req.body.permisos,
+        admin:req.body.permisos,
         contraseña: req.body.confirmar_contraseña,
-        imagen: req.file.filename
+        avatar: req.file.filename
     };
 
     users.push(newUser);

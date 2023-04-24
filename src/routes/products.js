@@ -8,7 +8,7 @@ const { body } = require("express-validator");
 //utilizacion de Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
-        cb(null, "../public/images")
+        cb(null, "./public/images")
     },
     filename: (req, file, cb) =>{
         let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
@@ -23,7 +23,7 @@ const validations = [
     body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
     body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
     body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
-    body("imagen").custom((value, { req }) => {
+    body("imagenproducto").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
@@ -44,7 +44,7 @@ router.get("/catalogo", productsController.catalogo);
 //router.get("/catalogo", productsController.lista)
 
 router.get("/create", productsController.create);
-router.post("/create", uploadFile.single("imagen"), validations ,productsController.store);
+router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
 
 // router.get("/detalle", productsController.detalle); no sirve que este
 router.get("/detalle/:id", productsController.detalle);

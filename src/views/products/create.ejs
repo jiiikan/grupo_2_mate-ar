@@ -48,10 +48,11 @@
             <% } %>
 
             <label class="label-create">Imagen del producto</label>
-            <input type="file" name="imagen" placeholder="Imagen" class="file">
-            <% if (locals.errors && errors.imagen) { %>
+            <input type="file" name="imagenproducto" placeholder="Imagen" class="file" 
+            class="form-control <%= locals.errors && errors.imagenproducto ? 'is-invalid' : null %>">
+            <% if (locals.errors && errors.imagenproducto) { %>
                 <div class="text-danger">
-                    <%= errors.imagen.msg %>
+                    <%= errors.imagenproducto.msg %>
                 </div>
             <% } %>
             

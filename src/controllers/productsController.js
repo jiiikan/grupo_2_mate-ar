@@ -59,13 +59,13 @@ update: (req, res) => {
     res.status(404).render("error404");
     return;
     }
-    const { id, product, description, price, image, category } = req.body;
+    const { id, product, description, price, imagenproducto, category } = req.body;
     products[productIndex] = {
     id: productId,
     nombre: product,
     descripcion: description,
     precio: parseFloat(price),
-    imagen: image,
+    imagen: imagenproducto,
     categoria: category,
     };
     fs.writeFileSync(
@@ -91,15 +91,16 @@ store: (req, res) => {
             olddata: req.body
         })
     }
-    const {product, description, price, image, category } = req.body;
+    const { product, description, price, category } = req.body;
     const newProduct = {
         id: products.length + 1,
         nombre: req.body.product,
         descripcion: req.body.description,
         precio: req.body.price,
-        imagen: req.body.image,
+        imagen: req.file.filename,
         categoria: req.body.category
     };
+
     products.push(newProduct);
     fs.writeFileSync(
         path.resolve(__dirname, "../data/products.json"),
@@ -119,7 +120,7 @@ delete: (req, res) => {
 
     let productoGuardar = JSON.stringify(productBorrar, null, 2);
     fs.writeFileSync( path.resolve(__dirname, "../data/products.json"), productoGuardar );
-    res.redirect("/products/catalogo");
+    res.redirect("/");
     }
 };
 

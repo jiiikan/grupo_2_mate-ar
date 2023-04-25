@@ -11,35 +11,118 @@
 
   <%- include("../partials/header") %>
 
-    <main class="main-register">
-    <form method="post" class="box-register">
-      <div class="box-title"><p class="Titulo-register">Registro:</p></div>
-      <label for="nombre_usuario" class="registro">Nombre de usuario:</label>
-      <input type="text" class="in-register" name="nombre_usuario" placeholder="Genaro777"  required><br>
+    <main class="main">
+    <form method="POST" class="box-register" enctype="multipart/form-data" action="/users/registro">
 
-      <label for="email" class="registro">Correo electrónico:</label>
-      <input type="email" class="in-register" name="email" placeholder="genarorafault@gmail.com" required><br>
+      <h1>Regristro</h1>
+
+      <label class="registro">Nombre de usuario</label>
+      <input type="text"  name="nombre_usuario" placeholder="Genaro777"
+      class="in-register <%= locals.errors && errors.nombre_usuario ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.nombre_usuario : null %>">
+      <% if (locals.errors && errors.nombre_usuario) { %>
+        <div class="text-danger">
+            <%= errors.nombre_usuario.msg %>
+        </div>
+    <% } %>
+
+      <label class="registro">Nombre y apellido</label>
+      <input type="text"  name="nombre_apellido" placeholder="Gustavo Cerati"
+      class="in-register <%= locals.errors && errors.nombre_apellido ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.nombre_apellido : null %>">
+      <% if (locals.errors && errors.nombre_apellido) { %>
+        <div class="text-danger">
+            <%= errors.nombre_apellido.msg %>
+        </div>
+    <% } %>
+
+
+      <label class="registro">Correo electrónico</label>
+      <input type="email" name="email" placeholder="genarorafault@gmail.com"
+      class="in-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.email : null %>">
+      <% if (locals.errors && errors.email) { %>
+        <div class="text-danger">
+            <%= errors.email.msg %>
+        </div>
+    <% } %>
+
       
-      <label for="phone_number" class="registro">Numero celular:</label>
-      <input type="number" class="in-register" name="phone_number" placeholder="5492901432109" required><br>
-
-      <label for="ideal" class="registro">¿Que quiere hacer?</label>
-      <select class="in-register">
-        <option value="conmprar">Quiero comprar</option>
-        <option value="vender">Quiero vender</option>
-        <option value="los-dos">Quiero comprar y vender</option>
-      </select><br>
+      <label class="registro">Pais</label>
+      <select name="pais" 
+      class="in-register form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
       
-      <label for="contrasena" class="registro">Contraseña:</label>
-      <input type="password" class="in-register" name="contrasena" minlength="8" placeholder="123456789" required><br>
+        <option value="">Selecciona un Pais</option>
+        <%
+          let paises = ["Argentina", "Colombia", "Peru", "Canada","Brasil", "España"]
+        %>
 
-      <label for="confirmar_contrasena" class="registro">Confirmar contraseña:</label>
-      <input type="password" class="in-register" name="confirmar_contrasena" minlength="8" placeholder="123456789" required><br>
+        <% for (const oneCountry of paises) { %>
+          <option 
+          value="<%= oneCountry %>"
+          <%= locals.oldData && (oneCountry  === oldData.paises ) ? 'selected' : null %>>
+          <%= oneCountry %> </option>
+              <% } %>
+      </select>
+      <% if (locals.errors && errors.paises ) { %>
+        <div class="text-danger">
+            <%= errors.paises.msg %>
+        </div>
+    <% } %>
 
-      <hr class="linea-registro">
+
+      <label class="registro">Domicilio</label>
+      <input type="text"  name="domicilio" placeholder="Calle numero" 
+      class="in-register form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>">
+      <% if (locals.errors && errors.domicilio) { %>
+          <div class="text-danger">
+              <%= errors.domicilio.msg %>
+          </div>
+      <% } %>
+
+      <label class="registro">Permisos</label>
+      <label ><input type="radio" name="admin"> Admin</label>
+
+      <label class="registro">Avatar</label>
+      <input type="file"  name="avatar" style="border: none" 
+      class="in-register <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+
+      <% if (locals.errors && errors.avatar) { %>
+        <div class="text-danger">
+            <%= errors.avatar.msg %>
+        </div>
+    <% } %> 
+
+      <label class="registro">Contraseña</label>
+      <input type="password" name="password"  placeholder="123456789"
+      class="in-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.password : null %>">
+      <% if (locals.errors && errors.password) { %>
+        <div class="text-danger">
+            <%= errors.password.msg %>
+        </div>
+    <% } %>
+
+
+      <!--<label class="registro">Confirmar contraseña</label>
+      <input type="password" class="in-register" name="confirmar_contraseña" placeholder="123456789"
+      class="form-control <%= locals.errors && errors.confirmar_contraseña ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.confirmar_contraseña : null %>">
+      <% if (locals.errors && errors.confirmar_contraseña) { %>
+        <div class="text-danger">
+            <%= errors.confirmar_contraseña.msg %>
+        </div>
+    <% } %>-->
+
+
+      <label class="registro"><input type="radio" name="terminos y condiciones"> Acepto terminos y condiciones</label>
+
       <div class="boton">
-      <button type="submit" class="boton-registro">Crear cuenta</button><br>
+        <button type="submit" class="boton-registro">Crear cuenta</button>
+        <button type="reset" class="boton-registro">Borrar</button>
       </div>
+
+
     </form>
     </main>
 

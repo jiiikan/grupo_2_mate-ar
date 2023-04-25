@@ -13,7 +13,7 @@
     <main class="main-edition">
 
         <section class="edition-container">
-        <form action="/products/update/ <%= product.id %>" method="POST" class="edition">
+        <form action="/products/update/ <%= product.id %>" method="POST" class="edition" enctype="multipart/form-data">
             <span class="titulo">Edicion de productos:</span>
             <label for="" class="label-edition">Nombre del producto</label>
             <input type="text" name="product" placeholder="Nombre" class="input" value="<%= product.nombre%>">

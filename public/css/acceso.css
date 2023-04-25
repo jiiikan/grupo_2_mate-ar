@@ -2,110 +2,110 @@
 
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main-login{
-    background-color: #efefefeb;
-    padding: 20px;
+.main{
+    background-color: #E5D9B6;
+    padding: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .login-container{
-    display: flex;
-    flex-direction: column;
-    background-color: #2589bd;
-    padding: 10px;
-    border-radius: 3px;
-    border: solid 1px;
-    box-shadow: 7px 5px 0px 4px rgba(0,0,0,1);
-    width: 300px;
-    
-
+    background-color: #5F8D4E;
+    padding: 4%;
+    border-radius: 10px;
+    color: #E5D9B6;
 }
 
 .iniciar{
-    font-size: 30px;
-    font-weight: bold;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .login-sub{
-    font-size: 15px;
+    font-size: 16px;
     padding: 3px;
 }
 
 .login-input{
-    border-radius: 5px;
-    border: solid 1px;
-    width: 200px;
-    padding: 3px;
     text-align: center;
-    align-self: center;
-    margin: 6px;
-    box-shadow: 2px 2px 0px 2px rgba(0,0,0,1);
+    border-radius: 10px;
+    border: solid 1px;
+    margin: 8px;
+    padding: 5px;
+    width: 80%;
 }
 
-.bottom{
-    display: flex;
-    justify-content: center;
-}
+
 
 .boton-iniciar{
     margin: 15px;
     padding: 5px;
-    width: 180px;
-    align-self: center;
     background-color: white;
     border: solid 1px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 0px 2px rgba(0,0,0,1);
+    border-radius: 10px;
 }
 
 .form-acceso{
     display: flex;
     flex-direction: column;
-    background-color: #2589bd;
+    align-items: center;
     padding: 10px;
-    border-radius: 3px;
-    border: solid 1px;
 }
 
 .go-register{
     padding: 5px;
     font-size: 12px;
+    margin-top: 0;
 }
 
+.go-register a{
+    margin-left: 5px;
+    color: #E5D9B6;
+}
 
 @media (min-width: 361px) {
 
 .login-sub{
     font-size: 20px; 
-    text-decoration: underline;
     margin-bottom: 2px;
-    margin-left: 5px;
 }
 
 .login-input{
-    width: 300px;
-    height: 30px;
     align-self: center;
 }
 
 .boton-iniciar{
-    width: 100px;
-    height: 30px;
     align-self: center;
+}
+}
+
+@media (min-width: 769px){
+    .go-register{
+        font-size: 18px;
+    }
+
+.iniciar{
+    font-size: 30px;
+}
+
+.login-input{
+    height: 25px;
+}
+
+.boton-iniciar{
+    padding: 10px;
+    text-align: center;
+}
+
+.bottom{
+    text-align: center;
 }
 
 .login-container{
-    width: 400px;
-}
-
-
-@media (min-width: 769px){
-
-
-
+    border-radius: 20px;
 }
 
 }

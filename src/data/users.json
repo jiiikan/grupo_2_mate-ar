@@ -42,5 +42,17 @@
   "contraseña": "contraseña",
   "admin": true,
   "avatar": "ejemplo.jpg"
+ },
+ {
+  "id": 5,
+  "nombre_usuario": "jiiikan",
+  "nombre_apellido": "Genaro Rafault",
+  "email": "genarorafault@gmail.com",
+  "pais": "Argentina",
+  "domicilio": "423",
+  "admin": "on",
+  "password": "$2a$10$G4aWUZXwnM4KS.tUOmn43ONNvFI3ZqaUixLIPR/1oE.4aj/SNrPNu",
+  "terminos y condiciones": "on",
+  "avatar": "1682416261327_img.png"
  }
 ]

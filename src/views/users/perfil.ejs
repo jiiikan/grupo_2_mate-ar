@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head") %>
+
+<head>
+    <title>Perfil - MateAr</title>
+    <link rel="stylesheet" href="/css/acceso.css">
+</head>
+
+<body>
+
+	<%- include("../partials/header") %>
+
+    <main class="main">
+		<div class="box-big">
+            <h2>Hola <%= user.nombre_apellido %></h2>
+            <img src="/images/users/<%= user.avatar %>">
+        </div>
+        <br>
+        <br>
+        <dir class="email_user"><%= user.email %></dir>
+</main>
+
+<%- include("../partials/footer") %>
+
+</body>
+</html>

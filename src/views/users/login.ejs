@@ -17,7 +17,11 @@
 		<p class="iniciar">Iniciar sesión</p>
 		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
 			<label class="login-sub">Nombre de usuario o correo electrónico</label>
-			<input type="text" class="login-input" name="nombre-user" placeholder="correo o username" required>
+			<input type="text" class="login-input" name="user" placeholder="correo o username" required>
+			<% if (locals.errors && errors.user) { %>
+				<div class="text-danger"></div>
+				<%= errors.user.msg %>
+			<% } %>
 
 			<label class="login-sub">Contraseña</label>
 			<input type="password" class="login-input" name="Contraseña" placeholder="hola81272" required>

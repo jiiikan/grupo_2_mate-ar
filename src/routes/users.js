@@ -13,17 +13,15 @@ const validations = require('../middlewares/validationRegisterMiddleware.js');
 
 router.get("/carrito", usersController.carrito);
 
-
-router.get("/login", usersController.login);
-router.post('/login', usersController.logeando);
-
-
 router.get("/registro", usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado)
 //router.post('/register', uploadFile.single('avatar'), usersController.create);
 
-router.get('/profile/', usersController.profile);
+router.get("/login", usersController.login);
+router.post('/login', usersController.logeando);
 
-router.get('/logout/', usersController.logout);
+router.get('/perfil', usersController.profile);
+
+router.get('/logout', usersController.logout);
 
 module.exports = router;

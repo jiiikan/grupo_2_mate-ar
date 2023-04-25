@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const db = require('../database/models');
 const { validationResult } = require("express-validator");
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const User = require('../modelos/User');
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
@@ -37,71 +37,23 @@ const usersController = {
     })
     }
 
-
-    /*let userInDB = User.findByField('email', req.body.email);
-
-		if (userInDB) {
-			return res.render('userRegisterForm', {
-				errors: {
-					email: {
-						msg: 'Este email ya está registrado'
-					}
-				},
-				oldData: req.body
-			});
-		}
-
         let userToCreate = {
 			...req.body,
 			password: bcryptjs.hashSync(req.body.password, 10),
 			avatar: req.file.filename
         }
-        let userCreated = User.create(userToCreate);
+            User.create(userToCreate);
 
-		return res.redirect('/users/login');*/
+		return res.redirect('/users/login');
 	},
     login: (req, res) => {
         res.render("users/login")
     },
     logeando: (req, res) => {
-        let userToLogin = User.findByField("email", req.body.email);
-
-        if(userToLogin) {
-            let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if(isOkThePassword) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-
-                if(req.session.remember_user) {
-                    res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 60 })
-                }
-                return res.redirect("/user/profile");
-            }
-            return res.render("userLoginForm", {
-                errors: {
-                    email: {
-                        msg: "Las credenciales son invalidas"
-                        }
-                    }
-                });
-        }
-        return res.render("userLoginForm", {
-            errors: {
-                email: {
-                    msg: "No se encuentra este email en nuestra base de datis"
-                }
-            }
-        });
     },
     profile: (req, res) => {
-        return res.render("userProfile", {
-            user: req.session.userLogged
-        })
     },
     logout: (req, res) => {
-        res.clearCookie("userEmail")
-        req.session.destroy()
-        return res.redirect("/")
     }
 
 

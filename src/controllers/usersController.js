@@ -74,9 +74,7 @@ const usersController = {
 				req.session.userLogged = userEmail;
 
 				return res.redirect('/users/perfil');
-
-                
-			} 
+            } 
 			return res.render('./users/login', {
 				errors: {
 					email: {

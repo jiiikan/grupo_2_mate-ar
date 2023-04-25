@@ -5,6 +5,8 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const port = process.env.PORT || 3000;
 const funca = () => console.log('Servidor funcionando en localhost: ');
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 //const methodOverride = require('method-override');
 
 // Config Ejs
@@ -27,6 +29,7 @@ app.use(session({ secret: "shhhh",
                 resave: false,
                 saveUninitialized: false}))
 app.use(cookies());
+app.use(userLoggedMiddleware);
 //app.use(methodOverride("_method"))
 
 // Rutas

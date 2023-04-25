@@ -9,6 +9,7 @@ const User = require('../modelos/User');
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
 
+
 const usersController = {   
     carrito: (req, res) => {
         res.render("users/carrito")
@@ -101,6 +102,8 @@ const usersController = {
 
     },
     logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 
 

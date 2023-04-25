@@ -3,8 +3,8 @@
 <%- include("../partials/head") %>
 
 <head>
-    <title>Perfil - MateAr</title>
-    <link rel="stylesheet" href="/css/acceso.css">
+    <title><%= user.nombre_user %> - MateAr</title>
+    <link rel="stylesheet" href="/css/perfil.css">
 </head>
 
 <body>
@@ -16,8 +16,8 @@
             <h2>Hola <%= user.nombre_apellido %></h2>
             <img src="/images/users/<%= user.avatar %>">
         </div>
-        <br>
-        <br>
+        <br><br>
+
         <div class="email_user"><%= user.email %></div>
 </main>
 

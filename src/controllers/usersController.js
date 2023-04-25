@@ -23,10 +23,11 @@ const usersController = {
         }*/
 
 },
+
     registro: (req, res) => {
     res.render("users/registro")
-
 },
+
     registrado: (req, res) => {
         const resultValidation = validationResult(req);
 

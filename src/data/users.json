@@ -8,18 +8,18 @@
   "domicilio": "riogrande",
   "contraseña": "contraseña",
   "admin": true,
-  "avatar": "ejemplo.jpg"
+  "avatar": "1682386393305_img.png"
  },
  {
   "id": 2,
   "nombre_user": "dante",
-  "combre_apellido": "alcachofa",
+  "nombre_apellido": "hola",
   "email": "dante@ejemplo.com",
   "pais": "argentina",
   "domicilio": "riogrande",
   "contraseña": "contraseña",
   "admin": true,
-  "avatar": "ejemplo.jpg"
+  "avatar": "1682386414602_img.png"
  },
  {
   "id": 3,
@@ -30,7 +30,7 @@
   "domicilio": "riogrande",
   "contraseña": "contraseña",
   "admin": true,
-  "avatar": "ejemplo.jpg"
+  "avatar": "1682416261327_img.png"
  },
  {
   "id": 4,
@@ -41,11 +41,11 @@
   "domicilio": "riogrande",
   "contraseña": "contraseña",
   "admin": true,
-  "avatar": "ejemplo.jpg"
+  "avatar": "1682416261327_img.png"
  },
  {
   "id": 5,
-  "nombre_usuario": "jiiikan",
+  "nombre_user": "jiiikan",
   "nombre_apellido": "Genaro Rafault",
   "email": "genarorafault@gmail.com",
   "pais": "Argentina",

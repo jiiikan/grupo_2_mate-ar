@@ -62,20 +62,20 @@ const usersController = {
 		return res.redirect('/users/login');
 	},
     login: (req, res) => {
-        res.render("./users/login")
+        res.render("users/login")
     },
     logeando: (req, res) => {
 		let userEmail = User.findByField('email', req.body.email);
 		
 		if(userEmail) {
-			let desencriptacion = bcryptjs.compareSync(req.body.password, userEmail.password);
-			if (desencriptacion) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userEmail.password);
+			if (isOkThePassword) {
 				delete userEmail.password;
 				req.session.userLogged = userEmail;
 
 				return res.redirect('/users/perfil');
-            } 
-			return res.render('./users/login', {
+            }     
+			/**/return res.render('users/login', {
 				errors: {
 					email: {
 						msg: 'Las credenciales son inválidas'
@@ -83,8 +83,7 @@ const usersController = {
 				}
 			});
 		}
-
-		return res.render('./users/login', {
+		return res.render('users/login', {
 			errors: {
 				email: {
 					msg: 'No se encuentra este email en nuestra base de datos'
@@ -93,17 +92,21 @@ const usersController = {
 		});
 	},
     profile: (req, res) => {
-        const userId = req.params.id;
+    const user =  req.session.userLogged
+    const userFromDB = User.findByField('id', user.id);
+    res.render('./users/perfil', { user: userFromDB });
+}
+    
+        /*const userId = req.params.id;
             
         const user = users.find(
             (user) => user.id === parseInt(userId)
         );
-    res.render("users/perfil", {user})},
-
+    res.render("users/perfil", {user})}},
+        
     logout: (req, res) => {
         req.session.destroy();
-        return res.redirect('/');
-    }
+        return res.redirect('/');*/
 
 };
 

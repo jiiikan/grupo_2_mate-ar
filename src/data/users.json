@@ -1,5 +1,5 @@
 [
- {
+{
   "id": 1,
   "nombre_usuario": "jiiikan",
   "nombre_apellido": "Genaro Rafault",
@@ -22,5 +22,17 @@
   "password": "$2a$10$yMAdakRJcuMfj3WBaA5sluAHUqm5sV.bXvkIqus5O6zK/dg3hu51C",
   "terminos y condiciones": "on",
   "avatar": "1682428805848_img.png"
- }
+ },
+{
+  "id": 2,
+  "nombre_usuario": "jiiiikan",
+  "nombre_apellido": "Genaro Rafault",
+  "email": "genarorafault1@gmail.com",
+  "pais": "Argentina",
+  "domicilio": "3432432",
+  "admin": "on",
+  "password": "$2a$10$hHcJ7zSCHyfQcHC4qyaqh.JYrQ2g.Yv2YD3SYwFbVAxlTxQFI/sGK",
+  "terminos y condiciones": "on",
+  "avatar": "1682430705389_img.jpg"
+}
 ]

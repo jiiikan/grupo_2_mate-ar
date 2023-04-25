@@ -1,8 +1,8 @@
 [
  {
   "id": 1,
-  "nombre-user": "genaro",
-  "nombre-apellido": "alcachofa",
+  "nombre_user": "genaro",
+  "nombre_apellido": "alcachofa",
   "email": "genaro@ejemplo.com",
   "pais": "argentina",
   "domicilio": "riogrande",
@@ -12,8 +12,8 @@
  },
  {
   "id": 2,
-  "nombre-user": "dante",
-  "combre-apellido": "alcachofa",
+  "nombre_user": "dante",
+  "combre_apellido": "alcachofa",
   "email": "dante@ejemplo.com",
   "pais": "argentina",
   "domicilio": "riogrande",
@@ -24,7 +24,7 @@
  {
   "id": 3,
   "nombre_user": "fernado",
-  "nombre-apellido": "lepe",
+  "nombre_apellido": "lepe",
   "email": "lepe@ejemplo.com",
   "pais": "argentina",
   "domicilio": "riogrande",

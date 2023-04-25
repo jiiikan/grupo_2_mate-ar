@@ -94,16 +94,16 @@ const usersController = {
 		});
 	},
     profile: (req, res) => {
-    
-    return res.render('users/perfil', {
-    user: req.session.userLogged
-})
-
+            const userId = req.params.id;
+            
+            const user = users.find(
+                (user) => user.id === parseInt(userId)
+            );
+        res.render("users/perfil", {user})
     },
+
     logout: (req, res) => {
     }
-
-
 
 };
 

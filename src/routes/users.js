@@ -20,7 +20,7 @@ router.post("/registro", uploadFile.single("avatar"), validations, usersControll
 router.get("/login", usersController.login);
 router.post('/login', usersController.logeando);
 
-router.get('/perfil', usersController.profile);
+router.get('/perfil/:id', usersController.profile);
 
 router.get('/logout', usersController.logout);
 

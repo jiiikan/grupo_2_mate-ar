@@ -11,9 +11,14 @@
             <a href="/">Inicio</a>
             <a href="/products/catalogo">Catalogo</a>        
             <a href="/users/carrito">Carrito</a>
+            <% if (locals.isLogged) { %>
+            <img src="/images/users/<%= locals.userLogged.avatar %>" width="40" style="border-radius: 100%;">
+            hi <%= locals.userLogged.nombre_usuario  %>
+            <% } else {%>
             <a href="/users/registro">Registrarse</a>
             <a href="/users/login">Acceso</a>
-            <a href="/users/perfil">Perfil</a>
+            <% } %>
+            
         </nav>
 
     <style>

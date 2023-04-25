@@ -9,6 +9,7 @@ const User = require('../modelos/User');
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
 
+
 const usersController = {   
     carrito: (req, res) => {
         res.render("users/carrito")
@@ -38,11 +39,9 @@ const usersController = {
     })
     }
 
-    let userInDB=  User.findByField("email", req.body.email)
+    let userInDB =  User.findByField("email", req.body.email)
 
     if (userInDB){
-
-    if(resultValidation.errors.length > 0){
         return res.render("users/registro", {
             errors: {
                 email: {
@@ -52,7 +51,6 @@ const usersController = {
             oldData: req.body
         })
     }  
-}
 
         let userToCreate = {
 			...req.body,
@@ -64,7 +62,7 @@ const usersController = {
 		return res.redirect('/users/login');
 	},
     login: (req, res) => {
-        res.render("users/login")
+        res.render("./users/login")
     },
     logeando: (req, res) => {
 		let userEmail = User.findByField('email', req.body.email);
@@ -76,8 +74,10 @@ const usersController = {
 				req.session.userLogged = userEmail;
 
 				return res.redirect('/users/perfil');
+
+                
 			} 
-			return res.render('users/login', {
+			return res.render('./users/login', {
 				errors: {
 					email: {
 						msg: 'Las credenciales son inválidas'
@@ -86,7 +86,7 @@ const usersController = {
 			});
 		}
 
-		return res.render('users/login', {
+		return res.render('./users/login', {
 			errors: {
 				email: {
 					msg: 'No se encuentra este email en nuestra base de datos'
@@ -95,15 +95,16 @@ const usersController = {
 		});
 	},
     profile: (req, res) => {
-            const userId = req.params.id;
+        const userId = req.params.id;
             
-            const user = users.find(
-                (user) => user.id === parseInt(userId)
-            );
-        res.render("users/perfil", {user})
-    },
+        const user = users.find(
+            (user) => user.id === parseInt(userId)
+        );
+    res.render("users/perfil", {user})},
 
     logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 
 };

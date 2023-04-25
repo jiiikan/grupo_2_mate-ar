@@ -17,14 +17,18 @@
 		<p class="iniciar">Iniciar sesión</p>
 		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
 			<label class="login-sub">Nombre de usuario o correo electrónico</label>
-			<input type="text" class="login-input" name="user" placeholder="correo o username" required>
+			<input type="text" name="user" placeholder="correo o username" 
+			class="login-input <%= locals.errors && errors.user ? 'is-invalid' : null %>" 
+			value= "<%= locals.oldData ? oldData.user : null %>">
 			<% if (locals.errors && errors.user) { %>
-				<div class="text-danger"></div>
+				<div class="text-danger">
 				<%= errors.user.msg %>
+			</div>
 			<% } %>
 
 			<label class="login-sub">Contraseña</label>
-			<input type="password" class="login-input" name="Contraseña" placeholder="hola81272" required>
+			<input type="password"  name="Contraseña" placeholder="hola81272"
+			class="login-input <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>">
 
 			<label class="login-sub"><input type="checkbox" name="recordar">Recordar este usuario</label>
 

@@ -12,18 +12,16 @@
 	<%- include("../partials/header") %>
 
     <main class="main">
-		
-        <h2 class="title">Hola <%= user.nombre_user %></h2>
-        <img src="/images/users/<%= user.avatar %>" class="img">
+        <h2 class="title">Hola <%=locals.userLogged.username %></h2>
+        <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
         
         <section class="section">
             <h2>Tu informacion personal</h2>
             <ul>
-                <li><%= user.nombre_apellido %></li>
-                <li><%= user.email %></li>
-                <li><%= user.pais %></li>
-                <li><%= user.domicilio %></li>
-                <li><%= user.contraseña %></li>
+                <li><%= locals.userLogged.name_lastName %></li>
+                <li><%= locals.userLogged.email %></li>
+                <li><%= locals.userLogged.country %></li>
+                <li><%= locals.userLogged.direction %></li>
             </ul>
         </section>
 

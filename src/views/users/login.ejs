@@ -15,15 +15,15 @@
     <main class="main">
 		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
-		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
+		<form method="POST" class="form-acceso" action="/users/login">
 			
 			<label class="login-sub">Correo electrónico</label>
-			<input type="text" name="user" placeholder="correo" 
-			class="login-input <%= locals.errors && errors.user ? 'is-invalid' : null %>" 
-			value= "<%= locals.oldData ? oldData.user : null %>">
-			<% if (locals.errors && errors.user) { %>
+			<input type="text" name="email" placeholder="correo" 
+			class="login-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+			value= "<%= locals.oldData ? oldData.email : null %>">
+			<% if (locals.errors && errors.email) { %>
 				<div class="text-danger">
-				<%= errors.user.msg %>
+				<%= errors.email.msg %>
 			</div>
 			<% } %>
 

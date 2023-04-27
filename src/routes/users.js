@@ -24,6 +24,6 @@ router.post('/login', validationsAcceso, usersController.logeando);
 
 router.get('/perfil', authMiddleware ,usersController.profile);
 
-//router.get('/logout', usersController.logout);
+router.get('/logout', usersController.logout);
 
 module.exports = router;

@@ -1,14 +1,26 @@
 [
  {
   "id": 1,
-  "nombre_usuario": "jiiikan",
-  "nombre_apellido": "Genaro Rafault",
+  "username": "jiiikan",
+  "name_lastName": "genaro rafault",
   "email": "genarorafault@gmail.com",
-  "pais": "Argentina",
-  "domicilio": "661",
+  "country": "Argentina",
+  "direction": "17 de mayo",
   "admin": "on",
-  "password": "$2a$10$J1RexA8HS0XFU5npq5HgKuucUeHzjktw7Hm9QuvZDoPNfTQ1ZjXWi",
+  "password": "$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u",
   "terminos y condiciones": "on",
-  "avatar": "1682556947308_img.jpg"
+  "avatar": "1682612299196_img.jpg"
+ },
+ {
+  "id": 2,
+  "username": "jiiikan777",
+  "name_lastName": "genaro rafault",
+  "email": "genarorafault1@gmail.com",
+  "country": "Colombia",
+  "direction": "17 de mayo",
+  "admin": "on",
+  "password": "$2a$10$xqPLEpUZY1efcf2dyP/sQ.zlD9VfT5lVho1oo4/40JfoK2a3yrmuq",
+  "terminos y condiciones": "on",
+  "avatar": "1682612785311_img.png"
  }
 ]

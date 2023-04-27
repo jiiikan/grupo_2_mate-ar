@@ -1,5 +1,5 @@
 [
-{
+ {
   "id": 1,
   "nombre_usuario": "jiiikan",
   "nombre_apellido": "Genaro Rafault",
@@ -7,32 +7,8 @@
   "pais": "Argentina",
   "domicilio": "661",
   "admin": "on",
-  "password": "$2a$10$I4gLeNU04G04GDUFFgbKYuw2/CbbGNaD6R/3QhBdzkIt3pZceL2EC",
+  "password": "$2a$10$J1RexA8HS0XFU5npq5HgKuucUeHzjktw7Hm9QuvZDoPNfTQ1ZjXWi",
   "terminos y condiciones": "on",
-  "avatar": "1682428063934_img.jpg"
- },
- {
-  "id": 2,
-  "nombre_usuario": "naryyyyyy",
-  "nombre_apellido": "nahir ",
-  "email": "nahirihan513@gmail.com",
-  "pais": "Argentina",
-  "domicilio": "calle 1276",
-  "admin": "on",
-  "password": "$2a$10$yMAdakRJcuMfj3WBaA5sluAHUqm5sV.bXvkIqus5O6zK/dg3hu51C",
-  "terminos y condiciones": "on",
-  "avatar": "1682428805848_img.png"
- },
-{
-  "id": 2,
-  "nombre_usuario": "jiiiikan",
-  "nombre_apellido": "Genaro Rafault",
-  "email": "genarorafault1@gmail.com",
-  "pais": "Argentina",
-  "domicilio": "3432432",
-  "admin": "on",
-  "password": "$2a$10$hHcJ7zSCHyfQcHC4qyaqh.JYrQ2g.Yv2YD3SYwFbVAxlTxQFI/sGK",
-  "terminos y condiciones": "on",
-  "avatar": "1682430705389_img.jpg"
-}
+  "avatar": "1682556947308_img.jpg"
+ }
 ]

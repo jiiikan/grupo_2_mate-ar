@@ -5,25 +5,19 @@ const db = require('../database/models');
 const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs');
 const User = require('../modelos/User');
+const { log } = require("console");
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
-
+let readFile1 = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
+let productos = JSON.parse(readFile, "utf-8");
 
 const usersController = {   
     carrito: (req, res) => {
-        res.render("users/carrito")
-        /*
-        const productId = req.params.id;
-        const product = products.find(p => p.id === parseInt(productId));
-        if (product) {
-        carrito.push(product);
-        res.redirect('/carrito/add/:id');
-        } else {
-        res.status(404).send('Producto no encontrado');
-        }*/
+        res.render('users/carrito')
+    
+}, 
 
-},
 
     registro: (req, res) => {
     res.render("users/registro")
@@ -62,22 +56,31 @@ const usersController = {
 		return res.redirect('/users/login');
 	},
     login: (req, res) => {
-        res.render("users/login")
+        res.render("users/login", {user: users})
     },
     logeando: (req, res) => {
-		let userEmail = User.findByField('email', req.body.email);
-		
+		let userEmail = User.findByField('user', req.body.email);
+        let contraseñaLogin = (req.body.password) 
+        console.log(contraseñaLogin)
+
 		if(userEmail) {
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userEmail.password);
-			if (isOkThePassword) {
-				delete userEmail.password;
+			let isOkThePassword = bcryptjs.compareSync(contraseñaLogin, userEmail.password);
+            if (isOkThePassword) {
+                return res.send("ok")
+
+                
+				
+                
+                
+                /*delete userEmail.password;
 				req.session.userLogged = userEmail;
 
 				return res.redirect('/users/perfil');
-            }     
-			/**/return res.render('users/login', {
+                
+            }  
+			return res.render('users/login', {
 				errors: {
-					email: {
+					user: {
 						msg: 'Las credenciales son inválidas'
 					}
 				}
@@ -85,16 +88,17 @@ const usersController = {
 		}
 		return res.render('users/login', {
 			errors: {
-				email: {
+				user: {
 					msg: 'No se encuentra este email en nuestra base de datos'
 				}
 			}
-		});
-	},
+		});*/
+        
+	}}},
     profile: (req, res) => {
     const user =  req.session.userLogged
     const userFromDB = User.findByField('id', user.id);
-    res.render('./users/perfil', { user: userFromDB });
+    res.render('./users/perfil', { user: users });
 }
     
         /*const userId = req.params.id;

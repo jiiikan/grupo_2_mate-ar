@@ -16,6 +16,7 @@
 		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
 		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
+			
 			<label class="login-sub">Correo electrónico</label>
 			<input type="text" name="user" placeholder="correo" 
 			class="login-input <%= locals.errors && errors.user ? 'is-invalid' : null %>" 
@@ -27,9 +28,14 @@
 			<% } %>
 
 			<label class="login-sub">Contraseña</label>
-			<input type="password"  name="Contraseña" placeholder="hola81272"
-			class="login-input <%= locals.errors && errors.contraseña ? 'is-invalid' : null %>">
-
+			<input type="password"  name="password" placeholder="hola81272"
+			class="login-input <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+			value= "<%= locals.oldData ? oldData.password : null %>">
+			<% if (locals.errors && errors.password) { %>
+				<div class="text-danger">
+				<%= errors.password.msg %>
+			</div>
+			<% } %>
 			<!--<label class="login-sub"><input type="checkbox" name="recordar">Recordar este usuario</label>-->
 
     <div class="bottom">

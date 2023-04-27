@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const funca = () => console.log('Servidor funcionando en localhost: ');
 
@@ -22,6 +23,7 @@ app.listen(port, funca);
 
 // Archivos estaticos 
 const public = path.resolve(__dirname, '../public');
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(public));
 app.use(express.json());
 app.use(session({ secret: "shhhh",

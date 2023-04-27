@@ -11,6 +11,8 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationsAcceso = require('../middlewares/validationAcceso');
 
+
+
 router.get("/carrito", usersController.carrito);
 
 router.get("/registro", guestMiddleware ,usersController.registro);

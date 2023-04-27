@@ -67,10 +67,6 @@ const usersController = {
 			let isOkThePassword = bcryptjs.compareSync(contraseñaLogin, userEmail.password);
             if (isOkThePassword) {
                 return res.send("ok")
-
-                
-				
-                
                 
                 /*delete userEmail.password;
 				req.session.userLogged = userEmail;
@@ -99,6 +95,7 @@ const usersController = {
     const user =  req.session.userLogged
     const userFromDB = User.findByField('id', user.id);
     res.render('./users/perfil', { user: users });
+    
 }
     
         /*const userId = req.params.id;

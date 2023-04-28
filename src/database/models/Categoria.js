@@ -8,6 +8,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         name:{
             type: dataTypes.STRING
+        },
+        product_id: {
+            type: dataTypes.INTEGER,
+            foreignKey: ture
         }
     }
     let config = {
@@ -19,7 +23,7 @@ const Categoria = sequelize.define(alias, cols, config)
 
 Categoria.associate = function(models){
     Categoria.hasMany(models.Producto, {
-        as: "productos",
+        as: "products",
         foreignKey: "category_id"
     })
 }

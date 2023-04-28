@@ -22,7 +22,8 @@ module.exports = (sequelize, dataTypes) => {
 
         },
         category_id: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            foreignKey: true
         }
     }
     let config = {
@@ -37,10 +38,14 @@ Producto.associate = function(models){
         as: "categoria",
         foreignKey: "category_id"
     })
+    Producto.belongToMany(models.Usuario, {
+        as: "users",
+        through: "carrito",
+        foreignKey: "product_id",
+        otherKey: "user_id",
+        timestamps: false
+    })
 }
 
 return Producto
-
-
-
 }

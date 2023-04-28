@@ -40,11 +40,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tablename:"usuarios",
+        tablename:"users",
         timestamps:false
     }
 
 const Usuario = sequelize.define(alias, cols, config)
+Usuario.associate = function(models){
+    Usuario.hasMany(models.Producto, {
+        as: "cart",
+        foreignKey: "cart_id"
+    })
+    
+}
 return Usuario
 
 }

@@ -40,7 +40,6 @@ app.use(express.urlencoded({ extended: false}));
 const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
-const { cookie } = require('express-validator');
 
 //  Paginas 
 

@@ -6,6 +6,7 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs');
 const User = require('../modelos/User');
 const { log } = require("console");
+const { on } = require("events");
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
@@ -65,6 +66,12 @@ const usersController = {
             delete userEmail.password;
 			req.session.userLogged = userEmail;
 
+            if(req.body.remember) {
+                res.cookie('userLogin', req.body.email, { maxAge: (1000 * 60) * 1000})
+                //return ;
+            }
+
+
 			return res.redirect('/users/perfil');
                 
             }  
@@ -99,6 +106,7 @@ const usersController = {
     res.render("users/perfil", {user})}},*/
         
     logout: (req, res) => {
+        res.clearCookie('userLogin')
         req.session.destroy();
         return res.redirect('/');
 }};

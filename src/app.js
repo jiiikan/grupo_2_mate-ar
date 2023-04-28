@@ -23,13 +23,14 @@ app.listen(port, funca);
 // Archivos estaticos 
 const public = path.resolve(__dirname, '../public');
 app.use(express.static(public));
-app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(session({ secret: "shhhh",
                 resave: false,
                 saveUninitialized: false}))
-app.use(cookies());
 app.use(userLoggedMiddleware);
+app.use(cookies());
+app.use(express.urlencoded({ extended: false}));
+
 //app.use(methodOverride("_method"))
 
 // Rutas
@@ -37,7 +38,6 @@ app.use(userLoggedMiddleware);
 const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
-const { cookie } = require('express-validator');
 
 //  Paginas 
 

@@ -15,18 +15,30 @@
     <main class="main">
 		<div class="login-container">
 		<p class="iniciar">Iniciar sesión</p>
-		<form method="POST" class="form-acceso" enctype="multipart/form-data" action="/users/login">
-			<label class="login-sub">Nombre de usuario o correo electrónico</label>
-			<input type="text" class="login-input" name="user" placeholder="correo o username" required>
-			<% if (locals.errors && errors.user) { %>
-				<div class="text-danger"></div>
-				<%= errors.user.msg %>
+		<form method="POST" class="form-acceso" action="/users/login">
+			
+			<label class="login-sub">Correo electrónico</label>
+			<input type="text" name="email" placeholder="correo" 
+			class="login-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+			value= "<%= locals.oldData ? oldData.email : null %>">
+			<% if (locals.errors && errors.email) { %>
+				<div class="text-danger">
+				<%= errors.email.msg %>
+			</div>
 			<% } %>
 
 			<label class="login-sub">Contraseña</label>
-			<input type="password" class="login-input" name="Contraseña" placeholder="hola81272" required>
-
-			<label class="login-sub"><input type="checkbox" name="recordar">Recordar este usuario</label>
+			<input type="password"  name="password" placeholder="hola81272"
+			class="login-input <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+			value= "<%= locals.oldData ? oldData.password : null %>">
+			<% if (locals.errors && errors.password) { %>
+				<div class="text-danger">
+				<%= errors.password.msg %>
+			</div>
+			<% } %>
+			<label class="login-sub">
+			<input type="checkbox" class="boton_remember" name="remember">Recordar mi usuario
+		    </label>
 
     <div class="bottom">
 			<button type="submit" class="boton-iniciar">Iniciar sesión</button>

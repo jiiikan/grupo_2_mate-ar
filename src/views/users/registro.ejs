@@ -12,27 +12,27 @@
   <%- include("../partials/header") %>
 
     <main class="main">
-    <form method="POST" class="box-register" enctype="multipart/form-data" action="/users/registro">
+    <form method="POST" class="box-register" action="/users/registro">
 
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text"  name="nombre_usuario" placeholder="Genaro777"
-      class="in-register <%= locals.errors && errors.nombre_usuario ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.nombre_usuario : null %>">
-      <% if (locals.errors && errors.nombre_usuario) { %>
+      <input type="text"  name="username" placeholder="Genaro777"
+      class="in-register <%= locals.errors && errors.username ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.username : null %>">
+      <% if (locals.errors && errors.username) { %>
         <div class="text-danger">
-            <%= errors.nombre_usuario.msg %>
+            <%= errors.username.msg %>
         </div>
     <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text"  name="nombre_apellido" placeholder="Gustavo Cerati"
-      class="in-register <%= locals.errors && errors.nombre_apellido ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.nombre_apellido : null %>">
-      <% if (locals.errors && errors.nombre_apellido) { %>
+      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati"
+      class="in-register <%= locals.errors && errors.name_lastName ? 'is-invalid' : null %>"
+      value= "<%= locals.oldData ? oldData.name_lastName : null %>">
+      <% if (locals.errors && errors.name_lastName) { %>
         <div class="text-danger">
-            <%= errors.nombre_apellido.msg %>
+            <%= errors.name_lastName.msg %>
         </div>
     <% } %>
 
@@ -49,34 +49,34 @@
 
       
       <label class="registro">Pais</label>
-      <select name="pais" 
-      class="in-register form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
+      <select name="country" 
+      class="in-register form-select <%= locals.errors && errors.country ? 'is-invalid' : null %>">
       
         <option value="">Selecciona un Pais</option>
         <%
-          let paises = ["Argentina", "Colombia", "Peru", "Canada","Brasil", "España"]
+          let country = ["Argentina", "Colombia", "Peru", "Canada","Brasil", "España"]
         %>
 
-        <% for (const oneCountry of paises) { %>
+        <% for (const oneCountry of country) { %>
           <option 
           value="<%= oneCountry %>"
-          <%= locals.oldData && (oneCountry  === oldData.paises ) ? 'selected' : null %>>
+          <%= locals.oldData && (oneCountry  === oldData.country ) ? 'selected' : null %>>
           <%= oneCountry %> </option>
               <% } %>
       </select>
-      <% if (locals.errors && errors.paises ) { %>
+      <% if (locals.errors && errors.country ) { %>
         <div class="text-danger">
-            <%= errors.paises.msg %>
+            <%= errors.country.msg %>
         </div>
     <% } %>
 
 
       <label class="registro">Domicilio</label>
-      <input type="text"  name="domicilio" placeholder="Calle numero" 
-      class="in-register form-control <%= locals.errors && errors.domicilio ? 'is-invalid' : null %>">
-      <% if (locals.errors && errors.domicilio) { %>
+      <input type="text"  name="direction" placeholder="Calle numero" 
+      class="in-register form-control <%= locals.errors && errors.direction ? 'is-invalid' : null %>">
+      <% if (locals.errors && errors.direction) { %>
           <div class="text-danger">
-              <%= errors.domicilio.msg %>
+              <%= errors.direction.msg %>
           </div>
       <% } %>
 

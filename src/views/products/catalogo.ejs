@@ -19,7 +19,7 @@
     <section class="array-products">
     <% for( let i = 0; i < products.length; i++ ) { %>
 
-      <article class="producto" onclick="location.href= '/products/detalle/<%= products[i].id%>'">
+      <article class="producto" onclick="location.href='/products/detalle/<%= products[i].id%>'">
 
         <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
         <h3><%= products[i].nombre %></h3>

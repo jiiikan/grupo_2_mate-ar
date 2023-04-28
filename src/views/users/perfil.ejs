@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <%- include("../partials/head") %>
 
 <head>
-    <title><%= user.nombre_user %> - MateAr</title>
+    <title>Perfil - MateAr</title>
     <link rel="stylesheet" href="/css/perfil.css">
 </head>
 
@@ -12,13 +12,22 @@
 	<%- include("../partials/header") %>
 
     <main class="main">
-		<div class="box-big">
-            <h2>Hola <%= user.nombre_apellido %></h2>
-            <img src="/images/users/<%= user.avatar %>">
-        </div>
-        <br><br>
+        <h2 class="title">Hola <%=locals.userLogged.username %></h2>
+        <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
+        
+        <section class="section">
+            <h2>Tu informacion personal</h2>
+            <ul>
+                <li><%= locals.userLogged.name_lastName %></li>
+                <li><%= locals.userLogged.email %></li>
+                <li><%= locals.userLogged.country %></li>
+                <li><%= locals.userLogged.direction %></li>
+            </ul>
+        </section>
 
-        <div class="email_user"><%= user.email %></div>
+        <section>
+            <input type="button" name="editar" value="editar" >
+        </section>
 </main>
 
 <%- include("../partials/footer") %>

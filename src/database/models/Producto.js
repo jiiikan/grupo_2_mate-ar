@@ -6,31 +6,46 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        nombre:{
+        name:{
             type: dataTypes.STRING
         },
-        descripcion:{
+        description:{
             type: dataTypes.STRING
 
         },
-        precio:{
+        price:{
             type: dataTypes.INTEGER
 
         },
-        imagen:{
+        image:{
             type: dataTypes.STRING
 
         },
-        id_categoria: {
-            type: dataTypes.INTEGER
+        category_id: {
+            type: dataTypes.INTEGER,
+            foreignKey: true
         }
     }
     let config = {
-        tablename: "productos",
+        tablename: "products",
         timestamps:false
     }
 
 const Producto = sequelize.define(alias, cols, config)
-return Producto
 
+Producto.associate = function(models){
+    Producto.belongsTo(models.Categoria, {
+        as: "categoria",
+        foreignKey: "category_id"
+    })
+    Producto.belongToMany(models.Usuario, {
+        as: "users",
+        through: "carrito",
+        foreignKey: "product_id",
+        otherKey: "user_id",
+        timestamps: false
+    })
+}
+
+return Producto
 }

@@ -186,10 +186,10 @@
    <!-- <main class="main-cart">
         <div class="box-cart">
         <span class="titulo-carrito">Tu carrito</span> 
-        <span class="numero-articulos">Articulo/s (1):</span>
-        <img src="/images/kitcompleto1.jpg" class="compra">
-        <span class="precio">$5000</span>
-        <span class="nombre">Kit completo 1 </span>
+        <span class="numero-articulos">Articulo/s (<%= %>):</span>
+        <img src="/images/<%= product.imagen %>.jpg" class="compra">
+        <span class="precio"><%= product.precio %></span>
+        <span class="nombre"><%= product.nombre %></span>
         <button class="comprar">Comprar</button>
         <span class="envios">Envios gratis a toda Argentina</span>
         </div>

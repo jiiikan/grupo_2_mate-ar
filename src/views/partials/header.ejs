@@ -1,6 +1,6 @@
 <header class="header">
 
-    <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo">
+    <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo" onclick="location.href= '/'">
 
     <form action="/product" method="get" class="busqueda">
         <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
@@ -11,8 +11,20 @@
             <a href="/">Inicio</a>
             <a href="/products/catalogo">Catalogo</a>        
             <a href="/users/carrito">Carrito</a>
+
+            <% if (locals.isLogged) { %>
+            <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%;">
+            <%= locals.userLogged.username %> 
+             <select onchange="location = this.value" class="select">
+                <option value="">Selecciona una opcion</option>
+                <option value="/users/perfil">Mi perfil</option>
+                <option value="/users/logout">Cerrar Sesion</option>
+             </select>
+            <% } else {%>
             <a href="/users/registro">Registrarse</a>
             <a href="/users/login">Acceso</a>
+            <% } %>
+            
         </nav>
 
     <style>
@@ -67,7 +79,8 @@
         color: #fff5e2;
         font-weight: bold;
         text-decoration: none;
-    }       
+    }    
+    
 
     @media(min-width: 450px){
     /*tablet*/

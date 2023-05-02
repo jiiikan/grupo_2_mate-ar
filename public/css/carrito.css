@@ -3,6 +3,7 @@
 body{  background-color: #E5D9B6;}
 
 
+
 .main-cart{
   display: flex;
   align-items: center;
@@ -82,6 +83,18 @@ body{  background-color: #E5D9B6;}
 
 @media (min-width: 450px){
 
+  .box-cart{
+    width: 80%;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+  
+  }
+}
+
 
 
 @media (min-width: 800px){
@@ -90,5 +103,5 @@ body{  background-color: #E5D9B6;}
 
 
 
-}
+
 

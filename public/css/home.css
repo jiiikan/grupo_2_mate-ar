@@ -10,6 +10,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   font-weight: bold;
   font-size: 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .titulo-reseña{
@@ -104,8 +105,13 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     padding: 4% 6%;
   }
 
+  .titulo-reseña{
+    font-size: 26px;
+  }
+
   .reseña-home{
     margin: 0 10px;
+    font-size: 20px;
   }
 
   .subtitulo{
@@ -124,5 +130,16 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     display: flex;
     padding: 3%;
     align-items: center;
+    margin-bottom: 6%;
   }
+
+  .info-texto h3{
+    font-size: 30px;
+  }
+
+  .info-texto p{
+    font-size: 20px;
+  }
+
+
 }

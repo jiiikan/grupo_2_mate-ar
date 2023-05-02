@@ -6,37 +6,52 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        nombre_user:{
+        user_name:{
             type: dataTypes.STRING
         },
-        nombre_apellido:{
+        name_lastname:{
             type: dataTypes.STRING
 
         },
-        email:{
+        emial:{
+            type: dataTypes.INTEGER
+
+        },
+        country:{
             type: dataTypes.STRING
 
         },
-        domicilio:{
+        direction: {
+            type: dataTypes.INTEGER
+        },
+        avatar:{
             type: dataTypes.STRING
 
-        },
-        contraseña: {
-            type: dataTypes.STRING
         },
         admin: {
-            type: dataTypes.BOOLEAN
+            type: dataTypes.INTEGER
         },
-        avatar: {
+        password:{
             type: dataTypes.STRING
+
+        },
+        conditions: {
+            type: dataTypes.INTEGER
         }
     }
     let config = {
-        tablename: "usuarios",
+        tablename:"users",
         timestamps:false
     }
 
 const Usuario = sequelize.define(alias, cols, config)
+Usuario.associate = function(models){
+    Usuario.hasMany(models.Producto, {
+        as: "cart",
+        foreignKey: "cart_id"
+    })
+    
+}
 return Usuario
 
 }

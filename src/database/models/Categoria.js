@@ -6,23 +6,28 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nombre:{
+        name:{
             type: dataTypes.STRING
+        },
+        product_id: {
+            type: dataTypes.INTEGER,
+            foreignKey: ture
         }
     }
     let config = {
-        tablename: "categorias",
+        tablename: "categories",
         timestamps:false
     }
 
 const Categoria = sequelize.define(alias, cols, config)
 
-Categoria.associate = function(models) {
+Categoria.associate = function(models){
     Categoria.hasMany(models.Producto, {
-        as: "productos",
-        foreignKey: "id_categoria"
+        as: "products",
+        foreignKey: "category_id"
     })
 }
+
 return Categoria
 // va a servir para los filtros de busqueda
 

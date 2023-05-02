@@ -1,46 +1,46 @@
 [
-    {
-        "id": 1,
-        "nombre-user": "genaro",
-        "nombre-apellido": "alcachofa",
-        "email": "genaro@ejemplo.com",
-        "pais": "argentina",
-        "domicilio": "riogrande",
-        "contraseña": "contraseña",
-        "admin": true,
-        "avatar": "ejemplo.jpg"
-    },
-    {
-        "id": 2,
-        "nombre-user": "dante",
-        "combre-apellido": "alcachofa",
-        "email": "dante@ejemplo.com",
-        "pais": "argentina",
-        "domicilio": "riogrande",
-        "contraseña": "contraseña",
-        "admin": true,
-        "avatar": "ejemplo.jpg"
-    },
-    {
-        "id": 3,
-        "nombre-user": "fernado",
-        "nombre-apellido": "lepe",
-        "email": "lepe@ejemplo.com",
-        "pais": "argentina",
-        "domicilio": "riogrande",
-        "contraseña": "contraseña",
-        "admin": true,
-        "avatar": "ejemplo.jpg"
-    },
-    {
-        "id": 4,
-        "nombre-user": "nahir",
-        "nombre-apellido": "cabezas",
-        "email": "nahir@ejemplo.com",
-        "pais": "argentina",
-        "domicilio": "riogrande",
-        "contraseña": "contraseña",
-        "admin": true,
-        "avatar": "ejemplo.jpg"
-    }
+  {
+    "id": 1,
+    "nombre-user": "genaro",
+    "nombre-apellido": "alcachofa",
+    "email": "genaro@ejemplo.com",
+    "pais": "argentina",
+    "domicilio": "riogrande",
+    "contraseña": "contraseña",
+    "admin": true,
+    "avatar": "ejemplo.jpg"
+  },
+  {
+    "id": 2,
+    "nombre-user": "dante",
+    "combre-apellido": "alcachofa",
+    "email": "dante@ejemplo.com",
+    "pais": "argentina",
+    "domicilio": "riogrande",
+    "contraseña": "contraseña",
+    "admin": true,
+    "avatar": "ejemplo.jpg"
+  },
+  {
+    "id": 3,
+    "nombre_user": "fernado",
+    "nombre-apellido": "lepe",
+    "email": "lepe@ejemplo.com",
+    "pais": "argentina",
+    "domicilio": "riogrande",
+    "contraseña": "contraseña",
+    "admin": true,
+    "avatar": "ejemplo.jpg"
+  },
+  {
+    "id": 4,
+    "nombre_user": "nahir",
+    "nombre_apellido": "cabezas",
+    "email": "nahir@ejemplo.com",
+    "pais": "argentina",
+    "domicilio": "riogrande",
+    "contraseña": "contraseña",
+    "admin": true,
+    "avatar": "ejemplo.jpg"
+  }
 ]

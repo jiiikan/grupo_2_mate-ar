@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 const port = process.env.PORT || 3000;
 const funca = () => console.log('Servidor funcionando en localhost: ');
 //const methodOverride = require('method-override');
-
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 // Config Ejs
 
 app.engine('html', require('ejs').renderFile);
@@ -21,6 +23,10 @@ const public = path.resolve(__dirname, '../public');
 app.use(express.static(public));
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(session({ secret: "shhhh",
+                resave: false,
+                saveUninitialized: false}))
+app.use(cookies());
 //app.use(methodOverride("_method"))
 
 // Rutas
@@ -28,6 +34,7 @@ app.use(express.json());
 const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
+const { cookie } = require('express-validator');
 
 //  Paginas 
 

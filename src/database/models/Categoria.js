@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         product_id: {
             type: dataTypes.INTEGER,
-            foreignKey: ture
+            foreignKey: true
         }
     }
     let config = {

@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
 
 const Carrito = sequelize.define(alias, cols, config)
 
-Carrito.associate = function(models){
+/*Carrito.associate = function(models){
     Carrito.belongToMany(models.Producto, {
         as: "products",
         through: "Carrito",
@@ -30,7 +30,7 @@ Carrito.associate = function(models){
         otherKey: "cart_id",
         timestamps: false
     })
-}
+}*/
 
 return Carrito
 }

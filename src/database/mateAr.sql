@@ -29,3 +29,14 @@ CREATE TABLE `users`(
     `admin` TINYINT(1) NOT NULL,
     `password` VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE `cart`(
+    `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `total` INT NOT NULL,
+    `cantidad` INT NOT NULL,
+    `nombre_user` VARCHAR(255) NOT NULL,
+
+    FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+    FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+
+);

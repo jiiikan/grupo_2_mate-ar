@@ -8,7 +8,7 @@ const funca = () => console.log('Servidor funcionando en localhost: ');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 //const methodOverride = require('method-override');
-
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 // Config Ejs
 
 app.engine('html', require('ejs').renderFile);
@@ -38,6 +38,7 @@ app.use(express.urlencoded({ extended: false}));
 const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
+const { cookie } = require('express-validator');
 
 //  Paginas 
 

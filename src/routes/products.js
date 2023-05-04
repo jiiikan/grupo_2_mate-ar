@@ -43,6 +43,10 @@ const validations = [
 router.get("/catalogo", productsController.catalogo);
 //router.get("/catalogo", productsController.lista)
 
+router.get("/carrito", productsController.carrito);
+router.post("/carrito", productsController.carritoPush);
+//router.delete("/carrito", productsController.carritoDelete);
+
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
 

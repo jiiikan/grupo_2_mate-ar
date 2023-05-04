@@ -8,15 +8,11 @@ const User = require('../modelos/User');
 const { log } = require("console");
 const { on } = require("events");
 
+
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
 let users = JSON.parse(readFile, "utf-8");
 
-
 const usersController = {   
-    carrito: (req, res) => {
-        res.render('users/carrito')
-    
-}, 
 
     registro: (req, res) => {
     res.render("users/registro")

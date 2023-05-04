@@ -7,7 +7,9 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
         },
         name:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         description:{
             type: dataTypes.STRING
@@ -40,7 +42,7 @@ Producto.associate = function(models){
     })
     Producto.belongToMany(models.Usuario, {
         as: "users",
-        through: "carrito",
+        through: "cart",
         foreignKey: "product_id",
         otherKey: "user_id",
         timestamps: false

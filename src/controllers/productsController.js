@@ -6,6 +6,7 @@ const { validationResult } = require("express-validator");
 
 let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
 let products = JSON.parse(readFile, "utf-8");
+let db = require("../database/models")
 
 const productsController = {
 

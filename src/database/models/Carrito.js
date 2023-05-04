@@ -6,6 +6,12 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        total:{
+            type: dataTypes.INTEGER,
+        },
+        forma_pago: {
+            type: dataTypes.STRING,
+        },
         user_id:{
             type: dataTypes.STRING,
             foreignKey: true

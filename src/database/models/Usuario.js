@@ -7,36 +7,47 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
         },
         user_name:{
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         name_lastname:{
-            type: dataTypes.STRING
-
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         emial:{
-            type: dataTypes.INTEGER
-
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            unique: true
         },
         country:{
-            type: dataTypes.STRING
-
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         direction: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            unique: true
         },
         avatar:{
-            type: dataTypes.STRING
-
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         admin: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            unique: true
         },
         password:{
-            type: dataTypes.STRING
-
+            type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         conditions: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
         }
     }
     let config = {

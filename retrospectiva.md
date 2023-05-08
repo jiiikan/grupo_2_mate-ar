@@ -13,6 +13,7 @@ con una mejora en el diseño de la pagina y en las funcionalidades de esta, pare
 establecidas como practicas para dejar una base.
 
 sprint 5
+En este sprint tuvimos dificultades a la hora de repartir las tareas, intentamos formar dos grupos separados para la resolucion de los puntos y este llevo a ciertos conflictos internos que logramos resolver asi entregando el trabajo en la fecha de entrega, Empezando con una ventaja de tiempo para la realizacion del siguiente sprint, ademas de ahora comprender el como deberiamos realizar las restrospectivas.
 
 sprint 6
 

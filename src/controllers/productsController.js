@@ -11,10 +11,6 @@ let products = JSON.parse(readFile, "utf-8");
 
 
 const productsController = {
-       
-
-   
-
     lista: (req, res) => {
         db.Producto.findAll()
         .then(products =>{

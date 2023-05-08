@@ -11,10 +11,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        product_id: {
-            type: dataTypes.INTEGER,
-            foreignKey: true
-        }
     }
     let config = {
         tablename: "categories",

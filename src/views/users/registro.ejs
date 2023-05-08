@@ -80,9 +80,6 @@
           </div>
       <% } %>
 
-      <label class="registro">Permisos</label>
-      <label ><input type="radio" name="admin"> Admin</label>
-
       <label class="registro">Avatar</label>
       <input type="file"  name="avatar" style="border: none" 
       class="in-register <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
@@ -103,25 +100,12 @@
         </div>
     <% } %>
 
-
-      <!--<label class="registro">Confirmar contraseña</label>
-      <input type="password" class="in-register" name="confirmar_contraseña" placeholder="123456789"
-      class="form-control <%= locals.errors && errors.confirmar_contraseña ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.confirmar_contraseña : null %>">
-      <% if (locals.errors && errors.confirmar_contraseña) { %>
-        <div class="text-danger">
-            <%= errors.confirmar_contraseña.msg %>
-        </div>
-    <% } %>-->
-
-
       <label class="registro"><input type="radio" name="terminos y condiciones"> Acepto terminos y condiciones</label>
 
       <div class="boton">
         <button type="submit" class="boton-registro">Crear cuenta</button>
         <button type="reset" class="boton-registro">Borrar</button>
       </div>
-
 
     </form>
     </main>

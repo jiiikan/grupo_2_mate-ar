@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const productsController = require("../controllers/productsController.js");
-const carritoController = require("../controllers/carritoController.js");
 const multer = require("multer");
 const { body } = require("express-validator");
 
@@ -44,9 +43,9 @@ const validations = [
 router.get("/catalogo", productsController.catalogo);
 //router.get("/catalogo", productsController.lista)
 
-router.get("/carrito", carritoController.carritoVista);
-router.post("/carrito/:id/agregar", carritoController.carritoAgregar);
-router.get('/carrito/:id/eliminar', carritoController.carritoEliminar);
+router.get("/carrito", productsController.carrito);
+//router.post("/carrito/:id/agregar", productsController.carritoAgregar);
+//router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);

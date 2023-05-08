@@ -8,21 +8,12 @@ let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
 let products = JSON.parse(readFile, "utf-8");
 
 
-const productsController = {
-    carrito: (req, res) => {
-        const cart = req.session.cart || {};
-        res.render('products/carrito', { cart: cart, products: products })
-}, 
 
-    carritoPush: (req, res) => {
-        fs.writeFileSync(
-            path.resolve(__dirname, "../data/cart.json"),
-            JSON.stringify(cart, null, 2),
-            "utf-8")
-        res.redirect('carrito')
+
+const productsController = {
+       
 
    
- },
 
     lista: (req, res) => {
         db.Producto.findAll()

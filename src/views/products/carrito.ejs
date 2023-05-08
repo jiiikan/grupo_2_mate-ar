@@ -18,15 +18,28 @@
     <main class="main-cart">
         <div class="box-cart">
         <span class="titulo-carrito">Tu carrito</span> 
-        <span class="numero-articulos">Articulo/s :</span>
-        <% Object.values(cart).forEach(product => { %>
-        <img src="/images/<%= products.imagen %>.jpg" class="compra">
-        <span class="precio"><%= products.precio.toFixed(2) %></span>
-        <span class="nombre"><%= products.nombre %></span>
+        <% if (carrito.length === 0) { %>
+        <span class="numero-articulos">No hay productos en le carrito</span>
+        <% } else{ %>
+        <ul>
+        <% carrito.forEach(function(item){  %>
+        <li>
+        <img src="/images/<%= item.imagen %>.jpg" class="compra">
+        <span class="precio">$<%= item.precio %></span>
+        <span class="nombre"><%= item.nombre %></span>
+        <span class="cantidad"><%= item.cantidad %> x $<%= item.precio.toFixed(2) %> = $<%= (item.cantidad * item.precio).toFixed(2) %></span>
+        <form action="/carrito/<%= item.id/eliminar %>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%= products.id %>">
+        </form></li>
         <% })%>
-        <button class="comprar">Comprar</button>
+        </ul>
+        <p>Total: <%= totalCantidad %> productos por un valor de $<%= totalPrecio.toFixed(2) %></p>
+        <form action="/" method="post">
+        <button class="comprar" type="submit">Comprar</button>
+        </form>
         <span class="envios">Envios gratis a toda Argentina</span>
         </div>
+        <% } %>
     </main>
 
     <%- include("../partials/footer") %>

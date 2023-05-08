@@ -27,9 +27,10 @@
         </section>
 
       <div class="botones">
-        <form method="post" action="/products/carrito" >
-        <input class="boton" type="hidden" name="product_id" value="<%= product.id %>">
-        <input type="submit" value="Agregar al carrito">
+        <form method="post" action="/products/carrito">
+        <label for="quantity">Cantidad:</label>
+        <input class="boton" type="hidden" name="id" value="<%= product.id %>">
+        <button type="submit" >Agregar al carrito</button>
         </form>
 
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">

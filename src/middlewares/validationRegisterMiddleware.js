@@ -14,7 +14,7 @@ const validations = [
     .isLength({ min: 8 }),
     //body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
     body("avatar").custom((value, { req }) => {
-    let file = req.file 
+    let file = req.file
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
         throw new Error("Tienen que subir una imagen")

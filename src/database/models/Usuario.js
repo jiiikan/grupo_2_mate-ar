@@ -37,7 +37,7 @@ module.exports = (sequelize, dataTypes) => {
             unique: true
         },
         admin: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.TINYINT,
             allowNull: false,
             unique: true
         },
@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
             unique: true
         },
         conditions: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.BOOLEAN,
         }
     }
     let config = {

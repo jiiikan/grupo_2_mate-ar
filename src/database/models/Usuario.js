@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        emial:{
+        email:{
             type: dataTypes.INTEGER,
             allowNull: false,
             unique: true

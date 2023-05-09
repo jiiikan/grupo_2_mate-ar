@@ -28,9 +28,9 @@
 
       <div class="botones">
         <form method="post" action="/products/carrito">
-        <label for="quantity">Cantidad:</label>
         <input class="boton" type="hidden" name="id" value="<%= product.id %>">
-        <button type="submit" >Agregar al carrito</button>
+        <%= console.log(product.id) %>
+        <button type="submit"  >Agregar al carrito</button>
         </form>
 
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">

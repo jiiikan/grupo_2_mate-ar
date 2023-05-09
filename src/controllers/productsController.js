@@ -17,15 +17,35 @@ const productsController = {
     carrito: (req, res) => {
         res.render("products/carrito", { products, cart})
     },
+    carritoAgregar: (req, res) => {
+        const productId = req.body.id;
+        
+        const productos  = products.find(
+            (producto) => producto.id === parseInt(productId) 
+            
+        );console.log(productos)
+        if (!productos) {
+            return res.status(404).send('Product not found');
+        }
+
+        cart.push(productos);
+        fs.writeFileSync(
+            path.resolve(__dirname, "../data/carrito.json"),
+            JSON.stringify(cart, null, 2),
+            "utf-8");
+
+        res.render("products/carrito", { cart, products })
+        
+    },
 
    
 
-    lista: (req, res) => {
+    /*lista: (req, res) => {
         db.Producto.findAll()
         .then(products =>{
             res.render('catalogo.ejs', {products: products})
             })
-    },
+    },*/
 
     // Renderizar lista de productos
 
@@ -37,6 +57,7 @@ const productsController = {
 
 detalle: (req, res) => {
         const productoid = req.params.id;
+        
         
         const product = products.find(
             (product) => product.id === parseInt(productoid)

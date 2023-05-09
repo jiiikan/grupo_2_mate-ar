@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         total:{
             type: dataTypes.INTEGER,
         },
-        forma_pago: {
+        method_payment: {
             type: dataTypes.STRING,
         },
         user_id:{

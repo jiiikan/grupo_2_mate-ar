@@ -12,12 +12,13 @@ module.exports = (sequelize, dataTypes) => {
             unique: true
         },
     }
+
     let config = {
         tablename: "categories",
         timestamps:false
     }
 
-const Categoria = sequelize.define(alias, cols, config)
+    const Categoria = sequelize.define(alias, cols, config)
 
 Categoria.associate = function(models){
     Categoria.hasMany(models.Producto, {

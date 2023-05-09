@@ -7,9 +7,9 @@
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
-DROP DATABASE IF EXISTS `matear12`;
-CREATE DATABASE `matear12`;
-USE `matear12`;
+DROP DATABASE IF EXISTS `matear`;
+CREATE DATABASE `matear`;
+USE `matear`;
 
 /*SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

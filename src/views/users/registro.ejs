@@ -17,7 +17,7 @@
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text"  name="username" placeholder="Genaro777"
+      <input type="text"  name="username" placeholder="User123456"
       class="in-register <%= locals.errors && errors.username ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.username : null %>">
       <% if (locals.errors && errors.username) { %>

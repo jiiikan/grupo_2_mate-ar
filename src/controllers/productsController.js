@@ -10,6 +10,19 @@ let readFile2 = fs.readFileSync(path.resolve(__dirname, "../data/products.json")
 let cart = JSON.parse(readFile, "utf-8");
 
 
+/*module.exports = {
+    index: async (req,res) => {
+        return res.render("users/list",{ // Enlista los usuarios
+            list: await db.User.findAll(),
+            title: "Listado de usuarios",
+        })
+    }, 
+    lista: (req, res) => {
+        db.Producto.findAll()
+        .then(products =>{
+            res.render('catalogo.ejs', {products: products})
+            })
+    }, */
 
 
 const productsController = {
@@ -17,21 +30,14 @@ const productsController = {
         res.render("products/carrito", { products, cart})
     },
 
-    lista: (req, res) => {
-        db.Producto.findAll()
-        .then(products =>{
-            res.render('catalogo.ejs', {products: products})
-            })
-    },
 
     // Renderizar lista de productos
-
-    catalogo: (req, res) => {
-        res.render("products/catalogo", {products: products})
+    catalogo: async (req, res) => {
+        res.render("products/catalogo", {products: await db.products.findAll()})
     },
 
-// Detalle de product dinamico
 
+// Detalle de product dinamico
 detalle: (req, res) => {
         const productoid = req.params.id;
         
@@ -39,11 +45,10 @@ detalle: (req, res) => {
             (product) => product.id === parseInt(productoid)
         );
     res.render("products/detalle", {product})
-
 },
 
-// Renderizar pagina editar producto
 
+// Renderizar pagina editar producto
 edition: (req, res) => {
         const productId = parseInt(req.query.id);
     if (isNaN(productId)) {
@@ -58,8 +63,8 @@ edition: (req, res) => {
     res.render("products/editionProducts.ejs", { product: product });
 },
 
-// Editar producto
 
+// Editar producto
 update: (req, res) => {
     const productId = parseInt(req.params.id);
     const productIndex = products.findIndex((product) => product.id === productId);
@@ -88,8 +93,8 @@ update: (req, res) => {
     res.render("products/create")       
 },
 
-//Crear producto
 
+//Crear producto
 store: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -117,8 +122,8 @@ store: (req, res) => {
     res.redirect("/products/catalogo");
 },
 
-// Borrar producto
 
+// Borrar producto
 delete: (req, res) => {
     const borrar = req.params.id;
 

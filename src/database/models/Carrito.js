@@ -8,9 +8,13 @@ module.exports = (sequelize, dataTypes) => {
         },
         total:{
             type: dataTypes.INTEGER,
+            allowNull: false,
+            unique: true
         },
         method_payment: {
             type: dataTypes.STRING,
+            allowNull: false,
+            unique: true
         },
         user_id:{
             type: dataTypes.STRING,

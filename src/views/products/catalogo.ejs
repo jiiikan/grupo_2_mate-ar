@@ -2,7 +2,6 @@
 <html lang="en">
 
 <%- include("../partials/head") %>
-
 <head>
     <link rel="stylesheet" href="/css/catalogo.css">
     <title>Catalogo</title>
@@ -21,10 +20,10 @@
 
       <article class="producto" onclick="location.href='/products/detalle/<%= products[i].id%>'">
 
-        <img src="/images/<%= products[i].imagen %>" alt="Producto 1" class="imag">
-        <h3><%= products[i].nombre %></h3>
-        <p class="descripcion"><%= products[i].descripcion %></p>
-        <span class="precio">$<%= products[i].precio %></span>
+        <img src="/images/<%= products[i].image %>" alt="Producto 1" class="imag">
+        <h3><%= products[i].name %></h3>
+        <p class="descripcion"><%= products[i].description %></p>
+        <span class="precio">$<%= products[i].price %></span>
         
       </article>
 

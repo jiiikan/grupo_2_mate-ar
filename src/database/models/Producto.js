@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tablename: "products",
+        tableName: "products",
         timestamps:false
     }
 
@@ -40,17 +40,15 @@ const Producto = sequelize.define(alias, cols, config)
 
 Producto.associate = function(models){
     Producto.belongsTo(models.Categoria, {
-        as: "categoria",
+        as: "categories",
         foreignKey: "category_id"
     })
-/*    Producto.belongToMany(models.Usuario, {
-        as: "users",
-        through: "cart",
-        foreignKey: "product_id",
-        otherKey: "user_id",
-        timestamps: false
-    })*/ 
-}
 
-return Producto
+    /*Producto.hasMany(models.Carrito, {
+        as: 'cart',
+        foreignKey: 'cart_id'
+    })*/
+}
+return Producto;
+
 }

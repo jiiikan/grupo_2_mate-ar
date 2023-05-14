@@ -15,21 +15,20 @@
     <div class="producto">
       <section class="array-products">
         
-          <h1 class="title"><%= product.nombre %></h1>
+          <h1 class="title"><%= product.name%></h1>
         
           <article class="products">
-            <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
-            <h3><%= product.nombre %></h3>
-            <p class="descripcion"><%= product.descripcion %></p>
-            <span class="precio">$<%= product.precio %></span>
+            <img src="/images/<%= product.image %>" alt="Producto 1" class="imag">
+            <h3><%= product.name %></h3>
+            <p class="descripcion"><%= product.description %></p>
+            <span class="precio">$<%= product.price %></span>
           </article>
 
         </section>
 
       <div class="botones">
-        <form method="post" action="/products/carrito">
-        <label for="quantity">Cantidad:</label>
-        <input class="boton" type="hidden" name="id" value="<%= product.id %>">
+        <form method="post" action="/products/carrito" class="boton">
+        <input  type="hidden" name="id" value="<%= product.id %>">
         <button type="submit" >Agregar al carrito</button>
         </form>
 

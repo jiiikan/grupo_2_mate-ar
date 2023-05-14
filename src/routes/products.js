@@ -41,22 +41,20 @@ const validations = [
 
 // Rutas como tal
 router.get("/catalogo", productsController.catalogo);
-//router.get("/catalogo", productsController.lista)
-
+/*
 router.get("/carrito", productsController.carrito);
 //router.post("/carrito/:id/agregar", productsController.carritoAgregar);
 //router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
-
+*/
 router.get("/create", productsController.create);
-router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
+//router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
 
-// router.get("/detalle", productsController.detalle); no sirve que este
 router.get("/detalle/:id", productsController.detalle);
-
+/*
 router.get("/edition", productsController.edition);
 router.post("/update/:id", productsController.update);
 
 router.get("/delete/:id", productsController.delete);
-
+*/
 
 module.exports= router; 

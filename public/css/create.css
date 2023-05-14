@@ -74,7 +74,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     }
 
     .create{
-        width: 46%;
+        width: 36%;
         padding: 3%;
     }
 
@@ -87,7 +87,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     }
 
     .label-create{
-        font-size: 18px;
+        font-size: 20px;
         margin: 15px;
     }
 

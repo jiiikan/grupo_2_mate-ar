@@ -43,7 +43,7 @@ const validations = [
 router.get("/catalogo", productsController.catalogo);
 /*
 router.get("/carrito", productsController.carrito);
-//router.post("/carrito/:id/agregar", productsController.carritoAgregar);
+router.post("/carrito", productsController.carritoAgregar);
 //router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 */
 router.get("/create", productsController.create);

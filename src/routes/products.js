@@ -47,7 +47,7 @@ router.post("/carrito", productsController.carritoAgregar);
 //router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 */
 router.get("/create", productsController.create);
-//router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
+router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
 
 router.get("/detalle/:id", productsController.detalle);
 /*

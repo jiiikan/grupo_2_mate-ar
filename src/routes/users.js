@@ -19,8 +19,7 @@ const validationsAcceso = require('../middlewares/validationAcceso');
 //router.delete("/carrito", usersController.carritoDelete);
 
 router.get("/registro", guestMiddleware ,usersController.registro);
-router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado)
-//router.post('/register', uploadFile.single('avatar'), usersController.create);
+router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado);
 
 router.get("/login", guestMiddleware, usersController.login);
 router.post('/login', validationsAcceso, usersController.logeando);

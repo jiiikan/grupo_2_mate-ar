@@ -23,7 +23,6 @@ const productsController = {
             const productoid = req.params.id;
             
             const product = await db.Producto.findByPk(productoid);
-            console.log(product)
 
         if(product != null){
             res.render("products/detalle", {product})
@@ -40,34 +39,32 @@ const productsController = {
                 return res.render("products/create", {categorias: categorias}) 
             })
 },
-/*
-store: (req, res) => {
+
+store: async (req, res) => {
     const resultValidation = validationResult(req);
 
+
     if(resultValidation.errors.length > 0){
-        return res.render("products/create", {
-            errors: resultValidation.mapped(),
-            olddata: req.body
+        db.Categoria.findAll()
+        .then(function(categorias) {
+            return res.render("products/create", {categorias : categorias },  {
+                errors: resultValidation.mapped(),
+                olddata: req.body
+            })
         })
     }
-    const { product, description, price, category } = req.body;
-    const newProduct = {
-        id: products.length + 1,
-        name: req.body.product,
+
+    db.Producto.create({
+        name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        image: req.file.filename,
+        image: req.body.image,
         category_id: req.body.category
-    };
+    });
+    res.redirect("/")
 
-    products.push(newProduct);
-    fs.writeFileSync(
-        path.resolve(__dirname, "../data/products.json"),
-        JSON.stringify(products, null, 2),
-        "utf-8");
-    res.redirect("/products/catalogo");
 },
-
+/*
 // Renderizar pagina editar producto
 edition: (req, res) => {
         const productId = parseInt(req.query.id);

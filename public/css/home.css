@@ -75,7 +75,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 }
 
 .info{
-  margin-bottom: 4%;
+  margin-bottom: 10%;
   background-color: #5F8D4E;
 }
 
@@ -84,8 +84,20 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
   color: #E5D9B6;
 }
 
+
 .matear2022{
   width: 100%;
+}
+
+.folleto{
+  margin-top: 20px;
+}
+
+.text-folleto {
+  color:#E5D9B6;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 18px;
 }
 
 @media (min-width: 450px){
@@ -141,5 +153,8 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     font-size: 20px;
   }
 
+  .text-folleto{
+    font-size: 22px;
+  }
 
 }

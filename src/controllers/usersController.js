@@ -93,13 +93,6 @@ const usersController = {
     const userFromDB = User.findByField('id', user.id);
     res.render('./users/perfil', { user: users });
 },
-    
-        /*const userId = req.params.id;
-            
-        const user = users.find(
-            (user) => user.id === parseInt(userId)
-        );
-    res.render("users/perfil", {user})}},*/
         
     logout: (req, res) => {
         res.clearCookie('userLogin')

@@ -13,11 +13,11 @@
     <main class="main">
         
         <section class="create-container">
-        <form action="/products/create" method="POST" class="create" enctype="multipart/form-data"> 
+        <form action="/products/create" method="POST" class="create"> 
             <span class="titulo">Creacion del producto</span>
 
             <label class="label-create">Nombre del producto</label>
-            <input type="text" name="product" placeholder="Nombre" class="input" 
+            <input type="text" name="name" placeholder="Nombre" class="input" 
                 class="form-control <%= locals.errors && errors.product ? 'is-invalid' : null %>"
                 value= "<%= locals.oldData ? oldData.product : null %>">
             <% if (locals.errors && errors.product) { %>

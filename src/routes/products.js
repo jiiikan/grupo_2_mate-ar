@@ -22,8 +22,8 @@ const validations = [
     body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
     body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
     body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("category").notEmpty().withMessage("Tienes que ingresar una categoria"),
-    body("imagenproducto").custom((value, { req }) => {
+    body("category_id").notEmpty().withMessage("Tienes que ingresar una categoria"),
+    body("image").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif"] 
     if (!file){
@@ -47,11 +47,11 @@ router.post("/carrito", productsController.carritoAgregar);
 //router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 */
 router.get("/create", productsController.create);
-router.post("/create", uploadFile.single("imagenproducto"), validations ,productsController.store);
+router.post("/create", uploadFile.single("image"), validations ,productsController.store);
 
 router.get("/detalle/:id", productsController.detalle);
-/*
-router.get("/edition", productsController.edition);
+
+router.get("/edition", productsController.edition);/*
 router.post("/update/:id", productsController.update);
 
 router.get("/delete/:id", productsController.delete);

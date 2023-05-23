@@ -40,9 +40,8 @@ const productsController = {
             })
 },
 
-store: async (req, res) => {
+store: (req, res) => {
     const resultValidation = validationResult(req);
-
 
     if(resultValidation.errors.length > 0){
         db.Categoria.findAll()
@@ -50,7 +49,7 @@ store: async (req, res) => {
             return res.render("products/create", {categorias : categorias },  {
                 errors: resultValidation.mapped(),
                 olddata: req.body
-            })
+            }) 
         })
     }
 
@@ -59,12 +58,11 @@ store: async (req, res) => {
         description: req.body.description,
         price: req.body.price,
         image: req.body.image,
-        category_id: req.body.category
+        category_id: req.body.category_id
     });
     res.redirect("/")
-
 },
-/*
+
 // Renderizar pagina editar producto
 edition: (req, res) => {
         const productId = parseInt(req.query.id);
@@ -80,7 +78,7 @@ edition: (req, res) => {
     res.render("products/editionProducts.ejs", { product: product });
 },
 
-
+/*
 // Editar producto
 update: (req, res) => {
     const productId = parseInt(req.params.id);

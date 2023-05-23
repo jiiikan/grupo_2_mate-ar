@@ -51,7 +51,7 @@ router.post("/create", uploadFile.single("image"),productsController.store);
 
 router.get("/detalle/:id", productsController.detalle);
 
-router.get("/edition", productsController.edition);/*
+/*router.get("/edition", productsController.edition);
 router.post("/update/:id", productsController.update);
 
 router.get("/delete/:id", productsController.delete);

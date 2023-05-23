@@ -41,9 +41,6 @@ const productsController = {
             .then(function (categorias) {
                 return res.render("products/create", { categorias: categorias })
             })
-<<<<<<< HEAD
-        console.log(db.Categoria)
-=======
 },
 
 store: (req, res) => {
@@ -127,7 +124,6 @@ delete: (req, res) => {
 
     carrito: (req, res) => {
         res.render("products/carrito", { products, cart})
->>>>>>> cde1374545d2c8175e9846fc70692e49246a584c
     },
 
     store: (req, res) => {

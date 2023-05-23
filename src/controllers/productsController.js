@@ -1,31 +1,71 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
-let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
-let products = JSON.parse(readFile, "utf-8");
+// Requerir al a basde de datos
+/*let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
+let products = JSON.parse(readFile, "utf-8");*/
+const db = require('../database/models');
 
 const productsController = {
-// Renderizar lista de productos
+    // Renderizar lista de productos
+    catalogo:  (req, res) => {
+        db.Producto.findAll()
+            .then(function(products){
+                return res.render("products/catalogo", {products: products})
+            })
+    },
 
-catalogo: (req, res) => {
-    res.render("products/catalogo", {products: products})
+
+    // Detalle de product dinamico
+    detalle: async (req, res) => {
+            const productoid = req.params.id;
+            
+            const product = await db.Producto.findByPk(productoid);
+
+        if(product != null){
+            res.render("products/detalle", {product})
+        }else { 
+            res.status(404).render('error404');
+        };
+    },
+
+
+//Crear producto
+    create:  (req, res) => {
+        db.Categoria.findAll()
+            .then(function(categorias) {
+                return res.render("products/create", {categorias: categorias}) 
+            })
 },
 
-// Detalle de product dinamico
+store: async (req, res) => {
+    const resultValidation = validationResult(req);
 
-detalle: (req, res) => {
-        const productoid = req.params.id;
-        
-        const product = products.find(
-            (product) => product.id === parseInt(productoid)
-        );
-    res.render("products/detalle", {product})
+
+    if(resultValidation.errors.length > 0){
+        db.Categoria.findAll()
+        .then(function(categorias) {
+            return res.render("products/create", {categorias : categorias },  {
+                errors: resultValidation.mapped(),
+                olddata: req.body
+            })
+        })
+    }
+
+    db.Producto.create({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        image: req.body.image,
+        category_id: req.body.category
+    });
+    res.redirect("/")
 
 },
-
+/*
 // Renderizar pagina editar producto
-
 edition: (req, res) => {
         const productId = parseInt(req.query.id);
     if (isNaN(productId)) {
@@ -34,14 +74,14 @@ edition: (req, res) => {
     }
     const product = products.find((product) => product.id === productId);
     if (!product) {
-        res.status(404).render("error404");//send("Producto no encontrado");
+        res.status(404).render("error404");
         return;
     }
     res.render("products/editionProducts.ejs", { product: product });
 },
 
-// Editar producto
 
+// Editar producto
 update: (req, res) => {
     const productId = parseInt(req.params.id);
     const productIndex = products.findIndex((product) => product.id === productId);
@@ -49,13 +89,13 @@ update: (req, res) => {
     res.status(404).render("error404");
     return;
     }
-    const { id, product, description, price, image, category } = req.body;
+    const { id, product, description, price, imagenproducto, category } = req.body;
     products[productIndex] = {
     id: productId,
     nombre: product,
     descripcion: description,
     precio: parseFloat(price),
-    imagen: image,
+    imagen: imagenproducto,
     categoria: category,
     };
     fs.writeFileSync(
@@ -66,32 +106,9 @@ update: (req, res) => {
     res.redirect("/products/catalogo");
     
 },
-    create: (req, res) => {
-    res.render("products/create")       
-},
 
-//Crear producto
-
-store: (req, res) => {
-    const {product, description, price, image, category } = req.body;
-    const newProduct = {
-        id: products.length + 1,
-        nombre: req.body.product,
-        descripcion: req.body.description,
-        precio: req.body.price,
-        imagen: req.body.image,
-        categoria: req.body.category
-    };
-    products.push(newProduct);
-    fs.writeFileSync(
-        path.resolve(__dirname, "../data/products.json"),
-        JSON.stringify(products, null, 2),
-        "utf-8");
-    res.redirect("/products/catalogo");
-},
 
 // Borrar producto
-
 delete: (req, res) => {
     const borrar = req.params.id;
 
@@ -101,8 +118,14 @@ delete: (req, res) => {
 
     let productoGuardar = JSON.stringify(productBorrar, null, 2);
     fs.writeFileSync( path.resolve(__dirname, "../data/products.json"), productoGuardar );
-    res.redirect("/products/catalogo");
+    res.redirect("/");
     }
+
+    carrito: (req, res) => {
+        res.render("products/carrito", { products, cart})
+    },
+
+*/
 };
 
 

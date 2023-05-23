@@ -15,28 +15,41 @@
     <div class="producto">
       <section class="array-products">
         
-          <h1 class="title"><%= product.nombre %></h1>
+          <h1 class="title"><%= product.name%></h1>
         
           <article class="products">
-            <img src="/images/<%= product.imagen %>" alt="Producto 1" class="imag">
-            <h3><%= product.nombre %></h3>
-            <p class="descripcion"><%= product.descripcion %></p>
-            <span class="precio">$<%= product.precio %></span>
+            <img src="/images/<%= product.image %>" alt="Producto 1" class="imag">
+            <h3><%= product.name %></h3>
+            <p class="descripcion"><%= product.description %></p>
+            <span class="precio">$<%= product.price %></span>
           </article>
 
         </section>
 
       <div class="botones">
-        <form method="GET" action="/users/carrito/add/<%= product.id %>">
-        <button class="boton"><a href="/users/carrito/add/?id=<%= product.id %>">Añadir al carrito</a></button>
+        <form method="post" action="/products/carrito" class="boton">
+        <input  type="hidden" name="id" value="<%= product.id %>">
+        <button type="submit" >Agregar al carrito</button>
         </form>
 
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
-
         <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
         
       </div>
     </div>
+
+    <section>
+      <h2>Reseñas</h2>
+      
+      <section class="reseñas">
+        <img src="/images/users/avatar.png" alt="user" class="img">
+        <div>
+          <h4>User6172783</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla labore non ipsam adipisci esse voluptatibus eos 
+          tempore consequatur obcaecati laboriosam quos.</p>
+        </div>
+      </section>
+    </section>
 
   </main>
 

@@ -1,38 +1,14 @@
 [
-    {
-        "id": 1,
-        "nombre": "genaro",
-        "apellido": "alcachofa",
-        "email": "genaro@ejemplo.com",
-        "contraseña": "contraseña",
-        "admin": true,
-        "imagen": "ejemplo.jpg"
-    },
-    {
-        "id": 2,
-        "nombre": "dante",
-        "apellido": "alcachofa",
-        "email": "dante@ejemplo.com",
-        "contraseña": "contraseña",
-        "admin": true,
-        "imagen": "ejemplo.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "fernado",
-        "apellido": "lepe",
-        "email": "lepe@ejemplo.com",
-        "contraseña": "contraseña",
-        "admin": true,
-        "imagen": "ejemplo.jpg"
-    },
-    {
-        "id": 4,
-        "nombre": "nahir",
-        "apellido": "cabezas",
-        "email": "nahir@ejemplo.com",
-        "contraseña": "contraseña",
-        "admin": true,
-        "imagen": "ejemplo.jpg"
-    }
+ {
+  "id": 1,
+  "username": "jiiikan",
+  "name_lastName": "genaro rafault",
+  "email": "genarorafault@gmail.com",
+  "country": "Argentina",
+  "direction": "17 de mayo",
+  "admin": "on",
+  "password": "$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u",
+  "terminos y condiciones": "on",
+  "avatar": "1682612299196_img.jpg" 
+ }
 ]

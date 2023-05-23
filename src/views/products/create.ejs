@@ -13,7 +13,7 @@
     <main class="main">
         
         <section class="create-container">
-        <form action="/products/create" method="POST" class="create"> 
+        <form action="/products/create" method="POST" class="create" enctype="multipart/form-data"> 
             <span class="titulo">Creacion del producto</span>
 
             <label class="label-create">Nombre del producto</label>
@@ -48,27 +48,28 @@
 
             <label class="label-create">Imagen del producto</label>
             <input type="file" name="image" placeholder="Imagen" class="file" 
-                class="form-control <%= locals.errors && errors.imagenproducto ? 'is-invalid' : null %>">
-            <% if (locals.errors && errors.imagenproducto) { %>
+                class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>">
+            <% if (locals.errors && errors.image) { %>
                 <div class="text-danger">
-                    <%= errors.imagenproducto.msg %>
+                    <%= errors.image.msg %>
                 </div>
             <% } %>
             
             <label class="label-create">Categoria del producto</label>
             
-            <select name="category_id" class="form-select <%= locals.errors && errors.category ? 'is-invalid' : null %>">
-                <% for (let i = 0; i > categorias.length; i++) {%>
-                    <option value="<%= categorias[i].id %>">
-                        <%=categorias[i].name %>
-                    </option>
-                <% } %>
+            <select name="category_id" class="form-select"> <!--<%= locals.errors && errors.categorias ? 'is-invalid' : null %>-->
 
-                <% for (const oneCategory of categorias) { %>
-                    <option value="<%= oneCategory %>"
-                    <%= locals.oldData && (oneCategory  === oldData.category ) ? 'selected' : null %>>
-                    <%= oneCategory %> </option>
-                <% } %>
+                        <%  let num1 = categorias.find(element => element.id == 1)
+                        let num2 = categorias.find(element => element.id == 2)
+                        let num3 = categorias.find(element => element.id == 3)
+                        let num4 = categorias.find(element => element.id == 4)%>
+        
+                        <option value="<%= num1.id %>"> <%= num1.name %> </option>
+                        <option value="<%= num2.id %>"> <%= num2.name %> </option>
+                        <option value="<%= num3.id %>"> <%= num3.name %> </option>
+                        <option value="<%= num4.id %>"> <%= num4.name %> </option>
+
+
             </select>
 
             <button type="submit" class="button">Subir</button>

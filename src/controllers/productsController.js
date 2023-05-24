@@ -68,7 +68,7 @@ const productsController = {
 
     // Renderizar pagina edicion
     edition: async (req, res) => {
-    const categorias = db.Categoria.findAll()
+    const categorias = await db.Categoria.findAll()
     const product = await db.Producto.findByPk(req.query.id);
 
     if (isNaN(req.query.id)) {
@@ -81,6 +81,7 @@ const productsController = {
 
     Promise.all([product, categorias])
         res.render("products/edition", { product: product, categorias:categorias });
+    
 },
 
     // Editar producto
@@ -93,11 +94,15 @@ const productsController = {
     };
 
     db.Producto.update({
-        name: req.params.product,
-        description: req.params.description,
-        price: parseFloat(price),
-        image: req.params.image,
-        category_id: req.params.category,
+        name: req.body.product,
+        description: req.body.description,
+        price: req.body.price,
+        image: req.file.filename,
+        category_id: req.body.category,
+    }, {
+        where: {
+            id: req.params.id
+        }
     });
 
     res.redirect("/");

@@ -7,6 +7,7 @@ const { validationResult } = require("express-validator");
 /*let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
 let products = JSON.parse(readFile, "utf-8");*/
 const db = require('../database/models');
+const { Association } = require("sequelize");
 
 const productsController = {
     // Renderizar lista de productos
@@ -19,12 +20,11 @@ const productsController = {
 
     },
 
-
-    // Detalle de product dinamico
+    // Detalle de productos dinamico
     detalle: async (req, res) => {
             const productoid = req.params.id;
             
-            const product = await db.Producto.findByPk(productoid);
+            const product = await db.Producto.findByPk(productoid, {include: [{association: "categories"}]});
 
         if(product != null){
             res.render("products/detalle", {product})
@@ -34,20 +34,17 @@ const productsController = {
     },
 
 
-//Crear producto
+    //Crear producto
     create:  (req, res) => {
         db.Categoria.findAll()
-        
             .then(function(categorias) {
                 return res.render("products/create", {categorias: categorias}) 
             })
-            console.log(db.Categoria)
-},
+    },
 
-store: (req, res) => {
+    //Formulario de crear producto
+    store: (req, res) => {
     const resultValidation = validationResult(req);
-    console.log(resultValidation)
-
 
     if(resultValidation.errors.length > 0){
         db.Categoria.findAll()
@@ -67,52 +64,45 @@ store: (req, res) => {
         category_id: req.body.category_id
     });
     res.redirect("/")
+    },
 
+    // Renderizar pagina edicion
+    edition: async (req, res) => {
+    const categorias = db.Categoria.findAll()
+    const product = await db.Producto.findByPk(req.query.id);
+
+    if (isNaN(req.query.id)) {
+        return res.status(404).render("error404");
+    }
+
+    if (!product) {
+        return res.status(404).render("error404");
+    }
+
+    Promise.all([product, categorias])
+        res.render("products/edition", { product: product, categorias:categorias });
+},
+
+    // Editar producto
+    update: async (req, res) => {
+    const productId = parseInt(req.params.id);
+    const productIndex = await db.Producto.findByPk(productId);
+
+    if (productIndex == undefined) {
+        return res.status(404).render("error404");
+    };
+
+    db.Producto.update({
+        name: req.params.product,
+        description: req.params.description,
+        price: parseFloat(price),
+        image: req.params.image,
+        category_id: req.params.category,
+    });
+
+    res.redirect("/");
 },
 /*
-// Renderizar pagina editar producto
-edition: (req, res) => {
-        const productId = parseInt(req.query.id);
-    if (isNaN(productId)) {
-        res.status(404).render("error404");
-        return;
-    }
-    const product = products.find((product) => product.id === productId);
-    if (!product) {
-        res.status(404).render("error404");
-        return;
-    }
-    res.render("products/editionProducts.ejs", { product: product });
-},
-
-
-// Editar producto
-update: (req, res) => {
-    const productId = parseInt(req.params.id);
-    const productIndex = products.findIndex((product) => product.id === productId);
-    if (productIndex === -1) {
-    res.status(404).render("error404");
-    return;
-    }
-    const { id, product, description, price, imagenproducto, category } = req.body;
-    products[productIndex] = {
-    id: productId,
-    nombre: product,
-    descripcion: description,
-    precio: parseFloat(price),
-    imagen: imagenproducto,
-    categoria: category,
-    };
-    fs.writeFileSync(
-        path.resolve(__dirname, "../data/products.json"),
-        JSON.stringify(products, null, 2),
-        "utf-8"
-    );
-    res.redirect("/products/catalogo");
-    
-},
-
-
 // Borrar producto
 delete: (req, res) => {
     const borrar = req.params.id;

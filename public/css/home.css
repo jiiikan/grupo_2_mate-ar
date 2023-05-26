@@ -105,6 +105,9 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     border-radius: 50px;
     padding: 3% 4%;
   }
+  .subtitulo{
+    font-size: 22px;
+  }
 
 .box-imgyp{
   margin: 10px;
@@ -128,6 +131,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
   .subtitulo{
     text-align: left;
+    font-size: 30px;
   }
   
   .box-imgyp img{

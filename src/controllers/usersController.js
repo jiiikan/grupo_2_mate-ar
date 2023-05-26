@@ -4,7 +4,6 @@ const fs = require("fs");
 const db = require('../database/models');
 const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs');
-const User = require('../modelos/User');
 const { log } = require("console");
 const { on } = require("events");
 
@@ -15,7 +14,11 @@ let users = JSON.parse(readFile, "utf-8");
 const usersController = {   
 
     registro: (req, res) => {
-    res.render("users/registro")
+        db.Usuario.findAll()
+        .then(function (usuarios){
+            res.render("users/registro", {usuarios})
+        })
+    
 },
 
     registrado: (req, res) => {
@@ -27,7 +30,10 @@ const usersController = {
             oldData: req.body
     })
     }
-
+    /*let dbcomp = db.Usuario.findAll()
+    function dbcomp (field, text) {
+        let userInDB = db.Usuario.find()
+    }
     let userInDB =  User.findByField("email", req.body.email)
 
     if (userInDB){
@@ -39,14 +45,21 @@ const usersController = {
             },
             oldData: req.body
         })
-    }  
+    }  */
 
-        let userToCreate = {
-			...req.body,
+        db.Usuario.create({
+			user_name: req.body.username,
+            name_lastname: req.body.name_lastName,
+            email: req.body.email,
+            country: req.body.country,
+            direction: req.body.direction,
 			password: bcryptjs.hashSync(req.body.password, 10),
-			avatar: req.file.filename
-        }      
-        let userCreated = User.create(userToCreate);
+			avatar: req.file.filename,
+            conditions: req.body.conditions
+            
+        })     
+        console.log(req.body)
+
 
 		return res.redirect('/users/login');
 	},
@@ -54,7 +67,7 @@ const usersController = {
         res.render("users/login", {user: users})
     },
     logeando: (req, res) => {
-		let userEmail = User.findByField('email', req.body.email);
+		let userEmail = db.Usuario.findByPk();
 
 		if(userEmail) {
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userEmail.password);

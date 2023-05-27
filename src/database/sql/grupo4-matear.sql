@@ -75,7 +75,6 @@ CREATE TABLE `users` (
   `country` varchar(255) NOT NULL,
   `direction` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
-  `admin` tinyint(1) NOT NULL,
   `password` varchar(255) NOT NULL,
   `conditions` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

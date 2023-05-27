@@ -104,7 +104,6 @@ CREATE TABLE `users` (
   `country` varchar(255) NOT NULL,
   `direction` varchar(255) NOT NULL,
   `avatar` varchar(255) NOT NULL,
-  `admin` tinyint(1) NOT NULL,
   `password` varchar(255) NOT NULL,
   `conditions` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -113,8 +112,8 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `admin`, `password`, `conditions`) VALUES
-(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', 1, '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1);
+INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `password`, `conditions`) VALUES
+(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1);
 
 --
 -- Índices para tablas volcadas

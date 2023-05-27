@@ -32,24 +32,6 @@ const User = {
 		return userFound;
 	},
 
-	create: function (req, res) {
-        const { nombre_user, nombre_apellido, email, pais, domicilio, admin, contraseña, avatar } = req.body;
-		let allUsers = this.findAll();
-		let newUser = {
-			id: this.generateId(),
-            nombre_user: req.body.nombre_usuario,
-            nombre_apellido: req.body.nombre_apellido,
-            email: req.body.email,
-            pais: req.body.pais,
-            domicilio: req.body.domicilio,
-            admin:req.body.permisos,
-            contraseña: req.body.contraseña,
-            avatar: req.file.filename
-		}
-		allUsers.push(newUser);
-		fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null,  ' '));
-		return newUser;
-	},
 
 	delete: function (id) {
 		let allUsers = this.findAll();

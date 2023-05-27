@@ -4,20 +4,18 @@ const fs = require("fs");
 const db = require('../database/models');
 const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs');
-const { log } = require("console");
+const { log, error } = require("console");
 const { on } = require("events");
+const Sequelize = require("sequelize");
 
 
-let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-let users = JSON.parse(readFile, "utf-8");
+//let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
+//let users = JSON.parse(readFile, "utf-8");
 
 const usersController = {   
 
     registro: (req, res) => {
-        db.Usuario.findAll()
-        .then(function (usuarios){
-            res.render("users/registro", {usuarios})
-        })
+            res.render("users/registro")
     
 },
 
@@ -58,16 +56,18 @@ const usersController = {
             conditions: req.body.conditions
             
         })     
-        console.log(req.body)
 
 
 		return res.redirect('/users/login');
 	},
     login: (req, res) => {
-        res.render("users/login", {user: users})
+        res.render("users/login")
     },
     logeando: (req, res) => {
-		let userEmail = db.Usuario.findByPk();
+		    db.Usuario.findOne({
+            where: { email: { [Sequelize.Op.eq]: req.body.email } }
+        })
+        .then((userEmail) => {
 
 		if(userEmail) {
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userEmail.password);
@@ -82,7 +82,7 @@ const usersController = {
 
 
 			return res.redirect('/users/perfil');
-                
+               
             }  
 			return res.render('users/login', {
 				errors: {
@@ -98,13 +98,16 @@ const usersController = {
 					msg: 'No se encuentra este email en nuestra base de datos'
 				}
 			}
-		});/**/
+		})}) .catch(error => {
+            console.log("error al iniciar sesion", error);
+        return res.render("users/login")
+        });/**/
         
 	},
     profile: (req, res) => {
-    const user =  req.session.userLogged
-    const userFromDB = User.findByField('id', user.id);
-    res.render('./users/perfil', { user: users });
+    //const user =  req.session.userLogged
+    //const userFromDB = User.findByField('id', user.id);
+    res.render('./users/perfil');
 },
         
     logout: (req, res) => {

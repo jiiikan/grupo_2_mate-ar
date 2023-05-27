@@ -25,7 +25,6 @@ CREATE TABLE `users`(
     `country` VARCHAR(255) NOT NULL,
     `direction` VARCHAR(255) NOT NULL,
     `avatar` VARCHAR(255) NOT NULL,
-    `admin` TINYINT(1) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
     `conditions` TINYINT(1) NOT NULL
 );
@@ -37,5 +36,5 @@ CREATE TABLE `cart`(
     `user_id` INT UNSIGNED NOT NULL,
     `product_id` INT UNSIGNED NOT NULL,
     FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-    FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+    FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );

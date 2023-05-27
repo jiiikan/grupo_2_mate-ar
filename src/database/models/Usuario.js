@@ -36,11 +36,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        admin: {
-            type: dataTypes.TINYINT,
-            allowNull: false,
-            unique: true
-        },
         password:{
             type: dataTypes.STRING,
             allowNull: false,

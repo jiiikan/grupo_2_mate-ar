@@ -12,12 +12,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationsAcceso = require('../middlewares/validationAcceso');
 
-
-
-//router.get("/carrito", usersController.carrito);
-//router.post("/carrito", usersController.carritoPush);
-//router.delete("/carrito", usersController.carritoDelete);
-
+// Rutas 
 router.get("/registro", guestMiddleware ,usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado);
 

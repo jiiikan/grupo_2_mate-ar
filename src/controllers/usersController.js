@@ -8,17 +8,13 @@ const { log, error } = require("console");
 const { on } = require("events");
 const Sequelize = require("sequelize");
 
-
-//let readFile = fs.readFileSync(path.resolve(__dirname, "../data/users.json"))
-//let users = JSON.parse(readFile, "utf-8");
-
 const usersController = {   
-
+    // Registro render 
     registro: (req, res) => {
             res.render("users/registro")
     
 },
-
+    // Registro  
     registrado: (req, res) => {
         const resultValidation = validationResult(req);
 
@@ -57,14 +53,17 @@ const usersController = {
             
         })     
 
-
 		return res.redirect('/users/login');
 	},
+
+    // Login render 
     login: (req, res) => {
         res.render("users/login")
     },
+
+    // Login db  
     logeando: (req, res) => {
-		    db.Usuario.findOne({
+		db.Usuario.findOne({
             where: { email: { [Sequelize.Op.eq]: req.body.email } }
         })
         .then((userEmail) => {
@@ -80,9 +79,8 @@ const usersController = {
                 //return ;
             }
 
-
 			return res.redirect('/users/perfil');
-               
+
             }  
 			return res.render('users/login', {
 				errors: {
@@ -98,22 +96,27 @@ const usersController = {
 					msg: 'No se encuentra este email en nuestra base de datos'
 				}
 			}
-		})}) .catch(error => {
+		})}) 
+        .catch(error => {
             console.log("error al iniciar sesion", error);
-        return res.render("users/login")
-        });/**/
+            return res.render("users/login")
+        });
         
-	},
+},
+
+    // Perfil render 
     profile: (req, res) => {
     //const user =  req.session.userLogged
     //const userFromDB = User.findByField('id', user.id);
     res.render('./users/perfil');
 },
-        
+
+    // Login con cookies 
     logout: (req, res) => {
         res.clearCookie('userLogin')
         req.session.destroy();
         return res.redirect('/');
-}};
+}
+};
 
 module.exports = usersController;

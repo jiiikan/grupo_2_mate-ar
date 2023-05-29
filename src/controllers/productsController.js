@@ -4,8 +4,6 @@ const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 // Requerir al a basde de datos
-/*let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
-let products = JSON.parse(readFile, "utf-8");*/
 const db = require('../database/models');
 const { Association } = require("sequelize");
 
@@ -13,14 +11,12 @@ const productsController = {
     // Renderizar lista de productos
     catalogo:  (req, res) => {
         db.Producto.findAll()
-        
             .then(function(products){
                 return res.render("products/catalogo", {products: products})
             })
-
     },
 
-    // Detalle de productos dinamico
+    // Detalle de productos 
     detalle: async (req, res) => {
             const productoid = req.params.id;
             
@@ -32,7 +28,6 @@ const productsController = {
             res.status(404).render('error404');
         };
     },
-
 
     //Crear producto
     create:  (req, res) => {
@@ -74,7 +69,6 @@ const productsController = {
     if (isNaN(req.query.id)) {
         return res.status(404).render("error404");
     }
-
     if (!product) {
         return res.status(404).render("error404");
     }
@@ -107,26 +101,32 @@ const productsController = {
 
     res.redirect("/");
 },
-/*
+
 // Borrar producto
 delete: (req, res) => {
     const borrar = req.params.id;
 
-    const productBorrar = products.filter(
-        (producto) => producto.id != borrar
-    );
-
-    let productoGuardar = JSON.stringify(productBorrar, null, 2);
-    fs.writeFileSync( path.resolve(__dirname, "../data/products.json"), productoGuardar );
+    db.Producto.destroy({
+        where: {
+            id: borrar
+        }
+    })
     res.redirect("/");
     }
-
+/*
     carrito: (req, res) => {
         res.render("products/carrito", { products, cart})
     },
 
+    agregarCart: (req, res) => {
+        
+    },
+
+    carritoEliminar: (req, res) => {
+
+    },
+
 */
 };
-
 
 module.exports = productsController;

@@ -29,7 +29,11 @@ module.exports = (sequelize, dataTypes) => {
         category_id: {
             type: dataTypes.INTEGER,
             foreignKey: true
-        }
+        },
+        /*marked: {
+            type: dataTypes.BOOLEAN,
+            defaultValue: false,
+          }*/
     }
     let config = {
         tableName: "products",
@@ -43,6 +47,11 @@ Producto.associate = function(models){
         as: "categories",
         foreignKey: "category_id"
     })
+
+Producto.OrderItems = Producto.hasMany(models.OrderItem, {
+        as: "orderItems",
+        foreignKey: "productId"
+      });
 
     /*Producto.hasMany(models.Carrito, {
         as: 'cart',

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head.ejs") %>
+<head>
+    <title>Mate.ar -Carga y edita los productos</title>
+    <link rel="stylesheet" href="/css/edition.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+
+    <main class="main-edition">
+
+        <form action="/products/update/ <%= product.id %>" method="POST" class="edition" enctype="multipart/form-data">
+            <h2 class="titulo">Edicion del producto:</h2>
+            <h3 class="name"> <%= product.name %> </h3>
+
+            <label class="label-edition">Nombre del producto</label>
+            <input type="text" name="product" placeholder="Nombre" class="input" value="<%= product.name%>">
+            
+            <label class="label-edition">Descripcion del producto</label>
+            <input type="text" name="description" placeholder="descripcion" class="input" value="<%= product.description%>">
+            
+            <label class="label-edition">Precio del producto</label>
+            <input type="number" name="price" placeholder="Precio" class="input" value="<%= product.price%>">
+            
+            <label class="label-edition">Imagen del producto</label>
+            <input type="file" name="image" placeholder="Imagen" class="file" value="<%= product.image %>">
+            
+            <label class="label-edition">Categoria del producto</label>
+            <select name="category" class="form-select">
+
+                <% let num1 = categorias.find(element => element.id == 1)
+                let num2 = categorias.find(element => element.id == 2)
+                let num3 = categorias.find(element => element.id == 3)
+                let num4 = categorias.find(element => element.id == 4)%>
+
+                <option value="<%= num1.id %>"> <%= num1.name %> </option>
+                <option value="<%= num2.id %>"> <%= num2.name %> </option>
+                <option value="<%= num3.id %>"> <%= num3.name %> </option>
+                <option value="<%= num4.id %>"> <%= num4.name %> </option>
+    </select>
+            
+            <button type="submit" class="button">Subir</button>
+        </form>
+        
+    </main>
+
+    <%- include("../partials/footer") %>
+</body>
+</html>

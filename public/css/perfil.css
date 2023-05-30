@@ -5,9 +5,15 @@ body{  background-color: #E5D9B6; margin: 0; padding: 0;}
     padding: 10%;
 }
 
+.data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .img{
     width: 40%;
-    border-radius: 10px;
+    border-radius: 50px;
 }
 
 .title{
@@ -16,18 +22,47 @@ body{  background-color: #E5D9B6; margin: 0; padding: 0;}
     margin-bottom: 10px;
 }
 
-.section h2{
+.h2{
     color: #285430;
     margin: 15px 0px;
 }
 
-.section ul li{
+.lista li{
     list-style: none;
     text-decoration: none;
 }
 
+.lista {
+    margin-bottom: 5%;
+}
+
+.button{
+    margin: 3%;
+    margin-left: 0;
+    padding: 8px;
+    border: none;
+    border-radius: 12px;
+    background-color: #285430;
+    color: #E5D9B6;
+}
+
 @media (min-width: 800px){
     .main{
-        padding: 5%;
+        padding: 8%;
+    }
+    .title{
+        font-size: 50px;
+    }
+    .img{
+        border-radius: 30px;
+    }
+    .h2{
+        font-size: 30px;    
+    }
+    .lista li{
+        font-size: 20px;
+    }
+    .button{
+        font-size: 18px;
     }
 }

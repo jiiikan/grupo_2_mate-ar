@@ -11,14 +11,15 @@ const validations = require('../middlewares/validationRegisterMiddleware.js');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationsAcceso = require('../middlewares/validationAcceso');
+const registerValidations = require("../middlewares/validationRegisterMiddleware")
 
 
 
-//router.get("/carrito", usersController.carrito);
+router.get("/carrito", authMiddleware, usersController.carrito);
 //router.post("/carrito", usersController.carritoPush);
 //router.delete("/carrito", usersController.carritoDelete);
 
-router.get("/registro", guestMiddleware ,usersController.registro);
+router.get("/registro", guestMiddleware, registerValidations ,usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado);
 
 router.get("/login", guestMiddleware, usersController.login);

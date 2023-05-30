@@ -8,25 +8,40 @@
 </head>
 
 <body>
-
 	<%- include("../partials/header") %>
 
     <main class="main">
-        <h2 class="title">Hola <%=locals.userLogged.username %></h2>
-        <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
         
-        <section class="section">
-            <h2>Tu informacion personal</h2>
-            <ul>
-                <li><%= locals.userLogged.name_lastName %></li>
-                <li><%= locals.userLogged.email %></li>
-                <li><%= locals.userLogged.country %></li>
-                <li><%= locals.userLogged.direction %></li>
-            </ul>
-        </section>
-
-        <section>
-            <input type="button" name="editar" value="editar" >
+        <section class="data">
+            
+            <section>
+                <h1 class="title">Hola <%=locals.userLogged.user_name %></h1>
+                <h2 class="h2">Tu informacion personal</h2>
+                <ul class="lista">
+                    <li><%= locals.userLogged.user_name %></li>
+                    <li><%= locals.userLogged.name_lastName %></li>
+                    <li><%= locals.userLogged.email %></li>
+                    <li><%= locals.userLogged.country %></li>
+                    <li><%= locals.userLogged.direction %></li>
+                    <li>Productos en el carrito: 0</li>
+                </ul>
+                <table>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>2022/06/04 10:00</td>
+                        <td>Correo Argentina</td>
+                        <td>Efectivo</td>
+                        <td>$1220</td>
+                        <td><button class="btn btn-warning btn-sm"><i class="fas fa-eye"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+                <input type="button" name="editar" value="Editar"  class="button">
+                <input type="submit" class="button" value="Cerrar Sesion" onclick="location.href= '/users/logout'">
+        
+            </section>
+            <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
         </section>
 </main>
 

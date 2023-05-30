@@ -28,12 +28,15 @@ app.use(express.json());
 const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
+const { cookie } = require('express-validator');
+const api = require("./routes/api.js")
 
 //  Paginas 
 
 app.use("/", home)
 app.use("/products", products);
 app.use("/users", users);
+app.use("/api", api);
 
 // Error 404
 app.use((req, res, next) => {

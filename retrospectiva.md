@@ -16,6 +16,8 @@ sprint 5
 En este sprint tuvimos dificultades a la hora de repartir las tareas, intentamos formar dos grupos separados para la resolucion de los puntos y este llevo a ciertos conflictos internos que logramos resolver asi entregando el trabajo en la fecha de entrega, Empezando con una ventaja de tiempo para la realizacion del siguiente sprint, ademas de ahora comprender el como deberiamos realizar las restrospectivas.
 
 sprint 6
+Debido al tiempo extra que tuvimos con este sprint nos relajamos mas de lo que podriamos admitir llegamos al plazo de tiempo muy justos y desorganizados. En la primera reunion se concreto muy bien la organizacion y distribucion de tareas pero con el paso del tiempo no se completo la mayoria de estas. 
+En este sprint ya nos dimos cuenta que derrochar el tiempo no conviene y  de la cercania de la finalizacion del proyecto. Como grupo tenemos que lograr una mejor organizacion si queremos completar el proyecto como es debido.
 
 sprint 7
 

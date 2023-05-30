@@ -10,6 +10,11 @@ body{  background-color: #E5D9B6;}
   justify-content: center;
 }
 
+table.table td,
+table.table th {
+  vertical-align: middle;
+}
+
 .box-cart{
   width: 80%;
   background-color: white;

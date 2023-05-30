@@ -27,10 +27,10 @@
         </section>
 
       <div class="botones">
-        <form method="post" action="/products/carrito" class="boton">
+        <!--<form method="post" action="/products/carrito" class="boton">-->
         <input  type="hidden" name="id" value="<%= product.id %>">
-        <button type="submit" >Agregar al carrito</button>
-        </form>
+        <button type="submit" data-id="<%= product.id %>" class="button_carrito">Agregar al carrito</button>
+        <!--</form>-->
 
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
         <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
@@ -54,6 +54,7 @@
   </main>
 
   <%- include("../partials/footer") %>
+  <script src="/js/productos.js"></script>
 
 </body>
 </html>

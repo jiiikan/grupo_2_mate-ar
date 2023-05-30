@@ -36,11 +36,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             unique: true
         },
-        admin: {
-            type: dataTypes.TINYINT,
-            allowNull: false,
-            unique: true
-        },
         password:{
             type: dataTypes.STRING,
             allowNull: false,
@@ -63,6 +58,12 @@ const Usuario = sequelize.define(alias, cols, config)
     })
     
 }*/
+Usuario.associate = (models) => {
+    Usuario.hasMany(models.Order, {
+      as: "orders",
+      foreignKey: "userId",
+    });
+}
 
 return Usuario;
 

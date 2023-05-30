@@ -18,28 +18,11 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage })
 
-/*const validations = [
-    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
-    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
-    body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("category_id").notEmpty().withMessage("Tienes que ingresar una categoria"),
-    body("image").custom((value, { req }) => {
-    let file = req.file 
-    let acceptedExtensions  = [".jpg", ".png", ".gif"] 
-    if (!file){
-        throw new Error("Tienen que subir una imagen")
-    } else {
-    let fileExtension = path.extname(file.originalname);  
-    if (!acceptedExtensions.includes(fileExtension)){
-    throw new Error (`Las extensiones de archivo permitidas son ${acceptedExtensions.join(", ")}`)
-    }
-}
-    return true;
-    })
-    
-]*/
+const productsValidations = require("../middlewares/validationProducts")
 
-// Rutas como tal
+
+
+// RUTAS 
 router.get("/catalogo", productsController.catalogo);
 /*
 router.get("/carrito", productsController.carrito);
@@ -48,14 +31,23 @@ router.post("/carrito", productsController.carritoAgregar);
 router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 
 router.get("/create", productsController.create);
-router.post("/create", uploadFile.single("image"),productsController.store);
+router.post("/create", productsValidations ,uploadFile.single("image"),productsController.store);
 
 router.get("/detalle/:id", productsController.detalle);
 
 router.get("/edition", productsController.edition);/*
 router.post("/update/:id", productsController.update);
 */
+router.get("/edition", productsController.edition); 
+router.post("/update/:id", productsValidations, uploadFile.single("image"), productsController.update);
+
 router.get("/delete/:id", productsController.delete);
 
+
+/*
+router.get("/carrito", productsController.carrito);
+router.post("/carrito", productsController.agregarCart);
+router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
+*/
 
 module.exports= router; 

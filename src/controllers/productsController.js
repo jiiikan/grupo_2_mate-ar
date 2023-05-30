@@ -113,20 +113,7 @@ delete: (req, res) => {
     })
     res.redirect("/");
     }
-/*
-    carrito: (req, res) => {
-        res.render("products/carrito", { products, cart})
-    },
 
-    agregarCart: (req, res) => {
-        
-    },
-
-    carritoEliminar: (req, res) => {
-
-    },
-
-*/
 };
 
 module.exports = productsController;

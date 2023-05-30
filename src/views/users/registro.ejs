@@ -17,7 +17,7 @@
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text"  name="username" placeholder="User123456"
+      <input type="text"  name="username" placeholder="User123456" id="user"
       class="in-register <%= locals.errors && errors.username ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.username : null %>">
       <% if (locals.errors && errors.username) { %>
@@ -27,7 +27,7 @@
     <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati"
+      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati" id="name"
       class="in-register <%= locals.errors && errors.name_lastName ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.name_lastName : null %>">
       <% if (locals.errors && errors.name_lastName) { %>
@@ -38,7 +38,7 @@
 
 
       <label class="registro">Correo electrónico</label>
-      <input type="email" name="email" placeholder="genarorafault@gmail.com"
+      <input type="email" name="email" placeholder="genarorafault@gmail.com" id="email"
       class="in-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.email : null %>">
       <% if (locals.errors && errors.email) { %>
@@ -81,7 +81,7 @@
       <% } %>
 
       <label class="registro">Avatar</label>
-      <input type="file"  name="avatar" style="border: none" 
+      <input type="file"  name="avatar" style="border: none" id="imag"
       class="in-register <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
 
       <% if (locals.errors && errors.avatar) { %>
@@ -91,7 +91,7 @@
     <% } %> 
 
       <label class="registro">Contraseña</label>
-      <input type="password" name="password"  placeholder="123456789"
+      <input type="password" name="password"  placeholder="123456789" id="contra"
       class="in-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
       value= "<%= locals.oldData ? oldData.password : null %>">
       <% if (locals.errors && errors.password) { %>
@@ -112,6 +112,8 @@
 
   
   <%- include("../partials/footer") %>
+
+<script src="/js/registro"></script>
 
 </body>
 </html>

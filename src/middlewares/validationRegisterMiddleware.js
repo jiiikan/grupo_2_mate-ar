@@ -29,9 +29,10 @@ const validationsRegister = [
     body("direction")
     .notEmpty().withMessage("Debes de ingresar un domicilio real"),
     body("password")
-    .trim().notEmpty().withMessage("Debes de ingresar una contraseña valida").bail()
-    //.matches(/^ (?=.*\d) $/).withMessage("Debe contener almenos un numero").bail()
-    //.matches(/^(?=.*[A-Z])$/).withMessage("Debe contener almenos una mayuscula").bail()
+    .trim().bail()
+    .notEmpty().withMessage("Debes de ingresar una contraseña valida").bail()
+    .matches(/^ (?=.*\d) $/).withMessage("Debe contener almenos un numero").bail()
+    .matches(/^(?=.*[A-Z])$/).withMessage("Debe contener almenos una mayuscula").bail()
     .isLength({ min: 8 }).withMessage("Debe tener al menos 8 caracteres"),
     //body("confirmar_contraseña").notEmpty().withMessage("Ingrese devuelta la contraseña"),
     body("avatar").custom((value, { req }) => {

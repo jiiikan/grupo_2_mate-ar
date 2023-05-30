@@ -16,29 +16,9 @@ const usersController = {
 },
     // Registro  
     registrado: (req, res) => {
-    const resultValidation = validationResult(req);
+    const errores = validationResult(req);
 
-    if(resultValidation.errors.length > 0){
-        return res.render("users/registro", {
-            errors: resultValidation.mapped(),
-            oldData: req.body
-    })
-    }
-
-    /*let emailDB =  db.Usuario.findOne({
-        where: { email: { [Sequelize.Op.eq]: req.body.email }
-    }})
-
-    if (emailDB){
-        return res.render("users/registro", {
-            errors: {
-                email: {
-                    msg: 'Este email ya esta registrado'
-                }
-            },
-            oldData: req.body
-        })
-    } */
+    if(errores.isEmpty()){
 
         db.Usuario.create({
 			user_name: req.body.username,
@@ -50,10 +30,18 @@ const usersController = {
 			avatar: req.file.filename,
             conditions: req.body.conditions
             
-        })     
-
-		return res.redirect('/users/login');
-	},
+        })
+        .then(function(){
+            res.render('users/login');
+        })  
+    } else {  
+  
+        res.render("users/registro", {errores: validationResult.errors})
+            
+    }
+    
+},
+    
 
     // Login render 
     login: (req, res) => {
@@ -132,7 +120,14 @@ const usersController = {
 },
     carrito: (req, res) => {
         res.render("./users/carrito")
-    }
+    },
+    order: async function (req, res) {
+        let order = await db.Order.findByPk(req.params.id, {
+          include: db.Order.OrderItem,
+        });
+        // res.send(order);
+        return res.render("order", { order });
+      },
 
 };
 

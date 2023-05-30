@@ -10,7 +10,7 @@ module.exports = {
     let order = await db.Order.create(
       { ...req.body, userId: req.session.userLogged.id },
       {
-        include: db.Order.OrderItems,
+        include: db.Order.OrderItem,
       }
     );
     res.json({ ok: true, status: 200, order: order });

@@ -40,3 +40,7 @@ app.use((req, res, next) => {
     res.status(404).render("error404");
 });
 
+//Delete
+router.delete("/delete/:idUser" , function (req,seq){
+    res.send("SOY DELETE!")
+})

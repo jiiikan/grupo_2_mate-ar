@@ -16,13 +16,13 @@
             </a> 
 
             <% if (locals.isLogged) { %>
-            <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%;">
-            <%= locals.userLogged.username %> 
-             <select onchange="location = this.value" class="select">
-                <option value="">Selecciona una opcion</option>
-                <option value="/users/perfil">Mi perfil</option>
-                <option value="/users/logout">Cerrar Sesion</option>
-             </select>
+                <a href="/products/carrito">Carrito</a>
+                <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%; margin-right: 5px;">
+                <%= locals.userLogged.username %> 
+                <select onchange="location = this.value" class="select">
+                    <option value="/users/perfil">Mi perfil</option>
+                    <option value="/users/logout">Cerrar Sesion</option>
+                </select>
             <% } else {%>
             <a href="/users/registro">Registrarse</a>
             <a href="/users/login">Acceso</a>
@@ -61,7 +61,6 @@
         height: 13px;
     }
 
-
     .button-busqueda{
         color: #E5D9B6;
         padding: 1px 10px;
@@ -84,6 +83,14 @@
         text-decoration: none;
     }    
     
+    .select{
+        background-color: #5F8D4E;
+        color: #E5D9B6;
+        border-radius: 10px;
+        border: none;
+        margin: 0 5px;
+        padding: 5px;
+    }
 
     @media(min-width: 450px){
     /*tablet*/
@@ -108,6 +115,9 @@
     
     .button-busqueda{
         height: 33px;
+    }
+    .nav a{
+        font-size: 18px;
     }
 }   
     </style>

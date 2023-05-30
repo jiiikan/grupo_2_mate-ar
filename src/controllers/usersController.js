@@ -24,13 +24,12 @@ const usersController = {
             oldData: req.body
     })
     }
-    /*let dbcomp = db.Usuario.findAll()
-    function dbcomp (field, text) {
-        let userInDB = db.Usuario.find()
-    }
-    let userInDB =  User.findByField("email", req.body.email)
 
-    if (userInDB){
+    /*let emailDB =  db.Usuario.findOne({
+        where: { email: { [Sequelize.Op.eq]: req.body.email }
+    }})
+
+    if (emailDB){
         return res.render("users/registro", {
             errors: {
                 email: {
@@ -39,7 +38,7 @@ const usersController = {
             },
             oldData: req.body
         })
-    }  */
+    } */
 
         db.Usuario.create({
 			user_name: req.body.username,

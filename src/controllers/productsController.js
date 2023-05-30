@@ -1,22 +1,24 @@
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
 const { validationResult } = require("express-validator");
+const db = require('../database/models');
 
 // Requerir al a basde de datos
-const db = require('../database/models');
+/*let readFile = fs.readFileSync(path.resolve(__dirname, "../data/products.json"))
+let products = JSON.parse(readFile, "utf-8");*/
+
 const { Association } = require("sequelize");
 
 const productsController = {
     // Renderizar lista de productos
     catalogo:  (req, res) => {
         db.Producto.findAll()
+        
             .then(function(products){
                 return res.render("products/catalogo", {products: products})
             })
+
     },
 
-    // Detalle de productos 
+    // Detalle de productos dinamico
     detalle: async (req, res) => {
             const productoid = req.params.id;
             
@@ -28,6 +30,7 @@ const productsController = {
             res.status(404).render('error404');
         };
     },
+
 
     //Crear producto
     create:  (req, res) => {
@@ -69,6 +72,7 @@ const productsController = {
     if (isNaN(req.query.id)) {
         return res.status(404).render("error404");
     }
+
     if (!product) {
         return res.status(404).render("error404");
     }
@@ -101,7 +105,6 @@ const productsController = {
 
     res.redirect("/");
 },
-
 // Borrar producto
 delete: (req, res) => {
     const borrar = req.params.id;
@@ -113,20 +116,9 @@ delete: (req, res) => {
     })
     res.redirect("/");
     }
-/*
-    carrito: (req, res) => {
-        res.render("products/carrito", { products, cart})
-    },
 
-    agregarCart: (req, res) => {
-        
-    },
 
-    carritoEliminar: (req, res) => {
-
-    },
-
-*/
 };
+
 
 module.exports = productsController;

@@ -31,16 +31,23 @@ SET time_zone = "+00:00";*/
 -- Estructura de tabla para la tabla `cart`
 --
 
-CREATE TABLE `cart` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `total` int(11) NOT NULL,
-  `method_payment` varchar(255) NOT NULL,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `product_id` int(10) UNSIGNED NOT NULL
+CREATE TABLE `orderitems` (
+    `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `price` DECIMAL(3,1) NOT NULL,
+    `quantity` INT NOT NULL,
+    `orderId` INT UNSIGNED NOT NULL,
+    `productId` VARCHAR(255) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
-
+CREATE TABLE `orders`(
+    `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `total` INT NOT NULL,
+    `userId` INT UNSIGNED NOT NULL ,
+    `paymentMethod` VARCHAR(255) NOT NULL,
+    `shippingMethod` VARCHAR(255)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 --
 -- Estructura de tabla para la tabla `category`
 --
@@ -122,10 +129,10 @@ INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `di
 --
 -- Indices de la tabla `cart`
 --
-ALTER TABLE `cart`
+ALTER TABLE `orderitems`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `product_id` (`product_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `productId` (`productId`),
+  ADD KEY `orderId` (`orderId`);
 
 --
 -- Indices de la tabla `category`
@@ -153,7 +160,7 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de la tabla `cart`
 --
-ALTER TABLE `cart`
+ALTER TABLE `orderitems`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -181,9 +188,9 @@ ALTER TABLE `users`
 --
 -- Filtros para la tabla `cart`
 --
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ALTER TABLE `orderItems`
+  ADD CONSTRAINT `orderitems_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `orderitems_ibfk_2` FOREIGN KEY (`orderId`) REFERENCES `order` (`id`);
 
 --
 -- Filtros para la tabla `products`

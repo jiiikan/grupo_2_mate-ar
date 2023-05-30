@@ -20,7 +20,7 @@ const usersController = {
 },
 
     registrado: (req, res) => {
-        const resultValidation = validationResult(req);
+    const resultValidation = validationResult(req);
 
     if(resultValidation.errors.length > 0){
         return res.render("users/registro", {
@@ -64,6 +64,13 @@ const usersController = {
         res.render("users/login")
     },
     logeando: (req, res) => {
+        const resultValidation = validationResult(req)
+        if(!resultValidation.isEmpty()){
+            let errores = resultValidation.mapped();
+            return res.render("users/login", {errores: errores, olds: req.body})
+        }
+
+
 		    db.Usuario.findOne({
             where: { email: { [Sequelize.Op.eq]: req.body.email } }
         })
@@ -74,6 +81,7 @@ const usersController = {
             if (isOkThePassword) { 
             delete userEmail.password;
 			req.session.userLogged = userEmail;
+            req.session.lastActitity = Date.now();
 
             if(req.body.remember) {
                 res.cookie('userLogin', req.body.email, { maxAge: (1000 * 60) * 1000})
@@ -83,22 +91,29 @@ const usersController = {
 
 			return res.redirect('/users/perfil');
                
-            }  
-			return res.render('users/login', {
+            }
+                return res.render('users/login', {
 				errors: {
-					email: {
-						msg: 'Las credenciales son inválidas'
-					}
-				}
+					password: {
+						msg: 'La contraseña es incorrecta', olds: req.body
+					},
+				},
+                
 			});
+        
+			
 		}
 		return res.render('users/login', {
 			errors: {
 				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
-				}
-			}
-		})}) .catch(error => {
+					msg: 'El email es invalido', olds: req.body
+				},
+			},
+
+		});
+    
+    
+    }) .catch(error => {
             console.log("error al iniciar sesion", error);
         return res.render("users/login")
         });/**/
@@ -114,6 +129,11 @@ const usersController = {
         res.clearCookie('userLogin')
         req.session.destroy();
         return res.redirect('/');
-}};
+},
+    carrito: (req, res) => {
+        res.render("./users/carrito")
+    }
+
+};
 
 module.exports = usersController;

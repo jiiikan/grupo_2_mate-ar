@@ -14,7 +14,7 @@ const validationsAcceso = require('../middlewares/validationAcceso');
 
 
 
-//router.get("/carrito", usersController.carrito);
+router.get("/carrito", authMiddleware, usersController.carrito);
 //router.post("/carrito", usersController.carritoPush);
 //router.delete("/carrito", usersController.carritoDelete);
 

@@ -19,19 +19,14 @@
         <div class="box-cart">
         <span class="titulo-carrito">Tu carrito</span> 
 
-        <% if (cart.length === 0) { %>
+
             <span class="numero-articulos">No hay productos en el carrito</span>
-        <% } else { %>
-            <article>
-                <% cart.forEach((item) => { %>
-                    <p><%= item.name %> - <%= item.price %></p>
-                <% }); %>
-            </article>
-            <p>Total: <%= cart.reduce((total, item) => total + item.price, 0) %></p>
+
+            <p>Total: </p>
             <form action="/" method="post">
                 <button class="comprar" type="submit">Comprar</button>
             </form>
-        <% } %>
+
         <span class="envios">Envios gratis a toda Argentina</span>
         </div>
 

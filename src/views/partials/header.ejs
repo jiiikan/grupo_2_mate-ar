@@ -1,3 +1,5 @@
+<!-- ENCABEZADO DE TODAS LAS PAGINAS -->
+
 <header class="header">
 
     <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo" onclick="location.href= '/'">
@@ -10,18 +12,18 @@
         <nav class="nav">
             <a href="/">Inicio</a>
             <a href="/products/catalogo">Catalogo</a> 
-            <a href="/users/carrito">      
-            <span href="clearfix d-none d-sm-inline-block">Carrito</span>
-            <span class="badge red z-depth-1 mr-1 cart-number">0</span>
-            </a> 
 
             <% if (locals.isLogged) { %>
-                <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%; margin-right: 5px;">
+                <a href="/users/carrito">      
+                    <span href="clearfix d-none d-sm-inline-block">Carrito</span>
+                    <span class="badge red z-depth-1 mr-1 cart-number">0</span>
+                </a> 
                 <%= locals.userLogged.username %> 
                 <select onchange="location = this.value" class="select">
                     <option value="/users/perfil">Mi perfil</option>
                     <option value="/users/logout">Cerrar Sesion</option>
                 </select>
+                <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%; margin-right: 5px;">
             <% } else {%>
             <a href="/users/registro">Registrarse</a>
             <a href="/users/login">Acceso</a>

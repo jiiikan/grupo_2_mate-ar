@@ -24,13 +24,6 @@ app.listen(port, funca);
 // Archivos estaticos (NECESARIOS) 
 const public = path.resolve(__dirname, '../public');
 app.use(express.static(public));
-app.use(express.json());
-app.use(session({   secret: "shhhh",
-                    resave: false,
-                    saveUninitialized: false}))
-app.use(userLoggedMiddleware);
-app.use(cookies());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false}));
 
 // Rutas

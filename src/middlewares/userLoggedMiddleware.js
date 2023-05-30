@@ -1,4 +1,3 @@
-const User = require('../modelos/User');
 
 function userLoggedMiddleware(req, res, next) {
 	res.locals.isLogged = false;

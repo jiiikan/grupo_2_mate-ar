@@ -66,14 +66,14 @@ const usersController = {
                         delete userEmail.password;
                         req.session.userLogged = userEmail;
                         req.session.lastActitity = Date.now();
-                        console.log(req.session.userLogged)
+                        console.log(req.session)
 
                         if (req.body.remember) {
-                            res.cookie('userLogin', req.body.email, { maxAge: (1000 * 60) * 1000 })
+                            res.cookie('userLogin', userEmail.id, { maxAge: 1000 * 60 * 5 })
                             //return ;
                         }
                         return res.redirect('/users/perfil');
-                    }
+                    }else{
 
                     return res.render('users/login', {
                         errors: {
@@ -84,6 +84,7 @@ const usersController = {
 
                     });
                 }
+            }else{
                 return res.render('users/login', {
                     errors: {
                         email: {
@@ -92,7 +93,7 @@ const usersController = {
                     },
 
                 });
-
+}
             }).catch(error => {
                 console.log("error al iniciar sesion", error);
                 return res.render("users/login")

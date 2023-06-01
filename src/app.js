@@ -44,7 +44,7 @@ const api = require("./routes/api.js")
 app.use("/", home)
 app.use("/products", products);
 app.use("/users", users);
-app.use("/api", api);
+app.use("/api/", api);
 
 // Error 404
 app.use((req, res, next) => {

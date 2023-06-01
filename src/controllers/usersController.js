@@ -17,7 +17,8 @@ const usersController = {
     
 
     if(resultValidation.errors.length > 0){
- res.render("users/registro", {errores: resultValidation.errors})  
+ res.render("users/registro", {errores: resultValidation.errors, ey: req.body})  
+ console.log(resultValidation.errors)
     } else {  
             db.Usuario.create({
             user_name: req.body.username,

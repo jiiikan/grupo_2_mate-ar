@@ -13,8 +13,8 @@ window.addEventListener('load', function() {
     if(nombre.value == ""){
       console.log("Hubo un error en el nombre y appelido");
     }
-    if(nombreObligatorio.value.length < 4){
-      console.log("Nombre y Apellido debe tener mas de 4 caracteres");
+    if(nombreObligatorio.value.length < 5){
+      console.log("Nombre y Apellido debe tener mas de 5 caracteres");
     }
     if(email.value == ""){
         console.log("Hubo un error en el email");

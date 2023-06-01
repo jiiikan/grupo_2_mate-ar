@@ -13,11 +13,13 @@ const usersController = {
     },
     // Registro  
     registrado: (req, res) => {
-    const errores = validationResult(req);
+    const resultValidation = validationResult(req);
+    
 
-    if(errores.isEmpty()){
-
-        db.Usuario.create({
+    if(resultValidation.errors.length > 0){
+ res.render("users/registro", {errores: resultValidation.errors})  
+    } else {  
+            db.Usuario.create({
             user_name: req.body.username,
             name_lastname: req.body.name_lastName,
             email: req.body.email,
@@ -26,17 +28,17 @@ const usersController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.file.filename,
             conditions: req.body.conditions
-            
-        })
-        .then(function(){
-            res.render('users/login');
-        })  
-    } else {  
-  
-        res.render("users/registro", {errores: validationResult.errors})
-            
-    }
-    
+
+    })
+    .then(function(){
+        res.render("users/login")
+    })
+    .catch(function(error) {
+        console.log(error)
+        res.render("error", { message: "Error al crear ususario"})
+    })
+}
+
 },
     
 

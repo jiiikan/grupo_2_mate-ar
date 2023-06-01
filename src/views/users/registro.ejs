@@ -21,12 +21,13 @@
 
       <label class="registro">Nombre de usuario</label>
       <input type="text"  name="username" placeholder="User123456" id="user"
-      class="in-register <%= locals.errors && errors.username ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.username : null %>">
-      <% if (locals.errors && errors.username) { %>
-        <div class="text-danger">
-            <%= errors.username.msg %>
-        </div>
+      class="in-register">
+      <% if(typeof errores != "undefined"){ %>
+      <% for(let i = 0; i < errores.length; i++) {%>
+      <% if (errores[i].param == "username") { %>
+        <small class="text-danger"><%= errores[i].msg %></small>
+    <% } %>
+    <% } %>
     <% } %>
 
       <label class="registro">Nombre y apellido</label>

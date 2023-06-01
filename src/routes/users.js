@@ -7,7 +7,6 @@ const usersController = require('../controllers/usersController');
 
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
-const validations = require('../middlewares/validationRegisterMiddleware.js');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationsAcceso = require('../middlewares/validationAcceso');
@@ -21,7 +20,7 @@ router.get("/carrito", authMiddleware, usersController.carrito);
 router.get("/order/:id", authMiddleware, usersController.order)
 
 router.get("/registro", guestMiddleware, registerValidations ,usersController.registro);
-router.post("/registro", uploadFile.single("avatar"), validations, usersController.registrado);
+router.post("/registro", uploadFile.single("avatar"), registerValidations, usersController.registrado);
 
 router.get("/login", guestMiddleware, usersController.login);
 router.post('/login', validationsAcceso, usersController.logeando);

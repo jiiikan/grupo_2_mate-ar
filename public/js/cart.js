@@ -1,7 +1,3 @@
-
-
-
-
 function setCarritoVacio() {
     cartRows.innerHTML = `
     <tr>

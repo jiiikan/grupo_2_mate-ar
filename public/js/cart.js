@@ -1,6 +1,3 @@
-
-
-
 function setCarritoVacio() {
     cartRows.innerHTML = `
     <tr>
@@ -40,7 +37,7 @@ if( localStorage.carrito ){
                 product.price * item.quantity,
                 2
             ).toFixed(2)} </td>
-            <td><button class="btn btn-danger btn-sm onclick=removeItem(${index})"><i class="fas fa-trash "></i></button></td>
+            <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash "></i></button></td>
             <tr>`;
             producto.push({
                 productId: product.id,
@@ -58,6 +55,35 @@ if( localStorage.carrito ){
             document.querySelector(".totalAmount").innerText = `$ ${calcularTotal(producto)}`;
         });
         
-    });
-    
+    });  
+}
+
+
+let checkoutCart = document.querySelector("#checkoutCart");
+
+checkoutCart.onsubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+        orderItems: producto,
+        paymentMethod: checkoutCart.paymentMethod.value,
+        shippingMethod: checkoutCart.shippingMethod.value,
+        total: calcularTotal(producto)
+    };
+    fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData)
+    })
+    .then((r) => r.json())
+    .then((res) => {
+        if(res.ok){
+            vaciarCarrito();
+            location.href = `/order/${res.order.id}`
+        }
+    })
+    console.log(formData);
+
+
 }

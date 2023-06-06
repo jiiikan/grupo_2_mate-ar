@@ -1,8 +1,11 @@
+<!-- PAGINA DE REGISTRO DE USUARIO -->
+
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("../partials/head") %>
+
 <head>
+    <%- include("../partials/head") %>
     <title>Registro - Mater.ar</title>
     <link rel="stylesheet" href="/css/registro.css">
 </head>
@@ -17,40 +20,43 @@
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text"  name="username" placeholder="User123456"
-      class="in-register <%= locals.errors && errors.username ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.username : null %>">
-      <% if (locals.errors && errors.username) { %>
-        <div class="text-danger">
-            <%= errors.username.msg %>
-        </div>
+      <input type="text"  name="username" placeholder="User123456" id="user"
+      class="in-register" value="<%= ey.username || '' %>">
+      <% if(typeof errores != "undefined"){ %>
+      <% for(let i = 0; i < errores.length; i++) {%>
+      <% if (errores[i].path == "username") { %>
+        <small class="text-danger"><%= errores[i].msg %></small>
+    <% } %>
+    <% } %>
     <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati"
-      class="in-register <%= locals.errors && errors.name_lastName ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.name_lastName : null %>">
-      <% if (locals.errors && errors.name_lastName) { %>
-        <div class="text-danger">
-            <%= errors.name_lastName.msg %>
-        </div>
-    <% } %>
+      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati" id="name"
+      class="in-register" value="<%= ey.name_lastName || '' %>">
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "name_lastName") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
 
 
       <label class="registro">Correo electrónico</label>
-      <input type="email" name="email" placeholder="genarorafault@gmail.com"
-      class="in-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.email : null %>">
-      <% if (locals.errors && errors.email) { %>
-        <div class="text-danger">
-            <%= errors.email.msg %>
-        </div>
-    <% } %>
+      <input type="email" name="email" placeholder="genarorafault@gmail.com" id="email"
+      class="in-register" value="<%= ey.email || '' %>">
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "email") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
 
       
       <label class="registro">Pais</label>
       <select name="country" 
-      class="in-register form-select <%= locals.errors && errors.country ? 'is-invalid' : null %>">
+      class="in-register form-select" value="<%= ey.country || '' %>">
       
         <option value="">Selecciona un Pais</option>
         <%
@@ -59,48 +65,65 @@
 
         <% for (const oneCountry of country) { %>
           <option 
-          value="<%= oneCountry %>"
+          value="<%=oneCountry%>"
           <%= locals.oldData && (oneCountry  === oldData.country ) ? 'selected' : null %>>
           <%= oneCountry %> </option>
               <% } %>
       </select>
-      <% if (locals.errors && errors.country ) { %>
-        <div class="text-danger">
-            <%= errors.country.msg %>
-        </div>
-    <% } %>
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "country") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
+
 
 
       <label class="registro">Domicilio</label>
       <input type="text"  name="direction" placeholder="Calle numero" 
-      class="in-register form-control <%= locals.errors && errors.direction ? 'is-invalid' : null %>">
-      <% if (locals.errors && errors.direction) { %>
-          <div class="text-danger">
-              <%= errors.direction.msg %>
-          </div>
+      class="in-register form-control" value="<%= ey.direction || '' %>">
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "direction") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
       <% } %>
 
-      <label class="registro">Avatar</label>
-      <input type="file"  name="avatar" style="border: none" 
-      class="in-register <%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
 
-      <% if (locals.errors && errors.avatar) { %>
-        <div class="text-danger">
-            <%= errors.avatar.msg %>
-        </div>
-    <% } %> 
+      <label class="registro">Avatar</label>
+      <input type="file"  name="avatar" style="border: none" id="imag"
+      class="in-register" value="<%= ey.avatar || '' %>">
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "avatar") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
+
 
       <label class="registro">Contraseña</label>
-      <input type="password" name="password"  placeholder="123456789"
-      class="in-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-      value= "<%= locals.oldData ? oldData.password : null %>">
-      <% if (locals.errors && errors.password) { %>
-        <div class="text-danger">
-            <%= errors.password.msg %>
-        </div>
-    <% } %>
+      <input type="password" name="password"  placeholder="123456789" id="contra"
+      class="in-register">
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "password") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
+
 
       <label class="registro"><input type="radio" name="terminos_y_condiciones"> Acepto terminos y condiciones</label>
+      <% if(typeof errores != "undefined"){ %>
+        <% for(let i = 0; i < errores.length; i++) {%>
+        <% if (errores[i].path == "terminos_y_condiciones") { %>
+          <small class="text-danger"><%= errores[i].msg %></small>
+      <% } %>
+      <% } %>
+      <% } %>
 
       <div class="boton">
         <button type="submit" class="boton-registro">Crear cuenta</button>
@@ -112,6 +135,8 @@
 
   
   <%- include("../partials/footer") %>
+
+<script src="/js/registro"></script>
 
 </body>
 </html>

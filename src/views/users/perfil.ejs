@@ -1,8 +1,10 @@
+<!-- PAGINA DEL PERFIL DEL USUARIO -->
+
 <!DOCTYPE html>
 <html lang="es">
-<%- include("../partials/head") %>
 
 <head>
+    <%- include("../partials/head") %>
     <title>Perfil - MateAr</title>
     <link rel="stylesheet" href="/css/perfil.css">
 </head>
@@ -39,7 +41,12 @@
             </table>
                 <input type="button" name="editar" value="Editar"  class="button">
                 <input type="submit" class="button" value="Cerrar Sesion" onclick="location.href= '/users/logout'">
-        
+            </section>
+            <section>
+                <h2 class="h2">Configuracion</h2>
+                <ul class="errores">
+                    <li></li>
+                </ul>
             </section>
             <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
         </section>

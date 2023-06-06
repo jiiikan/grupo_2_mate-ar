@@ -8,17 +8,16 @@ const Sequelize = require("sequelize");
 const usersController = {
     // Registro render 
     registro: (req, res) => {
-        res.render("users/registro")
+        res.render("users/registro", { ey: {} })
 
     },
     // Registro  
     registrado: (req, res) => {
     const resultValidation = validationResult(req);
     
-
     if(resultValidation.errors.length > 0){
  res.render("users/registro", {errores: resultValidation.errors, ey: req.body})  
- console.log(resultValidation.errors)
+
     } else {  
             db.Usuario.create({
             user_name: req.body.username,
@@ -45,16 +44,15 @@ const usersController = {
 
     // Login render 
     login: (req, res) => {
-        res.render("users/login")
+        res.render("users/login", { ey: {} })
     },
 
     // Login db  
     logeando: (req, res) => {
         const resultValidation = validationResult(req)
-        if (!resultValidation.isEmpty()) {
-            let errores = resultValidation.mapped();
-            return res.render("users/login", { errores: errores, olds: req.body })
-        }
+        if (resultValidation.errors.length > 0) {
+            return res.render("users/login", { errores: resultValidation.errors, ey: req.body })
+        }else{
 
         db.Usuario.findOne({
             where: { email: { [Sequelize.Op.eq]: req.body.email } }
@@ -74,33 +72,14 @@ const usersController = {
                             //return ;
                         }
                         return res.redirect('/users/perfil');
-                    }else{
-
-                    return res.render('users/login', {
-                        errors: {
-                            password: {
-                                msg: 'La contraseña es incorrecta', olds: req.body
-                            },
-                        },
-
-                    });
-                }
-            }else{
-                return res.render('users/login', {
-                    errors: {
-                        email: {
-                            msg: 'El email es invalido', olds: req.body
-                        },
-                    },
-
-                });
-}
-            }).catch(error => {
+}}
+})
+            .catch(error => {
                 console.log("error al iniciar sesion", error);
                 return res.render("users/login")
             });
-
-    },
+    }
+},
 
     // Perfil render 
     profile: (req, res) => {

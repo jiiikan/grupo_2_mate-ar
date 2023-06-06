@@ -2,16 +2,19 @@ const path = require('path');
 const { body } = require('express-validator');
 const { where } = require('sequelize');
 
+
 const validationProduct = [
-    body("product").notEmpty().withMessage("Tienes que ingresar el nombre del producto"),
-    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion"),
+    body("name")
+    .notEmpty().withMessage("Tienes que ingresar el nombre del producto").bail()
+    .isLength({ min: 5}).withMessage("Debe tener al menos 5 caracteres"),
+    body("description").notEmpty().withMessage("Tienes que ingresarle una descripcion").bail()
+    .isLength({ min: 10}).withMessage("Debe tener al menos 10 caracteres"),
     body("price").notEmpty().withMessage("Tienes que ingresar un precio"),
-    body("category_id").notEmpty().withMessage("Tienes que ingresar una categoria"),
     body("image").custom((value, { req }) => {
     let file = req.file 
     let acceptedExtensions  = [".jpg", ".png", ".gif", "jpeg"] 
     if (!file){
-        throw new Error("Tienen que subir una imagen")
+        throw new Error("Tienes que subir una imagen")
     } else {
     let fileExtension = path.extname(file.originalname);  
     if (!acceptedExtensions.includes(fileExtension)){

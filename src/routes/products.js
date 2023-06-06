@@ -24,14 +24,14 @@ const validationProduct = require('../middlewares/validationProducts');
 router.get("/catalogo", productsController.catalogo);
 
 // Rutas de creacion de un producto
-router.get("/create", productsController.create);
+router.get("/create", validationProduct ,productsController.create);
 router.post("/create", validationProduct ,uploadFile.single("image"),productsController.store);
 
 // Ruta del detalle de un producto
 router.get("/detalle/:id", productsController.detalle);
 
 // Rutas de edicion de los productos
-router.get("/edition", productsController.edition); 
+router.get("/edition", validationProduct ,productsController.edition); 
 router.post("/update/:id", validationProduct ,uploadFile.single("image"), productsController.update);
 
 // Ruta de eliminacion de los productos

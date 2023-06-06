@@ -30,14 +30,9 @@ router.post("/carrito", productsController.carritoAgregar);
 */
 router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 
-router.get("/create", productsController.create);
-router.post("/create", productsValidations ,uploadFile.single("image"),productsController.store);
 
-router.get("/detalle/:id", productsController.detalle);
 
-router.get("/edition", productsController.edition);/*
-router.post("/update/:id", productsController.update);
-*/
+
 router.get("/edition", productsController.edition); 
 router.post("/update/:id", productsValidations, uploadFile.single("image"), productsController.update);
 

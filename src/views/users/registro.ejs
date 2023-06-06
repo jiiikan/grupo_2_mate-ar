@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <%- include("../partials/head") %>
     <title>Registro - Mater.ar</title>
@@ -11,7 +10,6 @@
 </head>
 
 <body>
-
   <%- include("../partials/header") %>
 
     <main class="main">
@@ -39,7 +37,6 @@
         </div>
     <% } %>
 
-
       <label class="registro">Correo electrónico</label>
       <input type="email" name="email" placeholder="genarorafault@gmail.com" id="email"
       class="in-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -50,7 +47,6 @@
         </div>
     <% } %>
 
-      
       <label class="registro">Pais</label>
       <select name="country" 
       class="in-register form-select <%= locals.errors && errors.country ? 'is-invalid' : null %>">
@@ -72,7 +68,6 @@
             <%= errors.country.msg %>
         </div>
     <% } %>
-
 
       <label class="registro">Domicilio</label>
       <input type="text"  name="direction" placeholder="Calle numero" 
@@ -105,18 +100,21 @@
 
       <label class="registro"><input type="radio" name="terminos_y_condiciones"> Acepto terminos y condiciones</label>
 
+      <section class="errores">
+        <ul>
+
+        </ul>
+      </section>
+
       <div class="boton">
         <button type="submit" class="boton-registro">Crear cuenta</button>
         <button type="reset" class="boton-registro">Borrar</button>
       </div>
-
     </form>
     </main>
 
-  
   <%- include("../partials/footer") %>
 
-<script src="/js/registro"></script>
-
+  <script src="/js/registro.js"></script>
 </body>
 </html>

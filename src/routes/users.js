@@ -11,6 +11,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const validationsAcceso = require('../middlewares/validationAcceso');
 const registerValidations = require("../middlewares/validationRegisterMiddleware")
+const sessionMiddleware = require('../middlewares/sessionMiddleware');
 
 
 
@@ -19,8 +20,8 @@ router.get("/carrito", authMiddleware, usersController.carrito);
 //router.delete("/carrito", usersController.carritoDelete);
 router.get("/order/:id",authMiddleware, usersController.order)
 
-router.get("/registro", guestMiddleware, registerValidations ,usersController.registro);
-router.post("/registro", uploadFile.single("avatar"), registerValidations, usersController.registrado);
+router.get("/registro",  registerValidations, guestMiddleware ,usersController.registro);
+router.post("/registro", uploadFile.single("avatar"), registerValidations, sessionMiddleware, usersController.registrado);
 
 router.get("/login", guestMiddleware, usersController.login);
 router.post('/login', validationsAcceso, usersController.logeando);

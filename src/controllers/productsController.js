@@ -83,7 +83,7 @@ const productsController = {
     // Editar producto
     update: async (req, res) => {
         const productId = parseInt(req.params.id);
-        const productIndex = await db.Producto.findByPk(productId);
+        const productIndex = await db.Producto.findByPk(productId);                     
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {

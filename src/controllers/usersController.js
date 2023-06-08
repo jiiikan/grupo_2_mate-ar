@@ -1,6 +1,6 @@
-const db = require('../database/models');
 const { validationResult } = require("express-validator");
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models');
 const { log, error } = require("console");
 const { on } = require("events");
 const Sequelize = require("sequelize");
@@ -65,11 +65,10 @@ const usersController = {
                         delete userEmail.password;
                         req.session.userLogged = userEmail;
                         req.session.lastActitity = Date.now();
-                        console.log(req.session)
 
                         if (req.body.remember) {
-                            res.cookie('userLogin', userEmail.id, { maxAge: 1000 * 60 * 5 })
-                            //return ;
+                             res.cookie('remember', req.body.email, { maxAge: 6000 * 8 });
+
                         }
                         return res.redirect('/users/perfil');
 }}
@@ -85,12 +84,14 @@ const usersController = {
     profile: (req, res) => {
         //const user =  req.session.userLogged
         //const userFromDB = User.findByField('id', user.id);
-        res.render('./users/perfil');
+        res.render('./users/perfil', {
+            user: req.session.userLogged
+        });
     },
 
     // Login con cookies 
     logout: (req, res) => {
-        res.clearCookie('userLogin')
+        res.clearCookie('remember')
         req.session.destroy();
         return res.redirect('/');
     },

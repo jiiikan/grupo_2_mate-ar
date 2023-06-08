@@ -20,7 +20,7 @@
 			
 			<label class="login-sub">Correo electrónico</label>
 			<input type="text" name="email" placeholder="correo" 
-			class="login-input" value="<%= ey && ey.email ? ey.email : '' %>">
+			class="login-input" >
 			<% if(typeof errores != "undefined"){ %>
       <% for(let i = 0; i < errores.length; i++) {%>
       <% if (errores[i].path == "email") { %>

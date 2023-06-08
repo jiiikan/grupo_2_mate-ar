@@ -1,5 +1,5 @@
 const db = require("../database/models");
-const Users = db.Useuario;
+const Users = db.Usuario;
 
 sessionMiddleware = async (req, res, next) => {
   res.locals.userFound = false;
@@ -12,9 +12,9 @@ sessionMiddleware = async (req, res, next) => {
       res.locals.userAdmin = true;
     }
   } else {
-    if (req.cookies.userId) {
+    if (req.cookies.remember) {
       userFromCookie = await Users.findOne({
-        where: { id: req.cookies.userId },
+        where: { id: req.cookies.id },
       });
     }
 

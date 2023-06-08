@@ -18,9 +18,8 @@
 				<p class="iniciar">Iniciar sesión</p>
 				<form method="POST" class="form-acceso" action="/users/login">
 
-					<label class="login-sub" id="correo">Correo electrónico</label>
-					<input type="text" name="email" placeholder="correo" class="login-input"
-						value="<%= ey && ey.email ? ey.email : '' %>">
+					<label class="login-sub">Correo electrónico</label>
+					<input type="text" name="email" placeholder="correo" class="login-input">
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="email" ) { %>
@@ -31,29 +30,29 @@
 									<% } %>
 										<% } %>
 
-
 					<label class="login-sub" id="contra">Contraseña</label>
 					<input type="password" name="password" placeholder="hola81272"
 						class="login-input">
-						<% if(typeof errores !="undefined" ){ %>
-							<% for(let i=0; i < errores.length; i++) {%>
-								<% if (errores[i].path=="password" ) { %>
-									<small class="text-danger">
-										<%= errores[i].msg %>
-									</small>
+					<% if(typeof errores !="undefined" ){ %>
+						<% for(let i=0; i < errores.length; i++) {%>
+							<% if (errores[i].path=="password" ) { %>
+								<small class="text-danger">
+									<%= errores[i].msg %>
+								</small>
 								<% } %>
-							<% } %>
-						<% } %>
+									<% } %>
+										<% } %>
 
 
-					<label class="login-sub">
+				<label class="login-sub">
 					<input type="checkbox" class="boton_remember"
 						name="remember">Recordar mi usuario
-					</label>
+				</label>
 
-					<div class="bottom">
-						<button type="submit" class="boton-iniciar">Iniciar sesión</button>
-					</div>
+				<div class="bottom">
+					<button type="submit"
+						class="boton-iniciar">Iniciar sesión</button>
+			</div>
 				</form>
 				<h3 class="go-register">¿No tenes una cuenta? <a href="/registro"> Regístrate aquí</a></h3>
 			</div>

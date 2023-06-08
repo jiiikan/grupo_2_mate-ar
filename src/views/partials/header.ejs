@@ -13,12 +13,11 @@
             <a href="/">Inicio</a>
             <a href="/products/catalogo">Catalogo</a> 
 
-            <% if (locals.isLogged) { %>
+            <% if (locals.userLogged) { %>
                 <a href="/users/carrito">      
                     <span href="clearfix d-none d-sm-inline-block">Carrito</span>
                     <span class="badge red z-depth-1 mr-1 cart-number">0</span>
-                </a> 
-                <%= locals.userLogged.username %> 
+                </a>  
                 <select onchange="location = this.value" class="select">
                     <option value="/users/perfil">Mi perfil</option>
                     <option value="/users/logout">Cerrar Sesion</option>

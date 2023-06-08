@@ -11,16 +11,16 @@ window.addEventListener('load', function() {
 
   function validar(){
     if(nombre.value == ""){
-      console.log("Hubo un error en el nombre y appelido");
+      errores.push("Hubo un error en el nombre y appelido");
     }
     if(nombreObligatorio.value.length < 5){
-      console.log("Nombre y Apellido debe tener mas de 5 caracteres");
+      errores.push("Nombre y Apellido debe tener mas de 5 caracteres");
     }
     if(descripcion.value.length < 20){
-        console.log("La descripcion de debe tener más de 20 caracteres");
+        errores.push("La descripcion de debe tener más de 20 caracteres");
       }
     if(imagen("@" == false)){
-        console.log("El correo no es valido");
+        errores.push("El correo no es valido");
       } 
       // Crear arreglos con extensiones permitidas
 let allowedImages = ['jpeg', 'jpg', 'gif', 'png'];

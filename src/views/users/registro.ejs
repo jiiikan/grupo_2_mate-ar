@@ -21,7 +21,7 @@
 
       <label class="registro">Nombre de usuario</label>
       <input type="text"  name="username" placeholder="User123456" id="user"
-      class="in-register" value="<%= ey.username || '' %>">
+      class="in-register" value="<%= ey && ey.username ? ey.username : '' %>">
       <% if(typeof errores != "undefined"){ %>
       <% for(let i = 0; i < errores.length; i++) {%>
       <% if (errores[i].path == "username") { %>

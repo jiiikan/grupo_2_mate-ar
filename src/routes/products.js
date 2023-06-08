@@ -23,6 +23,9 @@ const validationProduct = require('../middlewares/validationProducts');
 // Ruta de vista del catalogo
 router.get("/catalogo", productsController.catalogo);
 
+
+router.get("/detalle/:id", productsController.detalle);
+
 // Rutas de creacion de un producto
 router.get("/create", validationProduct ,productsController.create);
 router.post("/create",  uploadFile.single("image"),validationProduct,productsController.store);

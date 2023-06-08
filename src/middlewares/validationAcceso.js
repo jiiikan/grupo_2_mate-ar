@@ -20,7 +20,7 @@ const validationsAcceso = [
     .custom(async (value, { req }) => {
         const user = await db.Usuario.findOne({ where: { email: req.body.email } });
         if (!user) {
-          throw new Error('Ingresa un correo electronico');
+          throw new Error('Contraseña invalida');
         }
         const passwordMatch = await bcrypt.compare(value, user.password);
         if (!passwordMatch) {

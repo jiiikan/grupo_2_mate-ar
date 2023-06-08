@@ -17,14 +17,14 @@
         <section class="data">
             
             <section>
-                <h1 class="title">Hola <%=locals.userLogged.user_name %></h1>
+                <h1 class="title">Hola <%=user.user_name %></h1>
                 <h2 class="h2">Tu informacion personal</h2>
                 <ul class="lista">
-                    <li><%= locals.userLogged.user_name %></li>
-                    <li><%= locals.userLogged.name_lastName %></li>
-                    <li><%= locals.userLogged.email %></li>
-                    <li><%= locals.userLogged.country %></li>
-                    <li><%= locals.userLogged.direction %></li>
+                    <li><%= user.user_name %></li>
+                    <li><%= user.name_lastName %></li>
+                    <li><%= user.email %></li>
+                    <li><%= user.country %></li>
+                    <li><%= user.direction %></li>
                     <li>Productos en el carrito: 0</li>
                 </ul>
                 <table>
@@ -48,7 +48,7 @@
                     <li></li>
                 </ul>
             </section>
-            <img src="/images/users/<%= locals.userLogged.avatar %>" class="img">
+            <img src="/images/users/<%= user.avatar %>" class="img">
         </section>
 </main>
 

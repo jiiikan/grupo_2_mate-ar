@@ -1,16 +1,31 @@
-window.addEventListener('load', function(){
-    let user = document.querySelectorAll('#user')
-    let name = document.querySelectorAll('#name')
-    let email = document.querySelectorAll('#email')
-    let contra = document.querySelectorAll('#contra')
-    let imag = document.querySelectorAll('#imag')
+window.addEventListener('load', function () {
+    let formulario = document.querySelector('.form-acceso')
 
-    
+    formulario.addEventListener('submit', function (e) {
+        let errores = [];
 
+        let correo = document.querySelector('#correo').value
+        let contra = document.querySelector('#contra').value
+
+        if(correo == ''){
+            errores.push("El campo email es obligatorio")
+        }
+        if (correo.includes('@') == false) {
+            errores.push('El campo de email es invalido')
+        }
+
+        if(contra == ''){
+            errores.push('El campo contraseña es obligatorio')
+        }
+
+        if (errores.length > 0) {
+            e.preventDefault();
+            let ulErrores = document.querySelector('.errores ul');
+            errores.forEach(error => {
+                ulErrores.innerHTML += '<li>' + [error] + '</li>'
+            });
+        }
+    })
 })
 /*○ Email
-■ Obligatorio.
-■ Deberá ser válido.
-■ (Opcional) → Debe existir en la base.
-○ Contraseña
-■ Obligatoria. */
+■ (Opcional) → Debe existir en la base. */

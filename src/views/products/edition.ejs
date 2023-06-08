@@ -14,24 +14,56 @@
 
     <main class="main-edition">
 
-        <form action="/products/update/ <%= product.id %>" method="POST" class="edition" enctype="multipart/form-data">
+        <form action="/products/update/<%=product.id%>" method="POST" class="edition" enctype="multipart/form-data">
             <h2 class="titulo">Edicion del producto:</h2>
             <h3 class="name"> <%= product.name %> </h3>
 
             <label class="label-edition">Nombre del producto</label>
-            <input type="text" name="product" placeholder="Nombre" class="input" value="<%= product.name%>">
+            <input type="text" name="name" placeholder="Nombre" class="input" value="<%= product.name%>">
+            <% if(typeof errores != "undefined"){ %>
+                <% for(let i = 0; i < errores.length; i++) {%>
+                <% if (errores[i].path == "name") { %>
+                  <small class="text-danger"><%= errores[i].msg %></small>
+              <% } %>
+              <% } %>
+              <% } %>
+        
             
             <label class="label-edition">Descripcion del producto</label>
             <input type="text" name="description" placeholder="descripcion" class="input" value="<%= product.description%>">
+            <% if(typeof errores != "undefined"){ %>
+                <% for(let i = 0; i < errores.length; i++) {%>
+                <% if (errores[i].path == "description") { %>
+                  <small class="text-danger"><%= errores[i].msg %></small>
+              <% } %>
+              <% } %>
+              <% } %>
+        
             
             <label class="label-edition">Precio del producto</label>
             <input type="number" name="price" placeholder="Precio" class="input" value="<%= product.price%>">
+            <% if(typeof errores != "undefined"){ %>
+                <% for(let i = 0; i < errores.length; i++) {%>
+                <% if (errores[i].path == "price") { %>
+                  <small class="text-danger"><%= errores[i].msg %></small>
+              <% } %>
+              <% } %>
+              <% } %>
+        
             
             <label class="label-edition">Imagen del producto</label>
             <input type="file" name="image" placeholder="Imagen" class="file" value="<%= product.image %>">
+            <% if(typeof errores != "undefined"){ %>
+                <% for(let i = 0; i < errores.length; i++) {%>
+                <% if (errores[i].path == "name") { %>
+                  <small class="text-danger"><%= errores[i].msg %></small>
+              <% } %>
+              <% } %>
+              <% } %>
+        
             
             <label class="label-edition">Categoria del producto</label>
-            <select name="category" class="form-select">
+            <select name="category_id" class="form-select">
 
                 <% let num1 = categorias.find(element => element.id == 1)
                 let num2 = categorias.find(element => element.id == 2)

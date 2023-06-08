@@ -77,33 +77,32 @@ const productsController = {
         }
 
         Promise.all([product, categorias])
-        res.render("products/edition", { product: product, categorias: categorias, ey: " " });
+        res.render("products/edition", { product: product, categorias: categorias});
     },
 
     // Editar producto
     update: async (req, res) => {
         const productId = parseInt(req.params.id);
-        const productIndex = await db.Producto.findByPk(productId);
+        const product = await db.Producto.findByPk(productId);                     
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
             db.Categoria.findAll()
                 .then(function (categorias) {
-                    res.render("products/edition", {errores: resultValidation.errors, ey: req.body, Categorias: categorias}) 
+                    res.render("products/edition", {errores: resultValidation.errors, product: product, categorias: categorias}) 
                 })
             }else{
-        
 
-        if (productIndex == undefined) {
+        if (product == undefined) {
             return res.status(404).render("error404");
-        };
+        }
 
         db.Producto.update({
-            name: req.body.product,
+            name: req.body.name,
             description: req.body.description,
             price: req.body.price,
             image: req.file.filename,
-            category_id: req.body.category,
+            category_id: req.body.category_id,
         }, {
             where: {
                 id: req.params.id

@@ -12,6 +12,8 @@ const funca = () => console.log('Servidor funcionando en localhost: ' + port);
 //Middleware para recordar usuario
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+
+
 // Config Ejs
 app.engine('html', require('ejs').renderFile);
 app.set("views", path.resolve(__dirname,"./views"));
@@ -28,10 +30,11 @@ app.use(express.urlencoded({ extended: false}));
 app.use(session({ secret: "shhhh",
                 resave: false,
                 saveUninitialized: false}))
-app.use(userLoggedMiddleware);
 app.use(cookies());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false}));
+app.use(userLoggedMiddleware);
+
 
 // Rutas
 const home = require("./routes/home");

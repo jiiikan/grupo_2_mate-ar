@@ -19,7 +19,7 @@
 				<form method="POST" class="form-acceso" action="/users/login">
 
 					<label class="login-sub">Correo electrónico</label>
-					<input type="text" name="email" placeholder="correo" class="login-input">
+					<input type="text" name="email" placeholder="correo" class="login-input" value="<%= ey && ey.email ? ey.email : '' %>">
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="email" ) { %>
@@ -31,8 +31,7 @@
 										<% } %>
 
 					<label class="login-sub" id="contra">Contraseña</label>
-					<input type="password" name="password" placeholder="hola81272"
-						class="login-input">
+					<input type="password" name="password" placeholder="hola81272" class="login-input">
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="password" ) { %>

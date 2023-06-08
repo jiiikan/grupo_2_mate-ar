@@ -15,29 +15,26 @@ const storage = multer.diskStorage({
         cb(null, fileName)
     }
 })
-
 const uploadFile = multer({ storage })
 
-const productsValidations = require("../middlewares/validationProducts")
+// Middleware de validacion de productos
+const validationProduct = require('../middlewares/validationProducts');
 
-
-
-// RUTAS 
+// Ruta de vista del catalogo
 router.get("/catalogo", productsController.catalogo);
-/*
-router.get("/carrito", productsController.carrito);
-router.post("/carrito", productsController.carritoAgregar);
-*/
-//router.get('/carrito/:id/eliminar', productsController.carritoEliminar);
 
-router.get("/create", productsController.create);
-router.post("/create", productsValidations ,uploadFile.single("image"),productsController.store);
+// Rutas de creacion de un producto
+router.get("/create", validationProduct ,productsController.create);
+router.post("/create", validationProduct ,uploadFile.single("image"),productsController.store);
 
+// Ruta del detalle de un producto
 router.get("/detalle/:id", productsController.detalle);
 
-router.get("/edition", productsController.edition); 
-router.post("/update/:id", productsValidations, uploadFile.single("image"), productsController.update);
+// Rutas de edicion de los productos
+router.get("/edition", validationProduct ,productsController.edition); 
+router.post("/update/:id", validationProduct ,uploadFile.single("image"), productsController.update);
 
+// Ruta de eliminacion de los productos
 router.get("/delete/:id", productsController.delete);
 
 module.exports= router; 

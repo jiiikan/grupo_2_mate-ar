@@ -20,42 +20,51 @@
 
             <label class="label-create">Nombre del producto</label>
             <input type="text" name="name" placeholder="Nombre" class="input" 
-                class="form-control <%= locals.errors && errors.product ? 'is-invalid' : null %>"
-                value= "<%= locals.oldData ? oldData.product : null %>">
-            <% if (locals.errors && errors.product) { %>
-                    <div class="text-danger">
-                        <%= errors.product.msg %>
-                    </div>
-            <% } %>
+                class="form-control" value="<%= ey && ey.name ? ey.name : '' %>">
+                <% if(typeof errores != "undefined"){ %>
+                    <% console.log(ey) %>
+                    <% for(let i = 0; i < errores.length; i++) {%>
+                    <% if (errores[i].path == "name") { %>
+                      <small class="text-danger"><%= errores[i].msg %></small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
             
             <label class="label-create">Descripcion del producto</label>
             <input type="text" name="description" placeholder="descripcion" class="input" 
-                class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
-                value= "<%= locals.oldData ? oldData.description : null %>">
-            <% if (locals.errors && errors.description) { %>
-                <div class="text-danger">
-                    <%= errors.description.msg %>
-                </div>
-            <% } %>
+                class="form-control" value="<%= ey && ey.description ? ey.description : '' %>">
+                <% if(typeof errores != "undefined"){ %>
+                    <% for(let i = 0; i < errores.length; i++) {%>
+                    <% if (errores[i].path == "description") { %>
+                      <small class="text-danger"><%= errores[i].msg %></small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
+            
 
             <label class="label-create">Precio del producto</label>
             <input type="number" name="price" placeholder="Precio" class="input" 
-                class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
-                value= "<%= locals.oldData ? oldData.price : null %>">
-            <% if (locals.errors && errors.price) { %>
-                <div class="text-danger">
-                    <%= errors.price.msg %>
-                </div>
-            <% } %>
+                class="form-control" value="<%= ey && ey.price ? ey.price : '' %>">
+                <% if(typeof errores != "undefined"){ %>
+                    <% for(let i = 0; i < errores.length; i++) {%>
+                    <% if (errores[i].path == "price") { %>
+                      <small class="text-danger"><%= errores[i].msg %></small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
+            
 
             <label class="label-create">Imagen del producto</label>
             <input type="file" name="image" placeholder="Imagen" class="file" 
-                class="form-control <%= locals.errors && errors.image ? 'is-invalid' : null %>">
-            <% if (locals.errors && errors.image) { %>
-                <div class="text-danger">
-                    <%= errors.image.msg %>
-                </div>
-            <% } %>
+                class="form-control" value="<%= ey && ey.image ? ey.image : '' %>">
+                <% if(typeof errores != "undefined"){ %>
+                    <% for(let i = 0; i < errores.length; i++) {%>
+                    <% if (errores[i].path == "image") { %>
+                      <small class="text-danger"><%= errores[i].msg %></small>
+                  <% } %>
+                  <% } %>
+                  <% } %>
+            
             
             <label class="label-create">Categoria del producto</label>
             

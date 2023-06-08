@@ -8,16 +8,18 @@ const Sequelize = require("sequelize");
 const usersController = {
     // Registro render 
     registro: (req, res) => {
-        res.render("users/registro")
+        res.render("users/registro", { ey: {} })
 
     },
     // Registro  
     registrado: (req, res) => {
-    const errores = validationResult(req);
+    const resultValidation = validationResult(req);
+    
+    if(resultValidation.errors.length > 0){
+ res.render("users/registro", {errores: resultValidation.errors, ey: req.body})  
 
-    if(errores.isEmpty()){
-
-        db.Usuario.create({
+    } else {  
+            db.Usuario.create({
             user_name: req.body.username,
             name_lastname: req.body.name_lastName,
             email: req.body.email,
@@ -26,32 +28,31 @@ const usersController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.file.filename,
             conditions: req.body.conditions
-            
-        })
-        .then(function(){
-            res.render('users/login');
-        })  
-    } else {  
-  
-        res.render("users/registro", {errores: validationResult.errors})
-            
-    }
-    
+
+    })
+    .then(function(){
+        res.render("users/login")
+    })
+    .catch(function(error) {
+        console.log(error)
+        res.render("error", { message: "Error al crear ususario"})
+    })
+}
+
 },
     
 
     // Login render 
     login: (req, res) => {
-        res.render("users/login")
+        res.render("users/login", { ey: {} })
     },
 
     // Login db  
     logeando: (req, res) => {
         const resultValidation = validationResult(req)
-        if (!resultValidation.isEmpty()) {
-            let errores = resultValidation.mapped();
-            return res.render("users/login", { errores: errores, olds: req.body })
-        }
+        if (resultValidation.errors.length > 0) {
+            return res.render("users/login", { errores: resultValidation.errors, ey: req.body })
+        }else{
 
         db.Usuario.findOne({
             where: { email: { [Sequelize.Op.eq]: req.body.email } }
@@ -64,38 +65,21 @@ const usersController = {
                         delete userEmail.password;
                         req.session.userLogged = userEmail;
                         req.session.lastActitity = Date.now();
+                        console.log(req.session)
 
                         if (req.body.remember) {
-                            res.cookie('userLogin', req.body.email, { maxAge: (1000 * 60) * 1000 })
+                            res.cookie('userLogin', userEmail.id, { maxAge: 1000 * 60 * 5 })
                             //return ;
                         }
                         return res.redirect('/users/perfil');
-                    }
-
-                    return res.render('users/login', {
-                        errors: {
-                            password: {
-                                msg: 'La contraseña es incorrecta', olds: req.body
-                            },
-                        },
-
-                    });
-                }
-                return res.render('users/login', {
-                    errors: {
-                        email: {
-                            msg: 'El email es invalido', olds: req.body
-                        },
-                    },
-
-                });
-
-            }).catch(error => {
+}}
+})
+            .catch(error => {
                 console.log("error al iniciar sesion", error);
                 return res.render("users/login")
             });
-
-    },
+    }
+},
 
     // Perfil render 
     profile: (req, res) => {

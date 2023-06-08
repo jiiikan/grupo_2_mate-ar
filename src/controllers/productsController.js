@@ -1,6 +1,5 @@
 const { validationResult } = require("express-validator");
 const db = require('../database/models');
-
 const { Association } = require("sequelize");
 
 const productsController = {
@@ -29,23 +28,24 @@ const productsController = {
     create: (req, res) => {
         db.Categoria.findAll()
             .then(function (categorias) {
-                return res.render("products/create", { categorias: categorias })
+                return res.render("products/create", { categorias: categorias, ey: {} })
             })
     },
 
     //Formulario de crear producto
     store: (req, res) => {
         const resultValidation = validationResult(req);
+        console.log(resultValidation.errors)
 
         if (resultValidation.errors.length > 0) {
             db.Categoria.findAll()
                 .then(function (categorias) {
-                    return res.render("products/create", { categorias: categorias }, {
-                        errors: resultValidation.mapped(),
-                        olddata: req.body
-                    })
+                    
+                    res.render("products/create", {errores: resultValidation.errors, ey: req.body, categorias: categorias})
                 })
-        }
+
+                
+        }else{
 
         db.Producto.create({
             name: req.body.name,
@@ -54,8 +54,15 @@ const productsController = {
             image: req.file.filename,
             category_id: req.body.category_id
         });
+
         res.redirect("/")
-    },
+
+        .catch(function (err) {
+            console.log(err);
+            res.render("error", { message: "Error al crear el producto" });
+        })
+
+    }},
 
     // Renderizar pagina edicion
     edition: async (req, res) => {
@@ -70,17 +77,25 @@ const productsController = {
         }
 
         Promise.all([product, categorias])
-        res.render("products/edition", { product: product, categorias: categorias });
+        res.render("products/edition", { product: product, categorias: categorias, ey: " " });
     },
 
     // Editar producto
     update: async (req, res) => {
         const productId = parseInt(req.params.id);
-        const productIndex = await db.Producto.findByPk(productId);
+        const product = await db.Producto.findByPk(productId);
+        const resultValidation = validationResult(req);
 
-        if (productIndex == undefined) {
+        if (resultValidation.errors.length > 0) {
+            db.Categoria.findAll()
+                .then(function (categorias) {
+                    res.render("products/edition", {errores: resultValidation.errors, ey: req.body, Categorias: categorias}) 
+                })
+            }else{
+
+        if (product == undefined) {
             return res.status(404).render("error404");
-        };
+        }
 
         db.Producto.update({
             name: req.body.product,
@@ -94,7 +109,7 @@ const productsController = {
             }
         });
         res.redirect("/");
-    },
+    }},
 
     // Borrar producto
     delete: (req, res) => {

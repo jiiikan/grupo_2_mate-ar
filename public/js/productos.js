@@ -1,4 +1,4 @@
-function prductosEnElcarrito() {
+function productosEnElcarrito() {
     return localStorage.carrito ? JSON.parse(localStorage.carrito).length:0;
 }
 
@@ -16,14 +16,14 @@ window.addEventListener("load", function () {
 
     let botonesComprar = document.querySelectorAll(".button_carrito")
     let cartNumber = document.querySelector(".cart-number")
-    cartNumber.innerText = prductosEnElcarrito()
+    cartNumber.innerText = productosEnElcarrito()
 
     botonesComprar.forEach((boton) => {
         boton.addEventListener("click", (e) => {
             if(localStorage.carrito){
                 let carrito = JSON.parse(localStorage.carrito)
-                let index = carrito.findIndex((prod) => prod.id == e.target.dataset.id);
-                if(index !== -1){
+                let index = carrito.findIndex((prod) => (prod.id == e.target.dataset.id));
+                if(index != -1){
                     carrito[index].quantity++
                 }else {
                     carrito.push({id:e.target.dataset.id,quantity: 1})
@@ -32,6 +32,7 @@ window.addEventListener("load", function () {
             } else {
                 localStorage.setItem("carrito", JSON.stringify([{id:e.target.dataset.id,quantity: 1}]))
             }
+            
             
             
             

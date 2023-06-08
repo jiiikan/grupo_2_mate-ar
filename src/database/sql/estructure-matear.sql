@@ -32,7 +32,7 @@ iNSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `category
 (5, 'Bombilla plana', 'Bombilla punta plana ', 2000, 'bombilla.jpg', 3),
 (6, 'Bombilla recta', 'Bombilla con resorte ', 2600, 'BOMBILLAS3.jpg', 3),
 (7, 'Kit de cuero azul', 'Set de mate completo de color azul incluye yerbera y azucarera', 7500, 'kitcompleto1.jpg', 4),
-(8, 'Kit de cuero negro', 'Set de mate de cuero negro incluye solo un accesorio de màs', 8700, 'et completo3.jpg', 4),
+(8, 'Kit de cuero negro', 'Set de mate de cuero negro incluye solo un accesorio de màs', 8700, 'set completo3.jpg', 4),
 (9, 'kit completo cuero', 'Set artesanal completo  de cuero negro reforsado  incluye azucarera y yerbera', 7300, 'set-completo2.jpg', 4);
 
 
@@ -50,7 +50,8 @@ CREATE TABLE `users`(
 );
 
 INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `password`, `conditions`) VALUES
-(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1);
+(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1),
+(2, 'nahhh', 'nahh bd funca', 'nahhh@gmail.com', 'Argentina', 'rio grande 1111', '1685369342015_img.jpg', '$2a$10$1wiTfl7ZBx5iLVx4VhMuZO0Q1k/i.6m0Q.3QugCweljvqNIhc7U3G', 1);
 
 
 CREATE TABLE `orders`(

@@ -10,13 +10,6 @@ window.addEventListener('load', function () {
         if(correo == ''){
             errores.push("El campo email es obligatorio")
         }
-        if (correo.includes('@') == false) {
-            errores.push('El campo de email es invalido')
-        }
-
-        if(contra == ''){
-            errores.push('El campo contraseña es obligatorio')
-        }
 
         if (errores.length > 0) {
             e.preventDefault();
@@ -27,5 +20,3 @@ window.addEventListener('load', function () {
         }
     })
 })
-/*○ Email
-■ (Opcional) → Debe existir en la base. */

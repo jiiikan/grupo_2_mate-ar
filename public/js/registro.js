@@ -1,8 +1,9 @@
-const db = require('../database/models');
+//const db = require('../database/models');
+
 window.addEventListener('load', function () {
     let formulario = document.querySelector('.box-register')
 
-    formulario.addEventListener('submit', function (e) {
+    formulario.addEventListener('submit', /*async*/ function (e) {
         let errores = [];
 
         let user = document.querySelector('#user').value
@@ -32,12 +33,18 @@ window.addEventListener('load', function () {
         if (email.includes('@') == false) {
             errores.push('El campo de correo electronico es invalido')
         }
-        /*let emails = db.Producto.findOnes()
-        //validar contraseñas cohincidan
-        if (p1 != p2) {
+
+        /*// Confirmar que el email no se haya registrado
+        let emailUsado = db.Usuario.findOne({
+            where:{
+                email: email
+            }
+        })
+        if ( await emailUsado != email) {
             errores.push('El correo es invalido ya ah sido registrado con anterioridad ')
         }*/
 
+        // Declarar extenciones permitidas y separar el string de extencion
         let extension = ['jpeg', 'jpg', 'gif', 'png'];
         let ex = imag.split('.').pop().toLowerCase();
 
@@ -67,7 +74,6 @@ window.addEventListener('load', function () {
 
         if (errores.length > 0) {
             e.preventDefault();
-            alert('hola');
             let ulErrores = document.querySelector('.errores ul');
             errores.forEach(error => {
                 ulErrores.innerHTML += '<li>' + [error] + '</li>'

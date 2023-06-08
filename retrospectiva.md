@@ -20,5 +20,7 @@ Debido al tiempo extra que tuvimos con este sprint nos relajamos mas de lo que p
 En este sprint ya nos dimos cuenta que derrochar el tiempo no conviene y  de la cercania de la finalizacion del proyecto. Como grupo tenemos que lograr una mejor organizacion si queremos completar el proyecto como es debido.
 
 sprint 7
+Con este sprint pudimos avanzar de una manera consiza, logrando concretar en el tiempo adecuado con una mejor organizacion factible comparada a la de los anteriores sprints. Ademas de poder poner cara a las distintas problematicas que surgieron en los distintos sprints, logrando solucionar algunos de los distintoss errores o grietas del codigo.
+Este sprint nos dio pie a ser mas concientes del tiempo que necesitamos usar ya que se nos aproxima la finalizacion del proyecto
 
 sprint 8

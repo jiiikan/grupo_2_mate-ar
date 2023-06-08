@@ -27,8 +27,6 @@ router.get("/catalogo", productsController.catalogo);
 router.get("/create", validationProduct ,productsController.create);
 router.post("/create",  uploadFile.single("image"),validationProduct,productsController.store);
 
-// Ruta del detalle de un producto
-router.get("/detalle/:id", productsController.detalle);
 
 // Rutas de edicion de los productos
 router.get("/edition", validationProduct ,productsController.edition); 

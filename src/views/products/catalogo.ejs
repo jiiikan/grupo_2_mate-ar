@@ -31,10 +31,11 @@
 
     <% } %>
     </section>
-
+  <% if (locals.userFound && locals.userAdmin) { %>
   <section class="section-input">
     <input type="submit" id="boton_agregar" value="Cargar producto" onclick="location.href= '/products/create'">
   </section>
+  <% } %>
 
   </main>
 

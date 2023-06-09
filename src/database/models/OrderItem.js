@@ -7,15 +7,6 @@ module.exports = (sequelize, dataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
-    orderId: {
-      type: dataTypes.INTEGER,
-      foreignKey: true
-    },
-    productId: {
-      type: dataTypes.STRING(100),
-      foreignKey: true
-    },
-
     name: {
       type: dataTypes.STRING(100),
       allowNull: false,
@@ -27,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     quantity: {
       type: dataTypes.INTEGER(11),
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "orderitems",
@@ -39,12 +30,10 @@ module.exports = (sequelize, dataTypes) => {
   OrderItem.associate = (models) => {
     OrderItem.belongsTo(models.Order, {
       as: "order",
-      foreignKey: "orderId"
     });
 
     OrderItem.belongsTo(models.Producto, {
       as: "product",
-      foreignKey: "productId"
     });
   };
 

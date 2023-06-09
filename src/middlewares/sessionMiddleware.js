@@ -8,13 +8,13 @@ sessionMiddleware = async (req, res, next) => {
   if (req.session && req.session.userLogged) {
     res.locals.userFound = true;
     res.locals.userLogged = req.session.userLogged;
-    if (req.session.userLogged.id === 1) {
+    if (req.session.userLogged.id <= 4) {
       res.locals.userAdmin = true;
     }
   } else {
     if (req.cookies.remember) {
       userFromCookie = await Users.findOne({
-        where: { id: req.cookies.id },
+        where: { id: req.cookies.remember},
       });
     }
 

@@ -15,7 +15,6 @@ const productsController = {
     detalle: async (req, res) => {
         const productoid = req.params.id;
         const product = await db.Producto.findByPk(productoid, { include: [{ association: "categories" }] });
-        console.log(productoid);
 
         if (product != null) {
             res.render("products/detalle", { product })

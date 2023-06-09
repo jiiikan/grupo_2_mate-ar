@@ -11,6 +11,7 @@ const funca = () => console.log('Servidor funcionando en localhost: ' + port);
 
 //Middleware para recordar usuario
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+const sessionMiddleware = require('./middlewares/sessionMiddleware')
 
 
 
@@ -34,6 +35,7 @@ app.use(cookies());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false}));
 app.use(userLoggedMiddleware);
+app.use(sessionMiddleware)
 
 
 // Rutas

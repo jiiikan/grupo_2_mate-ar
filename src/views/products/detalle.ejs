@@ -30,12 +30,14 @@
 
       <div class="botones">
         <!--<form method="post" action="/products/carrito" class="boton">-->
-        <input  type="hidden" name="id" value="<%= product.id %>">
-        <button type="submit" data-id="<%= product.id %>" class="button_carrito">Agregar al carrito</button>
+          <div>
+        <button class="button_carrito" data-id="<%= product.id %>" >Agregar al carrito</button>
         <!--</form>-->
-
+      </div>
+      <% if (locals.userFound && locals.userAdmin) { %>
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition?id=<%= product.id %>'">
         <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
+        <% } %>
         
       </div>
     </div>

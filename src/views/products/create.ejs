@@ -3,15 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% if(locals.userAdmin){ %>
 <head>
     <%- include("../partials/head.ejs") %>
     <link rel="stylesheet" href="/css/create.css">
     <title>Mate.ar -Nuevo producto</title>
 </head>
-
 <body>
     <%- include("../partials/header") %>
-
     <main class="main">
         
         <section class="create-container">
@@ -91,4 +90,10 @@
 <%- include("../partials/footer") %>
 <script src="/public/js/createYEditProducs.js"></script>
 </body>
+<% } else {%>
+    <script>
+        window.location.href = "/"
+    </script>
+
+<% } %>
 </html>

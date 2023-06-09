@@ -10,14 +10,14 @@ function vaciarCarrito() {
 
 function calcularTotal(products) {
     return products.reduce(
-        (acum, products) => (acum += Number(products.price) * Number(products.quantity)),
+        (acum, product) => (acum += Number(product.price) * Number(product.quantity)),
         0
     )
 }
 
 let cartRows = document.querySelector(".cartRows")
 
-let producto = [];
+let products = [];
 
 if( localStorage.carrito ){
     let carrito = JSON.parse(localStorage.carrito)
@@ -39,7 +39,7 @@ if( localStorage.carrito ){
             ).toFixed(2)} </td>
             <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash "></i></button></td>
             <tr>`;
-            producto.push({
+            products.push({
                 productId: product.id,
                 name: product.name,
                 price: product.price,
@@ -51,11 +51,12 @@ if( localStorage.carrito ){
                 localStorage.setItem("carrito", JSON.stringify(carrito));
             }
         })
-        .then(() => {
-            document.querySelector(".totalAmount").innerText = `$ ${calcularTotal(producto)}`;
-        });
-        
-    });  
+        .then(()=>{
+            document.querySelector(".totalAmount").innerText = `$ ${calcularTotal(products)}
+         `
+        });  
+})
+
 }
 
 
@@ -64,13 +65,13 @@ let checkoutCart = document.querySelector("#checkoutCart");
 checkoutCart.onsubmit = (e) => {
     e.preventDefault();
     const formData = {
-        orderItems: producto,
+        orderItems: products,
         paymentMethod: checkoutCart.paymentMethod.value,
         shippingMethod: checkoutCart.shippingMethod.value,
-        total: calcularTotal(producto)
+        total: calcularTotal(products)
     };
     fetch("/api/checkout", {
-        method: "POST",
+        method: "post",
         headers: {
             "Content-Type": "application/json",
         },

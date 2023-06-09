@@ -21,6 +21,9 @@ CREATE TABLE `products`(
     `price` INT NOT NULL,
     `image` VARCHAR(255) NOT NULL,
     `category_id` INT UNSIGNED NOT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    `deleteAt` DATETIME NULL,
     FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`)
 );
 
@@ -46,7 +49,10 @@ CREATE TABLE `users`(
     `direction` VARCHAR(255) NOT NULL,
     `avatar` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
-    `conditions` TINYINT(1) NOT NULL
+    `conditions` TINYINT(1) NOT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    `deleteAt` DATETIME NULL
 );
 
 INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `password`, `conditions`) VALUES
@@ -60,6 +66,9 @@ CREATE TABLE `orders`(
     `userId` INT UNSIGNED NOT NULL ,
     `paymentMethod` VARCHAR(255) NOT NULL,
     `shippingMethod` VARCHAR(255),
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    `deleteAt` DATETIME NULL,
     FOREIGN KEY (`userId`) REFERENCES `users`(`id`)
 );
 
@@ -70,6 +79,9 @@ CREATE TABLE `orderitems`(
     `quantity` INT NOT NULL,
     `orderId` INT UNSIGNED NOT NULL,
     `productId` INT UNSIGNED,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    `deleteAt` DATETIME NULL,
     FOREIGN KEY (`orderId`) REFERENCES `orders` (`id`),
     FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
 );

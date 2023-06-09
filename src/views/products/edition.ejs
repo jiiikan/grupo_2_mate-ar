@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<% if(locals.userAdmin){ %>
 
 <head>
     <%- include("../partials/head.ejs") %>
@@ -83,4 +84,10 @@
 
     <%- include("../partials/footer") %>
 </body>
+<% } else {%>
+    <script>
+        window.location.href = "/"
+    </script>
+
+<% } %>
 </html>

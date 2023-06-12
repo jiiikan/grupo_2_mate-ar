@@ -1,3 +1,5 @@
+
+
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
@@ -28,6 +30,11 @@ h1{ margin: 10px 0; color: #285430;}
   width: 80%; border-radius: 10px;
 }
 
+.producto:hover{
+  transform: scale(1.1) translateZ(10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
 .producto .precio {
   color: #cc0000;
   font-weight: bold;
@@ -36,6 +43,13 @@ h1{ margin: 10px 0; color: #285430;}
 .section-input{
   display: flex;
   justify-content: center;
+}
+
+.boton_agregar:hover {
+
+  transform: scale(1.1) translateZ(10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+
 }
 
 .section-input input{ 

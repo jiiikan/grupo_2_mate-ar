@@ -2,7 +2,7 @@
 
 <header class="header">
 
-    <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="logo" onclick="location.href= '/'">
+    <img src="/images/LogoMateAr.png" alt="logo-Mater.ar" class="jello-horizontal logo" onclick="location.href= '/'">
 
     <form action="/product" method="get" class="busqueda">
         <input type="text" name="buscar-producto" placeholder="Buscar..." class="cuadrado-busqueda" >
@@ -10,27 +10,39 @@
     </form>
 
         <nav class="nav">
-            <a href="/">Inicio</a>
-            <a href="/products/catalogo">Catalogo</a> 
+        <div class="contenedor-inicioycatalogo">
+            <a href="/" >Inicio</a>
+            <a href="/products/catalogo" >Catalogo</a> 
+        </div>
 
             <% if (locals.userLogged) { %>
+            <div class="contenedor-perfilfotoycarrito">
                 <a href="/users/carrito">      
-                    <span href="clearfix d-none d-sm-inline-block">Carrito</span>
+                    <span href="clearfix d-none d-sm-inline-block" class="fa fa-shopping-cart header-link"></span>
                     <span class="badge red z-depth-1 mr-1 cart-number">0</span>
                 </a>  
+                <div class="contenedor-perfilyfoto">
                 <select onchange="location = this.value" class="select">
-                    <option value="/users/perfil">Mi perfil</option>
-                    <option value="/users/logout">Cerrar Sesion</option>
+                    <option value="/users/perfil" >Mi perfil</option>
+                    <option value="/users/logout" >Cerrar Sesion</option>
                 </select>
-                <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  width="40"   style="border-radius: 100%; margin-right: 5px;">
+                <div class="imagen-contenedor">
+                <img src="/images/users/<%= locals.userLogged.avatar %>" onclick="location.href='/users/perfil'"  class="img-profile">
+                </div>
+                </div>
+            </div>
             <% } else {%>
-            <a href="/users/registro">Registrarse</a>
-            <a href="/users/login">Acceso</a>
+                <div class="contenedor-perfilfotoycarrito">
+            <a href="/users/registro" >Registrarse</a>
+            <a href="/users/login" >Acceso</a>
+        </div>
             <% } %>
             
         </nav>
 
     <style>
+@-webkit-keyframes jello-horizontal{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}40%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}50%{-webkit-transform:scale3d(1.15,.85,1);transform:scale3d(1.15,.85,1)}65%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}75%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes jello-horizontal{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}40%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}50%{-webkit-transform:scale3d(1.15,.85,1);transform:scale3d(1.15,.85,1)}65%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}75%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}
+
     .header{
         padding: 20px;
         padding-bottom: 0px;
@@ -48,6 +60,52 @@
         text-align: center;
         justify-content: center;
         
+    }
+
+    .jello-horizontal {
+	-webkit-animation: jello-horizontal 0.9s both;
+	        animation: jello-horizontal 0.9s both;
+}
+
+    .imagen-contenedor{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .img-profile{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
+
+    .img-profile:hover{
+        transform: scale(1.1) translateZ(10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .contenedor-perfilyfoto{
+        display: flex;
+        
+    }
+
+    .contenedor-perfilfotoycarrito{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-basis: 50%
+    }
+
+    .contenedor-inicioycatalogo{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-basis: 50%;
+
     }
 
     .cuadrado-busqueda { 
@@ -71,16 +129,23 @@
     }
 
     .nav{
-        margin: 5px 0;
+        margin: 5px ;
         padding: 10px;
         border-top: #E5D9B6 solid 2px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .nav a { 
-        margin: 20px; 
         color: #fff5e2;
         font-weight: bold;
         text-decoration: none;
+        align-items: center;
+        margin: 5px;
+        margin-right: 10px;
+
     }    
     
     .select{
@@ -88,8 +153,14 @@
         color: #E5D9B6;
         border-radius: 10px;
         border: none;
-        margin: 0 5px;
+        margin: 5px;
         padding: 5px;
+        height: 30px;
+    }
+
+    .header-link:hover{
+        transform: scale(1.1) translateZ(10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
 
     @media(min-width: 450px){

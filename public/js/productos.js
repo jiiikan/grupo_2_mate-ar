@@ -20,6 +20,7 @@ window.addEventListener("load", function () {
 
     botonesComprar.forEach((boton) => {
         boton.addEventListener("click", (e) => {
+            e.preventDefault()
             //EL EVENTO (e) SE DUPLICA ERROR!!
             if(localStorage.carrito){
                 let carrito = JSON.parse(localStorage.carrito)
@@ -31,7 +32,7 @@ window.addEventListener("load", function () {
                 }
                 localStorage.setItem("carrito", JSON.stringify(carrito))
             } else {
-                localStorage.setItem("carrito", JSON.stringify([{id:e.target.dataset.id,quantity: 1}]))
+                localStorage.setItem("carrito", JSON.stringify([{id:e.target.dataset.id, quantity: 1}]))
             }
             
             

@@ -1,3 +1,5 @@
+@-webkit-keyframes wobble-hor-bottom{0%,100%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateX(-30px) rotate(-6deg);transform:translateX(-30px) rotate(-6deg)}30%{-webkit-transform:translateX(15px) rotate(6deg);transform:translateX(15px) rotate(6deg)}45%{-webkit-transform:translateX(-15px) rotate(-3.6deg);transform:translateX(-15px) rotate(-3.6deg)}60%{-webkit-transform:translateX(9px) rotate(2.4deg);transform:translateX(9px) rotate(2.4deg)}75%{-webkit-transform:translateX(-6px) rotate(-1.2deg);transform:translateX(-6px) rotate(-1.2deg)}}@keyframes wobble-hor-bottom{0%,100%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateX(-30px) rotate(-6deg);transform:translateX(-30px) rotate(-6deg)}30%{-webkit-transform:translateX(15px) rotate(6deg);transform:translateX(15px) rotate(6deg)}45%{-webkit-transform:translateX(-15px) rotate(-3.6deg);transform:translateX(-15px) rotate(-3.6deg)}60%{-webkit-transform:translateX(9px) rotate(2.4deg);transform:translateX(9px) rotate(2.4deg)}75%{-webkit-transform:translateX(-6px) rotate(-1.2deg);transform:translateX(-6px) rotate(-1.2deg)}}
+
 *{  font-family: 'Tajawal', sans-serif; }
 
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
@@ -15,6 +17,11 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     padding: 4%;
     border-radius: 10px;
     color: #E5D9B6;
+}
+
+.wobble-hor-bottom {
+	-webkit-animation: wobble-hor-bottom 0.8s both;
+	        animation: wobble-hor-bottom 0.8s both;
 }
 
 .iniciar{
@@ -48,6 +55,11 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     border: none;
     border-radius: 10px;
     font-size: 16px;
+}
+
+.boton-iniciar:hover{
+    transform: scale(1.1) translateZ(10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .form-acceso{

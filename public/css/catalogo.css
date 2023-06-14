@@ -3,10 +3,13 @@
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main{ padding: 5% 8%;}
+.main{ padding: 20px;}
 h1{ margin: 10px 0; color: #285430;}
 
 .array-products{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -15,7 +18,7 @@ h1{ margin: 10px 0; color: #285430;}
 
 .producto {
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
   background-color: #A4BE7B;
   margin-bottom: 2rem;
   padding: 1rem;
@@ -27,7 +30,8 @@ h1{ margin: 10px 0; color: #285430;}
 }
 
 .imag{
-  width: 80%; border-radius: 10px;
+  border-radius: 10px; 
+  width: 80%; 
 }
 
 .producto:hover{
@@ -64,22 +68,38 @@ h1{ margin: 10px 0; color: #285430;}
 }
 
 @media (min-width: 450px){
+
+  .producto {
+    border-radius: 10px;
+    width: 300px;
+    background-color: #A4BE7B;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  .imag{
+    border-radius: 10px; 
+    width: 80%; 
+    height: 250px;
+  }
   
 }
 
 @media (min-width: 800px){
-  .main{
-    padding: 2% 8%;
-  }
   h1{ font-size: 40px;}
 
   .producto{
-    width: 25%;
+    width: 300px;
+    height: 400px;
   }
   .array-products{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+ 
+  }
+  .imag{
+    border-radius: 10px; 
+    width: 80%; 
   }
 
 }

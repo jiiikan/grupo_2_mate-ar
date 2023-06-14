@@ -69,12 +69,14 @@
                 <% let num1 = categorias.find(element => element.id == 1)
                 let num2 = categorias.find(element => element.id == 2)
                 let num3 = categorias.find(element => element.id == 3)
-                let num4 = categorias.find(element => element.id == 4)%>
+                let num4 = categorias.find(element => element.id == 4)
+                let num5 = categorias.find(element => element.id == 5)%>
 
                 <option value="<%= num1.id %>"> <%= num1.name %> </option>
                 <option value="<%= num2.id %>"> <%= num2.name %> </option>
                 <option value="<%= num3.id %>"> <%= num3.name %> </option>
                 <option value="<%= num4.id %>"> <%= num4.name %> </option>
+                <option value="<%= num5.id %>"> <%= num5.name %> </option>
     </select>
             
             <button type="submit" class="button">Subir</button>

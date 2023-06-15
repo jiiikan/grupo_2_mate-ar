@@ -3,6 +3,6 @@ const router = express.Router();
 
 const apiProducts = require("../controllers/apiProducts");
 
-router.get();
+router.get('/prueba', apiProducts.prueba);
 
 module.exports = router;

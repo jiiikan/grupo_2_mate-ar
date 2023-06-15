@@ -28,9 +28,9 @@ app.listen(port, funca);
 const public = path.resolve(__dirname, '../public');
 app.use(express.static(public));
 app.use(express.urlencoded({ extended: false}));
-app.use(session({ secret: "shhhh",
-                resave: false,
-                saveUninitialized: false}))
+app.use(session({   secret: "shhhh",
+                    resave: false,
+                    saveUninitialized: false}))
 app.use(cookies());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false}));
@@ -44,12 +44,14 @@ const products = require("./routes/products.js");
 const users = require("./routes/users.js");
 const { cookie } = require('express-validator');
 const api = require("./routes/api.js")
+const apiUsers = require('./routes/apiUsers')
 
 // Renderizacion de paginas 
 app.use("/", home)
 app.use("/products", products);
 app.use("/users", users);
 app.use("/api/", api);
+app.use('/api/', apiUsers)
 
 // Error 404
 app.use((req, res, next) => {

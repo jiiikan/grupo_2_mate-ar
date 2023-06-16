@@ -8,9 +8,10 @@ module.exports = {
             association: "categories",
         }]})
             .then(productos =>{
+                let categoria = productos.categories;
                 productsByCategory = {}
                 productos.forEach(product => {
-                    const categories = product.categories; // Obtener las categorías del producto actual
+                    const categories = product.categories;
                     if (Array.isArray(categories)) {
                         categories.forEach(category => {
                             const categoryName = category.name;
@@ -38,7 +39,7 @@ module.exports = {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        //categories: product.categories.map(category => category.name),
+                        categories: categoria.map(category => category.name),
                         detail: `http://localhost:3000/api/products/${product.id}`
                     }))
                 })

@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
         /*marked: {
             type: dataTypes.BOOLEAN,
             defaultValue: false,
-          }*/
+        }*/
     }
     let config = {
         tableName: "products",
@@ -51,7 +51,7 @@ Producto.associate = function(models){
 Producto.OrderItems = Producto.hasMany(models.OrderItem, {
         as: "orderItems",
         foreignKey: "productId"
-      });
+    });
 
     /*Producto.hasMany(models.Carrito, {
         as: 'cart',

@@ -100,11 +100,11 @@ const usersController = {
     },
     order: async function (req, res) {
         let order = await db.Order.findByPk(req.params.id, {
-          include: db.Order.OrderItem,
+            include: db.Order.OrderItem,
         });
         // res.send(order);
         return res.render("order", { order });
-      },
+    },
 
 };
 

@@ -50,7 +50,7 @@ const apiUsers = require('./routes/apiUsers')
 app.use("/", home)
 app.use("/products", products);
 app.use("/users", users);
-app.use("/api/", api);
+app.use("/api", api);
 app.use('/api/', apiUsers)
 
 // Error 404

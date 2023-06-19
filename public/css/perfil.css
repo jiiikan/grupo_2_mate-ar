@@ -55,14 +55,19 @@ body{  background-color: #E5D9B6; margin: 0; padding: 0;}
     }
     .img{
         border-radius: 30px;
+        -webkit-box-shadow: 8px 8px 13px 1px rgba(40,84,48,0.67);
+        -moz-box-shadow: 8px 8px 13px 1px rgba(40,84,48,0.67);
+        box-shadow: 8px 8px 13px 1px rgba(40,84,48,0.67);;
     }
     .h2{
         font-size: 30px;    
     }
     .lista li{
         font-size: 20px;
+        margin-bottom: 2%;
     }
     .button{
         font-size: 18px;
+        margin-top: 5%;
     }
 }

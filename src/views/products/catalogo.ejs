@@ -16,6 +16,12 @@
 
     <h1>Catalogo</h1>
     <!-- filter para filtrar por categoria idea -->
+    <section class="filtro">
+      <button class="boton-fil">Mate</button>
+      <button class="boton-fil">Bombilla</button>
+      <button class="boton-fil">Termo</button>
+      <button class="boton-fil">Set</button>
+    </section>
 
     <section class="array-products">
     <% for( let i = 0; i < products.length; i++ ) { %>
@@ -28,9 +34,9 @@
         <span class="precio">$<%= products[i].price %></span>
         
       </article>
-
     <% } %>
     </section>
+
   <% if (locals.userFound && locals.userAdmin) { %>
   <section class="section-input">
     <input type="submit" class="boton_agregar" value="Cargar producto" onclick="location.href= '/products/create'">
@@ -38,7 +44,6 @@
   <% } %>
 
   </main>
-
   <%- include("../partials/footer") %>
 
   </body>

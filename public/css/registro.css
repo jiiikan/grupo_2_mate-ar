@@ -17,11 +17,6 @@ h1{
     margin-bottom: 5px;
 }
 
-.wobble-hor-bottom {
-	-webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
-}
-
 .box-register{
     display: flex;
     align-items: center;

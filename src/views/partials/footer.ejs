@@ -2,9 +2,9 @@
     <section class="seccionesFooter">
         <p>Seguinos en nuestras redes sociales</p> 
         <section class="iconosFooter">
-            <i class="fa-brands fa-instagram animIcon"></i>
-            <i class="fa-brands fa-facebook animIcon"></i>
-            <i class="fa-brands fa-twitter animIcon"></i>
+            <a href="/"><i class="fa-brands fa-instagram animIcon"></i></a>
+            <a href="/"><i class="fa-brands fa-facebook animIcon"></i></a>
+            <a href="/"><i class="fa-brands fa-twitter animIcon"></i></a>
         </section>
     </section>
 
@@ -19,9 +19,9 @@
     <section class="seccionesFooter">
         <p>Informacion y contactos</p>
         <section class="iconosFooter">
-            <i class="fa-solid fa-phone animIcon"></i>
+            <a href="/"><i class="fa-solid fa-phone animIcon"></i></a>
             <i class="fa-solid fa-envelope animIcon"></i>
-            <i class="fa-solid fa-truck-fast"></i>
+            <a href="/products/catalogo"><i class="fa-solid fa-truck-fast"></i></a>
         </section>
     </section>
 
@@ -43,7 +43,7 @@
     }
     .footer{
     background-color: #285430;
-    padding: 4% ;
+    padding: 8% 4% ;
     padding-bottom: 1%;
     color: #E5D9B6;
     }
@@ -52,7 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; 
     }
 
@@ -63,6 +63,11 @@
     font-size: 1.4rem;
     justify-content: space-around;
     align-items: center;
+    }
+
+    .iconosFooter a i{
+        margin: 8px;
+        color: #E5D9B6;
     }
 
     .legal{
@@ -82,12 +87,17 @@
     width: 100%;
     }
 
+    .iconosFooter a i:active{
+        color: #A4BE7B;
+    }
+
 
     @media(min-width: 800px){
     .footer{
     flex-direction: row; 
     justify-content: space-around;
     align-items: stretch;
+    padding: 3%;
     }
 
     .iconosFooter {

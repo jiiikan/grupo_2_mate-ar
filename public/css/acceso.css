@@ -19,11 +19,6 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     color: #E5D9B6;
 }
 
-.wobble-hor-bottom {
-	-webkit-animation: wobble-hor-bottom 0.8s both;
-	        animation: wobble-hor-bottom 0.8s both;
-}
-
 .iniciar{
     text-align: center;
     font-size: 20px;

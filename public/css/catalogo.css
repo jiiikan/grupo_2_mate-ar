@@ -1,10 +1,8 @@
-
-
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main{ padding: 2%;}
-h1{ margin: 10px 0; color: #285430;}
+h1{ margin: 8% 4%; color: #285430;}
 
 .array-products{
   flex-direction: row;
@@ -18,7 +16,7 @@ h1{ margin: 10px 0; color: #285430;}
 
 .producto {
   border-radius: 10px;
-  width: 90%;
+  width: 75%;
   background-color: #A4BE7B;
   margin-bottom: 2rem;
   padding: 1rem;
@@ -67,7 +65,24 @@ h1{ margin: 10px 0; color: #285430;}
   font-weight: 500;
 }
 
+.filtro{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.boton-fil{
+  border: #285430 solid 2px;
+  background-color: #E5D9B6;
+  color: #285430;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 @media (min-width: 450px){
+  h1{
+    font-size: 30px;
+  }
 
   .producto {
     border-radius: 10px;
@@ -85,7 +100,11 @@ h1{ margin: 10px 0; color: #285430;}
 }
 
 @media (min-width: 800px){
-  h1{ font-size: 40px;}
+  h1{ font-size: 50px;  margin: 1% 0 4% 0;}
+
+  .main{
+    padding: 4%;
+  }
 
   .producto{
     width: 300px;
@@ -95,11 +114,15 @@ h1{ margin: 10px 0; color: #285430;}
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
- 
   }
+
   .imag{
     border-radius: 10px; 
     width: 80%; 
+  }
+
+  .boton-fil{
+    font-size: 18px;
   }
 
 }

@@ -1,13 +1,8 @@
 *{  font-family: 'Tajawal', sans-serif; margin: 0; padding: 0;}
-
 body{  background-color: #E5D9B6;}
 
-
-
 .main-cart{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10%;
 }
 
 table.table td,
@@ -15,15 +10,20 @@ table.table th {
   vertical-align: middle;
 }
 
+.th-lg strong{
+  margin: 5px;
+}
+
 .box-cart{
-  width: 80%;
-  background-color: white;
-  border: solid 1px;
-  border-radius: 10px;
+  background-color: #5F8D4E;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  color: #E5D9B6;
+}
 
+.container{
+  padding: 8%;
 }
 
 .titulo-carrito{
@@ -32,7 +32,18 @@ table.table th {
   text-decoration: underline;
   margin-left: 20px;
   margin-top: 20px;
+}
 
+h2{
+  margin: 15px 0;
+}
+
+.p{
+  margin: 8px;
+}
+
+.table{
+  margin: 8% 0 11%;
 }
 
 .compra{
@@ -65,16 +76,19 @@ table.table th {
   margin-bottom: 5px;
 }
 
+.boton{
+  display: flex;
+  justify-content: center;
+}
+
 .comprar{
-  width: 100px;
-  height: 30px;
-  align-self: center;
-  margin: 5px;
+  padding: 6px 15px;
+  font-size: 16px;
   color: #E5D9B6;
-  border: solid 1px;
   background-color: #285430;
   border-radius: 8px;
-  text-decoration: underline;
+  text-decoration: none;
+  border: none;
 }
 
 .envios{
@@ -83,26 +97,51 @@ table.table th {
   margin: 10px;
   margin-left: 20px;
   font-weight: 300;
-  color: #5F8D4E;
+  color: #E5D9B6;
 }
 
 @media (min-width: 450px){
+  .th-lg strong{
+    margin: 10px;
+  }
 
-  .box-cart{
-    width: 80%;
-    background-color: white;
-    border: solid 1px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    margin: 40px;
-  
+  .comprar{
+    font-size: 18px;
   }
 }
 
-
-
 @media (min-width: 800px){
+
+  h2{
+    font-size: 40px;
+  }
+
+  .comprar{
+    font-size: 18px;
+  }
+
+  .box-cart{
+    width: 70%;
+  }
+
+  .envios{
+    margin: 4% 5%;
+  }
+
+  .main-cart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .p{
+    font-size: 16px;
+  }
+
+  .th-lg strong{
+    margin: 15px;
+
+    font-size: 18px;
+  }
 
 }
 

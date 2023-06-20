@@ -15,12 +15,12 @@
 
     <main class="main-edition">
 
-        <form action="/products/update/<%=product.id%>" method="POST" class="edition" enctype="multipart/form-data">
+        <form action="/products/edition/<%=product.id%>" method="POST" class="edition" enctype="multipart/form-data">
             <h2 class="titulo">Edicion del producto:</h2>
             <h3 class="name"> <%= product.name %> </h3>
 
             <label class="label-edition">Nombre del producto</label>
-            <input type="text" name="name" placeholder="Nombre" class="input" value="<%= product.name%>">
+            <input type="text" name="name" placeholder="Nombre" class="input" value="<%= product.name %>">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
                 <% if (errores[i].path == "name") { %>
@@ -53,10 +53,10 @@
         
             
             <label class="label-edition">Imagen del producto</label>
-            <input type="file" name="image" placeholder="Imagen" class="file" value="<%= product.image %>">
+            <input type="file" name="image" placeholder="Imagen" class="file">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
-                <% if (errores[i].path == "name") { %>
+                <% if (errores[i].path == "image") { %>
                   <small class="text-danger"><%= errores[i].msg %></small>
               <% } %>
               <% } %>

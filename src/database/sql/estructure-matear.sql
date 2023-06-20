@@ -11,7 +11,8 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (1, 'mate'),
 (2, 'termo'),
 (3, 'bombilla'),
-(4, 'kit de mate');
+(4, 'kit de mate'),
+(5, 'yerbas');
 
 
 CREATE TABLE `products`(

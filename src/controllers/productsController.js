@@ -64,51 +64,64 @@ const productsController = {
     }},
 
     // Renderizar pagina edicion
-    edition: async (req, res) => {
-        const categorias = await db.Categoria.findAll()
-        const product = await db.Producto.findByPk(req.query.id);
+    edition: (req, res) => {
+       const productId = req.params.id
 
-        if (isNaN(req.query.id)) {
-            return res.status(404).render("error404");
-        }
-        if (!product) {
-            return res.status(404).render("error404");
-        }
+       const productoID = db.Producto.findByPk(productId)
 
-        Promise.all([product, categorias])
-        res.render("products/edition", { product: product, categorias: categorias});
-    },
+       const categoriasAll = db.Categoria.findAll()
+         
+      Promise.all([productoID, categoriasAll])
+      .then(function([product, categorias]) {
+        res.render('products/edition', {product: product, categorias: categorias})
+      })
+      .catch((error) => {
+        console.log('Error al obtener producto y categorías:', error);
+        res.status(400).render("error400");
+      });
+            
+      },
 
     // Editar producto
-    update: async (req, res) => {
+    update: (req, res) => {
         const productId = parseInt(req.params.id);
-        const product = await db.Producto.findByPk(productId);                     
-        const resultValidation = validationResult(req);
-
-        if (resultValidation.errors.length > 0) {
-            db.Categoria.findAll()
-                .then(function (categorias) {
-                    res.render("products/edition", {errores: resultValidation.errors, product: product, categorias: categorias}) 
-                })
-            }else{
-
-        if (product == undefined) {
-            return res.status(404).render("error404");
-        }
-
-        db.Producto.update({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            image: req.file.filename,
-            category_id: req.body.category_id,
-        }, {
-            where: {
-                id: req.params.id
+      
+        db.Producto.findByPk(productId)
+          .then((foundProduct) => {
+            product = foundProduct;
+      
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+              return db.Categoria.findAll();
             }
-        });
-        res.redirect("/");
-    }},
+      
+            return db.Producto.update(
+              {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                image: req.file.filename,
+                category_id: req.body.category_id,
+              },
+              {
+                where: {
+                  id: productId,
+                },
+              }
+            );
+          })
+          .then((updateResult) => {
+            if (updateResult && updateResult.length > 0) {
+              res.redirect("/products/detalle/" + req.params.id);
+            } else {
+              res.status(404).render("error404");
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            res.status(400).render("error400");
+          });
+      },
 
     // Borrar producto
     delete: (req, res) => {

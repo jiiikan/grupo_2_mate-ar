@@ -8,7 +8,6 @@ module.exports = {
             association: "categories",
         }]})
             .then(productos =>{
-                let categoria = productos.categories;
                 productsByCategory = {}
                 productos.forEach(product => {
                     const categories = product.categories;
@@ -30,7 +29,6 @@ module.exports = {
                         }
                     }
                 });
-                      
                 return res.status(200).json({
                     count:productos.length,
                     status: 200,
@@ -39,7 +37,7 @@ module.exports = {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        categories: categoria.map(category => category.name),
+                        categories: product.categories.name,
                         detail: `http://localhost:3000/api/products/${product.id}`
                     }))
                 })
@@ -47,14 +45,16 @@ module.exports = {
     },
 
     detalle: (req,res) =>{
-        db.Producto.findByPk(req.params.id)
+        db.Producto.findByPk(req.params.id, {include: [{ 
+            association: "categories",
+        }]})
             .then(producto =>{
                 return res.status(200).json({
                     id: producto.id,
                     name: producto.name,
                     description: producto.description,
                     price: producto.price,
-                    category_id: producto.category_id,
+                    category_id: producto.categories.name,
                     image: `http://localhost:3000/images/${producto.image}`,
                 })
             })

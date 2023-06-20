@@ -28,12 +28,12 @@ router.get("/detalle/:id", productsController.detalle);
 
 // Rutas de creacion de un producto
 router.get("/create",  validationProduct, productsController.create);
-router.post("/create",  uploadFile.single("image"),validationProduct,productsController.store);
+router.post("/create",  uploadFile.single("image"), validationProduct,productsController.store);
 
 
 // Rutas de edicion de los productos
-router.get("/edition", validationProduct ,productsController.edition); 
-router.post("/update/:id", uploadFile.single("image"),validationProduct, productsController.update);
+router.get("/edition/:id", validationProduct ,productsController.edition); 
+router.post("/edition/:id",validationProduct, uploadFile.single("image") , productsController.update);
 
 // Ruta de eliminacion de los productos
 router.get("/delete/:id", productsController.delete);

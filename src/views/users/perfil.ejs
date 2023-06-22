@@ -20,12 +20,18 @@
                 <h1 class="title">Hola <%=user.user_name %></h1>
                 <h2 class="h2">Tu informacion personal</h2>
                 <ul class="lista">
+                    <li class="sub-title">Nombre de usuario</li>
                     <li><%= user.user_name %></li>
+                    <li class="sub-title">Nombre y apellido</li>
                     <li><%= user.name_lastName %></li>
+                    <li class="sub-title">Correo electronico</li>
                     <li><%= user.email %></li>
+                    <li class="sub-title">Pais</li>
                     <li><%= user.country %></li>
+                    <li class="sub-title">Domilicio</li>
                     <li><%= user.direction %></li>
-                    <li>Productos en el carrito: 0</li>
+                    <li class="sub-title">Productos en el carrito:</li>
+                    <li>0</li>
                 </ul>
                 <input type="button" name="editar" value="Editar"  class="button">
                 <input type="submit" class="button" value="Cerrar Sesion" onclick="location.href= '/users/logout'">

@@ -72,7 +72,7 @@ window.addEventListener('load', function () {
             errores.push('El campo contraseña debe tener al menos un carater especial')
         }
 
-        if (errores.length > 0) {
+        if (errores.length >= 1) {
             e.preventDefault();
             let ulErrores = document.querySelector('.errores ul');
             errores.forEach(error => {

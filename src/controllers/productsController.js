@@ -123,6 +123,8 @@ const productsController = {
           });
       },
 
+      
+
     // Borrar producto
     delete: (req, res) => {
         const borrar = req.params.id;

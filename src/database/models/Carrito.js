@@ -1,30 +1,29 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = "Carrito";
     let cols = {
-        id:{
-            type: dataTypes.INTEGER,
+        id: {
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },
-        total:{
-            type: dataTypes.INTEGER,
-            allowNull: false,
-            unique: true
-        },
-        method_payment: {
-            type: dataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        user_id:{
-            type: dataTypes.STRING,
-            foreignKey: true
-        },
-        product_id: {
-            type: dataTypes.INTEGER,
-            foreignKey: true
+          },
+          productId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+          },
+          quantity: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+          },
+          price: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+          },
+          userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+          },
         }
-    }
+    
     let config = {
         tableName: "cart",
         timestamps:false
@@ -32,5 +31,13 @@ module.exports = (sequelize, dataTypes) => {
 
 const Carrito = sequelize.define(alias, cols, config)
 
+Carrito.associate = function(models){
+    Carrito.belongsTo(models.Usuario, {
+        as: "usuarios",
+        foreignKey: "userId"
+    })}
+
 return Carrito
 }
+
+

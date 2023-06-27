@@ -31,7 +31,7 @@ const usersController = {
 
     })
     .then(function(){
-        res.render("users/login")
+        res.render("users/login", {ey: {}})
     })
     .catch(function(error) {
         console.log(error)
@@ -44,7 +44,7 @@ const usersController = {
 
     // Login render 
     login: (req, res) => {
-        res.render("users/login", { ey: {} })
+        res.render("users/login", {ey: {}})
     },
 
     // Login db  

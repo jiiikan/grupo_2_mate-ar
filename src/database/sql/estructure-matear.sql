@@ -37,7 +37,10 @@ iNSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `category
 (6, 'Bombilla recta', 'Bombilla con resorte ', 2600, 'BOMBILLAS3.jpg', 3),
 (7, 'Kit de cuero azul', 'Set de mate completo de color azul incluye yerbera y azucarera', 7500, 'kitcompleto1.jpg', 4),
 (8, 'Kit de cuero negro', 'Set de mate de cuero negro incluye solo un accesorio de màs', 8700, 'set completo3.jpg', 4),
-(9, 'kit completo cuero', 'Set artesanal completo  de cuero negro reforsado  incluye azucarera y yerbera', 7300, 'set-completo2.jpg', 4);
+(9, 'kit completo cuero', 'Set artesanal completo  de cuero negro reforsado  incluye azucarera y yerbera', 7300, 'set-completo2.jpg', 4),
+(10, 'Yerba cBSe', 'Una yerba de muy alta calidad para tus mates', 2300, 'cBSe.jpg', 5),
+(11, 'Yerba playadito', 'Una yerba de muy alta calidad para tus mates', 2400, 'playadito.jpg', 5),
+(12, 'Yerba verde flor', 'Una yerba de muy alta calidad para tus mates', 2500, 'verdeFLor.jpg', 5);
 
 
 
@@ -58,8 +61,10 @@ CREATE TABLE `users`(
 
 INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `password`, `conditions`) VALUES
 (1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1),
-(2, 'nahhh', 'nahh bd funca', 'nahhh@gmail.com', 'Argentina', 'rio grande 1111', '1685369342015_img.jpg', '$2a$10$1wiTfl7ZBx5iLVx4VhMuZO0Q1k/i.6m0Q.3QugCweljvqNIhc7U3G', 1);
-
+(2, 'nahhh', 'nahh bd funca', 'nahhh@gmail.com', 'Argentina', 'rio grande 1111', '1685369342015_img.jpg', '$2a$10$1wiTfl7ZBx5iLVx4VhMuZO0Q1k/i.6m0Q.3QugCweljvqNIhc7U3G', 1),
+(3, 'ferPalacios', 'fernando lepe', 'ferchulepe05@gmail.com', 'Argentina', 'avenida san martin 453', '1687872603120_img.jpg', '$2a$10$/MLuGp/vuqgVb8ON6uLeuelXF8YbJQfgPcKrkuupJfLuyuLPfeF4q', 1),
+(4, 'DannteS', 'Dante Stigliani', 'dantestigliani05@gmail.com', 'Argentina', 'avenida san martin 453', '1687873290727_img.jpg', '$2a$10$5D/vt6NUOFsxAJRyy5BideH8v3hMcqO9BD6PCDW8wym3H/yjs/JnK', 1),
+(5, 'lolito23', 'Lolito Fernandez', 'lolitouwuxd3@gmail.com', 'Colombia', 'san martin 225', '1687873692676_img.jpg', '$2a$10$rdbixxReZqcMkCRkmXtsV.D16bg85AkbTgI.bZAe6Yni.DlCyuFAi', 1);
 
 CREATE TABLE `orders`(
     `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,

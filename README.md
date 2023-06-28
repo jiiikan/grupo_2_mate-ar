@@ -1,6 +1,6 @@
 #  Mate.ar
 
-https://raw.githubusercontent.com/nahhhhir/grupo_2_mate-ar/master/public/images/LogoMateAr.png
+![LogoMateAr](https://github.com/nahhhhir/Dashboard-React-Matear/assets/121957769/ca142816-d711-451d-8c6c-4593056e1c35)
 
 Nuestra tienda se dedicará a vender mates, bombillas, termos, contenedor de azucar y yerba, y juegos comlpetos con bolso incluido. Surgio  la idea al pensar en una tienda internacional destinada a argentinos fuera y dentro del pais con envio. 
 

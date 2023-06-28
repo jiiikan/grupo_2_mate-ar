@@ -7,11 +7,15 @@ Nuestra tienda se dedicará a vender mates, bombillas, termos, contenedor de azu
 Estamos dirigidos a adolescentes, adultos e incluso a familias que esperan vivir momentos inolvidables en cualquier lugar listos para compartir un buen mate, lo cual es muy buscado por este público. 
 
 # Nuestro equipo 
-está compuesto por  4 miemb:
+está compuesto por  4 miembros:
 - Dante Stigliani 
+     Fascinacion por el arte musical, egresado de un bachiller informatico y aprendiendo programacion web
 - Genaro Rafault
+    Amante de la programacion enfocandose en  back end, estudiando desarrollo web 
 - Nahir Cabezas 
+    Estudiante de tecnico informatico, diseñadora grafica e ilustradora digital esctualmente estudiando desarrollo web full stack
 - Fernando Lepe
+    Estudiante de tecnico informatico con un gusto a la programacion de videojuegos
 
 
 # Listado de paginas de referencia o inspiracion:

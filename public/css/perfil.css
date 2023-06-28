@@ -2,6 +2,7 @@
 body{  background-color: #E5D9B6; margin: 0; padding: 0;}
 
 .main{
+    margin-top: 68%;
     padding: 10%;
 }
 
@@ -78,6 +79,7 @@ body{  background-color: #E5D9B6; margin: 0; padding: 0;}
 @media (min-width: 800px){
     .main{
         padding: 5%;
+        margin-top: 15%;
     }
     .title{
         font-size: 50px;

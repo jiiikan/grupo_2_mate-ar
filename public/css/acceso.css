@@ -5,6 +5,7 @@
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main{
+    margin-top: 68%;
     background-color: #E5D9B6;
     padding: 10%;
     display: flex;
@@ -92,6 +93,9 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 }
 
 @media (min-width: 769px){
+    .main{
+        margin-top: 15%;
+    }
     .go-register{
         font-size: 18px;
     }

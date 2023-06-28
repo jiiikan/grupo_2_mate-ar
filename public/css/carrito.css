@@ -2,6 +2,7 @@
 body{  background-color: #E5D9B6;}
 
 .main-cart{
+  margin-top: 68%;
   padding: 10%;
 }
 
@@ -129,6 +130,7 @@ h2{
   }
 
   .main-cart{
+    margin-top: 15%;
   display: flex;
   align-items: center;
   justify-content: center;

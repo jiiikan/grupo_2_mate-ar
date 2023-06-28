@@ -35,10 +35,6 @@ window.addEventListener("load", function () {
                 localStorage.setItem("carrito", JSON.stringify([{id:e.target.dataset.id, quantity: 1}]))
             }
             
-            
-            
-            
-    
 })
 })
 })

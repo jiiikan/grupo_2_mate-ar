@@ -18,7 +18,7 @@ const sessionMiddleware = require('../middlewares/sessionMiddleware');
 router.get("/carrito", authMiddleware, usersController.carrito);
 //router.post("/carrito", usersController.carritoPush);
 //router.delete("/carrito", usersController.carritoDelete);
-router.get("/order/:id",authMiddleware, usersController.order)
+
 
 router.get("/registro",  registerValidations, guestMiddleware ,usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), registerValidations, sessionMiddleware, usersController.registrado);

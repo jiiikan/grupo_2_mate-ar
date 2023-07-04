@@ -2,36 +2,33 @@
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main-edition{
-    padding: 12%;
+    background-color: #E5D9B6;
+    padding: 10%;
     margin-top: 68%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .edition{
     display: flex;
-    flex-direction: column;
-    padding: 10% 15px;
-    text-align: center;
     align-items: center;
+    flex-direction: column;
     background-color: #5F8D4E;
+    border-radius: 20px;
+    padding: 8%;
     color: #E5D9B6;
-    border-radius: 15px;
 }
 
-.titulo{
-    margin-bottom: 8px;
+h1{
     margin-top: 0px;
-}
-
-.name{
-    color: #E5D9B6;
-    margin: 0;
     margin-bottom: 5px;
 }
 
 .label-edition{
-    font-size: 15px;
-    font-weight: 400;
-    margin: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 15px;
     padding: 5px;
 }
 
@@ -40,19 +37,27 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 }
 
 .input{
-    width: 80%;
-    border: none;
     border-radius: 8px;
-    padding: 5px;
+    border: none;
+    padding: 3px;
     text-align: center;
+    width: 80%;
+}
+
+.div-button{
+    margin: 10px;
 }
 
 .button{
-    margin-top: 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: snow;
+    font-weight: bold;
+    margin-top: 30px;
     padding: 5px;
+    align-self: center;
+    background-color: #285430;
+    border: none;
+    border-radius: 15px;
+    color: #E5D9B6;
+    font-size: 16px;
 }
 
 .button:hover{
@@ -60,45 +65,31 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 400px){
+@media (min-width: 361px){
+    .label-edition{
+        font-size: 23px;
+    }
 
+    .input{
+        width: 300px;
+        height: 30px;
+        align-self: center;
+    }
 }
 
 @media (min-width: 800px){
     .main-edition{
+        padding: 4%;
         margin-top: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .edition{
-        width: 55%;
-        padding: 5% 15px;
-        border-radius: 50px;
-    }
-    .titulo{
-        font-size: 40px;
-    }
-
-    .label-edition{
-        font-size: 22px;
-    }
-    
-    .file{
-        font-size: 16px;
-    }
-
-    .input{
-        font-size: 18px;
+        padding: 6%;
     }
 
     .button{
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 8%;
     }
 
-    .name{
-        font-size: 28px;
-    }
 }

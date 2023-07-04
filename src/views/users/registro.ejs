@@ -18,8 +18,11 @@
       <h1>Regristro</h1>
 
       <label class="registro">Nombre de usuario</label>
-      <input type="text"  name="username" placeholder="User123456" id="user"
+      <input type="text"  name="username" placeholder="Nombre de usuario" id="user"
       class="in-register" value="<%= ey && ey.username ? ey.username : '' %>">
+      <div>
+        <small class="text-danger errorName"></small>
+      </div>
       <% if(typeof errores != "undefined"){ %>
       <% for(let i = 0; i < errores.length; i++) {%>
       <% if (errores[i].path == "username") { %>
@@ -29,8 +32,11 @@
     <% } %>
 
       <label class="registro">Nombre y apellido</label>
-      <input type="text"  name="name_lastName" placeholder="Gustavo Cerati" id="name"
+      <input type="text"  name="name_lastName" placeholder="Nombre completo" id="name"
       class="in-register" value="<%= ey.name_lastName || '' %>">
+      <div>
+        <small class="text-danger errorName"></small>
+      </div>
       <% if(typeof errores != "undefined"){ %>
         <% for(let i = 0; i < errores.length; i++) {%>
         <% if (errores[i].path == "name_lastName") { %>
@@ -40,7 +46,7 @@
       <% } %>
 
       <label class="registro">Correo electrónico</label>
-      <input type="email" name="email" placeholder="genarorafault@gmail.com" id="email"
+      <input type="email" name="email" placeholder="Correo electrónico" id="email"
       class="in-register" value="<%= ey.email || '' %>">
       <% if(typeof errores != "undefined"){ %>
         <% for(let i = 0; i < errores.length; i++) {%>
@@ -76,7 +82,7 @@
 
 
       <label class="registro">Domicilio</label>
-      <input type="text"  name="direction" placeholder="Calle numero" 
+      <input type="text"  name="direction" placeholder="Domicilio" 
       class="in-register form-control" value="<%= ey.direction || '' %>">
       <% if(typeof errores != "undefined"){ %>
         <% for(let i = 0; i < errores.length; i++) {%>
@@ -86,8 +92,8 @@
       <% } %>
       <% } %>
 
-
-      <label class="registro">Avatar</label>
+      <label class="registro" id="avatar">Avatar</label>
+      <div class="div-file">
       <input type="file"  name="avatar" style="border: none" id="imag"
       class="in-register" value="<%= ey.avatar || '' %>">
       <% if(typeof errores != "undefined"){ %>
@@ -97,10 +103,9 @@
       <% } %>
       <% } %>
       <% } %>
-
-
+</div>
       <label class="registro">Contraseña</label>
-      <input type="password" name="password"  placeholder="123456789" id="contra"
+      <input type="password" name="password"  placeholder="Contraseña" id="contra"
       class="in-register">
       <% if(typeof errores != "undefined"){ %>
         <% for(let i = 0; i < errores.length; i++) {%>
@@ -119,15 +124,10 @@
       <% } %>
       <% } %>
       <% } %>
-
-      <section class="errores">
-        <ul>
-
-        </ul>
-      </section>
+      <!--<script src="/js/registro.js"></script>-->
 
       <div class="boton">
-        <button type="submit" class="boton-registro">Crear cuenta</button>
+        <button type="submit" class="boton-registro" id="boton-registrado">Crear cuenta</button>
         <button type="reset" class="boton-registro">Borrar</button>
       </div>
     </form>
@@ -135,6 +135,5 @@
 
   <%- include("../partials/footer") %>
 
-  <!--<script src="/js/registro.js"></script>-->
 </body>
 </html>

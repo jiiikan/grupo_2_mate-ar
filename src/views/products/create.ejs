@@ -12,14 +12,12 @@
 <body>
     <%- include("../partials/header") %>
     <main class="main">
-        
-        <section class="create-container">
         <form action="/products/create" method="POST" class="create" enctype="multipart/form-data"> 
-            <span class="titulo">Creacion del producto</span>
+            <h1 class="titulo">Creacion del producto</h1>
 
             <label class="label-create">Nombre del producto</label>
             <input type="text" name="name" placeholder="Nombre" class="input" 
-                class="form-control" value="<%= ey && ey.name ? ey.name : '' %>">
+                 value="<%= ey && ey.name ? ey.name : '' %>">
                 <% if(typeof errores != "undefined"){ %>
                     <% console.log(ey) %>
                     <% for(let i = 0; i < errores.length; i++) {%>
@@ -31,7 +29,7 @@
             
             <label class="label-create">Descripcion del producto</label>
             <input type="text" name="description" placeholder="descripcion" class="input" 
-                class="form-control" value="<%= ey && ey.description ? ey.description : '' %>">
+                 value="<%= ey && ey.description ? ey.description : '' %>">
                 <% if(typeof errores != "undefined"){ %>
                     <% for(let i = 0; i < errores.length; i++) {%>
                     <% if (errores[i].path == "description") { %>
@@ -43,7 +41,7 @@
 
             <label class="label-create">Precio del producto</label>
             <input type="number" name="price" placeholder="Precio" class="input" 
-                class="form-control" value="<%= ey && ey.price ? ey.price : '' %>">
+                 value="<%= ey && ey.price ? ey.price : '' %>">
                 <% if(typeof errores != "undefined"){ %>
                     <% for(let i = 0; i < errores.length; i++) {%>
                     <% if (errores[i].path == "price") { %>
@@ -55,7 +53,7 @@
 
             <label class="label-create">Imagen del producto</label>
             <input type="file" name="image" placeholder="Imagen" class="file" 
-                class="form-control" value="<%= ey && ey.image ? ey.image : '' %>">
+                 value="<%= ey && ey.image ? ey.image : '' %>">
                 <% if(typeof errores != "undefined"){ %>
                     <% for(let i = 0; i < errores.length; i++) {%>
                     <% if (errores[i].path == "image") { %>
@@ -81,12 +79,10 @@
                         <option value="<%= num4.id %>"> <%= num4.name %> </option>
                         <option value="<%= num5.id %>"> <%= num5.name %> </option>
             </select>
-
+<div class="boton">
             <button type="submit" class="button">Subir</button>
-
-        </form>
-        </section>
-        
+</div>
+        </form>     
     </main>
     
 <%- include("../partials/footer") %>

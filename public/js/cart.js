@@ -1,4 +1,4 @@
-/*function setCarritoVacio() {
+function setCarritoVacio() {
     cartRows.innerHTML = `
     <tr>
         <td colspan="5"><div class="alert alert-warning my-2 text-center">No tienes productos en el carrito</div></td>
@@ -60,31 +60,5 @@ if( localStorage.carrito ){
 }
 
 
-let checkoutCart = document.querySelector("#checkoutCart");
-
-checkoutCart.onsubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-        orderItems: products,
-        paymentMethod: checkoutCart.paymentMethod.value,
-        shippingMethod: checkoutCart.shippingMethod.value,
-        total: calcularTotal(products)
-    };
-    fetch("/api/checkout", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData)
-    })
-    .then((r) => r.json())
-    .then((res) => {
-        if(res.ok){
-            vaciarCarrito();
-            location.href = `/order/${res.order.id}`
-        }
-    })
-    console.log(formData);
 
 
-}*/

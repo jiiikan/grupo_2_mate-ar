@@ -6,12 +6,12 @@ const { on } = require("events");
 const Sequelize = require("sequelize");
 
 const usersController = {
-    // Registro render 
+    // Registro de usuario GET
     registro: (req, res) => {
         res.render("users/registro", { ey: {} })
 
     },
-    // Registro  
+    // Registro de usuario POST  
     registrado: (req, res) => {
     const resultValidation = validationResult(req);
     
@@ -33,21 +33,21 @@ const usersController = {
     .then(function(){
         res.render("users/login", {ey: {}})
     })
-    .catch(function(error) {
-        console.log(error)
-        res.render("error", { message: "Error al crear ususario"})
-    })
+    .catch((error) => {
+        console.log(error);
+        res.status(400).render("error400");
+      });
 }
 
 },
     
 
-    // Login render 
+    // Incio de sesion GET 
     login: (req, res) => {
         res.render("users/login", {ey: {}})
     },
 
-    // Login db  
+    // Inicio de sesion POST 
     logeando: (req, res) => {
         const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0) {
@@ -73,14 +73,14 @@ const usersController = {
                         return res.redirect('/users/perfil');
 }}
 })
-            .catch(error => {
-                console.log("error al iniciar sesion", error);
-                return res.render("users/login")
-            });
+.catch((error) => {
+    console.log(error);
+    res.status(400).render("error400");
+  });
     }
 },
 
-    // Perfil render 
+    // Renderizacion perfil
     profile: (req, res) => {
         //const user =  req.session.userLogged
         //const userFromDB = User.findByField('id', user.id);
@@ -89,21 +89,16 @@ const usersController = {
         });
     },
 
-    // Login con cookies 
+    // Desloguearse
     logout: (req, res) => {
         res.clearCookie('remember')
         req.session.destroy();
         return res.redirect('/');
     },
+
+    // Renderizacion carrito de compras
     carrito: (req, res) => {
         res.render("./users/carrito")
-    },
-    order: async function (req, res) {
-        let order = await db.Order.findByPk(req.params.id, {
-            include: db.Order.OrderItem,
-        });
-        // res.send(order);
-        return res.render("order", { order });
     },
 
 };

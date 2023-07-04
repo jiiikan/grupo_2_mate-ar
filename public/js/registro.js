@@ -1,26 +1,28 @@
 //const db = require('../database/models');
 
 window.addEventListener('load', function () {
-    let formulario = document.querySelector('.box-register')
+    
+        let formulario = document.querySelector('.box-register')
+        let user = document.querySelector('#user')
+        let name = document.querySelector('#name')
+        let email = document.querySelector('#email')
+        let contra = document.querySelector('#contra')
+        let imag = document.querySelector('#imag')
+        let bton = document.querySelector('#boton-registrado')
+        let erName = document.querySelector('.errorName')
 
-    formulario.addEventListener('submit', /*async*/ function (e) {
-        let errores = [];
+        bton.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        let user = document.querySelector('#user').value
-        let name = document.querySelector('#name').value
-        let email = document.querySelector('#email').value
-        let contra = document.querySelector('#contra').value
-        let imag = document.querySelector('#imag').value
+            let errores = {};
 
-        if (name == "") {
-            errores.push("El campo nombre es obligatorio")
+        
+        if (name.value == "") {
+            errores.push = ("El nombre de usuario es obligatorio")
         }
-        if (name.length < 2) {
-            errores.push('El campo de nombre debe tener como minimo 2 caracteres ')
-        }
 
-        if (user == "") {
-            errores.push("El campo nombre de usuario esta vacio")
+        if (user.value.length == "") {
+            errores.user  = "Debe ingresar su nombre completo"
         }
         if (user.length < 2) {
             errores.push('El campo de nombre de usuario debe tener como minimo 5 caracteres ')
@@ -30,9 +32,7 @@ window.addEventListener('load', function () {
         if (email == "") {
             errores.push('El campo de correo electronico es obligatorio')
         }
-        if (email.includes('@') == false) {
-            errores.push('El campo de correo electronico es invalido')
-        }
+        
 
         /*// Confirmar que el email no se haya registrado
         let emailUsado = db.Usuario.findOne({
@@ -46,12 +46,9 @@ window.addEventListener('load', function () {
 
         // Declarar extenciones permitidas y separar el string de extencion
         let extension = ['jpeg', 'jpg', 'gif', 'png'];
-        let ex = imag.split('.').pop().toLowerCase();
+        
 
-        // Verificar que la extensión es permitida
-        if (!extension.includes(ex)) {
-            errores.push('Las extenciones validas son: .jpg, .jpeg, .png, .gif')
-        }
+        
 
         if (contra == "") {
             errores.push('El campo contraseña es obligatorio')
@@ -59,25 +56,15 @@ window.addEventListener('load', function () {
         if (contra.length > 8) {
             errores.push('El campo contraseña debe tener 8 caracteres como minimo')
         }
-        if (contra.match(/[a-z]/) == null) {
-            errores.push('El campo contraseña debe tener al menos una minuscula')
-        }
-        if (contra.match(/[A-Z]/) == null) {
-            errores.push('El campo contraseña debe tener al menos una mayuscula')
-        }
-        if (contra.match(/\d/) == null) {
-            errores.push('El campo contraseña debe tener al menos un numero')
-        }
-        if (contra.match(/[!,*,¡,?,¿,#,@]/g) == null) {
-            errores.push('El campo contraseña debe tener al menos un carater especial')
-        }
 
-        if (errores.length >= 1) {
-            e.preventDefault();
-            let ulErrores = document.querySelector('.errores ul');
-            errores.forEach(error => {
-                ulErrores.innerHTML += '<li>' + [error] + '</li>'
-            });
+        if (Object.keys(errores).length >= 1) {
+            erName.innerText = errores.name || " ";
+            }else{
+                erName.innerText = ""
+
+                formulario.submit()
         }
     })
-});
+    })
+
+        

@@ -2,8 +2,7 @@
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main{
-  margin-top: 68%;
-  padding: 7%;
+  padding: 10%;
 }
 
 h1{
@@ -136,7 +135,7 @@ h2{
 
 @media (min-width:800px) {
   .main{
-    margin-top: 15%;
+    padding: 4%;
   }
   
   .title{

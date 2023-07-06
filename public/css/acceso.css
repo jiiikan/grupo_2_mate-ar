@@ -5,19 +5,12 @@
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main{
-    margin-top: 68%;
     background-color: #E5D9B6;
-    padding: 10%;
+    padding: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.login-container{
-    background-color: #5F8D4E;
-    padding: 4%;
-    border-radius: 10px;
-    color: #E5D9B6;
+    margin: 15px
 }
 
 .iniciar{
@@ -63,6 +56,10 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    background-color: #5F8D4E;
+    padding: 4%;
+    border-radius: 10px;
+    color: #E5D9B6;
 }
 
 .go-register{
@@ -93,9 +90,6 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 }
 
 @media (min-width: 769px){
-    .main{
-        margin-top: 15%;
-    }
     .go-register{
         font-size: 18px;
     }

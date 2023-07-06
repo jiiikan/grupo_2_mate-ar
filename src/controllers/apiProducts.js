@@ -38,7 +38,7 @@ module.exports = {
                         name: product.name,
                         description: product.description,
                         categories: product.categories.name,
-                        detail: `http://localhost:3000/api/products/${product.id}`
+                        detail: `http://localhost:3008/api/products/${product.id}`
                     }))
                 })
             })

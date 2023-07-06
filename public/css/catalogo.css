@@ -1,8 +1,8 @@
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main{ padding: 2%; margin-top: 68%;}
-h1{ margin: 8% 4%; color: #285430;}
+.main{ padding: 2%; margin-top: 100px;}
+
 
 .array-products{
   flex-direction: row;
@@ -20,6 +20,7 @@ h1{ margin: 8% 4%; color: #285430;}
   background-color: #A4BE7B;
   margin-bottom: 2rem;
   padding: 1rem;
+  margin: 10px;
 }
 
 .producto h3{
@@ -81,9 +82,6 @@ h1{ margin: 8% 4%; color: #285430;}
 }
 
 @media (min-width: 450px){
-  h1{
-    font-size: 30px;
-  }
 
   .producto {
     border-radius: 10px;
@@ -101,16 +99,13 @@ h1{ margin: 8% 4%; color: #285430;}
 }
 
 @media (min-width: 800px){
-  h1{ font-size: 50px;  margin: 1% 0 4% 0;}
 
-  .main{
-    padding: 4%;
-    margin-top: 13%;
-  }
 
   .producto{
     width: 300px;
     height: 400px;
+    margin-bottom: 30px;
+    padding: 10px;
   }
   .array-products{
     flex-direction: row;

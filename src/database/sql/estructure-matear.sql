@@ -40,7 +40,8 @@ iNSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `category
 (9, 'kit completo cuero', 'Set artesanal completo  de cuero negro reforsado  incluye azucarera y yerbera', 7300, 'set-completo2.jpg', 4),
 (10, 'Yerba cBSe', 'Una yerba de muy alta calidad para tus mates', 2300, 'cBSe.jpg', 5),
 (11, 'Yerba playadito', 'Una yerba de muy alta calidad para tus mates', 2400, 'playadito.jpg', 5),
-(12, 'Yerba verde flor', 'Una yerba de muy alta calidad para tus mates', 2500, 'verdeFLor.jpg', 5);
+(12, 'Yerba verde flor', 'Una yerba de muy alta calidad para tus mates', 2500, 'verdeFLor.jpg', 5),
+(13, 'Mate de madera', 'Mate de madera simple', 3000, 'mate3.jpeg', 1);
 
 
 
@@ -60,34 +61,8 @@ CREATE TABLE `users`(
 );
 
 INSERT INTO `users` (`id`, `user_name`, `name_lastName`, `email`, `country`, `direction`, `avatar`, `password`, `conditions`) VALUES
-(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$Gfh8UxSlzaStzvi.wtf8geTgv4JvxMLqYsVEmuAM28s9qgBgd2m8u', 1),
-(2, 'nahhh', 'nahh bd funca', 'nahhh@gmail.com', 'Argentina', 'rio grande 1111', '1685369342015_img.jpg', '$2a$10$1wiTfl7ZBx5iLVx4VhMuZO0Q1k/i.6m0Q.3QugCweljvqNIhc7U3G', 1),
+(1, 'jiiikan', 'genaro rafault', 'genarorafault@gmail.com', 'Argentina', '17 de mayo', '1682612299196_img.jpg', '$2a$10$J1.KTvVJjPtbHtHeTnGmBenDRpW4Kik5n.AWMEwxnahg2.eQdSKRC', 1),
+(2, 'nahhh', 'nahh bd funca', 'nahhh@gmail.com', 'Argentina', 'rio grande 1111', '1685369342015_img.jpg', '$2a$10$AK.zbVaRm..0uSAmoE9Amer4zopF3xp8AqqXHZdDRmdVnTXqWfJFq', 1),
 (3, 'ferPalacios', 'fernando lepe', 'ferchulepe05@gmail.com', 'Argentina', 'avenida san martin 453', '1687872603120_img.jpg', '$2a$10$/MLuGp/vuqgVb8ON6uLeuelXF8YbJQfgPcKrkuupJfLuyuLPfeF4q', 1),
 (4, 'DannteS', 'Dante Stigliani', 'dantestigliani05@gmail.com', 'Argentina', 'avenida san martin 453', '1687873290727_img.jpg', '$2a$10$5D/vt6NUOFsxAJRyy5BideH8v3hMcqO9BD6PCDW8wym3H/yjs/JnK', 1),
 (5, 'lolito23', 'Lolito Fernandez', 'lolitouwuxd3@gmail.com', 'Colombia', 'san martin 225', '1687873692676_img.jpg', '$2a$10$rdbixxReZqcMkCRkmXtsV.D16bg85AkbTgI.bZAe6Yni.DlCyuFAi', 1);
-
-CREATE TABLE `orders`(
-    `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `total` INT NOT NULL,
-    `userId` INT UNSIGNED NOT NULL ,
-    `paymentMethod` VARCHAR(255) NOT NULL,
-    `shippingMethod` VARCHAR(255),
-    `createdAt` DATETIME NOT NULL,
-    `updatedAt` DATETIME NOT NULL,
-    `deleteAt` DATETIME NULL,
-    FOREIGN KEY (`userId`) REFERENCES `users`(`id`)
-);
-
-CREATE TABLE `orderitems`(
-    `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL,
-    `price` DECIMAL(3,1) NOT NULL,
-    `quantity` INT NOT NULL,
-    `orderId` INT UNSIGNED NOT NULL,
-    `productId` INT UNSIGNED,
-    `createdAt` DATETIME NOT NULL,
-    `updatedAt` DATETIME NOT NULL,
-    `deleteAt` DATETIME NULL,
-    FOREIGN KEY (`orderId`) REFERENCES `orders` (`id`),
-    FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-);

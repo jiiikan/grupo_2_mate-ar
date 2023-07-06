@@ -38,6 +38,7 @@ module.exports = {
                         name: product.name,
                         description: product.description,
                         categories: product.categories.name,
+                        image: `http://localhost:3008/images/${product.image}`,
                         detail: `http://localhost:3008/api/products/${product.id}`
                     }))
                 })
@@ -58,5 +59,14 @@ module.exports = {
                     image: `http://localhost:3008/images/${producto.image}`,
                 })
             })
-    }
+
+            
+    },
+
+    products: async function (req, res) {
+        let product = await db.Producto.findByPk(req.params.id);
+        console.log(product)
+        return res.json(product);
+      },
+
 }

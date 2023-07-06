@@ -48,10 +48,6 @@ Producto.associate = function(models){
         foreignKey: "category_id"
     })
 
-Producto.OrderItems = Producto.hasMany(models.OrderItem, {
-        as: "orderItems",
-        foreignKey: "productId"
-    });
 
     /*Producto.hasMany(models.Carrito, {
         as: 'cart',

@@ -23,8 +23,8 @@ router.get("/carrito", authMiddleware, usersController.carrito);
 router.get("/registro",  registerValidations, guestMiddleware ,usersController.registro);
 router.post("/registro", uploadFile.single("avatar"), registerValidations, sessionMiddleware, usersController.registrado);
 
-router.get("/login", guestMiddleware, usersController.login);
-router.post('/login', validationsAcceso, usersController.logeando);
+router.get("/login",  validationsAcceso, guestMiddleware, usersController.login);
+router.post('/login', validationsAcceso, sessionMiddleware, usersController.logeando);
 
 router.get('/perfil', authMiddleware ,usersController.profile);
 

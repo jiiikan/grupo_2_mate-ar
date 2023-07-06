@@ -58,12 +58,8 @@ const Usuario = sequelize.define(alias, cols, config)
     })
     
 }*/
-Usuario.associate = (models) => {
-    Usuario.hasMany(models.Order, {
-      as: "orders",
-      foreignKey: "userId",
-    });
-}
+
+
 
 return Usuario;
 

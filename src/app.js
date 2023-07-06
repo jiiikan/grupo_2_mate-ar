@@ -6,7 +6,7 @@ const cookies = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 // CONFIGURACION DEL SERVIDOR
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3008;
 const funca = () => console.log('Servidor funcionando en localhost: ' + port);
 
 //Middleware para recordar usuario

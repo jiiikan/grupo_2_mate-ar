@@ -12,7 +12,7 @@ module.exports = {
                         id: user.id,
                         name: user.user_name,
                         email: user.email,
-                        detail: `http://localhost:3000/api/users/${user.id}`
+                        detail: `http://localhost:3008/api/users/${user.id}`
                     }))
                 })
             })
@@ -28,7 +28,7 @@ module.exports = {
                     email: usuario.email,
                     country: usuario.country,
                     direction: usuario.direction,
-                    image: `http://localhost:3000/images/users/${usuario.avatar}`,
+                    image: `http://localhost:3008/images/users/${usuario.avatar}`,
                 })
             })
     }

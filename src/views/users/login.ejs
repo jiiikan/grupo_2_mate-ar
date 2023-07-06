@@ -14,10 +14,8 @@
 	<%- include("../partials/header") %>
 
 		<main class="main">
-			<div class="login-container">
-				<p class="iniciar">Iniciar sesión</p>
 				<form method="POST" class="form-acceso" action="/users/login">
-
+                  <h1 class="iniciar">Iniciar sesión</h1>
 					<label class="login-sub">Correo electrónico</label>
 					<input type="text" name="email" placeholder="Correo electrónico" class="login-input" value="<%= ey && ey.email ? ey.email : ' ' %>">
 					<% if(typeof errores !="undefined" ){ %>
@@ -52,9 +50,9 @@
 					<button type="submit"
 						class="boton-iniciar">Iniciar sesión</button>
 			</div>
+			<h3 class="go-register">¿No tienes una cuenta? <a href="/users/registro"> Regístrate aquí</a></h3>
 				</form>
-				<h3 class="go-register">¿No tienes una cuenta? <a href="/users/registro"> Regístrate aquí</a></h3>
-			</div>
+				
 		</main>
 
 		<%- include("../partials/footer") %>

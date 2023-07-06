@@ -12,12 +12,13 @@
 <body>
 	<%- include("../partials/header") %>
 
-    <main class="main">
+    <main>
+        <div class="main">
         
-        <section class="data">
+   
             
-            <section>
-                <h1 class="title">Hola <%=user.user_name %></h1>
+            <section class="data">
+                
                 <h2 class="h2">Tu informacion personal</h2>
                 <ul class="lista">
                     <li class="sub-title">Nombre y apellido</li>
@@ -31,13 +32,15 @@
                     <li class="sub-title">Productos en el carrito:</li>
                     <li>0</li>
                 </ul>
+                <div class="container-buttons">
                 <input type="button" name="editar" value="Editar"  class="button">
                 <input type="submit" class="button" value="Cerrar Sesion" onclick="location.href= '/users/logout'">
-            </section>
-            <section>
-            </section>
+            </div></section>
+            <section class="imagenyhola">
+            <h1 class="title">Hola <%=user.user_name %></h1>
             <img src="/images/users/<%= user.avatar %>" class="img">
         </section>
+    </div>
 </main>
 
 <%- include("../partials/footer") %>

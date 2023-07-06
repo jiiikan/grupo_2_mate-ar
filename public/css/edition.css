@@ -3,11 +3,10 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 .main-edition{
     background-color: #E5D9B6;
-    padding: 10%;
-    margin-top: 68%;
     display: flex;
     align-items: center;
     justify-content: center;
+        padding: 10%;
 }
 
 .edition{
@@ -78,10 +77,10 @@ h1{
 }
 
 @media (min-width: 800px){
-    .main-edition{
-        padding: 4%;
-        margin-top: 15%;
-    }
+.main-edition{
+    padding: 4%;
+}
+
 
     .edition{
         padding: 6%;

@@ -1,11 +1,10 @@
 *{  font-family: 'Tajawal', sans-serif; }
 body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
-.main{ padding: 2%; margin-top: 100px;}
-
+.main{ padding: 2%; margin-top: 68%;}
+h1{ margin: 8% 4%; color: #285430;}
 
 .array-products{
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: center;
@@ -100,6 +99,10 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
 
 @media (min-width: 800px){
 
+  .main{
+    padding: 4%;
+    margin-top: 13%;
+  }
 
   .producto{
     width: 300px;
@@ -111,6 +114,7 @@ body{ margin: 0; padding: 0; background-color: #E5D9B6;}
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 30px;
   }
 
   .imag{

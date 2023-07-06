@@ -2,13 +2,47 @@
 body{  background-color: #E5D9B6;}
 
 .main-cart{
-  margin-top: 68%;
-  padding: 10%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 table.table td,
 table.table th {
   vertical-align: middle;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.img-compra{
+  width: 130px;
+}
+
+
+.card{
+  background-color: #E5D9B6;
+  border: solid 1px black;
+  width: 73%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
 .th-lg strong{
@@ -17,35 +51,66 @@ table.table th {
 
 .box-cart{
   background-color: #5F8D4E;
-  border-radius: 15px;
+  border: solid 1px black;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  color: #E5D9B6;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  width: 85%;
 }
 
-.container{
-  padding: 8%;
+
+
+td{
+  font-size: 13px;
+  text-align: center;
 }
+
+.table{
+  border: solid 2px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.tr{
+  font-size: 13px;
+}
+
+th{
+  font-size: 13px;
+}
+
 
 .titulo-carrito{
-  font-size: 25px;
   font-weight: bold;
   text-decoration: underline;
-  margin-left: 20px;
-  margin-top: 20px;
+  padding: 10px;
+
+
+  
 }
 
 h2{
   margin: 15px 0;
 }
 
-.p{
-  margin: 8px;
+.container-pago{
+  margin: 20px;
 }
 
-.table{
-  margin: 8% 0 11%;
+.Elegir{
+  color: #5F8D4E;
+  font-weight: bold;
 }
+
+.p{
+  font-weight: bold;
+}
+
+
 
 .compra{
   width: 200px;
@@ -93,12 +158,11 @@ h2{
 }
 
 .envios{
-  text-align: left;
+  text-align: center;
   font-size: 15px;
-  margin: 10px;
-  margin-left: 20px;
   font-weight: 300;
   color: #E5D9B6;
+  padding-bottom: 10px;
 }
 
 @media (min-width: 450px){
@@ -109,6 +173,28 @@ h2{
   .comprar{
     font-size: 18px;
   }
+
+  .card{
+    width: 80%
+  }
+
+  .box-cart{
+    width: 90%;
+    max-width: 500px;
+  }
+
+  td{
+    font-size: 15px;
+  }
+  
+  .tr{
+    font-size: 15px;
+  }
+  
+  th{
+    font-size: 15px;
+  }
+  
 }
 
 @media (min-width: 800px){
@@ -122,15 +208,15 @@ h2{
   }
 
   .box-cart{
-    width: 70%;
+    width: 90%;
+    max-width: 700px;
   }
 
   .envios{
-    margin: 4% 5%;
+   margin: 10px;
   }
 
   .main-cart{
-    margin-top: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,6 +230,11 @@ h2{
 
     font-size: 18px;
   }
+
+  .card{
+    width: 85%;
+  }
+
 
 }
 

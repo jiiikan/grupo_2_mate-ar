@@ -22,6 +22,7 @@ const validationProduct = require('../middlewares/validationProducts');
 
 // Ruta de vista del catalogo
 router.get("/catalogo", productsController.catalogo);
+router.get("/catalogo/:id", productsController.catalogoId);
 
 
 router.get("/detalle/:id", productsController.detalle);

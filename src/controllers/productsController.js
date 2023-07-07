@@ -11,6 +11,25 @@ const productsController = {
             })
     },
 
+    catalogoId: (req, res) => {
+        const { id } = req.params;
+        db.Producto.findAll({
+        include: [{ association: "categories" }],
+          where: { category_id: id }
+        })
+          .then(products => {
+            db.Categoria.findAll()
+              .then(categories => {
+                res.render('products/catalogo', { products: products, categories: categories });
+              })
+              .catch((error) => {
+                console.log(error);
+                res.status(400).render("error400");
+              });
+          })
+
+    },
+
     // Detalle de un productos dinamico
     detalle: async (req, res) => {
         const productoid = req.params.id;

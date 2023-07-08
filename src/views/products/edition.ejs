@@ -18,7 +18,7 @@
             <h1 class="titulo">Edicion del producto:</h1>
     
             <label class="label-edition">Nombre del producto</label>
-            <input type="text" name="name" placeholder="Nombre" class="input" value="<%= product.name %>">
+            <input type="text" name="name" placeholder="Nombre" class="input" value="<%= ey && ey.name ? ey.name: product.name %>">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
                 <% if (errores[i].path == "name") { %>
@@ -29,7 +29,7 @@
         
             
             <label class="label-edition">Descripcion del producto</label>
-            <input type="text" name="description" placeholder="descripcion" class="input" value="<%= product.description%>">
+            <input type="text" name="description" placeholder="descripcion" class="input" value="<%= ey && ey.description ? ey.description: product.description %>">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
                 <% if (errores[i].path == "description") { %>
@@ -40,7 +40,7 @@
         
             
             <label class="label-edition">Precio del producto</label>
-            <input type="number" name="price" placeholder="Precio" class="input" value="<%= product.price%>">
+            <input type="number" name="price" placeholder="Precio" class="input" value="<%= ey && ey.price ? ey.price: product.price %>">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
                 <% if (errores[i].path == "price") { %>
@@ -51,7 +51,7 @@
         
             
             <label class="label-edition">Imagen del producto</label>
-            <input type="file" name="image" placeholder="Imagen" class="file">
+            <input type="file" name="image" placeholder="Imagen" class="file" value="<%= imagePath %>">
             <% if(typeof errores != "undefined"){ %>
                 <% for(let i = 0; i < errores.length; i++) {%>
                 <% if (errores[i].path == "image") { %>

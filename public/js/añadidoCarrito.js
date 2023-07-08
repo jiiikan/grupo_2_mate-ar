@@ -16,13 +16,14 @@ function calcularTotal(products) {
 }
 
 let cartRows = document.querySelector(".cartRows")
+let botonComprar = document.querySelector(".comprar")
 
 let products = [];
 
 if( localStorage.carrito ){
     let carrito = JSON.parse(localStorage.carrito)
     carrito.forEach((item,index) => {
-        fetch(`/api/products/${item.id}`)
+        fetch(`/api/productos/${item.id}`)
         .then((res) =>res.json())
         .then((product) => {
             if(product){
@@ -56,8 +57,11 @@ if( localStorage.carrito ){
          `
         });  
 })
-
+botonComprar.addEventListener("click", () => {
+    return vaciarCarrito()
+})
 }
+
 
 
 

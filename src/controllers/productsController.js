@@ -84,14 +84,12 @@ const productsController = {
     // Formulario de la edicion de un producto
     edition: (req, res) => {
        const productId = req.params.id
-
        const productoID = db.Producto.findByPk(productId)
-
        const categoriasAll = db.Categoria.findAll()
          
       Promise.all([productoID, categoriasAll])
       .then(function([product, categorias]) {
-        res.render('products/edition', {product: product, categorias: categorias})
+        res.render('products/edition', {product: product, categorias: categorias, ey: req.body, imagePath: product.image})
       })
       .catch((error) => {
         console.log(error);
@@ -100,15 +98,17 @@ const productsController = {
       },
 
     // Edicion del producto
-    update: (req, res) => {
-      const productId = parseInt(req.params.id);
-      const productIndex = db.Producto.findByPk(productId);
+    update: async (req, res) => {
       const resultValidation = validationResult(req);
-      if (resultValidation.errors.length > 0) {
-          db.Categoria.findAll()
-              .then(function (categorias) {
-                res.render("products/edition", {errores: resultValidation.errors, product: productIndex, categorias: categorias}) 
-              })
+      const productId = req.params.id
+        try {
+          if (resultValidation.errors.length > 0) {
+            const [product, categorias] = await Promise.all([
+              db.Producto.findByPk(productId),
+              db.Categoria.findAll()
+            ]);
+             res.render('products/edition', { errores: resultValidation.errors ,product: product, categorias: categorias, ey: req.body, imagePath: product.image})  
+
           }else{
             db.Producto.update({
               name: req.body.name,
@@ -119,10 +119,16 @@ const productsController = {
         }, {
             where: {
                 id: req.params.id
-              }
+              }       
             });
-            res.redirect("/");
-        }},
+        }
+        res.redirect('/products/catalogo') 
+        
+      } catch (error) {
+        res.status(400).render("error400");
+      }
+      
+    },
       
 
       

@@ -43,6 +43,15 @@ audio{
   margin-top: 0;
 }
 
+.folleto{
+  color: #E5D9B6;
+}
+
+.link-feriaMatear{
+  color: #E5D9B6;
+  text-decoration: none;
+}
+
 .reseña-articulo{
   display: flex;
   justify-content: center;

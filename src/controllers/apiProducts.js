@@ -67,6 +67,6 @@ module.exports = {
         let product = await db.Producto.findByPk(req.params.id);
         console.log(product)
         return res.json(product);
-      },
+    },
 
 }

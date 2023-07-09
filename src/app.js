@@ -4,6 +4,7 @@ const path = require('path');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 // CONFIGURACION DEL SERVIDOR
 const port = process.env.PORT || 3008;
@@ -34,7 +35,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false}));
 app.use(userLoggedMiddleware);
 app.use(sessionMiddleware);
-
+app.use(cors())
 
 // Rutas
 const home = require("./routes/home");

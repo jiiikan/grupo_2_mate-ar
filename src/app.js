@@ -42,17 +42,17 @@ const home = require("./routes/home");
 const products = require("./routes/products.js");
 const users = require("./routes/users.js");
 const { cookie } = require('express-validator');
-const api = require("./routes/api.js");
 const apiUsers = require('./routes/apiUsers');
 const apiProducts = require('./routes/apiProducts');
+const apiScripts = require('./routes/apiScripts');
 
 // Renderizacion de paginas 
 app.use("/", home);
 app.use("/products", products);
 app.use("/users", users);
-app.use("/api/", api);
 app.use("/api/", apiUsers);
 app.use("/api/", apiProducts);
+app.use("/api/", apiScripts);
 
 
 // Error 404

@@ -45,7 +45,7 @@ module.exports = {
             })
     },
 
-    detalle: (req,res) =>{
+    detalleApi: (req,res) =>{
         db.Producto.findByPk(req.params.id, {include: [{ 
             association: "categories",
         }]})
@@ -59,14 +59,12 @@ module.exports = {
                     image: `http://localhost:3008/images/${producto.image}`,
                 })
             })
+            .catch((error) => {
+                console.log(error);
+                res.status(400).render("error400");
+              });
 
             
-    },
-
-    products: async function (req, res) {
-        let product = await db.Producto.findByPk(req.params.id);
-        console.log(product)
-        return res.json(product);
     },
 
 }

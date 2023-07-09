@@ -4,8 +4,6 @@ function productosEnElcarrito() {
 
 window.addEventListener("load", function () {
 
-    
-
     TransformStream.options = {
         positionClass: "toast-bottom-right",
         fadeIn: 300,

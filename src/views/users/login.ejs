@@ -19,7 +19,13 @@
 				<form method="POST" class="form-acceso" action="/users/login">
 
 					<label class="login-sub">Correo electrónico</label>
+					<div class="errores">
+						<ul></ul>
+					</div>
 					<input type="text" name="email" placeholder="correo" class="login-input" value="<%= ey && ey.email ? ey.email : '' %>">
+					<div class="errores">
+						<ul></ul>
+					</div>
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="email" ) { %>
@@ -32,6 +38,9 @@
 
 					<label class="login-sub" id="contra">Contraseña</label>
 					<input type="password" name="password" placeholder="hola81272" class="login-input">
+					<div class="errores">
+						<ul></ul>
+					</div>
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="password" ) { %>
@@ -58,7 +67,7 @@
 		</main>
 
 		<%- include("../partials/footer") %>
-
+		<script src="/public/jg/valdacionLogin.js"></script>
 </body>
 
 </html>

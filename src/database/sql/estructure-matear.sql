@@ -41,7 +41,7 @@ iNSERT INTO `products` (`id`, `name`, `description`, `price`, `image`, `category
 (10, 'Yerba cBSe', 'Una yerba de muy alta calidad para tus mates', 2300, 'cBSe.jpg', 5),
 (11, 'Yerba playadito', 'Una yerba de muy alta calidad para tus mates', 2400, 'playadito.jpg', 5),
 (12, 'Yerba verde flor', 'Una yerba de muy alta calidad para tus mates', 2500, 'verdeFLor.jpg', 5),
-(13, 'Mate de madera', 'Mate de madera simple', 3000, 'mate3.jpeg', 1);
+(13, 'Mate de madera', 'Mate artesanal de madera de roble reforsado con metal antioxidante por dentro', 3000, 'mate3.jpeg', 1);
 
 
 

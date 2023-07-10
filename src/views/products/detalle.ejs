@@ -29,19 +29,27 @@
         </section>
 
       <div class="botones">
-        <!--<form method="post" action="/products/carrito" class="boton">-->
-          <div>
-        <button class="boton-admin button_carrito" data-id="<%= product.id %>" <% if (!locals.userLogged) { %>
-            onclick="location.href='/users/login'" <% } else { %>
-            onclick="location.herf='/users/carrito'"
-          <% } %> >Agregar al carrito</button>
+        <button class="button_carrito" data-id="<%= product.id %>" <% if (locals.userLogged) { %>
+            onclick="location.herf='/users/carrito'" <% } else { %> onclick="location.href='/users/login'"
+          <% } %>>
+          <div class="default-btn" data-id="<%= product.id %>" >
+          <i class="fa-solid fa-eye"></i>
+          <span data-id="<%= product.id %>">Agregar?</span>
+        </div>
+        <div class="hover-btn" data-id="<%= product.id %>">
+          <i class="fa fa-shopping-cart cart"></i>
+          <span data-id="<%= product.id %>">Agregado</span>
+        </div>
+      </button>
         
         <!--</form>-->
           </div>
+          <div class="buttons-admin">
       <% if (locals.userFound && locals.userAdmin) { %>
         <input type="submit" class="boton-admin" value="Editar" onclick="location.href= '/products/edition/<%= product.id %>'">
         <input type="submit" class="boton-admin" value="Eliminar" onclick="location.href= '/products/delete/<%= product.id %>'">
         <% } %>
+      </div>
         
       </div>
     </div>

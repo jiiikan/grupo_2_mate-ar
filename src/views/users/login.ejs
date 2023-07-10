@@ -16,8 +16,10 @@
 		<main class="main">
 				<form method="POST" class="form-acceso" action="/users/login">
                   <h1 class="iniciar">Iniciar sesión</h1>
-					<label class="login-sub">Correo electrónico</label>
-					<input type="text" name="email" placeholder="Correo electrónico" class="login-input" value="<%= ey && ey.email ? ey.email : ' ' %>">
+
+
+                    <label class="login-sub">Correo electrónico</label>
+					<input type="text" name="email" class="login-input"  placeholder="Correo electrónico"  value="<%= ey.email || '' %>">
 					<% if(typeof errores !="undefined" ){ %>
 						<% for(let i=0; i < errores.length; i++) {%>
 							<% if (errores[i].path=="email" ) { %>

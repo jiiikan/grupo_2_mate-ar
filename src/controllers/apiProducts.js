@@ -38,13 +38,14 @@ module.exports = {
                         name: product.name,
                         description: product.description,
                         categories: product.categories.name,
-                        detail: `http://localhost:3000/api/products/${product.id}`
+                        image: `http://localhost:3008/images/${product.image}`,
+                        detail: `http://localhost:3008/api/products/${product.id}`
                     }))
                 })
             })
     },
 
-    detalle: (req,res) =>{
+    detalleApi: (req,res) =>{
         db.Producto.findByPk(req.params.id, {include: [{ 
             association: "categories",
         }]})
@@ -55,8 +56,15 @@ module.exports = {
                     description: producto.description,
                     price: producto.price,
                     category_id: producto.categories.name,
-                    image: `http://localhost:3000/images/${producto.image}`,
+                    image: `http://localhost:3008/images/${producto.image}`,
                 })
             })
-    }
+            .catch((error) => {
+                console.log(error);
+                res.status(400).render("error400");
+              });
+
+            
+    },
+
 }

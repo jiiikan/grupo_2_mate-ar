@@ -1,8 +1,6 @@
-<!-- PAGINA DEL CARRITO -->
-
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- PAGINA DEL CARRITO -->
 <head>
     <title>Carrito</title>
     <link rel="stylesheet" href="/css/carrito.css">
@@ -14,14 +12,14 @@
 
         <main class="main-cart">
             <div class="box-cart">
-                <div class="container wow fadeIn animated">
-                    <h2 class="mt-5 mb-3 h2 text-center"> Productos en mi carrito</h2>
-                    <div class="card my-5">
+                <div class="container">
+                    <h1 class="titulo-carrito">CARRITO DE COMPRAS:</h1>
+                    <div class="card">
 
-                            <table class="table table-responsive-md mb-0">
+                            <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th style="width: 40px;">
+                                    <tr class="tr">
+                                        <th class="th-lg">
                                             <strong>#</strong>
                                         </th>
                                         <th class="th-lg">
@@ -41,28 +39,30 @@
                                 <tbody class="cartRows">
                                 </tbody>
                             </table>
-                    </div>
+                    
 
-                    <div class="card">
+                    
                         <form class="card-body" id="checkoutCart">
                             <div class="row">
-                                <div class=" col-md-6 mb-4">
-                                    <label for="country" class="p">Tipo Envio</label>
+                                <div class="tipo-de">
+
+                                <div class="container-pago">
+                                    <label for="country" class="p">Tipo de Envio</label>
                                     <select class="custom-select d-block w-100" id="shippingMethod"
                                         name=" shippingMethod" required="">
-                                        <option value="" >Elegir...</option>
+                                        <option value="" >Elegir...</option>pr
                                         <option value="Cadete" >Cadete</option>
                                         <option value="Correo" >Correo Argentino</option>
                                         <option value="Andreani" >Andreani</option>
                                         <option value="DHL" >DHL</option>
                                     </select>
-                                    <div class="p">
+                                    <div class="Elegir">
                                         Elija un tipo de envio.
                                     </div>
 
                                 </div>
-                                <div class=" col-md-6 mb-4">
-                                    <label for="country" class="p">Pago</label>
+                                <div class="container-pago">
+                                    <label for="country" class="p">Tipo de Pago</label>
                                     <select class="custom-select d-block w-100" id="paymentMethod" name="paymentMethod"
                                         required="">
                                         <option value="" >Elegir...</option>
@@ -70,11 +70,16 @@
                                         <option value="Débito">Tarjeta Débito</option>
                                         <option value="Crédito">Tarjeta Crédito</option>
                                     </select>
-                                    <div class="p">
+                                    <div class="Elegir">
                                         Elija un tipo de pago.
                                     </div>
+                                </div></div>
+                                    <div class="container-img">
+                                        <img src="/images/002-te-de-mate-1.png" class="img-compra">
 
-                                </div>
+                                    </div>
+
+                                
                             </div>
                                 <h2>Total: <span class="totalAmount">$ 0</span></h2>
 
@@ -90,7 +95,7 @@
         </main>
 
         <%- include("../partials/footer") %>
-            <script src="/js/cart.js"></script>
+            <script src="/js/añadidoCarrito.js"></script>
 
 </body>
 </html>

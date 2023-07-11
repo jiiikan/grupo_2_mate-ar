@@ -1,14 +1,21 @@
 #  Mate.ar
+
+![LogoMateAr](https://github.com/nahhhhir/Dashboard-React-Matear/assets/121957769/ca142816-d711-451d-8c6c-4593056e1c35)
+
 Nuestra tienda se dedicará a vender mates, bombillas, termos, contenedor de azucar y yerba, y juegos comlpetos con bolso incluido. Surgio  la idea al pensar en una tienda internacional destinada a argentinos fuera y dentro del pais con envio. 
 
 Estamos dirigidos a adolescentes, adultos e incluso a familias que esperan vivir momentos inolvidables en cualquier lugar listos para compartir un buen mate, lo cual es muy buscado por este público. 
 
 # Nuestro equipo 
-está compuesto por  4 miemb:
+está compuesto por  4 miembros:
 - Dante Stigliani 
+     Fascinacion por el arte musical, egresado de un bachiller informatico y aprendiendo programacion web
 - Genaro Rafault
+    Amante de la programacion enfocandose en  back end, estudiando desarrollo web 
 - Nahir Cabezas 
+    Estudiante de tecnico informatico, diseñadora grafica e ilustradora digital esctualmente estudiando desarrollo web full stack
 - Fernando Lepe
+    Estudiante de tecnico informatico con un gusto a la programacion de videojuegos
 
 
 # Listado de paginas de referencia o inspiracion:

@@ -1,4 +1,4 @@
-/*function setCarritoVacio() {
+function setCarritoVacio() {
     cartRows.innerHTML = `
     <tr>
         <td colspan="5"><div class="alert alert-warning my-2 text-center">No tienes productos en el carrito</div></td>
@@ -16,13 +16,14 @@ function calcularTotal(products) {
 }
 
 let cartRows = document.querySelector(".cartRows")
+let botonComprar = document.querySelector(".comprar")
 
 let products = [];
 
 if( localStorage.carrito ){
     let carrito = JSON.parse(localStorage.carrito)
     carrito.forEach((item,index) => {
-        fetch(`/api/products/${item.id}`)
+        fetch(`/api/productos/${item.id}`)
         .then((res) =>res.json())
         .then((product) => {
             if(product){
@@ -32,12 +33,13 @@ if( localStorage.carrito ){
             <th scope="row">${index + 1}</th>
             <td>${product.name}</td>
             <td>$ ${product.price}</td>
-            <td class="text-center">${item.quantity}</td>
+            <td class="text-center">${item.quantity} 
+          </td>
             <td class="text-center">$ ${parseFloat(
                 product.price * item.quantity,
                 2
             ).toFixed(2)} </td>
-            <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash "></i></button></td>
+            <td><button class="btn btn-danger btn-sm basura" onclick=removeItem(${index})><i class="fas fa-trash basura"></i></button></td>
             <tr>`;
             products.push({
                 productId: product.id,
@@ -56,35 +58,14 @@ if( localStorage.carrito ){
          `
         });  
 })
-
+botonComprar.addEventListener("click", () => {
+    return vaciarCarrito()
+})
+} else {
+    setCarritoVacio()
 }
 
 
-let checkoutCart = document.querySelector("#checkoutCart");
-
-checkoutCart.onsubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-        orderItems: products,
-        paymentMethod: checkoutCart.paymentMethod.value,
-        shippingMethod: checkoutCart.shippingMethod.value,
-        total: calcularTotal(products)
-    };
-    fetch("/api/checkout", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData)
-    })
-    .then((r) => r.json())
-    .then((res) => {
-        if(res.ok){
-            vaciarCarrito();
-            location.href = `/order/${res.order.id}`
-        }
-    })
-    console.log(formData);
 
 
-}*/
+

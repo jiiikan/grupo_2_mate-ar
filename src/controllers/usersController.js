@@ -82,8 +82,6 @@ const usersController = {
 
     // Renderizacion perfil
     profile: (req, res) => {
-        //const user =  req.session.userLogged
-        //const userFromDB = User.findByField('id', user.id);
         res.render('./users/perfil', {
             user: req.session.userLogged
         });

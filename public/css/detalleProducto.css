@@ -12,11 +12,10 @@ h1{
   color: #285430;
 }
 
-.products{
-  border-radius: 10px;
-  background-color: #A4BE7B;
-  margin: 20px ;
-  padding: 30px 20px;
+.buttons-admin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .products h3{
@@ -28,7 +27,10 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
+    /* width: 90%; */
+    border-radius: 10px;
+    background-color: #A4BE7B;
+    padding: 20px;
   }
   
   .products img {
@@ -49,7 +51,68 @@ h1{
   .botones {
     display: flex;
     justify-content: center;
+    margin: 10px;
   }
+
+  .button_carrito {
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    background-color: #285430;
+    padding: 5px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #E5D9B6;
+    background-color: #285430;
+    cursor: pointer;
+   }
+   
+   .default-btn,.hover-btn {
+    background-color: #285430;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all .3s ease;
+   }
+   
+   .hover-btn {
+    position: absolute;
+    inset: 0;
+    background-color: #285430;
+    transform: translate(0%,100%);
+   }
+   
+   .default-btn span {
+    color: #E5D9B6;
+   }
+   
+   .hover-btn span {
+    color: hsl(50deg 100% 50%);
+   }
+   
+   button:hover .default-btn {
+    transform: translate(0%,-100%);
+   }
+   
+   button:hover .hover-btn {
+    transform: translate(0%,0%);
+   }
+
+   .cart{
+    color: hsl(50deg 100% 50%);;
+   }
   
   .boton{
     padding: 5px;
@@ -87,6 +150,8 @@ h1{
     color: #E5D9B6;
     background-color: #285430;
     cursor: pointer;
+    width: 100px;
+    height: 40px;
   }
 
   .boton-admin:hover{
@@ -128,9 +193,7 @@ h2{
 }
 
 @media (min-width:400px) {
-  .products{
-    margin-bottom: 5%;
-  }
+
 }
 
 
@@ -145,11 +208,10 @@ h2{
   .products{
     display: flex;
     align-items: center;
-    
-    width: 50%;
+    width: 600px;
   }
   .products img {
-    width: 60%;
+    width: 90%;
   }
   .array-products{
     display: flex;

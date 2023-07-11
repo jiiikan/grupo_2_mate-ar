@@ -33,12 +33,13 @@ if( localStorage.carrito ){
             <th scope="row">${index + 1}</th>
             <td>${product.name}</td>
             <td>$ ${product.price}</td>
-            <td class="text-center">${item.quantity}</td>
+            <td class="text-center">${item.quantity} 
+          </td>
             <td class="text-center">$ ${parseFloat(
                 product.price * item.quantity,
                 2
             ).toFixed(2)} </td>
-            <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash "></i></button></td>
+            <td><button class="btn btn-danger btn-sm basura" onclick=removeItem(${index})><i class="fas fa-trash basura"></i></button></td>
             <tr>`;
             products.push({
                 productId: product.id,
@@ -60,6 +61,8 @@ if( localStorage.carrito ){
 botonComprar.addEventListener("click", () => {
     return vaciarCarrito()
 })
+} else {
+    setCarritoVacio()
 }
 
 

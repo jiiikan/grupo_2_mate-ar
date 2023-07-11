@@ -2,6 +2,8 @@ const db = require('../database/models');
 const op = db.sequelize.op;
 
 module.exports = {
+
+    // Lista de los usuarios breve y count users
     users: (req, res) =>{
         db.Usuario.findAll()
             .then(usuarios =>{
@@ -18,6 +20,7 @@ module.exports = {
             })
     },
 
+    // Detalle de cada usuario
     detalle: (req,res) =>{
         db.Usuario.findByPk(req.params.id)
             .then(usuario =>{

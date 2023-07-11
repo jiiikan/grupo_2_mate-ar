@@ -32,7 +32,7 @@
         <!--<form method="post" action="/products/carrito" class="boton">-->
           <div>
         <button class="boton-admin button_carrito" data-id="<%= product.id %>" <% if (!locals.userLogged) { %>
-            onclick="location.href='/users/login'" <% } else { %>
+            onclick="location.href='/users/login'" <% } if (locals.userLogged)  { %>
             onclick="location.herf='/users/carrito'"
           <% } %> >Agregar al carrito</button>
         

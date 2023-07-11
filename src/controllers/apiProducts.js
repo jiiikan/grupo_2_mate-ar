@@ -3,11 +3,15 @@ const db = require('../database/models');
 const op = db.sequelize.op;
 
 module.exports = {
-    product: (req, res) =>{
-        db.Producto.findAll({include: [{ 
-            association: "categories",
-        }]})
-            .then(productos =>{
+
+    // Lista de productos, count productsByCategory
+    product: (req, res) => {
+        db.Producto.findAll({
+            include: [{
+                association: "categories",
+            }]
+        })
+            .then(productos => {
                 productsByCategory = {}
                 productos.forEach(product => {
                     const categories = product.categories;
@@ -30,7 +34,7 @@ module.exports = {
                     }
                 });
                 return res.status(200).json({
-                    count:productos.length,
+                    count: productos.length,
                     status: 200,
                     countByCategory: productsByCategory,
                     products: productos.map(product => ({
@@ -45,11 +49,14 @@ module.exports = {
             })
     },
 
-    detalleApi: (req,res) =>{
-        db.Producto.findByPk(req.params.id, {include: [{ 
-            association: "categories",
-        }]})
-            .then(producto =>{
+    // Detalle de cada producto
+    detalleApi: (req, res) => {
+        db.Producto.findByPk(req.params.id, {
+            include: [{
+                association: "categories",
+            }]
+        })
+            .then(producto => {
                 return res.status(200).json({
                     id: producto.id,
                     name: producto.name,
@@ -62,9 +69,9 @@ module.exports = {
             .catch((error) => {
                 console.log(error);
                 res.status(400).render("error400");
-              });
+            });
 
-            
+
     },
 
 }

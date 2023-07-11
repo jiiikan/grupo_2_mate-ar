@@ -9,6 +9,10 @@ const productsController = {
             .then(function (products) {
                 return res.render("products/catalogo", { products: products })
             })
+            .catch((error) => {
+              console.log(error);
+              res.status(400).render("error400");
+            });
     },
 
     catalogoId: (req, res) => {
@@ -49,6 +53,10 @@ const productsController = {
             .then(function (categorias) {
                 return res.render("products/create", { categorias: categorias, ey: {} })
             })
+            .catch((error) => {
+              console.log(error);
+              res.status(400).render("error400");
+            });
     },
 
     //Formulario de la creacion de un producto

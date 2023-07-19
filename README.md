@@ -32,3 +32,5 @@ https://www.wish.com/es
 
 # Trello 
 https://trello.com/invite/b/KHmB4qb7/ATTIbafbd1dae60378c75958bf1bc92628ba8453CB68/matear-grupo2
+
+Terminacion de proyecto con digital house 11/07
